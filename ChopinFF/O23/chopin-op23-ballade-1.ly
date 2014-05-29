@@ -20,8 +20,8 @@
 
 \header {
     title = "Première Ballade."
-    composer = "F.Chopin (1810-1849). Op.23"
-    piece = "à Mr. le Baron de Stockhausen."
+    composer = "Fr.Chopin (1810-1849),Op.23"
+    piece = \markup \italic "à Mr. le Baron de Stockhausen."
     date = "1836"
     style = "Romantic"
     source = "Klindworth; Bote & Bock,n.d.[1880]" % "Mikuli; Schirmer, 1894"
@@ -53,27 +53,30 @@ cadenzaOne = {
 }
 
 upperOne =  \relative c {
-  \stemUp \setRestDirUp
-  \time 4/4 \tempoLargo \hideTempo \staffDown 
-  c2-\hideF^\(^~^\largoLegend c8 ees aes bes\glissando \staffUp                       | %1
-  c8 aes ees' bes'  c aes ees' bes' | % 2
-  c8 g bes aes  g4 fis8\) f8\rest  | % 3
+  \setRestDirUp
+  \time 4/4 \tempoLargo \hideTempo
+  \trebleToBass
+  \stemNeutral
+  c2-\hideF(\(_~^\lentoLegend c8 ees aes bes              | %1
+  \clef treble
+  c8) aes_( ees' bes'  c) aes( ees' bes' | % 2
+  c8) g( bes aes  g4 fis8)\) b,8\rest  | % 3
+  b8\rest fis'(^\(-\hideP g fis  eis) fis( \times 2/3 { a g ees) }     | % 4
    \mBreak
-  f8\rest fis^\(-\hideP g fis  eis[ fis \times 2/3 {  a g ees ] }          | % 4
-  ees8.[ d16 \times 2/3 { f!8 ees d] } d4\) b\rest  | % 5
-  \stemNeutral b2\rest c4.(\> g8\!    | % 6
-  bes1)~                          | % 7
-   \mBreak
+  ees8. d16 \times 2/3 { f!8 ees d\) } d4 b\rest  | % 5
+  \stemNeutral b2\rest^\espressTxt c4.\( g8    | % 6
+  bes1~                     | % 7
    \time 6/4 \tempoMod
-  bes2.^\moderatoLegend b8\rest c,2(-\hideMF s8           | % 8
-  g'2.) \stemUp d'(                  | %9
-  c2.) b8\rest c,2( s8                | %10
-  g'2.) e(              | %11
+  bes2.^\moderatoLegend b8\rest \stemDown \hideNotes c,8_~ \unHideNotes c2-\hideMF    | % 8
+  \stemUp g'2.\) d'(        | %9
+  c2.) b8\rest \stemDown \hideNotes c,8\(_~ \unHideNotes c2 | %10
+   \mBreak
+  \stemUp g'2.\) e(         | %11
    \mBreak
   fis2.) b8\rest c,!2( s8   | %12
   g'2.) g'(                 | %13
-  f2.) e,(                | %14
-  cis'2.)\( d                 | %15
+  f2.) e,(                  | %14
+  cis'2.)\( d               | %15
    \mBreak
   c!2.\) b8\rest c,2( s8    | %16
   g'2.) d'(                 | %17
@@ -112,10 +115,10 @@ upperTwo =  \relative c' {
   \time 4/4
   \repeat unfold 7 { s1 | }      % 1-7
   \time 6/4
-  \mergeDifferentlyHeadedOn
-  s2. s8 c8_>-\hideP d fis bes a           | % 8
-  b,4\rest <d bes>^.^( <d bes>^.) e\rest <g d>^.^( <g d>^.)  | % 9
-  c,4\rest <g' ees>^.^( <g ees>^.) s8 c,8_> d fis bes a    | %10
+  %\mergeDifferentlyHeadedOn
+  s2. s8 \stemUp c8-\hideP d fis bes a \stemDown   | % 8
+  b,4\rest <d bes>-.( <d bes>-.) e\rest <g d>-.( <g d>-.) | % 9
+  c,4\rest <g' ees>-.( <g ees>-.) s8 \stemUp c,8^> d fis bes a \stemDown   | %10
   b,4\rest <d bes>^.^( <d bes>^.) g,\rest <cis a g>^.^( <cis a g>^.)  | %11
   a4\rest <d a fis>^.^( <d a fis>^.) s8 c!_> d fis bes a  | %12
   b,4\rest <d bes>^.^( <d bes>^.) g\rest <des'bes g>^.^( <des bes g>^.)  | %13
@@ -148,9 +151,12 @@ upperTwo =  \relative c' {
 upperTre = \relative c' {
   \time 4/4
   \repeat unfold 7 { s1 | } \time 6/4     % 1-7
-  \mergeDifferentlyDottedOn
-  s1 d4.-\hideP s8                       | % 8
-  \repeat unfold 5 { s1. | }         | % 9-13
+  %\mergeDifferentlyHeadedOn
+  \stemUp
+  s1 d2-\hideP                       | % 8
+  s1.                                | % 9
+  s1 d2                              | %10
+  \repeat unfold 3 { s1. | }         | %11-13
   s1 a'2                       | %14
   s1.                          | %15
   s1 d,4. s8                 | %16
@@ -163,26 +169,29 @@ upperQtr = \relative c' {
  
   \time 4/4
   \repeat unfold 7 { s1 | }     % 1-7
-  \time 6/4 \mergeDifferentlyHeadedOn \stemUp
-  s1 s8 fis4-\hideP s8                  | % 8
-  \repeat unfold 7 { s1. | }    % 9-15
+  \time 6/4 \mergeDifferentlyDottedOn \stemDown
+  s1 s8 fis4.-\hideP                   | % 8
+  s1.                                  | % 9
+  s1 s8 fis4.                          | %10
+  \repeat unfold 5 { s1. | }    % 11-15
   s1 s8 fis4 s8                | %16
   s1.                     | %17
   s1 s8 fis4 s8            | %18
   %}
 }
 
-upperStaff =  <<{ \upperOne  } \\ { \upperTwo } \\ {  \upperTre } \\ { \upperQtr } >>
+upperStaff =  <<{ \upperOne  } \\ { \upperTwo } \\ {  \upperTre } \\ {  \upperQtr }  >>
 
 lowerOne = \relative c, {
   \time 4/4
   \setRestDirDown
-  \stemDown c2-\hideF_\(_~ c8 ees aes bes    | % 1
-  c8 aes ees' bes'  c aes \staffUp ees' bes' | % 2
-  c8 g bes aes  g4 fis8\) e8\rest    | % 3
-  r8 fis8_\(-\hideP g fis  eis[ fis \times 2/3 { a g ees] }  | % 4
-  ees8.[ d16 \times 2/3 { f!8 ees d] } d4\) \staffDown d,\rest | %5
-  d2\rest <c' g ees>2(  | % 6
+  c2-\hideF\(_~ c8 ees aes bes    | % 1
+  c8 aes ees' bes' \clef treble  c aes ees' bes' | % 2
+  c8 g bes aes  g4 fis8\) b8\rest    | % 3
+  b8\rest fis8_\(-\hideP g fis  eis fis \times 2/3 { a g ees }  | % 4
+  ees8. d16 \times 2/3 { f!8 ees d\) } d4 \staffDown b'\rest | %5
+  \clef bass
+  d,,2\rest <c' g ees>2(^>  | % 6
   <ees g,d>1\arpeggio)   | % 7
    \bar "||" \time 6/4
    \stemNeutral
@@ -243,14 +252,15 @@ lowerStaff = <<
 >>
 
 dynamics = {
-  s4\f s8 s8-\markup{\italic \left-align pesante} s2  | % 1
-  s1                                                  | % 2
-  s2.\> s4\!                                          | % 3
-  s1                                                  | % 4
+  s4-\fPesante s8 s8 s2                               | % 1
+  s4 s2-\dimTxt s4\>                                  | % 2
+  s2. s4\!                                            | % 3
+  s8 s8\p s2.                                         | % 4
   s1                                                  | % 5
-  s2 s2\<                                             | % 6
-  s8 s8\! s2.                                         | % 7
-  \repeat unfold 19 { s1. | }                         | % 8-26
+  s4. s8\p s4. s8\<                                   | % 6
+  s2. s8 s8\!                                         | % 7
+  s2.\> s8\! s2-\pDolce s8
+  \repeat unfold 18 { s1. | }                         | % 9-26
   s4 s1\< s4                                          | %27
   s1.\!                                               | %28
   s2 s1\<                                             | %29

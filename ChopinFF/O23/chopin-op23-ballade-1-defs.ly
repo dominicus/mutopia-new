@@ -20,15 +20,20 @@ tempoLargo = \tempo 4 = 55
 tempoMod = \tempo 4 = 75
 tempoAgitato = \tempo 4 = 80
 hideTempo = \set Score.tempoHideNote = ##t
-largoLegend = \markup \huge \right-align \raise #13.3 "Largo"
-moderatoLegend = \markup \center-align \huge "Moderato"
+lentoLegend = \markup \huge \right-align \bold \raise #1.5 "Lento."
+moderatoLegend = \markup \center-align \huge "     Moderato"
 riten = \markup { \italic "riten." }
+fPesante = \markup \concat { \dynamic "f" \italic \larger "  pesante" }
+pDolce = \markup \concat { \dynamic "p" \italic \larger " dolce" }
+dimTxt = \markup \italic \larger "dim."
+espressTxt = \markup \italic \larger "espress."
 
 setRestDirDown = \override Rest #'direction = #down
 setRestDirUp = \override Rest #'direction = #up
 doubleSlursOn = \set doubleSlurs = ##t
 doubleSlursOff = \set doubleSlurs = ##f
 connectArpeggio = \set Staff.connectArpeggios = ##t
+hairpinToBarline = \once \override Hairpin.to-barline = ##t
 
 cadenzaSizeOn = {
   \override NoteHead.font-size = #-4
@@ -45,6 +50,34 @@ cadenzaSizeOff = {
 
 
 alignBeamOne = \once \override Beam.positions = #'(-1.2 . -1.2)
+
+moveNoteOne = \once \override NoteColumn #'force-hshift = #-0.55
+
+halfNotehead = {
+  \once \override NoteHead.stencil = #ly:text-interface::print
+  \once \override NoteHead.text = \markup \musicglyph #"noteheads.s2"
+}
+
+%---------Pavel's snippet from LSR to change clef at beginning of staff
+% Append markup in the text property to the grob
+#(define (append-markup grob old-stencil)
+  (ly:stencil-combine-at-edge
+    old-stencil X RIGHT (ly:text-interface::print grob)))
+
+trebleToBass = {
+  \clef bass
+  % Fake staff clef appearance
+  \once \override Staff.Clef.glyph-name = #"clefs.G"
+  \once \override Staff.Clef.Y-offset = #-1
+  % Append change clef to the time signature
+  \once \override Staff.TimeSignature.text = \markup {
+    \hspace #1.2
+    \raise #1
+    \musicglyph #"clefs.F_change"
+  }
+  \once \override Staff.TimeSignature.stencil = #(lambda (grob)
+    (append-markup grob (ly:time-signature::print grob)))
+}
 
 %{
 ten = \tenuto
