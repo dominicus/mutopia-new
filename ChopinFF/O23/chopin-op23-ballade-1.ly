@@ -98,28 +98,27 @@ upperOne =  \relative c {
   %--------------------------------------------ISSUE HERE: OBSCURED DOT!
   \ritenSpanner a2.\startTextSpan a2~ a8 a                                   | %31
   a2.\arpeggio ~ a2 a4->_~                                | %32
-  a16 bes a gis \stemDown a g'! e f  f g'f e \cadenzaOne | %33
+  a16 bes a gis \stemDown a g'! e f  f g'f e \cadenzaOne  | %33
    \mBreak \stemNeutral
-  cis8\) b8\rest d2->\(~ d4 c g                             | %34
+  cis8\) b8\rest d2->\(~ d4 c g                           | %34
   bes2. fis                                               | %35
-  g4\)\stopTextSpan \stemUp bes'4^\aTempo s2 a4 s          | %36
-  s4 bes4 s2 aes4 s                                | %37
-  s4 g s2 c,4 s                                    | %38
-  s4 ees s2 g,4^( <a fis>                           | %39
-  <bes g>4)^\agitato <bes bes'>2 s4 <a a'>2         | %40
-  s4 <bes bes'>2 s4 <aes aes'>2                     | %41
+  g4\)\stopTextSpan \stemUp bes'4^\aTempo s2 a4 s         | %36
+  s4 bes4 s2 aes4 s                                       | %37
+  s4 g s2 c,4 s                                           | %38
+  s4 ees s2 g,4^( <a fis>                                 | %39
+  <bes g>4)^\agitato <bes bes'>2 s4 <a a'>2               | %40
+  s4 <bes bes'>2 s4 <aes aes'>2                           | %41
   
   \bar "|."
-%}
 }
 
 upperTwo =  \relative c' {
   \time 4/4
-  \repeat unfold 7 { s1 | }      % 1-7
+  \repeat unfold 7 { s1 | }                                     % 1-7
   \time 6/4
   \mergeDifferentlyHeadedOn
-  s2. s8 \stemUp c8-\hideP d fis bes a \stemDown   | % 8
-  b,4\rest <d bes>-.( <d bes>-.) b\rest <g'd>-.( <g d>-.) | % 9
+  s2. s8 \stemUp c8-\hideP d fis bes a \stemDown              | % 8
+  b,4\rest <d bes>-.( <d bes>-.) b\rest <g'd>-.( <g d>-.)     | % 9
   c,4\rest <g' ees>-.( <g ees>-.) s8 \stemUp c,8^> d fis bes a \stemDown   | %10
   b,4\rest <d bes>-.( <d bes>-.) g,\rest <cis a g>-.( <cis a g>-.)  | %11
   a4\rest <d a fis>-.( <d a fis>-.) s8 \stemUp c^> d fis bes a \stemDown | %12
@@ -128,39 +127,37 @@ upperTwo =  \relative c' {
   g,4\rest <bes c>-.( <bes c>-.) \stemUp ees,8^>[ f a ees' d b16\rest cis]  | %14
   e,4\rest \stemDown <a f ees>-.( <a f ees>-.) e\rest <bes' f d>-.( <bes f d>-.)   | %15
   e,4\rest <g ees>-.( <g ees>-.) s8 c,^[^> d fis bes a]       | %16
-  a,4\rest <d bes>-.( <d bes>-.) c\rest <g'd>-.(<g d>-.)    | %17
-  c,4\rest <g'ees>-.(<g ees>-.) s8 c,^[ d fis bes a]        | %18
+  a,4\rest <d bes>-.( <d bes>-.) c\rest <g'd>-.(<g d>-.)      | %17
+  c,4\rest <g'ees>-.(<g ees>-.) s8 c,^[ d fis bes a]          | %18
   a,4\rest <d bes>-.(<d bes>-.) g,\rest <cis a g>-.(<cis a g>-.)  | %19
-  a4\rest <d a fis>-.( <d a fis>-.) s8 c^[ d fis bes a]  | %20
+  a4\rest <d a fis>-.( <d a fis>-.) s8 c^[ d fis bes a]       | %20
   a,4\rest <f'!d b>4-.( <f d b>-.) g\rest <d'b g f>-.( <d b g f>-.)  | %21
-  a4\rest <ees'c g>-.( <ees c g>-.) e,\rest <g d>-.( <g d>-.)   | %22
-  c,4\rest <g'c,>-.( <g c,>-.) b,\rest <d bes>-.( <d bes>-.)   | %23
-  g4\rest <ees'c g>-.( <ees c g>-.) d,\rest <g d>-.( <g d>-.)   | %24
+  a4\rest <ees'c g>-.( <ees c g>-.) e,\rest <g d>-.( <g d>-.) | %22
+  c,4\rest <g'c,>-.( <g c,>-.) b,\rest <d bes>-.( <d bes>-.)  | %23
+  g4\rest <ees'c g>-.( <ees c g>-.) d,\rest <g d>-.( <g d>-.) | %24
   d4\rest <g c,>-.( <g c,>-.) a,\rest <cis bes>-.( <cis bes>-.)  | %25
-  a4\rest <d bes>-.( <d bes>-.) e\rest <bes'f d>-.( <bes f d>-.)  | %26
-  <a ees!>4_\tenutoTxt <a ees> <a ees> <a ees> <a ees> <a ees>  | %27
-  g\rest <bes ees,> <bes ees,> <bes d,> <bes d,> <bes d,>  | %28
-  <fis c> <fis c> <fis c> <fis c> <fis c> <fis c>     | %29
-  e\rest <g!c,> <g c,> <g bes,> <g bes,> <g bes,>     | %30
-  \moveNoteTwo <g ees> <g ees> <g ees> <fis d> <fis d> <fis d>     | %31
-   \mBreak
-  <e a,>4\arpeggio s1\< s4                              | %32
-  s2. s16\! s8.-\pocoCresc s2                           | %33
-  s1.                                                   | %34
-  s1. \tieUp \slurUp                                    | %35
-  s4 bes'8\<( d\! f\> ees\!~ ees4) a,8\<( cis\! ees\> d\!~           | %36
-  d4) bes8\<( d\! f\> ees\!~ ees4) aes,8\<( cis\! ees\> d\!~          | %37
-  d4) g,8( b d c~ c4) c,8( gis' bes a~                  | %38
-  a4) ees8( b' d c~c4)  ees,8\< d cis c                 | %39
-  bes4_\f bes'8->( d f ees) b4\rest a8->( cis ees d)    | %40
-  b4\rest bes8->( d f ees) b4\rest aes8->( cis ees d)   | %41
+  a4\rest <d bes>-.( <d bes>-.) e\rest <bes'f d>-.( <bes f d>-.) | %26
+  <a ees!>4_\tenutoTxt <a ees> <a ees> <a ees> <a ees> <a ees>| %27
+  g\rest <bes ees,> <bes ees,> <bes d,> <bes d,> <bes d,>     | %28
+  <fis c> <fis c> <fis c> <fis c> <fis c> <fis c>             | %29
+  e\rest <g!c,> <g c,> <g bes,> <g bes,> <g bes,>             | %30
+  \moveNoteTwo <g ees> <g ees> <g ees> <fis d> <fis d> <fis d>| %31
+  <e a,>4\arpeggio s1\< s4                                    | %32
+  s2. s16\! s8.-\pocoCresc s2                                 | %33
+  s1.                                                         | %34
+  s1. \tieUp \slurUp                                          | %35
+  s4 bes'8\<( d\! f\> ees\!~ ees4) a,8\<( cis\! ees\> d\!~    | %36
+  d4) bes8\<( d\! f\> ees\!~ ees4) aes,8\<( cis\! ees\> d\!~  | %37
+  d4) g,8( b d c~ c4) c,8( gis' bes a~                        | %38
+  a4) ees8( b' d c~c4)  ees,8\< d cis c                       | %39
+  bes4_\f bes'8->( d f ees) b4\rest a8->( cis ees d)          | %40
+  b4\rest bes8->( d f ees) b4\rest aes8->( cis ees d)         | %41
 }
 
 upperTre = \relative c' {
-  \time 4/4
-  \repeat unfold 7 { s1 | } \time 6/4     % 1-7
-  \mergeDifferentlyHeadedOn \mergeDifferentlyDottedOn
-  \stemDown
+  \time 4/4 \mergeDifferentlyHeadedOn
+  \mergeDifferentlyDottedOn \stemDown
+  \repeat unfold 7 { s1 | } \time 6/4        % 1-7
   s1 \tweak Stem.transparent ##t d2-\hideP | % 8
   s1.                                      | % 9
   s1 \tweak Stem.transparent ##t d2        | %10
@@ -177,22 +174,27 @@ upperTre = \relative c' {
 }
 upperQtr = \relative c' {
   \time 4/4
-  \repeat unfold 7 { s1 | }              % 1-7
+  \repeat unfold 7 { s1 | }                  % 1-7
   \time 6/4 \mergeDifferentlyDottedOn \stemDown
-  s1 s8 fis4.-\hideP                   | % 8
-  s1.                                  | % 9
-  s1 s8 fis4.                          | %10
-  s1.                                  | %11
-  s1 s8 fis!4.                         | %12
-  \repeat unfold 3 { s1. | }             %13-15
-  s1 s8 fis4.                          | %16
-  s1.                                  | %17
-  s1 s8 fis4.                          | %18
-  s1.                                  | %19
-  s1 s8 fis!4.                         | %20
+  s1 s8 fis4.-\hideP                       | % 8
+  s1.                                      | % 9
+  s1 s8 fis4.                              | %10
+  s1.                                      | %11
+  s1 s8 fis!4.                             | %12
+  \repeat unfold 3 { s1. | }                 %13-15
+  s1 s8 fis4.                              | %16
+  s1.                                      | %17
+  s1 s8 fis4.                              | %18
+  s1.                                      | %19
+  s1 s8 fis!4.                             | %20
 }
 
-upperStaff =  <<{ \upperOne  } \\ { \upperTwo } \\ {  \upperTre } \\ {  \upperQtr }  >>
+upperStaff =  <<
+  { \upperOne } \\ 
+  { \upperTwo } \\
+  { \upperTre } \\
+  { \upperQtr }
+>>
 
 lowerOne = \relative c, {
   \time 4/4
@@ -205,13 +207,12 @@ lowerOne = \relative c, {
   \clef bass
   d,,2\rest <c' g ees>2(^>                      | % 6
   <ees g,d>1\arpeggio)\sustainOn                | % 7
-   \bar "||" \time 6/4
-   \stemNeutral
+   \bar "||" \time 6/4 \stemNeutral
   d,2.\rest\sustainOff d,4-. d'\rest d\rest     | % 8
   d4\rest g,_._( g_.) d'\rest bes'-.( bes-.)    | % 9
-  d,4\rest <c'a>-.( <c a>-.) d,\rest d,_._( d_.)| % 10
+  d,4\rest <c'a>-.( <c a>-.) d,\rest d,_._( d_.)| %10
   d'4\rest g,_._( g_.) d'\rest a_._( a_.)       | %11
-  d4\rest d,-.( d_.) d'\rest d-.( d-.)          | %12
+  d4\rest d,_._( d_.) d'\rest d-.( d-.)         | %12
   d4\rest g,_._( g_.) d'\rest e'-.( e-.)        | %13
   d,4\rest f'-.( f-.) d,\rest f,_._( f_.)       | %14
   d'4\rest bes_._( bes_.) d\rest bes'-.( bes-.) | %15
@@ -221,48 +222,44 @@ lowerOne = \relative c, {
   d'4\rest g,_._( g_.) d'\rest a_._( a_.)       | %19
   d4\rest d,_._( d_.) d'\rest d-.( d-.)         | %20
   d4\rest g-.( g-.) d\rest g,_._( g_.)          | %21
-  d'4\rest \stemUp c2 d4\rest d2         | %22
-  d4\rest ees2 d4\rest d2              | %23
-   \mBreak \stemDown
-  b8->( c d c g'4)  cis,8->( d ees d g4)   | %24
+  d'4\rest \stemUp c2 d4\rest d2                | %22
+  d4\rest ees2 d4\rest d2  \stemDown            | %23
+  b8->( c d c g'4)  cis,8->( d ees d g4)        | %24
   d8->( ees f ees g4) \stemUp \grace { dis16->_([_\( e]) \slashFlag f8 } \stemDown \afterGrace e2.\trill { \stemUp dis16[ e]\) } | %25
-  \stemDown f2.~_\( f4 \stemUp <e e,> <f f,>                 | %26
+  \stemDown f2.~_\( f4 \stemUp <e e,> <f f,>    | %26
   <fis~ fis,_~>2. <fis fis,>4 <eis eis,> <fis fis,>\)  | %27
-   \mBreak
-  <g g,>1._\(                                          | %28
-  <d d,>1.                                          | %29
-  <ees ees,>1.                                      | %30
-  <c c,>2. <d d,>                  | %31
-   \mBreak
+  <g g,>1._\(                                   | %28
+  <d d,>1.                                      | %29
+  <ees ees,>1.                                  | %30
+  <c c,>2. <d d,>                               | %31
    <cis cis,>4\)\arpeggio \stemNeutral \doubleSlursOff <e' a, e>-.( <e a, e>-. <e a, e>-. <e a, e>-. <e a, e>-.) | %32
   <c,!c,!>4 <f'ees!a,f>-.( <f ees a,f>-. <f ees a,f>-. <f ees a,f>-. <f ees a,f>-.)      | %33
-   \mBreak
   <bes,,bes,>4 <bes'f d> <d bes f> ees,,<c''g ees><ees c g>  | %34
-  d,,4_. g'2 d2._(                          | %35
-  g,4_.) <bes'g>2 fis,4_. <a'fis>2                   | %36
-  g,4_. <bes'g>2 f,!4_. <b'aes f!>2                 | %37
-  ees,,4_. <ees'g>2 c,4_. ees'2                     | %38
-  d,4_. <d'c'>2 d,4_. a''( d,)                      | %39
-  <g g,>4_. g2 <fis fis,>4_. fis2                   | %40
-  <g g,>4_. g2 <f! f,!>4_. f2                       | %41
+  d,,4_. g'2 d2._(                              | %35
+  g,4_.) <bes'g>2 fis,4_. <a'fis>2              | %36
+  g,4_. <bes'g>2 f,!4_. <b'aes f!>2             | %37
+  ees,,4_. <ees'g>2 c,4_. ees'2                 | %38
+  d,4_. <d'c'>2 d,4_. a''( d,)                  | %39
+  <g g,>4_. g2 <fis fis,>4_. fis2               | %40
+  <g g,>4_. g2 <f! f,!>4_. f2                   | %41
 }
 
 lowerTwo = \relative c {
   \time 4/4
-  \repeat unfold 7 { s1 | }      % 1-7
+  \repeat unfold 7 { s1 | }                          % 1-7
   \time 6/4
-  \repeat unfold 14 { s1. | }   %8-21
-  \stemDown s4 c,-._( g''-.) s d,-._( g'-.)    | %22
-  s4 ees,4-._( g'-.) s d,-._( g'-.)            | %23
-  \repeat unfold 11 { s1. | }          | %24-34
+  \repeat unfold 14 { s1. | }                        %8-21
+  \stemDown s4 c,-._(-\hideP g''-.) s d,-._( g'-.) | %22
+  s4 ees,4-._( g'-.) s d,-._( g'-.)                | %23
+  \repeat unfold 11 { s1. | }                      | %24-34
   \stemUp \slurUp \tieUp
   s4 <bes ees>(^\> <d bes>2 <cis bes>4 <c a>)\!    | %35
-  s4 f!( ees) s ees( d)              | %36
-  s4 f!( ees) s ees( d)              | %37
-  s4 d( c) s bes( a)                 | %38
-  s4 g( fis) s2.                     | %39
-  s4 f'( <ees bes>) s ees( <d a>)    | %40
-  s4 f( <ees bes>) s ees( <d b aes>) | %41
+  s4 f!( ees) s ees( d)                            | %36
+  s4 f!( ees) s ees( d)                            | %37
+  s4 d( c) s bes( a)                               | %38
+  s4 g( fis) s2.                                   | %39
+  s4 f'( <ees bes>) s ees( <d a>)                  | %40
+  s4 f( <ees bes>) s ees( <d b aes>)               | %41
 }
 breaks = {
   \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 1 ( 1- 4)
@@ -277,11 +274,10 @@ breaks = {
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 9 (38-41)
 }
 
-lowerStaff = << { \lowerOne }
-                \\
-                { \lowerTwo }
-                \\
-                { \breaks }
+lowerStaff = <<
+  { \lowerOne } \\
+  { \lowerTwo } \\
+  { \breaks }
 >>
 
 dynamics = {
@@ -324,9 +320,9 @@ pedal = {
  s4\sustainOn s1 s4\sustainOff                          | %32
  s4\sustainOn s1 s8 s16. s32\sustainOff                 | %33
  s4\sustainOn s s\sustainOff s\sustainOn s s\sustainOff | %34
- s4\sustainOn s4. s4\sustainOff s8 s2                       | %35
+ s4\sustainOn s4. s4\sustainOff s8 s2                   | %35
  s4..\sustainOn s4\sustainOff s16 s4..\sustainOn s4\sustainOff s16 | %36
- s4..\sustainOn s4\sustainOff s16 s4..\sustainOn s4\sustainOff s16  | %37
+ s4..\sustainOn s4\sustainOff s16 s4..\sustainOn s4\sustainOff s16 | %37
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %38
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %39
  s2\sustainOn s4\sustainOff s4..\sustainOn s4\sustainOff s16  | %40
@@ -350,6 +346,7 @@ pedal = {
       }%}
     } 
 }
+%{
 %-------generate Midi
 \score {
     %\removeWithTag #'printed
@@ -362,3 +359,4 @@ pedal = {
     >>
     \midi  { }
 }
+%}
