@@ -112,7 +112,11 @@ upperOne =  \relative c {
   s4 <ees ees,>2 s4 <fis,fis,>2 (                         | %43
   bes4-.) c,8(^\sPiuMosso bes a g  g'4-.) c,8\( bes a g   | %44
   f'!8_> c ees fis,\< c' ees fis_[ c' f! ees d c]         | %45
-  g'4-.\)\f
+  g'4-.\)-\hideF c,8( bes a g  g'4-.) c,8\( bes a g       | %46
+  \stemDown
+  f'!8-> c ees fis, c' ees  fis c' f! ees d c             | %47
+  <bes-\hideMF g'>4-.\) b,8\rest <g''c>( bes d, <fis bes> a d, <bes fis> a d,) | %48
+  <g c>8( bes d <g c> bes d,<fis bes> a d,<bes fis> a d,) | %49
   \bar "|."
 }
 
@@ -158,8 +162,11 @@ upperTwo =  \relative c' {
   b4\rest bes8->( d f ees) b4\rest aes8->( cis ees d)         | %41
   b4\rest g8->( b d c) b4\rest c,8->( gis' bes a)             | %42
   b4\rest ees,8->( b' d c) b4\rest fis,8-> cis' ees d         | %43
-  bes4\f g-> s4 bes g-> s4                                    | %44
-  s
+  bes4-\hideF g-> s4 bes g-> s4                               | %44
+  s1.                                                         | %45
+  bes'4 g-> s bes g-> s                                       | %46
+  \repeat unfold 3 { s1. | }                                  | %47-49
+  
 }
 
 upperTre = \relative c' {
@@ -255,7 +262,13 @@ lowerOne = \relative c, {
   d,4_. <g'a,>( <fis c>) d,_. <ees'g,>( <d c>)  | %43
   \stemDown
   g,4 \stemUp <g g,>2_( <d'g,>4_.) \stemDown g, d'\rest | %44
-  <ees c g>2._~ <ees c g>4 \stemUp <g g,> \stemNeutral <ees'ees,>    | %45
+  <ees c g>2._~ <ees c g>4 \stemUp <g g,> \stemNeutral <ees'ees,>| %45
+  s4 <g,g,>2( <g d'>4-.) g d\rest               | %46
+   \clef treble
+  b''4\rest a2->(~ a4 <g g,> <ees'ees,>         | %47
+  \stemDown
+  <d g,>4-.) b\rest b\rest <a fis ees>_._\fz s2 | %48
+  s4 d,2_( <a'fis ees>4_.)_\fz s2               | %49
 }
 
 lowerTwo = \relative c {
@@ -279,6 +292,12 @@ lowerTwo = \relative c {
   d,4 s2. ees8( d) s4                              | %44
   a'4\rest a2^>^\(~ a4 s2                          | %45
   \stemDown <d d,>4^.\) s2. \stemUp ees8( d) s4    | %46
+  \clef treble \stemDown \tieDown
+  <ees c g>2.~ <ees c g>4 s2 \stemUp               | %47
+  s2. ees'4^>( d d,                                | %48
+  g,-.) d'(^\< d'\! ees^> d d,                     | %49
+  g,)
+   
   
 }
 breaks = {
@@ -332,6 +351,13 @@ dynamics = {
   s4 s16 s16-\crescTxt s4. s2.                        | %38
   s1.                                                 | %39
   s1.                                                 | %40
+  \repeat unfold 3 { s1. | }                          | %41-43
+  s1.\f                                               | %44
+  s1.                                                 | %45
+  s1.\f                                               | %46
+  s1.                                                 | %47
+  s1.-\piuF                                           | %48
+  s1.                                                 | %49
 }
 
 pedal = {
@@ -353,6 +379,10 @@ pedal = {
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %43
  s1.                                                    | %44
  s2.\sustainOn s8 s8\sustainOff s2                      | %45
+ s1.                                                    | %46
+ s2\sustainOn s4 s8 s8\sustainOff s2                    | %47
+ s1.                                                    | %48
+ s2\sustainOn s8 s8\sustainOff s2.                      | %49
 }
 
 %-------Typeset music 
@@ -372,7 +402,7 @@ pedal = {
       }%}
     } 
 }
-%{
+
 %-------generate Midi
 \score {
     %\removeWithTag #'printed
