@@ -4,6 +4,7 @@
 staffUp = \change Staff = "upper"
 staffDown = \change Staff = "lower"
 mBreak = { \break }
+mNoBreak = { \noBreak }
 
 
 
@@ -21,25 +22,33 @@ tempoMod = \tempo 4 = 75
 tempoAgitato = \tempo 4 = 80
 hideTempo = \set Score.tempoHideNote = ##t
 lentoLegend = \markup \huge \right-align \bold \raise #1.5 "Lento."
-moderatoLegend = \markup \center-align \huge "     Moderato"
-riten = \markup { \italic "riten." }
+moderatoLegend = \markup \center-align \huge \bold "     Moderato."
 fPesante = \markup \concat { \dynamic "f" \italic \larger "  pesante" }
 pDolce = \markup \concat { \dynamic "p" \italic \larger " dolce" }
 dimTxt = \markup \italic \larger "dim."
 espressTxt = \markup \italic \larger "espress."
+tenutoTxt = \markup \italic \larger "tenuto"
+pocoCresc = \markup \italic \larger "poco cresc."
+aTempo = \markup \italic \larger "a tempo"
+ritenSpanner = {
+  \override TextSpanner #'(bound-details left text) = \markup { \italic "ritenuto" }
+  \override TextSpanner #'(bound-details left-broken text) = ##f
+  \once \override TextSpanner #'bound-details #'right #'padding = #4.0
+  \once \override TextSpanner #'bound-details #'right-broken #'padding = #0.5
+}
 
 setRestDirDown = \override Rest #'direction = #down
 setRestDirUp = \override Rest #'direction = #up
 doubleSlursOn = \set doubleSlurs = ##t
 doubleSlursOff = \set doubleSlurs = ##f
 connectArpeggio = \set Staff.connectArpeggios = ##t
-hairpinToBarline = \once \override Hairpin.to-barline = ##t
 
 cadenzaSizeOn = {
   \override NoteHead.font-size = #-4
   \override Accidental.font-size = #-4
   \override AccidentalCautionary.font-size = #-4
   \override Beam.beam-thickness = #0.28
+  \once \override Beam.length-fraction = #0.65
 }
 cadenzaSizeOff = {
   \revert NoteHead.font-size
@@ -48,10 +57,17 @@ cadenzaSizeOff = {
   \revert Beam.beam-thickness
 }
 
+subdivideBeamOn = {
+  \set subdivideBeams = ##t
+  \set baseMoment = #(ly:make-moment 1/4)
+}
+subdivideBeamOff = \set subdivideBeams = ##f
 
 alignBeamOne = \once \override Beam.positions = #'(-1.2 . -1.2)
 
-moveNoteOne = \once \override NoteColumn #'force-hshift = #-0.55
+moveNoteOne = \once \override NoteColumn #'force-hshift = #1.0
+moveNoteTwo = \once \override NoteColumn #'force-hshift = #1.5
+slashFlag = \once \override Flag.stroke-style = #"grace"
 
 halfNotehead = {
   \once \override NoteHead.stencil = #ly:text-interface::print
