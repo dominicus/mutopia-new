@@ -104,7 +104,11 @@ upperOne =  \relative c {
   bes2. fis                                               | %35
   g4\)\stopTextSpan \stemUp bes'4^\aTempo s2 a4 s          | %36
   s4 bes4 s2 aes4 s                                | %37
-  s4 g s2 c,4 s
+  s4 g s2 c,4 s                                    | %38
+  s4 ees s2 g,4^( <a fis>                           | %39
+  <bes g>4)^\agitato <bes bes'>2 s4 <a a'>2         | %40
+  s4 <bes bes'>2 s4 <aes aes'>2                     | %41
+  
   \bar "|."
 %}
 }
@@ -143,10 +147,13 @@ upperTwo =  \relative c' {
   <e a,>4\arpeggio s1\< s4                              | %32
   s2. s16\! s8.-\pocoCresc s2                           | %33
   s1.                                                   | %34
-  s1.                                                   | %35
-  s4 bes'8\<^( d\! f\> ees\!^~ ees4) a,8\<^( cis\! ees\> d\!^~           | %36
-  d4) bes8\<^( d\! f\> ees\!^~ ees4) aes,8\<^( cis\! ees\> d\!^~          | %37
-  d4)
+  s1. \tieUp \slurUp                                    | %35
+  s4 bes'8\<( d\! f\> ees\!~ ees4) a,8\<( cis\! ees\> d\!~           | %36
+  d4) bes8\<( d\! f\> ees\!~ ees4) aes,8\<( cis\! ees\> d\!~          | %37
+  d4) g,8( b d c~ c4) c,8( gis' bes a~                  | %38
+  a4) ees8( b' d c~c4)  ees,8\< d cis c                 | %39
+  bes4_\f bes'8->( d f ees) b4\rest a8->( cis ees d)    | %40
+  b4\rest bes8->( d f ees) b4\rest aes8->( cis ees d)   | %41
 }
 
 upperTre = \relative c' {
@@ -234,6 +241,10 @@ lowerOne = \relative c, {
   d,,4_. g'2 d2._(                          | %35
   g,4_.) <bes'g>2 fis,4_. <a'fis>2                   | %36
   g,4_. <bes'g>2 f,!4_. <b'aes f!>2                 | %37
+  ees,,4_. <ees'g>2 c,4_. ees'2                     | %38
+  d,4_. <d'c'>2 d,4_. a''( d,)                      | %39
+  <g g,>4_. g2 <fis fis,>4_. fis2                   | %40
+  <g g,>4_. g2 <f! f,!>4_. f2                       | %41
 }
 
 lowerTwo = \relative c {
@@ -244,10 +255,14 @@ lowerTwo = \relative c {
   \stemDown s4 c,-._( g''-.) s d,-._( g'-.)    | %22
   s4 ees,4-._( g'-.) s d,-._( g'-.)            | %23
   \repeat unfold 11 { s1. | }          | %24-34
-  \stemUp
-  s4 <bes ees>^(^\> <d bes>2 <cis bes>4 <c a>)\!    | %35
-  s4 f!^( ees) s ees^( d)              | %36
-  s4 f!^( ees) s ees^( d)              | %37
+  \stemUp \slurUp \tieUp
+  s4 <bes ees>(^\> <d bes>2 <cis bes>4 <c a>)\!    | %35
+  s4 f!( ees) s ees( d)              | %36
+  s4 f!( ees) s ees( d)              | %37
+  s4 d( c) s bes( a)                 | %38
+  s4 g( fis) s2.                     | %39
+  s4 f'( <ees bes>) s ees( <d a>)    | %40
+  s4 f( <ees bes>) s ees( <d b aes>) | %41
 }
 breaks = {
   \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 1 ( 1- 4)
@@ -259,7 +274,7 @@ breaks = {
   \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 6 (26-30)
   \repeat unfold 2 { s1. \mNoBreak } s1. \mBreak      % line 7 (31-33)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 8 (34-37)
-  
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 9 (38-41)
 }
 
 lowerStaff = << { \lowerOne }
@@ -295,6 +310,10 @@ dynamics = {
   s1.                                                 | %34
   s1.                                                 | %35
   s1.\p                                               | %36
+  s1.                                                 | %37
+  s4 s16 s16-\crescTxt s4. s2.                        | %38
+  s1.                                                 | %39
+  s1.                                                 | %40
 }
 
 pedal = {
@@ -308,6 +327,10 @@ pedal = {
  s4\sustainOn s4. s4\sustainOff s8 s2                       | %35
  s4..\sustainOn s4\sustainOff s16 s4..\sustainOn s4\sustainOff s16 | %36
  s4..\sustainOn s4\sustainOff s16 s4..\sustainOn s4\sustainOff s16  | %37
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %38
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %39
+ s2\sustainOn s4\sustainOff s4..\sustainOn s4\sustainOff s16  | %40
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %41
 }
 
 %-------Typeset music 

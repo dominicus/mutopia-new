@@ -21,6 +21,7 @@ tempoLargo = \tempo 4 = 55
 tempoMod = \tempo 4 = 75
 tempoAgitato = \tempo 4 = 80
 hideTempo = \set Score.tempoHideNote = ##t
+
 lentoLegend = \markup \huge \right-align \bold \raise #1.5 "Lento."
 moderatoLegend = \markup \center-align \huge \bold "     Moderato."
 fPesante = \markup \concat { \dynamic "f" \italic \larger "  pesante" }
@@ -30,6 +31,8 @@ espressTxt = \markup \italic \larger "espress."
 tenutoTxt = \markup \italic \larger "tenuto"
 pocoCresc = \markup \italic \larger "poco cresc."
 aTempo = \markup \italic \larger "a tempo"
+agitato = \markup \italic \larger "agitato"
+crescTxt = \markup \italic \larger "cresc."
 ritenSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "ritenuto" }
   \override TextSpanner #'(bound-details left-broken text) = ##f
