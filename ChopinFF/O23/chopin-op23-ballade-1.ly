@@ -108,7 +108,11 @@ upperOne =  \relative c {
   s4 ees s2 g,4^( <a fis>                                 | %39
   <bes g>4)^\agitato <bes bes'>2 s4 <a a'>2               | %40
   s4 <bes bes'>2 s4 <aes aes'>2                           | %41
-  
+  s4 <g'g,>2 s4 <c,c,>2  \slurUp                          | %42
+  s4 <ees ees,>2 s4 <fis,fis,>2 (                         | %43
+  bes4-.) c,8(^\sPiuMosso bes a g  g'4-.) c,8\( bes a g   | %44
+  f'!8_> c ees fis,\< c' ees fis_[ c' f! ees d c]         | %45
+  g'4-.\)\f
   \bar "|."
 }
 
@@ -152,6 +156,10 @@ upperTwo =  \relative c' {
   a4) ees8( b' d c~c4)  ees,8\< d cis c                       | %39
   bes4_\f bes'8->( d f ees) b4\rest a8->( cis ees d)          | %40
   b4\rest bes8->( d f ees) b4\rest aes8->( cis ees d)         | %41
+  b4\rest g8->( b d c) b4\rest c,8->( gis' bes a)             | %42
+  b4\rest ees,8->( b' d c) b4\rest fis,8-> cis' ees d         | %43
+  bes4\f g-> s4 bes g-> s4                                    | %44
+  s
 }
 
 upperTre = \relative c' {
@@ -242,6 +250,12 @@ lowerOne = \relative c, {
   d,4_. <d'c'>2 d,4_. a''( d,)                  | %39
   <g g,>4_. g2 <fis fis,>4_. fis2               | %40
   <g g,>4_. g2 <f! f,!>4_. f2                   | %41
+  <ees ees,>4_. ees2 <c c,>4_. \stemDown c2     | %42
+  \stemNeutral
+  d,4_. <g'a,>( <fis c>) d,_. <ees'g,>( <d c>)  | %43
+  \stemDown
+  g,4 \stemUp <g g,>2_( <d'g,>4_.) \stemDown g, d'\rest | %44
+  <ees c g>2._~ <ees c g>4 \stemUp <g g,> \stemNeutral <ees'ees,>    | %45
 }
 
 lowerTwo = \relative c {
@@ -260,6 +274,12 @@ lowerTwo = \relative c {
   s4 g( fis) s2.                                   | %39
   s4 f'( <ees bes>) s ees( <d a>)                  | %40
   s4 f( <ees bes>) s ees( <d b aes>)               | %41
+  s4 d( <c g>) s bes( <a ees>)                     | %42
+  s1.                                              | %43
+  d,4 s2. ees8( d) s4                              | %44
+  a'4\rest a2^>^\(~ a4 s2                          | %45
+  \stemDown <d d,>4^.\) s2. \stemUp ees8( d) s4    | %46
+  
 }
 breaks = {
   \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 1 ( 1- 4)
@@ -272,6 +292,8 @@ breaks = {
   \repeat unfold 2 { s1. \mNoBreak } s1. \mBreak      % line 7 (31-33)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 8 (34-37)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 9 (38-41)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 10 (42-45)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 11 (46-49)
 }
 
 lowerStaff = <<
@@ -327,6 +349,10 @@ pedal = {
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %39
  s2\sustainOn s4\sustainOff s4..\sustainOn s4\sustainOff s16  | %40
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %41
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %42
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %43
+ s1.                                                    | %44
+ s2.\sustainOn s8 s8\sustainOff s2                      | %45
 }
 
 %-------Typeset music 

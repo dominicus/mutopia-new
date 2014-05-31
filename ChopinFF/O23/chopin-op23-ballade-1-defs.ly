@@ -33,6 +33,7 @@ pocoCresc = \markup \italic \larger "poco cresc."
 aTempo = \markup \italic \larger "a tempo"
 agitato = \markup \italic \larger "agitato"
 crescTxt = \markup \italic \larger "cresc."
+sPiuMosso = \markup \italic \larger "sempre più mosso"
 ritenSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "ritenuto" }
   \override TextSpanner #'(bound-details left-broken text) = ##f
