@@ -117,6 +117,23 @@ upperOne =  \relative c {
   f'!8-> c ees fis, c' ees  fis c' f! ees d c             | %47
   <bes-\hideMF g'>4-.\) b,8\rest <g''c>( bes d, <fis bes> a d, <bes fis> a d,) | %48
   <g c>8( bes d <g c> bes d,<fis bes> a d,<bes fis> a d,) | %49
+  <g c>8( bes d <g c> bes d,<fis, bes> a d,<bes fis>a d,) | %50
+  <c'g>8( bes d <g c> bes d, <fis bes> a d,<bes fis> a d,)| %51
+  <c'g>8( bes d <g c> bes d, <a'd,>g bes,<ees bes> d g,)  | %52
+  \stemNeutral
+  <c g>8( bes d, <a'd,> g bes, \clef bass <bes ees>d g, <g c!> bes d,)| %53
+  \menoFSpanner
+  <c'g>8\startTextSpan\( bes d, <d'g,> c ees, <c'g> bes d, <d'g,> c ees,| %54
+  <c'g> bes d, <d'g,> c ees, <c'g> bes d, <d'g,> c ees,\) | %55
+  \clef treble
+  g8\(\< d'bes d g bes  d-> g bes \ottava #1 d g d'\!     | %56
+  bes\> d g, d \ottava #0 bes g d bes g d bes\! c,\)_(\<  | %57
+  g'8)\!\>( d'\! bes d g d'bes d g, d bes d,)_(\<         | %58
+  fis8)\!\>( d'\! bes d fis d' bes d fis, d bes d,)_(\<\stopTextSpan | %59
+  \piuPianoSpanner
+  g8)\!(\>\startTextSpan d'\! bes d g bes d g bes \ottava #1 d g d' | %60
+  bes d g, d \ottava #0 bes g d bes g d bes d,)_(\<\stopTextSpan | %61
+  ges)\! d' bes
   \bar "|."
 }
 
@@ -269,6 +286,19 @@ lowerOne = \relative c, {
   \stemDown
   <d g,>4-.) b\rest b\rest <a fis ees>_._\fz s2 | %48
   s4 d,2_( <a'fis ees>4_.)_\fz s2               | %49
+  s2. \clef bass <ees,fis a>4_._> s2            | %50
+  s4 d2_( <ees fis a>4_._>) s2                  | %51
+  g,2 d'4\rest \stemNeutral <cis cis,>_( <d d,>) d\rest | %52
+  <g,g,>4( d') d\rest cis,_( d) d'\rest         | %53
+  <g,g,>4 d'\rest c,!( <g'g,>) d'\rest c,(      | %54
+  <g'g,>4) d'\rest c,( <g'g,>) d'\rest c,(      | %55
+  <g'g,>2.) d'4\rest <d'g>-.( <d g,>-.          | %56
+  <d g>2) d,4\rest d\rest d\rest d,_(           | %57
+  <g~ g,_~>2.) <g g,>2 d4_(                     | %58
+  <fis~ fis,_~>2.) <fis fis,>2 d4_(             | %59
+  <g g,>2.) d'4\rest <d g>(-. <d g,>-.          | %60
+  <d g>2) d4\rest d\rest d\rest d,_(            | %61
+  <ges ges,>2.)
 }
 
 lowerTwo = \relative c {
@@ -296,8 +326,9 @@ lowerTwo = \relative c {
   <ees c g>2.~ <ees c g>4 s2 \stemUp               | %47
   s2. ees'4^>( d d,                                | %48
   g,-.) d'(^\< d'\! ees^> d d,                     | %49
-  g,)
-   
+  g,4) b'\rest \clef bass d,,( ees'd d,            | %50
+  g,4-.) d'(\< d'\! ees d d,                       | %51
+  g,4)( <d'd'>) s1                                 | %52
   
 }
 breaks = {
@@ -313,6 +344,11 @@ breaks = {
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 9 (38-41)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 10 (42-45)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 11 (46-49)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 12 (50-53)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 13 (54-57)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 14 (58-61)
+  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 15 (62-66)
+  
 }
 
 lowerStaff = <<
@@ -383,6 +419,19 @@ pedal = {
  s2\sustainOn s4 s8 s8\sustainOff s2                    | %47
  s1.                                                    | %48
  s2\sustainOn s8 s8\sustainOff s2.                      | %49
+ s2\sustainOn s8 s32\sustainOff s16. s2.                | %50
+ s2\sustainOn s8. s16\sustainOff s2.                    | %51
+ s2\sustainOn s1\sustainOff                             | %52
+ s2\sustainOn s1\sustainOff                             | %53
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %54
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %55
+ s1.\sustainOn                                          | %56
+ s1 s4 s4\sustainOff                                    | %57
+ s1\sustainOn s4 s4\sustainOff                          | %58
+ s1\sustainOn s4 s4\sustainOff                          | %59
+ s1.\sustainOn                                          | %60
+ s1 s4 s4\sustainOff                                    | %61
+ 
 }
 
 %-------Typeset music 

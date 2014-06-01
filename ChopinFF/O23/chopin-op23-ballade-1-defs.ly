@@ -41,6 +41,14 @@ ritenSpanner = {
   \once \override TextSpanner #'bound-details #'right #'padding = #4.0
   \once \override TextSpanner #'bound-details #'right-broken #'padding = #0.5
 }
+menoFSpanner = {
+  \override TextSpanner #'(bound-details left text) = \markup { \italic "poco  a  poco  meno  " \dynamic "f" }
+  \override TextSpanner #'(bound-details left-broken text) = ##f
+}
+piuPianoSpanner = {
+  \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre più " \dynamic "p" }
+  \override TextSpanner #'(bound-details left-broken text) = ##f
+}
 
 setRestDirDown = \override Rest #'direction = #down
 setRestDirUp = \override Rest #'direction = #up
