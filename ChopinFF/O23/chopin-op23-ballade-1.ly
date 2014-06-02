@@ -6,7 +6,7 @@
 \version "2.18.2"
 
 #(set-default-paper-size "letter")
-#(set-global-staff-size 20)
+#(set-global-staff-size 19)
 
 \paper {
     top-margin = 8\mm                              %-minimum top-margin: 8mm
@@ -132,8 +132,42 @@ upperOne =  \relative c {
   fis8)\!\>( d'\! bes d fis d' bes d fis, d bes d,)_(\<\stopTextSpan | %59
   \piuPianoSpanner
   g8)\!(\>\startTextSpan d'\! bes d g bes d g bes \ottava #1 d g d' | %60
-  bes d g, d \ottava #0 bes g d bes g d bes d,)_(\<\stopTextSpan | %61
-  ges)\! d' bes
+  bes8 d g, d \ottava #0 bes g d bes g d bes d,)_(\<\stopTextSpan | %61
+  \calandoSpanner
+  ges8)\!\>(\startTextSpan d'\!bes d ges d'bes d ges,d bes d,\<)_( | %62
+  f8)\!\>( d'\! bes d f_\dimTxt d'bes d f,d bes c,)_(\stopTextSpan | %63
+  f8)(^\smorzTxt c'a c f a c f a c \ottava #1 f a         | %64 
+  f'4) \ottava #0 b,,,\rest b\rest b2\rest b4\rest        | %65
+  \restDownOne R1*6/4                                     | %66
+  b2\rest b4\rest b\rest b\rest f->-\menoMosso~\(         | %67
+  f2.( g2) g4(                                            | %68
+  ees2.)\)~ ees4 ees'4.\( d8                              | %69
+  \stemUp c2.( d2) d4(                                    | %70
+  bes2.)\) \stemNeutral bes'2\(^\< bes4                   | %71
+  bes2->\! aes4 aes g fis                                 | %72
+  fis2 g\) aes4.( ees8                                    | %73
+  g2 f) g4.\( d8                                          | %74
+  f4 ees d \times 2/3 { c8[ d c] } b c d ees              | %75
+  f,2.\)(\( g2) g4(                                       | %76
+  ees2.)\)_~ ees4 ees'4.\( d8                             | %77
+  \stemUp c2.( d2) d4(                                    | %78
+  bes2.)\) \stemNeutral bes'2->\( bes4                    | %79
+  %-----------------------------------correction to source bar40: bes2->bes2.
+  bes2. c,2\) d4\(                                        | %80
+  \times 2/3 { ees8 f ees } d4 ees g\) g->(~ \times 2/3 { g8 f ees) } | %81
+  ees2. b4\rest g8[( aes] \times 2/3 { bes d c}           | %82
+  bes2.)~ bes4 g8([ aes] \times 2/3 { bes d c) }          | %83
+  bes2.~ bes4 f8([ aes] \times 2/3 { bes d c }            | %84
+  bes4)_~ \times 2/3 { bes8[ des,_\( ees] g[ c bes]} aes4_~ aes8 ces,ees f | %85
+  g2\) b4\rest b\rest g8([ aes] \times 2/3 { bes d c }    | %86
+  bes4) bes'2.-> \times 2/3 { b,8\rest( g[ aes] bes d c } | %87
+  bes4) bes'2.-> \times 2/3 { b,8\rest( f[ aes] bes d c } | %88
+  bes4)_~ \times 2/3 { bes8[ des,_\( ees] g[ c bes]} aes4_~ aes8 ces,ees f | %89
+  g2.\)_~ g8\noBeam g( bes g'f ees                        | %90
+  d2.)~ d8 bes( d bes' d,ees                              | %91
+  e4 f2)~ f8 d\( f d'c bes                                | %92
+  gis8 a f'e d a \staffDown f,,^[ \staffUp a'f d e \acciaccatura { g } f] | %93
+  e,2.\)
   \bar "|."
 }
 
@@ -183,7 +217,21 @@ upperTwo =  \relative c' {
   s1.                                                         | %45
   bes'4 g-> s bes g-> s                                       | %46
   \repeat unfold 3 { s1. | }                                  | %47-49
-  
+  \repeat unfold 17 { s1. | }                                 | %50-66
+  s1 s4 \stemDown \ignoreClashOnce c,4_~                      | %67
+  c2._( d                                                     | %68
+  ees2.) s                                                    | %69
+  g2._( a                                                     | %70
+  bes2.) s                                                    | %71
+  \repeat unfold 4 { s1. | } \slurDown                          %72-75
+  c,!2.( d                                                    | %76
+  ees2.) s                                                    | %77
+  g2.( a                                                      | %78
+  bes2.) s                                                    | %79
+  \repeat unfold 5 { s1. | }                                    %80-84
+  s4 \scaleDurations 2/3 { s8 des,4-> s4. } s4 s8 ces4-> s8   | %85
+  \repeat unfold 3 { s1. | }                                    %86-88
+  s4 \scaleDurations 2/3 { s8 des4-> s4. } s4 s8 ces4-> s8    | %89
 }
 
 upperTre = \relative c' {
@@ -298,7 +346,40 @@ lowerOne = \relative c, {
   <fis~ fis,_~>2.) <fis fis,>2 d4_(             | %59
   <g g,>2.) d'4\rest <d g>(-. <d g,>-.          | %60
   <d g>2) d4\rest d\rest d\rest d,_(            | %61
-  <ges ges,>2.)
+  <ges~ ges,_~>2.) <ges ges,>2 d4_(             | %62
+  f2.)(~ f2 g4                                  | %63
+  a!2) d4\rest d\rest <c'f>(\( <c f,>-.         | %64
+  \piuDimSpanner
+  <c~ f_~>2.)\startTextSpan <c f>2 <c f,>4(     | %65
+  <c~ f_~>2.) <c f>2 <c f,>4(                   | %66
+  <c f>2 <c f,>4 <c f> <c f,> \staffUp \hideNotes \stemDown
+      f)\)\stopTextSpan \unHideNotes \staffDown | %67
+  \stemNeutral bes,,,4(_. bes' aes'f c'bes)     | %68
+  ees,,4( bes' ees g bes ees)                   | %69
+  c( ees f, ees'g f)                            | %70
+  bes,,( f' bes d f bes)                        | %71
+  c,4( ees f, bes d aes')                       | %72
+  bes,( d ees, aes c g')                        | %73
+  aes,( c d,g b f')                             | %74
+  g,( c c,f a! ees')                            | %75
+  f,4( aes bes,aes'c bes)                       | %76
+  ees,,4( bes'ees g bes ees)                    | %77
+  c( ees f,ees'g f)                             | %78
+  bes,,4( f'bes d f bes)                        | %79
+  c,,,4 e''( bes \stemUp g e' bes)              | %80
+  f4 ees'!( a,) bes, \stemNeutral d'( aes)      | %81
+  \stemDown
+  ees,8( bes'g'ees bes'g ees'4) d,4\rest d\rest | %82
+  ees,8( bes'g'ees bes'g ees'4) d,4\rest d\rest | %83
+  ees,8( bes' aes'f bes aes d4) d,4\rest d\rest | %84
+  ees,8( bes'g'4) d\rest ees,8(ces'aes'4)d,\rest| %85
+  ees,8( bes'g'ees bes'g ees'4) d,\rest d\rest  | %86
+  ees,8( bes'g'ees bes'g ees'4) d,\rest d\rest  | %87
+  ees,8( bes'aes'f bes aes d4) d,\rest d\rest   | %88
+  ees,8( bes'g'4) d\rest ees,8(ces'aes'4)d,\rest| %89
+  ees,8( bes'g'ees bes'g ees'4) d,\rest d\rest  | %90
+  g,8( d'bes'g d'bes g'4) d,\rest d\rest        | %91
+  bes8( f'd'bes f'd bes'4) d,,\rest d\rest      | %92
 }
 
 lowerTwo = \relative c {
@@ -329,7 +410,19 @@ lowerTwo = \relative c {
   g,4) b'\rest \clef bass d,,( ees'd d,            | %50
   g,4-.) d'(\< d'\! ees d d,                       | %51
   g,4)( <d'd'>) s1                                 | %52
-  
+  \repeat unfold 10 { s1. | }                      | %53-62
+  \stemDown f,,1.~                                 | %63
+  f2 s1                                            | %64
+  s1.                                              | %65
+  s1.                                              | %66
+  s1 s4 d''\rest                                   | %67
+  \repeat unfold 12 { s1. | }                      | %68-79
+  s2. g_(                                          | %80
+  f2. bes,4) s2                                    | %81
+  \repeat unfold 4 { s1. | }                         %82-85
+  \stemUp s2 bes'4^> s2.                           | %86
+  \repeat unfold 3 { s1. | }                         %87-89
+  s2 bes4^> s2.                                    | %90
 }
 breaks = {
   \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 1 ( 1- 4)
@@ -348,7 +441,13 @@ breaks = {
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 13 (54-57)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 14 (58-61)
   \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 15 (62-66)
-  
+  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 16 (67-71)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 17 (72-75)
+  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 18 (76-80)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 19 (81-84)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 20 (85-88)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 21 (89-92)
+  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 22 (93-97)
 }
 
 lowerStaff = <<
@@ -394,7 +493,16 @@ dynamics = {
   s1.                                                 | %47
   s1.-\piuF                                           | %48
   s1.                                                 | %49
-}
+  \repeat unfold 18 { s1. | }                           %50-67
+  s1.\pp                                              | %68
+  \repeat unfold 13 { s1. | }                           %69-81
+  s1.-\semprePP                                       | %82
+  \repeat unfold 7 { s1. | }                            %83-89
+  \semprePiuPSpanner s1.\startTextSpan                | %90
+  s1 s4 s8\stopTextSpan \eRallSpanner s8\startTextSpan| %91
+  s1.                                                 | %92
+  s1 s4. s8\stopTextSpan                              | %93
+} 
 
 pedal = {
  \repeat unfold 6 { s1 | }                                % 1-6
@@ -431,6 +539,42 @@ pedal = {
  s1\sustainOn s4 s4\sustainOff                          | %59
  s1.\sustainOn                                          | %60
  s1 s4 s4\sustainOff                                    | %61
+ s1\sustainOn s4. s8\sustainOff                         | %62
+ s1\sustainOn s4. s8\sustainOff                         | %63
+ s1.\sustainOn                                          | %64
+ s1.                                                    | %65
+ s1.                                                    | %66
+ s1 s4 s4\sustainOff                                    | %67
+ s1\sustainOn s2\sustainOff                             | %68
+ s1\sustainOn s4. s8\sustainOff                         | %69
+ s1\sustainOn s2\sustainOff                             | %70
+ s1\sustainOn s4 s4\sustainOff                          | %71
+ s1\sustainOn s4 s4\sustainOff                          | %72
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %73
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %74
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %75
+ s1\sustainOn s2\sustainOff                             | %76
+ s1\sustainOn s4 s4\sustainOff                          | %77
+ %---------------------------------- the SustainOff prior to 6th beat (bar 78) pulls
+ %---------------------------------- the note column unexpectedly to left..why?
+ s1\sustainOn s8. s16\sustainOff s4                     | %78
+ s1\sustainOn s4. s8\sustainOff                         | %79
+ %---------------------------------- can't get this one to land on 4th beat
+ %---------------------------------- ...trying results in notecolumn shifts
+ s2.\sustainOn s2.\sustainOff                           | %80
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %81
+ s1\sustainOn s4 s4\sustainOff                          | %82
+ s1\sustainOn s4 s4\sustainOff                          | %83
+ s1\sustainOn s4 s4\sustainOff                          | %84
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %85
+ s1\sustainOn s4 s4\sustainOff                          | %86
+ s1\sustainOn s4 s4\sustainOff                          | %87
+ s1\sustainOn s4 s4\sustainOff                          | %88
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %89
+ s1\sustainOn s4 s4\sustainOff                          | %90
+ s1\sustainOn s4 s4\sustainOff                          | %91
+ s4\sustainOn s8\sustainOff s8 s2.\sustainOn s4\sustainOff | %92
+ 
  
 }
 

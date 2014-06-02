@@ -33,8 +33,12 @@ pocoCresc = \markup \italic \larger "poco cresc."
 aTempo = \markup \italic \larger "a tempo"
 agitato = \markup \italic \larger "agitato"
 crescTxt = \markup \italic \larger "cresc."
+smorzTxt = \markup \italic "smorz."
 sPiuMosso = \markup \italic \larger "sempre più mosso"
 piuF = \markup \concat { \italic " più " \dynamic "f"}
+menoMosso = \markup \override #'(baseline-skip . 1.7) \column { \larger \bold "Meno mosso." \italic "sotto voce"  }
+semprePP = \markup { \italic "sempre" \dynamic "pp" }
+
 ritenSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "ritenuto" }
   \override TextSpanner #'(bound-details left-broken text) = ##f
@@ -46,7 +50,23 @@ menoFSpanner = {
   \override TextSpanner #'(bound-details left-broken text) = ##f
 }
 piuPianoSpanner = {
+  \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre  più " \dynamic "p" }
+  \override TextSpanner #'(bound-details left-broken text) = ##f
+}
+calandoSpanner = {
+  \override TextSpanner #'(bound-details left text) = \markup { \italic "calando" }
+  \override TextSpanner #'(bound-details left-broken text) = ##f
+}
+piuDimSpanner = {
+  \override TextSpanner #'(bound-details left text) = \markup { \italic "più dimin. e riten." }
+  \override TextSpanner #'(bound-details left-broken text) = ##f
+}
+semprePiuPSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre più " \dynamic "p" }
+  \override TextSpanner #'(bound-details left-broken text) = ##f
+}
+eRallSpanner = {
+  \override TextSpanner #'(bound-details left text) = \markup { \italic " e  rall. " }
   \override TextSpanner #'(bound-details left-broken text) = ##f
 }
 
@@ -75,6 +95,7 @@ subdivideBeamOn = {
   \set baseMoment = #(ly:make-moment 1/4)
 }
 subdivideBeamOff = \set subdivideBeams = ##f
+restDownOne = \once \override MultiMeasureRest.staff-position = #2
 
 alignBeamOne = \once \override Beam.positions = #'(-1.2 . -1.2)
 
@@ -86,6 +107,8 @@ halfNotehead = {
   \once \override NoteHead.stencil = #ly:text-interface::print
   \once \override NoteHead.text = \markup \musicglyph #"noteheads.s2"
 }
+
+ignoreClashOnce = \once \override NoteColumn.ignore-collision = ##t
 
 %---------Pavel's snippet from LSR to change clef at beginning of staff
 % Append markup in the text property to the grob
@@ -271,8 +294,6 @@ breakBeamSep = \markup {
 }
 legendOne = \markup { \center-align \smaller "doux et soutenu" }
 legendTwo = \markup { \center-align \italic \smaller "doux mais en dehors" }
-
-ignoreClashOnce = \once \override NoteColumn.ignore-collision = ##t
 
 
 %}
