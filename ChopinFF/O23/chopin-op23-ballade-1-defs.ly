@@ -16,6 +16,7 @@ global = {
 hideF = \tweak #'stencil ##f \f
 hideP = \tweak #'stencil ##f \p
 hideMF = \tweak #'stencil ##f \mf
+hidePP = \tweak #'stencil ##f \pp
 
 tempoLargo = \tempo 4 = 55
 tempoMod = \tempo 4 = 75
@@ -33,11 +34,14 @@ pocoCresc = \markup \italic \larger "poco cresc."
 aTempo = \markup \italic \larger "a tempo"
 agitato = \markup \italic \larger "agitato"
 crescTxt = \markup \italic \larger "cresc."
+crescTiny = \markup \italic \small "cresc."
 smorzTxt = \markup \italic "smorz."
 sPiuMosso = \markup \italic \larger "sempre più mosso"
 piuF = \markup \concat { \italic " più " \dynamic "f"}
 menoMosso = \markup \override #'(baseline-skip . 1.7) \column { \larger \bold "Meno mosso." \italic "sotto voce"  }
 semprePP = \markup { \italic "sempre" \dynamic "pp" }
+aTempoMenoMosso = \markup { \center-align \italic \larger "a tempo (meno mosso)   " }
+sottoVoce = \markup \italic \larger "sotto voce"
 
 ritenSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "ritenuto" }

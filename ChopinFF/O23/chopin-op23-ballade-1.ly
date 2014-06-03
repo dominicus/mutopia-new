@@ -166,8 +166,17 @@ upperOne =  \relative c {
   g2.\)_~ g8\noBeam g( bes g'f ees                        | %90
   d2.)~ d8 bes( d bes' d,ees                              | %91
   e4 f2)~ f8 d\( f d'c bes                                | %92
-  gis8 a f'e d a \staffDown f,,^[ \staffUp a'f d e \acciaccatura { g } f] | %93
-  e,2.\)
+  gis8 a f'e d a \staffDown d,^[ \staffUp a f d e \acciaccatura { g } f] | %93
+  e,2.\)\pp b''8\rest \stemDown
+     \hideNotes d,8_~^( \unHideNotes \moveNoteOne d2      | %94
+  \stemUp a'2.) e'2.(                                     | %95
+  d2.) s8 \stemDown
+     \hideNotes d,8_~^( \unHideNotes \moveNoteOne d2      | %96
+  \stemUp a'2.) fis->(                                    | %97
+  gis2.) b8\rest \stemDown
+     \hideNotes d,8_~^( \unHideNotes \moveNoteOne d2      | %98
+  \stemUp a'2.) e'(                                       | %99
+  fis2.) \stemDown s8 c,2 s8                              | %100
   \bar "|."
 }
 
@@ -232,6 +241,15 @@ upperTwo =  \relative c' {
   s4 \scaleDurations 2/3 { s8 des,4-> s4. } s4 s8 ces4-> s8   | %85
   \repeat unfold 3 { s1. | }                                    %86-88
   s4 \scaleDurations 2/3 { s8 des4-> s4. } s4 s8 ces4-> s8    | %89
+  \repeat unfold 4 { s1. | }                                    %90-93
+  s2. \stemUp s8 d8-\hidePP e^\aTempoMenoMosso gis c b        | %94
+  c,4\rest \stemDown <e c>-.( <e c>-.) e\rest a-.( a-.)       | %95
+  e\rest <a f>-.( <a f>-.) b8\rest \stemUp d,e gis c b \stemDown | %96
+  c,4\rest <e c>_.( <e c>)_.) a,\rest <e'c a>_.( <e c a>_.)   | %97
+  a,\rest <e'b>_.( <e b>_.) s8 \stemUp d e! gis! c b          | %98
+  \stemDown c,4\rest <e c>_.( <e c>_.) d\rest <c'a>_.(<c a>_.)| %99
+  g4\rest <c a e>_.(<c a e>_.) b8\rest \stemUp c,8^( e gis b a| %100
+  a2.)
 }
 
 upperTre = \relative c' {
@@ -251,6 +269,14 @@ upperTre = \relative c' {
   s1 \tweak Stem.transparent ##t d2        | %18
   s1.                                      | %19
   s1 \tweak Stem.transparent ##t d2        | %20
+  \repeat unfold 73 { s1. | }                %21-93
+  s1 \tweak Stem.transparent ##t e2        | %94
+  s1.                                      | %95
+  s1 \tweak Stem.transparent ##t e2        | %96
+  s1.                                      | %97
+  s1 \tweak Stem.transparent ##t e2        | %98
+  s1.                                      | %99
+  s1  e4. s8                               | %100
 }
 upperQtr = \relative c' {
   \time 4/4
@@ -267,6 +293,14 @@ upperQtr = \relative c' {
   s1 s8 fis4.                              | %18
   s1.                                      | %19
   s1 s8 fis!4.                             | %20
+  \repeat unfold 73 { s1. | }                %21-93
+  s1 s8 gis4.-\hidePP                      | %94
+  s1.                                      | %95
+  s1 s8 gis4.                              | %96
+  s1.                                      | %97
+  s1 s8 gis4.                              | %98
+  s1.                                      | %99
+  s1 s8 gis4 s8                            | %100
 }
 
 upperStaff =  <<
@@ -380,6 +414,15 @@ lowerOne = \relative c, {
   ees,8( bes'g'ees bes'g ees'4) d,\rest d\rest  | %90
   g,8( d'bes'g d'bes g'4) d,\rest d\rest        | %91
   bes8( f'd'bes f'd bes'4) d,,\rest d\rest      | %92
+  d8( a'f' \clef treble d a'f d'4) b\rest b\rest| %93
+  \clef bass \stemNeutral \slurDown
+  d,,\rest e,_.(-\hidePP e_.) d'\rest e,_.( e_.)| %94
+  d'\rest e,_.( e_.) b'\rest <a'e>_.( <a e>_.)  | %95
+  b,\rest <a'e>_.( <a e>_.) b,\rest \stemDown e,_.( e_.) | %96
+  e4\rest e_.( e_.) e\rest e_.( e_.)            | %97
+  e4\rest e_.( e_.) e\rest e_.( e_.)            | %98
+  e4\rest e_.( e_.) b'\rest <c'a e>_.(<c a e>_.)| %99
+  b,4\rest<c'a e>_.(<c a e>_.)e,,\rest e_.( e_.)| %100
 }
 
 lowerTwo = \relative c {
@@ -423,6 +466,13 @@ lowerTwo = \relative c {
   \stemUp s2 bes'4^> s2.                           | %86
   \repeat unfold 3 { s1. | }                         %87-89
   s2 bes4^> s2.                                    | %90
+  \repeat unfold 4 { s1. | }                         %91-94
+  s2. e2.(                                         | %95
+  d2.) a2.\rest                                    | %96
+  a2.\rest fis^>(                                  | %97
+  gis2.) a2.\rest                                  | %98
+  a2.\rest e'(                                     | %99
+  fis2.)-\hideF a,2.\rest                          | %100
 }
 breaks = {
   \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 1 ( 1- 4)
@@ -447,7 +497,8 @@ breaks = {
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 19 (81-84)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 20 (85-88)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 21 (89-92)
-  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 22 (93-97)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 22 (93-96)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 23 (97-100)
 }
 
 lowerStaff = <<
@@ -502,6 +553,13 @@ dynamics = {
   s1 s4 s8\stopTextSpan \eRallSpanner s8\startTextSpan| %91
   s1.                                                 | %92
   s1 s4. s8\stopTextSpan                              | %93
+  s2. s8 s2-\sottoVoce s8                             | %94
+  s1.                                                 | %95
+  s1 s2-\semprePP                                     | %96
+  s1.                                                 | %97
+  s1.                                                 | %98
+  s2.\< s2.-\crescTiny                                | %99
+  s2.\f s8 s8\pp s2
 } 
 
 pedal = {
@@ -574,7 +632,14 @@ pedal = {
  s1\sustainOn s4 s4\sustainOff                          | %90
  s1\sustainOn s4 s4\sustainOff                          | %91
  s4\sustainOn s8\sustainOff s8 s2.\sustainOn s4\sustainOff | %92
- 
+ s1\sustainOn s4 s4\sustainOff                          | %93
+ s1\sustainOn s4 s4\sustainOff                          | %94
+ s1\sustainOn s4.. s16\sustainOff                       | %95
+ s2\sustainOn s4\sustainOff s2\sustainOn s8 s8\sustainOff| %96
+ s2\sustainOn s16 s8.\sustainOff s2\sustainOn s16 s8.\sustainOff  | %97
+ s1\sustainOn s4. s16\sustainOff s16                    | %98
+ s1.\sustainOn                                          | %99
+ s2 s4\sustainOff s4\sustainOn s4. s16\sustainOff s16   | %100
  
 }
 
