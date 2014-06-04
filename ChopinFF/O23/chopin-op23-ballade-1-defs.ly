@@ -42,6 +42,7 @@ menoMosso = \markup \override #'(baseline-skip . 1.7) \column { \larger \bold "M
 semprePP = \markup { \italic "sempre" \dynamic "pp" }
 aTempoMenoMosso = \markup { \center-align \italic \larger "a tempo (meno mosso)   " }
 sottoVoce = \markup \italic \larger "sotto voce"
+moltoCresc = \markup \italic "molto cresc."
 
 ritenSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "ritenuto" }
@@ -71,6 +72,10 @@ semprePiuPSpanner = {
 }
 eRallSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic " e  rall. " }
+  \override TextSpanner #'(bound-details left-broken text) = ##f
+}
+sempreCrescSpanner = {
+  \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre cresc." }
   \override TextSpanner #'(bound-details left-broken text) = ##f
 }
 
@@ -105,6 +110,7 @@ alignBeamOne = \once \override Beam.positions = #'(-1.2 . -1.2)
 
 moveNoteOne = \once \override NoteColumn #'force-hshift = #1.0
 moveNoteTwo = \once \override NoteColumn #'force-hshift = #1.5
+moveNoteTre = \once \override NoteColumn #'force-hshift = #-0.7
 slashFlag = \once \override Flag.stroke-style = #"grace"
 
 halfNotehead = {
@@ -133,6 +139,22 @@ trebleToBass = {
   }
   \once \override Staff.TimeSignature.stencil = #(lambda (grob)
     (append-markup grob (ly:time-signature::print grob)))
+}
+
+%-----Jacek's squeeze functions
+squeezeNotation = {
+  \override Staff.AccidentalPlacement #'right-padding = #-0.05
+  \override Staff.Accidental #'stencil =
+  #(lambda (grob)
+     (ly:stencil-scale (ly:accidental-interface::print grob) 0.92 1))
+  \override Staff.NoteHead #'stencil =
+  #(lambda (grob)
+     (ly:stencil-scale (ly:note-head::print grob) 0.96 1.02))
+}
+unSqueezeNotation = {
+  \revert Staff.AccidentalPlacement.right-padding
+  \revert Staff.Accidental.stencil
+  \revert Staff.NoteHead.stencil
 }
 
 %{

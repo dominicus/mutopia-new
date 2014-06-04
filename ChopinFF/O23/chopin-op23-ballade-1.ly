@@ -6,7 +6,7 @@
 \version "2.18.2"
 
 #(set-default-paper-size "letter")
-#(set-global-staff-size 19)
+#(set-global-staff-size 18)
 
 \paper {
     top-margin = 8\mm                              %-minimum top-margin: 8mm
@@ -53,6 +53,7 @@ cadenzaOne = {
 }
 
 upperOne =  \relative c {
+  %\voiceOneStyle
   \setRestDirUp
   \time 4/4 \tempoLargo \hideTempo
   \trebleToBass
@@ -176,11 +177,34 @@ upperOne =  \relative c {
   gis2.) b8\rest \stemDown
      \hideNotes d,8_~^( \unHideNotes \moveNoteOne d2      | %98
   \stemUp a'2.) e'(                                       | %99
-  fis2.) \stemDown s8 c,2 s8                              | %100
+  fis2.) \stemDown s8 c,2( s8                             | %100
+  \stemUp a'2.) fis'(                                     | %101
+  gis2. fis2) f8\rest gis                                 | %102
+  gis2.( fis2) f8\rest gis                                | %103
+  gis2.( fis2) f8\rest gis                                | %104
+  a2.( fis2 a4)                                           | %105
+  \stemDown
+  <b gis e d!b>2.(\( <cis gis e d>2) <cis gis e d>4(      | %106
+  <a cis,a>2.)\) <a'cis,a>2\( <gis cis,gis>4              | %107
+  <fis cis fis,>2.( <gis dis b>2) <gis dis b>4(           | %108
+  <e gis,e>2.)\) <e e,>2-^ <e e,>4-^                      | %109
+  \squeezeNotation
+  <e e,>2->(<d d,>4) \times 2/3 { <d d,>8([<e e,><d d,>] }
+     <cis cis,><d d,><fis fis,><e e,>)                    | %110
+  <d d,>2->(<cis cis,>4) \times 2/3 { <cis cis,>8([<d d,><cis cis,>] }
+     <bis bis,><cis cis,><e e,><d d,>)                    | %111
+  \stemUp
+  <cis cis,>4( <b b,>4.<ais ais,>8) 
+     \times 3/4 {<b b,>4(<bis bis,><cis cis,><gis gis,>) }| %112
+  <b b,>4( a4. gis8 \grace { fis16[ gis] } fis4) eis8-.(
+     fis-. gis-. a-.)                                     | %113
+  <b,gis e d>2.(\( <e cis gis e>2) <e cis gis e d>4(      | %114
+  <a,cis,a>4)\)
   \bar "|."
 }
 
 upperTwo =  \relative c' {
+  %\voiceTwoStyle
   \time 4/4
   \repeat unfold 7 { s1 | }                                     % 1-7
   \time 6/4
@@ -248,8 +272,19 @@ upperTwo =  \relative c' {
   c,4\rest <e c>_.( <e c>)_.) a,\rest <e'c a>_.( <e c a>_.)   | %97
   a,\rest <e'b>_.( <e b>_.) s8 \stemUp d e! gis! c b          | %98
   \stemDown c,4\rest <e c>_.( <e c>_.) d\rest <c'a>_.(<c a>_.)| %99
-  g4\rest <c a e>_.(<c a e>_.) b8\rest \stemUp c,8^( e gis b a| %100
-  a2.)
+  g4\rest <c a e>_.( <c a e>_.) b8\rest \stemUp c,8 e gis b a | %100
+  \stemDown c,4\rest <e c>_.( <e c>_.) e\rest <c'a e>_.( <c a e>_.) | %101
+  e,4\rest <dis'c a>_.(<dis c a>_.) g,\rest <dis'c a> g,\rest  | %102
+  g4\rest <dis'c a> <dis c a> g,\rest <dis'c a> g,\rest       | %103
+  g4\rest <dis'c a> <dis c a> g,\rest <dis'c a> g,\rest       | %104
+  g4\rest<fis'dis c><fis dis c> g,\rest <fis'dis c><fis dis c>| %105
+  \repeat unfold 4 { s1. | }                                  | %106-109
+  \squeezeNotation
+  \moveNoteTre a1.                                            | %110
+  \moveNoteTre gis1.                                          | %111
+  fis2. eis2 s4                                               | %112
+  <fis cis>2. <dis b a>4 <dis b a>8<dis b a><dis b a><dis b a>| %113
+  s1.                                                         | %114
 }
 
 upperTre = \relative c' {
@@ -277,6 +312,8 @@ upperTre = \relative c' {
   s1 \tweak Stem.transparent ##t e2        | %98
   s1.                                      | %99
   s1  e4. s8                               | %100
+  \repeat unfold 12 { s1. | }                %101-112
+  s4 a2 s2.                                | %113
 }
 upperQtr = \relative c' {
   \time 4/4
@@ -423,6 +460,22 @@ lowerOne = \relative c, {
   e4\rest e_.( e_.) e\rest e_.( e_.)            | %98
   e4\rest e_.( e_.) b'\rest <c'a e>_.(<c a e>_.)| %99
   b,4\rest<c'a e>_.(<c a e>_.)e,,\rest e_.( e_.)| %100
+  e4\rest e_.( e_.) d'\rest <c'a e>_.(<c a e>_.)| %101
+  d,4\rest <c'a e>_.(<c a e>_.) d,\rest <c'a e> d,\rest | %102
+  d4\rest <c'a e><c a e> d,\rest <c'a e> d,\rest| %103
+  d4\rest <c'a e><c a e> d,\rest <c'a e> d,\rest| %104
+  \stemNeutral \slurUp
+  d4\rest <c'a e><c a e> d,\rest <c'a e> <c a e>\arpeggio| %105
+  <e,,e,>4\arpeggio<d''gis,e>( <e d gis,> <gis d b> <e d gis,> <d gis,e>) | %106
+  <a,a,>4 <cis'e,>(<e a,><a cis,><e a,><cis e,>)| %107
+  <b,b,>4 <b'fis>(<dis a><fis b,><dis a><b fis>)| %108
+  <e,e,>4 <b'e,>(<e gis,><gis b,><e gis,><b e,>)| %109
+  \squeezeNotation
+  <fis fis,>4 <d'fis,>( <a'a,>) <b,,b,> <d'~ fis,>( <a'd,b>)   | %110
+  <e,e,>4 <cis'e,>( <gis'gis,>) <a,,a,><cis'~e,>( <gis'cis,a>) | %111
+  <d,d,>4 <b'd,>(<fis'fis,>) <cis,cis,> <cis'gis>(<eis b>)     | %112
+  <fis,,fis,>^> fis'2 <bes,bes,>4 fis'2          | %113
+  <e,e,>4<gis'b,><b ees,><d gis,><b ees,><gis b,>| %114
 }
 
 lowerTwo = \relative c {
@@ -473,6 +526,14 @@ lowerTwo = \relative c {
   gis2.) a2.\rest                                  | %98
   a2.\rest e'(                                     | %99
   fis2.)-\hideF a,2.\rest                          | %100
+  a2.\rest fis'(                                   | %101
+  gis2.^> fis2) f8\rest gis                        | %102
+  gis2.^>( fis2) f8\rest gis                       | %103
+  gis2.^>( fis2) f8\rest gis                       | %104
+  a2.( gis2 a4)\arpeggio                           | %105
+  \repeat unfold 7 { s1. | }                         %106-112
+  \squeezeNotation
+  s4 cis,( <fis a,>) s b,( <dis a>)                | %113
 }
 breaks = {
   \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 1 ( 1- 4)
@@ -499,6 +560,10 @@ breaks = {
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 21 (89-92)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 22 (93-96)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 23 (97-100)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 24 (101-104)
+  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 25 (105-109)
+  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 25 (110-114)
+  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 26 (115-119)
 }
 
 lowerStaff = <<
@@ -559,7 +624,17 @@ dynamics = {
   s1.                                                 | %97
   s1.                                                 | %98
   s2.\< s2.-\crescTiny                                | %99
-  s2.\f s8 s8\pp s2
+  s2.\f s8 s8\pp s2                                   | %100
+  s2.\< s2.-\crescTiny                                | %101
+  s4\fz \sempreCrescSpanner s4\startTextSpan s2. s4\< | %102
+  s1.\sf                                              | %103
+  s1\sf s4 s8. s16\stopTextSpan                       | %104
+  s2.^\moltoCresc s2.\<                               | %105
+  s1.\ff                                              | %106
+  \repeat unfold 5 { s1. | }                            %107-111
+  s2. s2.\<                                           | %112
+  s2.\! s4 s2\<                                       | %113
+  s1.\ff                                              | %114
 } 
 
 pedal = {
@@ -640,7 +715,20 @@ pedal = {
  s1\sustainOn s4. s16\sustainOff s16                    | %98
  s1.\sustainOn                                          | %99
  s2 s4\sustainOff s4\sustainOn s4. s16\sustainOff s16   | %100
- 
+ s1\sustainOn s4 s4\sustainOff                          | %101
+ s2\sustainOn s4\sustainOff s2\sustainOn s8 s8\sustainOff| %102
+ s2\sustainOn s4\sustainOff s2\sustainOn s8 s8\sustainOff| %103
+ s2\sustainOn s4\sustainOff s2\sustainOn s8 s8\sustainOff| %104
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %105
+ s1\sustainOn s4 s4\sustainOff                          | %106
+ s1\sustainOn s4 s4\sustainOff                          | %107
+ s1\sustainOn s4 s4\sustainOff                          | %108
+ s1\sustainOn s4 s4\sustainOff                          | %109
+ s2\sustainOn s4\sustainOff s16 s4\sustainOn s8 s8.\sustainOff s8  | %110
+ s2\sustainOn s4\sustainOff s16 s4\sustainOn s8 s8.\sustainOff s8  | %111
+ s2\sustainOn s4\sustainOff s2\sustainOn s8. s16\sustainOff  | %112
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %113
+ s1\sustainOn s4. s16\sustainOff s16                    | %114
 }
 
 %-------Typeset music 
@@ -650,7 +738,8 @@ pedal = {
         \new Staff = "upper" \with { \consists "Span_arpeggio_engraver" }
            { \clef treble \global \connectArpeggio \upperStaff }
         \new Dynamics = "dyns" { \dynamics }
-        \new Staff = "lower" { \clef bass \global \lowerStaff }
+        \new Staff = "lower" \with { \consists "Span_arpeggio_engraver" }
+           { \clef bass \global \connectArpeggio \lowerStaff }
         \new Dynamics = "ped" { \pedal }
     >>
     \layout{ 
