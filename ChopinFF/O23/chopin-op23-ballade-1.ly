@@ -199,7 +199,21 @@ upperOne =  \relative c {
   <b b,>4( a4. gis8 \grace { fis16[ gis] } fis4) eis8-.(
      fis-. gis-. a-.)                                     | %113
   <b,gis e d>2.(\( <e cis gis e>2) <e cis gis e d>4(      | %114
-  <a,cis,a>4)\)
+  \stemNeutral \unSqueezeNotation
+  <a,cis,a>4)\) b\rest <a'cis,a>\(<a'cis,a>2<gis cis,gis>4| %115
+  <fis cis fis,>2.(<gis dis b>2)<gis dis a>4(             | %116
+  <e gis,e>2)\) b,4\rest \ottava #1 <e''~e,_~>2<e e,>8.<e e,>16  | %117
+  <e e,>4-. \ottava #0 b,,\rest b\rest <fis'~ fis,_~>2.->-\tenTxt| %118
+  <fis fis,>4 <fis fis,>-\sharpPrall\( <eis eis,>8<fis fis,>
+     <gis gis,><ais ais,><b b,><cis cis,><d!d,!><e e,>    |%119
+  <fis fis,>4-.\) b,,\rest b\rest <gis'gis,>2->-\tenTxt <gis gis,>4-^ | %120
+  gis,8\( gis'a gis <fisis fisis,><gis gis,><ais ais,>
+     <bis bis,><cis cis,><dis dis,><e e,><fis fis,>       | %121
+  <gis gis,>4-.\)b,,\rest b\rest<gis'gis,>2-^<gis gis,>4-^| %122
+  <gis gis,>4-\sharpPrall\( <fisis fisis,>8
+     <gis gis,><ais ais,><b b,><cis cis,><dis dis,>
+     <eis eis,><fisis fisis,!><gis gis,!><ais ais,!>      | %123
+  <b b,>4-.\)
   \bar "|."
 }
 
@@ -474,8 +488,17 @@ lowerOne = \relative c, {
   <fis fis,>4 <d'fis,>( <a'a,>) <b,,b,> <d'~ fis,>( <a'd,b>)   | %110
   <e,e,>4 <cis'e,>( <gis'gis,>) <a,,a,><cis'~e,>( <gis'cis,a>) | %111
   <d,d,>4 <b'd,>(<fis'fis,>) <cis,cis,> <cis'gis>(<eis b>)     | %112
-  <fis,,fis,>^> fis'2 <bes,bes,>4 fis'2          | %113
+  <fis,,fis,>^> fis'2 <bes,bes,>4 fis'2         | %113
   <e,e,>4<gis'b,><b ees,><d gis,><b ees,><gis b,>| %114
+  <a,a,>4 <cis'e,> <e a,> <a cis, ><e a,><cis e,>| %115
+  <b,b,>4 <b'fis ><dis a> <fis b, ><dis a><b fis>| %116
+  <e,e,>4 <b'e,> <e gis,> <gis b,><e gis,> <b e,>| %117
+  <e,e,>4 <ais e> <cis fis,> <e ais,!> <cis fis,> <ais e>| %118
+  <e,e,>4 <ais'e> <cis fis,> <e ais,!> <cis fis,> <ais e>| %119
+  <e e,>4 <bis'e,><dis gis,><fis bis,> <dis gis,><bis e,>| %120
+  <e,,e,>4<bis''e,><dis gis,><fis bis,!><dis gis,><bis e,>| %121
+  <e,e,>4<cis'e,><e gis,><dis,dis,><b'dis,><dis gis,>    | %122
+  <cis,cis,>4<gis'cis,><cis e,><gis,gis,><gis'b,><b dis,>| %123
 }
 
 lowerTwo = \relative c {
@@ -564,6 +587,7 @@ breaks = {
   \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 25 (105-109)
   \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 25 (110-114)
   \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 26 (115-119)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 27 (120-123)
 }
 
 lowerStaff = <<
@@ -635,6 +659,14 @@ dynamics = {
   s2. s2.\<                                           | %112
   s2.\! s4 s2\<                                       | %113
   s1.\ff                                              | %114
+  \repeat unfold 3 { s1. | }                            %115-117
+  s1.-\semprePiuF                                     | %118
+  s2 s1\<                                             | %119
+  s16 s8.\! s4 s1                                     | %120
+  s2 s1\<                                             | %121
+  s16 s16\! s8 s1^\moltoCresc s4                      | %122
+  s4 s1\< s4                                          | %123
+  s1.\!-\ffz                                          | %124
 } 
 
 pedal = {
@@ -729,6 +761,15 @@ pedal = {
  s2\sustainOn s4\sustainOff s2\sustainOn s8. s16\sustainOff  | %112
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %113
  s1\sustainOn s4. s16\sustainOff s16                    | %114
+ s1\sustainOn s4 s4\sustainOff                          | %115
+ s1\sustainOn s4 s4\sustainOff                          | %116
+ s1\sustainOn s4 s4\sustainOff                          | %117
+ s1\sustainOn s4 s4\sustainOff                          | %118
+ s2\sustainOn s8. s16\sustainOff s2.                    | %119
+ s1\sustainOn s4 s4\sustainOff                          | %120
+ s2\sustainOn s8. s16\sustainOff s2.                    | %121
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %122
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %123
 }
 
 %-------Typeset music 
