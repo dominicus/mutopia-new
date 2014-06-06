@@ -213,7 +213,23 @@ upperOne =  \relative c {
   <gis gis,>4-\sharpPrall\( <fisis fisis,>8
      <gis gis,><ais ais,><b b,><cis cis,><dis dis,>
      <eis eis,><fisis fisis,!><gis gis,!><ais ais,!>      | %123
-  <b b,>4-.\)
+  <b b,>4-.\) <b gis>8-^ eis,dis b <b gis> eis,dis b
+     <b gis> eis, \clef bass                              | %124
+  dis8 b <b gis> eis,dis b <b'gis>eis,dis b aes' f        | %125
+  bes!8\(-\piuAnimato aes ces f,bes aes ces f,bes aes ces f,| %126
+  bes aes ces f,bes aes ces f, bes aes ces f,             | %127
+  bes aes ces f,bes aes ces f, bes aes ces f,             | %128
+  bes\< aes ces f,bes aes ces f, bes aes ces f,           | %129
+  bes4-.\!\) \clef treble bes8\( d ces d cis f d aes'e aes| %130
+  f8_[ ces'g bes aes d] bes d ces! d cis f                | %131
+  d8 aes'e aes f ces'g ces aes d bes d                    | %132
+  ces8 d cis \ottava #1 f d aes'e aes f ces'g ces         | %133
+  d8 aes ces f,bes aes c f,bes aes cis f,                 | %134
+  bes\< aes d-. f,bes aes ees'-.f,bes aes e'-. f,\!       | %135
+  f'->\> d cis e ees c b d cis bes a! c\!                 | %136
+  b aes g bes aes \ottava #0 f d bes a! bes aes bes\)     | %137
+  fis(-\animatoLegend g g'd ees b c g bes aes g f)        | %138
+  fis( g g'd ees b c g bes aes g f)                       | %139
   \bar "|."
 }
 
@@ -299,6 +315,11 @@ upperTwo =  \relative c' {
   fis2. eis2 s4                                               | %112
   <fis cis>2. <dis b a>4 <dis b a>8<dis b a><dis b a><dis b a>| %113
   s1.                                                         | %114
+  \unSqueezeNotation
+  \repeat unfold 9 { s1. | }                                    %115-123
+  s4 \stemUp \hideNotes b''8 ^\( \unHideNotes s8 s1           | %124
+  s1 s4 ces,,,\)^(                                            | %125
+  \hideNotes bes8) \unHideNotes s4. s1                        | %126
 }
 
 upperTre = \relative c' {
@@ -488,9 +509,10 @@ lowerOne = \relative c, {
   <fis fis,>4 <d'fis,>( <a'a,>) <b,,b,> <d'~ fis,>( <a'd,b>)   | %110
   <e,e,>4 <cis'e,>( <gis'gis,>) <a,,a,><cis'~e,>( <gis'cis,a>) | %111
   <d,d,>4 <b'd,>(<fis'fis,>) <cis,cis,> <cis'gis>(<eis b>)     | %112
-  <fis,,fis,>^> fis'2 <bes,bes,>4 fis'2         | %113
+  <fis,,fis,>^> fis'2 <bes,bes,>4 fis'2          | %113
   <e,e,>4<gis'b,><b ees,><d gis,><b ees,><gis b,>| %114
   <a,a,>4 <cis'e,> <e a,> <a cis, ><e a,><cis e,>| %115
+  \unSqueezeNotation
   <b,b,>4 <b'fis ><dis a> <fis b, ><dis a><b fis>| %116
   <e,e,>4 <b'e,> <e gis,> <gis b,><e gis,> <b e,>| %117
   <e,e,>4 <ais e> <cis fis,> <e ais,!> <cis fis,> <ais e>| %118
@@ -499,6 +521,26 @@ lowerOne = \relative c, {
   <e,,e,>4<bis''e,><dis gis,><fis bis,!><dis gis,><bis e,>| %121
   <e,e,>4<cis'e,><e gis,><dis,dis,><b'dis,><dis gis,>    | %122
   <cis,cis,>4<gis'cis,><cis e,><gis,gis,><gis'b,><b dis,>| %123
+  <eis,,eis,>4_. d'\rest d\rest <gis'dis b eis,>2->\arpeggio d,4\rest | %124
+  \restDownOne R1*6/4 \slurDown \stemUp          | %125
+  bes,4( d') d\rest bes,( d') d\rest             | %126
+  bes,4( d') d\rest bes,( d') d\rest             | %127
+  \stemDown \slurUp d4_>( f') d,\rest d_>( f') d,\rest | %128
+  d4_>( f') d,\rest d_>( f') d,\rest             | %129
+  \stemNeutral \ottava #-1 \dynLeft bes,,4\sf \ottava #0 
+     d''\rest d\rest <aes'f bes,> d,\rest d\rest | %130
+  <d'aes f>4 d,\rest d\rest <f'd aes> d,\rest d\rest   | %131
+  \clef treble
+  <aes''f bes,>4 b\rest b\rest <d aes f> b\rest b\rest | %132
+  <f'd aes> b,\rest b\rest <aes'f b,> b,\rest b\rest   | %133
+  <d'~ aes~ f_~>1.(                              | %134
+  <d aes f>2. <c aes ees>)                       | %135
+  \doubleSlursOn
+  <c aes~ ees>2.( <bes!aes d,>4) b,\rest b\rest  | %136
+  \clef bass \doubleSlursOff
+  \restDownOne R1*6/4 \stemDown                  | %137
+  ees,,4-. <g'ees>2 bes,,4-. a'!_( bes)          | %138
+  ees,4-. <g'ees>2 bes,,4-. a'!_( bes)           | %139
 }
 
 lowerTwo = \relative c {
@@ -557,6 +599,11 @@ lowerTwo = \relative c {
   \repeat unfold 7 { s1. | }                         %106-112
   \squeezeNotation
   s4 cis,( <fis a,>) s b,( <dis a>)                | %113
+  \unSqueezeNotation
+  \repeat unfold 24 { s1. | } \stemUp                %114-137
+  s4 c'( bes) s <aes d,>2                          | %138
+  s4 c( bes) s <aes d,>2                           | %139
+  s4 
 }
 breaks = {
   \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 1 ( 1- 4)
@@ -588,6 +635,11 @@ breaks = {
   \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 25 (110-114)
   \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 26 (115-119)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 27 (120-123)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 28 (124-127)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 29 (128-131)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 30 (132-135)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 31 (136-139)
+  
 }
 
 lowerStaff = <<
@@ -667,6 +719,19 @@ dynamics = {
   s16 s16\! s8 s1^\moltoCresc s4                      | %122
   s4 s1\< s4                                          | %123
   s1.\!-\ffz                                          | %124
+  s4^\dimTxt s4\> s1                                  | %125
+  s2.\p s2.\cresc                                     | %126
+  \repeat unfold 3 { s1. | }                            %127-129
+  s1.\f                                               | %130
+  s1.                                                 | %131
+  s1\dim s4 s8. s16\!                                 | %132
+  s1.\>                                               | %133
+  s1.\!                                               | %134
+  s1.                                                 | %135
+  s1.                                                 | %136
+  s1.                                                 | %137
+  s1.\p                                               | %138
+  
 } 
 
 pedal = {
@@ -770,6 +835,13 @@ pedal = {
  s2\sustainOn s8. s16\sustainOff s2.                    | %121
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %122
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %123
+ s1.\sustainOn                                          | %124
+ s1 s4. s8\sustainOff                                   | %125
+ \repeat unfold 4 { s1. | }                               %126-129
+ s1.\sustainOn                                          | %130
+ \repeat unfold 7 { s1. | }                               %131-137
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %138
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %139
 }
 
 %-------Typeset music 

@@ -27,7 +27,7 @@ lentoLegend = \markup \huge \right-align \bold \raise #1.5 "Lento."
 moderatoLegend = \markup \center-align \huge \bold "     Moderato."
 fPesante = \markup \concat { \dynamic "f" \italic \larger "  pesante" }
 pDolce = \markup \concat { \dynamic "p" \italic \larger " dolce" }
-ffz = \markup \dynamic "ffz"
+ffz = \markup { \center-align \dynamic "ffz" }
 dimTxt = \markup \italic \larger "dim."
 espressTxt = \markup \italic \larger "espress."
 tenutoTxt = \markup \italic \larger "tenuto"
@@ -45,6 +45,8 @@ semprePiuF = \markup { \italic "sempre più " \dynamic "f" }
 aTempoMenoMosso = \markup { \center-align \italic \larger "a tempo (meno mosso)   " }
 sottoVoce = \markup \italic \larger "sotto voce"
 moltoCresc = \markup \italic "molto cresc."
+animatoLegend = \markup \italic \larger "animato"
+piuAnimato = \markup \italic "più animato"
 tenTxt = \markup { \center-align  \italic "  ten." }
 sharpPrall = \markup \override #'(baseline-skip . 1.7) \center-column { \teeny \musicglyph #"accidentals.sharp" \musicglyph #"scripts.prall" }
 
@@ -120,6 +122,10 @@ slashFlag = \once \override Flag.stroke-style = #"grace"
 halfNotehead = {
   \once \override NoteHead.stencil = #ly:text-interface::print
   \once \override NoteHead.text = \markup \musicglyph #"noteheads.s2"
+}
+
+dynLeft = {
+  \once \override DynamicText.self-alignment-X = 2.5
 }
 
 ignoreClashOnce = \once \override NoteColumn.ignore-collision = ##t
