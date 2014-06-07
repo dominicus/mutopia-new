@@ -221,7 +221,7 @@ upperOne =  \relative c {
   bes aes ces f,bes aes ces f, bes aes ces f,             | %128
   bes\< aes ces f,bes aes ces f, bes aes ces f,           | %129
   bes4-.\!\) \clef treble bes8\( d ces d cis f d aes'e aes| %130
-  f8_[ ces'g bes aes d] bes d ces! d cis f                | %131
+  f8_[ ces'g bes aes d] bes d ces! d cis f \stemDown      | %131
   d8 aes'e aes f ces'g ces aes d bes d                    | %132
   ces8 d cis \ottava #1 f d aes'e aes f ces'g ces         | %133
   d8 aes ces f,bes aes c f,bes aes cis f,                 | %134
@@ -230,6 +230,24 @@ upperOne =  \relative c {
   b aes g bes aes \ottava #0 f d bes a! bes aes bes\)     | %137
   fis(-\animatoLegend g g'd ees b c g bes aes g f)        | %138
   fis( g g'd ees b c g bes aes g f)                       | %139
+  fis\(\< g g'd ees b c g bes aes g f\!                   | %140
+  ees\> aes f d aes' f c aes'f bes,aes'f\)\!              | %141
+  fis(_\pocoApocoCresc g g'd ees b c g bes aes g f)       | %142
+  fis( g g'd ees b c g bes aes g f)                       | %143
+  fis8\(\< g g'd ees b c g bes aes g f\!                  | %144
+  fes8 ees d des c ces bes a! c bes a aes\)               | %145
+  g\<( aes a bes c bes aes_\crescTiny bes b c des c\!)    | %146
+  a!\<( bes b c d! c bes_\crescTiny c cis d ees d\!)      | %147
+  b8\<\( c cis d ees d c_\crescTiny cis d ees e f\!       | %148
+  g8->\> f e ees d des c b bes a!bes aes\! \stemUp        | %149
+  g4\)\( bes,8 bes'd,_( ces' bes,bes'ees,g e des'         | %150
+  c,8 c') f,_( a! e des'  c, c'f,a fis ees'!              | %151
+  d,8) d' g,_( b fis ees' d, d' g, b gis f'               | %152
+  e,8) e' a, cis ais g' fis, fis' b,_( dis bis a'!\)      | %153
+  \stemDown \squeezeNotation
+  <cis a fis cis>4-.) bis,8\(\< cis dis eis fis gis a b cis dis\! | %154
+  eis fis gis a fis cis a fis cis a fis cis\)
+  \unSqueezeNotation
   \bar "|."
 }
 
@@ -320,6 +338,18 @@ upperTwo =  \relative c' {
   s4 \stemUp \hideNotes b''8 ^\( \unHideNotes s8 s1           | %124
   s1 s4 ces,,,\)^(                                            | %125
   \hideNotes bes8) \unHideNotes s4. s1                        | %126
+  \repeat unfold 14 { s1. | }                                   %127-140
+  ees'4. d c bes                                              | %141
+  \repeat unfold 8 { s1. | }                                    %142-149
+  \stemDown \slurUp \shiftOnn
+  s2 d,4~ \smallNotehead \moveNoteQtr d4 s4 \hideNotes e4~    | %150
+  \unHideNotes \smallNotehead \moveNoteTwo e4 f e~
+     \smallNotehead \moveNoteQtr e f fis~                     | %151
+  \smallNotehead \moveNoteQtr \hideAccidental fis4 g fis~
+     \smallNotehead \moveNoteQtr fis g gis~                   | %152
+  \smallNotehead \moveNoteQtr gis4 a_( ais)~ 
+     \smallNotehead \moveNoteQtr ais b bis                    | %153
+  
 }
 
 upperTre = \relative c' {
@@ -541,6 +571,31 @@ lowerOne = \relative c, {
   \restDownOne R1*6/4 \stemDown                  | %137
   ees,,4-. <g'ees>2 bes,,4-. a'!_( bes)          | %138
   ees,4-. <g'ees>2 bes,,4-. a'!_( bes)           | %139
+  ees,4-. <ees'bes>2 aes,,4-. <c'aes>2           | %140
+  bes,4-. <aes'f>2 bes,4-. <aes'f>2              | %141
+  ees4-. <g'ees>2 bes,,4-. a'!_( bes)            | %142
+  ees,4-. <g'ees>2 bes,,4-. a'!_( bes)           | %143
+  ees,4-. \clef treble <bes''g>2 \clef bass aes,,4-. <c'aes>2 | %144
+  \stemNeutral bes,4_. d\rest <d'aes f>
+     <d aes f> <d aes f> <d aes f>               | %145
+  <des bes ees,>4-^ d,8\rest <ees ees,>8
+     <ees ees,>4_.<c'aes>-^ <g g,>_. <ges ges,>_.| %146
+  <ees'a,!>4-^ d,8\rest <f f,>8 <f f,>4_.
+     <d'bes>-^ <a a,>-. <aes aes,>-.             | %147
+  <f'b,>4-^ d,8\rest <g g,>8<g g,>4_.<ees'c>-^(
+     <c,c,>_>) d\rest                            | %148
+  <ees'aes,>4( ces,_>) d\rest <d'aes>( bes,_>) d\rest    | %149
+  <ees ees,>4<g g,><aes aes,><g g,><ees ees,><bes'bes,>  | %150
+  <a! a,!>4<f f,><bes bes,><a a,><f f,><c'c,>    | %151
+  <b b,>4 <g g,> <c c,> <b b,> <g g,> <d'd,>     | %152
+  <cis cis,>4 <a a,> <e'e,><dis dis,><b b,><d d,>| %153
+  <cis,cis,>4_. d8\rest <a''fis cis a><a fis cis a>4-.(
+     <a fis cis a>-.<a fis cis a>-.<a fis cis a>-.)   | %154
+  <a fis cis a>2.-> d,,4\rest d\rest <ais ais,>_(     | %155
+  <gis gis,>4) d'8\rest <dis'a fis> <dis a fis>4(_>
+     <dis a fis>-.) d,\rest <c c,>_(                  | %156
+  <ces ces,>4) d8\rest
+  
 }
 
 lowerTwo = \relative c {
@@ -603,7 +658,11 @@ lowerTwo = \relative c {
   \repeat unfold 24 { s1. | } \stemUp                %114-137
   s4 c'( bes) s <aes d,>2                          | %138
   s4 c( bes) s <aes d,>2                           | %139
-  s4 
+  s4 aes( g) s g( f)                               | %140
+  s4 ees( d) s c( bes)                             | %141
+  s4 c'( bes) s <aes d,>2                          | %142
+  s4 c( bes) s <aes d,>2                           | %143
+  s4 \clef treble f'4( ees) \clef bass s g,( f)    | %144
 }
 breaks = {
   \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 1 ( 1- 4)
@@ -639,7 +698,11 @@ breaks = {
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 29 (128-131)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 30 (132-135)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 31 (136-139)
-  
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 32 (140-143)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 33 (144-147)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 34 (148-151)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 35 (152-155)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 36 (156-159)
 }
 
 lowerStaff = <<
@@ -731,7 +794,11 @@ dynamics = {
   s1.                                                 | %136
   s1.                                                 | %137
   s1.\p                                               | %138
-  
+  \repeat unfold 11 { s1. | }                           %139-149
+  \semprePiuCrescSpanner s1.\startTextSpan            | %150
+  \repeat unfold 2 { s1. | }                            %151-152
+  s1 s4 s8... s64\stopTextSpan                        | %153
+  s1.\ff                                              | %154
 } 
 
 pedal = {
@@ -842,6 +909,21 @@ pedal = {
  \repeat unfold 7 { s1. | }                               %131-137
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %138
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %139
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %140
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %141
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %142
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %143
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %144
+ s2\sustainOn s4\sustainOff s2.                         | %145
+ s4.\sustainOn s8\sustainOff s4 s\sustainOn s\sustainOff s| %146
+ s4.\sustainOn s8\sustainOff s4 s\sustainOn s\sustainOff s| %147
+ s4.\sustainOn s8\sustainOff s4 s4..\sustainOn s16\sustainOff s4  | %148
+ s2. s4..\sustainOn s16\sustainOff s4                   | %149
+ s4.\sustainOn s8\sustainOff s1                         | %150
+ \repeat unfold 3 { s1. | }                               %151-153
+ s1.\sustainOn                                          | %154
+ s1 s4 s4\sustainOff                                    | %155
+ 
 }
 
 %-------Typeset music 

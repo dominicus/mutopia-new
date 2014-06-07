@@ -46,6 +46,7 @@ aTempoMenoMosso = \markup { \center-align \italic \larger "a tempo (meno mosso) 
 sottoVoce = \markup \italic \larger "sotto voce"
 moltoCresc = \markup \italic "molto cresc."
 animatoLegend = \markup \italic \larger "animato"
+pocoApocoCresc = \markup \italic "poco     a       poco    cresc."
 piuAnimato = \markup \italic "più animato"
 tenTxt = \markup { \center-align  \italic "  ten." }
 sharpPrall = \markup \override #'(baseline-skip . 1.7) \center-column { \teeny \musicglyph #"accidentals.sharp" \musicglyph #"scripts.prall" }
@@ -84,6 +85,10 @@ sempreCrescSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre cresc." }
   \override TextSpanner #'(bound-details left-broken text) = ##f
 }
+semprePiuCrescSpanner = {
+  \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre più cresc." }
+  \override TextSpanner #'(bound-details left-broken text) = ##f
+}
 
 setRestDirDown = \override Rest #'direction = #down
 setRestDirUp = \override Rest #'direction = #up
@@ -117,12 +122,16 @@ alignBeamOne = \once \override Beam.positions = #'(-1.2 . -1.2)
 moveNoteOne = \once \override NoteColumn #'force-hshift = #1.0
 moveNoteTwo = \once \override NoteColumn #'force-hshift = #1.5
 moveNoteTre = \once \override NoteColumn #'force-hshift = #-0.7
+moveNoteQtr = \once \override NoteColumn #'force-hshift = #2.0
+
 slashFlag = \once \override Flag.stroke-style = #"grace"
+hideAccidental = \once \override Voice.Accidental.stencil = ##f
 
 halfNotehead = {
   \once \override NoteHead.stencil = #ly:text-interface::print
   \once \override NoteHead.text = \markup \musicglyph #"noteheads.s2"
 }
+smallNotehead = \once \override NoteHead.font-size = #-3
 
 dynLeft = {
   \once \override DynamicText.self-alignment-X = 2.5
