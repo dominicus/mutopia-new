@@ -246,8 +246,14 @@ upperOne =  \relative c {
   e,8) e' a, cis ais g' fis, fis' b,_( dis bis a'!\)      | %153
   \stemDown \squeezeNotation
   <cis a fis cis>4-.) bis,8\(\< cis dis eis fis gis a b cis dis\! | %154
-  eis fis gis a fis cis a fis cis a fis cis\)
-  \unSqueezeNotation
+  eis fis gis a fis cis a fis cis a fis cis\)             | %155
+  \unSqueezeNotation \stemNeutral
+  a8\( fis'\< dis a'a fis'  dis a'a fis'dis a'            | %156
+  fis\> a ees!\! a,fis a ees a,\< fis a ees a,            | %157
+  <bes'g ees bes>4-.\)\sf a,8(\p\<^\leggiero bes c d ees e g f g f  | %158
+  c'8 bes)( a bes c d ees e g_\crescTiny f g f\!          | %159
+  c'8 bes) a( bes c d ees e g f g f                       | %160
+  bes4-.) b,,\rest b\rest
   \bar "|."
 }
 
@@ -593,8 +599,14 @@ lowerOne = \relative c, {
      <a fis cis a>-.<a fis cis a>-.<a fis cis a>-.)   | %154
   <a fis cis a>2.-> d,,4\rest d\rest <ais ais,>_(     | %155
   <gis gis,>4) d'8\rest <dis'a fis> <dis a fis>4(_>
-     <dis a fis>-.) d,\rest <c c,>_(                  | %156
-  <ces ces,>4) d8\rest
+     <dis a fis>-.) d,\rest <c! c,!>_(                | %156
+  <ces ces,>4) d8\rest <ees'!a,fis><ees a,fis>4->( 
+     <ees a,fis>-.) d,\rest <ces ces,>_(              | %157
+  <bes bes,>4_.) d\rest d\rest d\rest <ees'c a>(
+     <d bes aes>                                      | %158
+  <ees bes g>4) d,\rest d\rest d\rest \clef treble
+     <ees''c a>( <d bes aes>                          | %159
+  <ees bes g>4) b\rest b\rest b\rest
   
 }
 
@@ -703,6 +715,7 @@ breaks = {
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 34 (148-151)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 35 (152-155)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 36 (156-159)
+  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 37 (160-164)
 }
 
 lowerStaff = <<
@@ -923,6 +936,8 @@ pedal = {
  \repeat unfold 3 { s1. | }                               %151-153
  s1.\sustainOn                                          | %154
  s1 s4 s4\sustainOff                                    | %155
+ s1\sustainOn s4 s4\sustainOff                          | %156
+ s1\sustainOn s4 s4\sustainOff                          | %157
  
 }
 
