@@ -251,9 +251,21 @@ upperOne =  \relative c {
   a8\( fis'\< dis a'a fis'  dis a'a fis'dis a'            | %156
   fis\> a ees!\! a,fis a ees a,\< fis a ees a,            | %157
   <bes'g ees bes>4-.\)\sf a,8(\p\<^\leggiero bes c d ees e g f g f  | %158
-  c'8 bes)( a bes c d ees e g_\crescTiny f g f\!          | %159
-  c'8 bes) a( bes c d ees e g f g f                       | %160
-  bes4-.) b,,\rest b\rest
+  c'8 bes)( a bes c d ees e g_\crescTiny f g f            | %159
+  \squeezeNotation
+  c'8 bes) a( bes c d ees e g f g f\!                     | %160
+  bes4-.)_\piuF a,!8( bes c d ees e g\< f g f             | %161
+  bes4-.) b,,\rest\! b\rest \ottava #1 \stemUp
+     \acciaccatura { f''8 } \stemDown f'\fz\>\( 
+     e\! ees d c bes                                      | %162
+  \ottava #0 a8 g f e ees d c bes a g f e                 | %163
+  ees des ces bes aes ges \stemUp f ees des
+     ces bes \staffDown aes!                              | %164
+  \unSqueezeNotation
+  ges8 f ees des ces bes a ges f ees des ces              | %165
+  \hideNotes bes8\) \unHideNotes \staffUp s8 s2 
+     <g'''d bes>2-^_\( <g d aes>4(                        | %166
+  <ees g,>)\)
   \bar "|."
 }
 
@@ -352,9 +364,11 @@ upperTwo =  \relative c' {
   \unHideNotes \smallNotehead \moveNoteTwo e4 f e~
      \smallNotehead \moveNoteQtr e f fis~                     | %151
   \smallNotehead \moveNoteQtr \hideAccidental fis4 g fis~
-     \smallNotehead \moveNoteQtr fis g gis~                   | %152
+     \smallNotehead \moveNoteQtr fis g gis~               | %152
   \smallNotehead \moveNoteQtr gis4 a_( ais)~ 
-     \smallNotehead \moveNoteQtr ais b bis                    | %153
+     \smallNotehead \moveNoteQtr ais b bis                | %153
+  \repeat unfold 12 { s1. | }                               %154-165
+  b2.\rest s                                              | %166
   
 }
 
@@ -606,8 +620,14 @@ lowerOne = \relative c, {
      <d bes aes>                                      | %158
   <ees bes g>4) d,\rest d\rest d\rest \clef treble
      <ees''c a>( <d bes aes>                          | %159
-  <ees bes g>4) b\rest b\rest b\rest
-  
+  \squeezeNotation
+  <ees bes g>4) b\rest b\rest b\rest <ees'c a>( <d bes aes>  | %160
+  <ees bes g>4) b,\rest b\rest b\rest <ees'c a>( <d bes aes> | %161
+  <ees bes g>4) b,\rest b\rest <a! f ees c>_. b\rest b\rest  | %162
+  \restDownOne R1*6/4   \clef bass                           | %163
+  \dynLeft <ees,aes, ees ces>4-.\arpeggio\fz
+     d,\rest d\rest d2.\rest                                 | %164
+  \unSqueezeNotation
 }
 
 lowerTwo = \relative c {
@@ -716,6 +736,7 @@ breaks = {
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 35 (152-155)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 36 (156-159)
   \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 37 (160-164)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 38 (165-168)
 }
 
 lowerStaff = <<
@@ -812,6 +833,10 @@ dynamics = {
   \repeat unfold 2 { s1. | }                            %151-152
   s1 s4 s8... s64\stopTextSpan                        | %153
   s1.\ff                                              | %154
+  \repeat unfold 9 { s1. | }                            %155-163
+  s1.\<                                               | %164
+  s1.                                                 | %165
+  s1.\ff                                              | %166
 } 
 
 pedal = {
@@ -938,7 +963,10 @@ pedal = {
  s1 s4 s4\sustainOff                                    | %155
  s1\sustainOn s4 s4\sustainOff                          | %156
  s1\sustainOn s4 s4\sustainOff                          | %157
- 
+ \repeat unfold 4 { s1. | }                               %159-161
+ s2. s2.\sustainOn                                      | %162
+ s2 s8 s4.\sustainOff s2                                | %163
+ s2.\sustainOn s8 s4.\sustainOff  s4                    | %164
 }
 
 %-------Typeset music 
