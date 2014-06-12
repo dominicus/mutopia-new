@@ -262,10 +262,23 @@ upperOne =  \relative c {
   ees des ces bes aes ges \stemUp f ees des
      ces bes \staffDown aes!                              | %164
   \unSqueezeNotation
-  ges8 f ees des ces bes a ges f ees des ces              | %165
+  ges8 f ees des ces bes aes ges f ees des ces!           | %165
   \hideNotes bes8\) \unHideNotes \staffUp s8 s2 
      <g'''d bes>2-^_\( <g d aes>4(                        | %166
-  <ees g,>)\)
+  <ees g,>)\) b'\rest <ees~ g,_~ees_~>->\( 
+     <ees g,ees>2 <d bes ees,>4                           | %167
+  <c bes ees,>2.( <d a! f>2) <d a ees>4( \stemNeutral     | %168
+  <bes d,>4)\) b\rest b\rest <bes'bes,>2( <b b,>4)        | %169
+  \times 3/5 { <c ees,>4(<des bes><c e,><b bes!><c e,>) }
+     \stemUp \acciaccatura { <c aes>8 } \stemDown
+     <aes'aes,>4-._> b,,\rest b8\rest <c'ees,>            | %170
+  \times 3/5 { <bes bes,>4(<c aes><bes bes,><a aes!>
+     <bes bes,>) } \stemUp \acciaccatura { <a f>8 }
+     \stemDown <bes'bes,>4-._> b,,\rest b8\rest <bes'd,>  | %171
+  \times 3/5 { <aes c,>4(<bes ees,><aes c,><g ees>
+     <aes c,>) } \stemUp \acciaccatura { <aes f>8 }
+     \stemDown <f'f,>4-._> b,,\rest <aes'f>(              | %172
+      
   \bar "|."
 }
 
@@ -628,6 +641,14 @@ lowerOne = \relative c, {
   \dynLeft <ees,aes, ees ces>4-.\arpeggio\fz
      d,\rest d\rest d2.\rest                                 | %164
   \unSqueezeNotation
+  \stemDown ces,4_> c\rest c\rest c2.\rest            | %165                                       | %165
+  \dynLeft bes8\fz( f'bes d bes f bes, f'bes f'bes,f) | %166
+  ees8( bes'ees g ees bes ees,bes'ees bes'ees,bes)    | %167
+  f8( c'ees bes'ees,c)  f,( c'ees a! ees c)           | %168
+  bes8( f'bes d bes f)  bes,( f'bes f'bes,f)          | %169
+  bes,8( g'c e c g)  bes,( aes'c f c aes)             | %170
+  bes,8( f'aes d aes f)  bes,( ees g ees' g,ees)      | %171
+  bes8( ees aes c aes ees) bes( f'aes d aes f)        | %172
 }
 
 lowerTwo = \relative c {
@@ -737,6 +758,8 @@ breaks = {
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 36 (156-159)
   \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 37 (160-164)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 38 (165-168)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 39 (169-172)
+  
 }
 
 lowerStaff = <<
@@ -837,6 +860,10 @@ dynamics = {
   s1.\<                                               | %164
   s1.                                                 | %165
   s1.\ff                                              | %166
+  \repeat unfold 3 { s1. | }                            %167-169
+  s8 s8\< s4.. s16\! s2.                              | %170
+  s8 s8\< s4.. s16\! s2.                              | %171
+  s8 s8\< s4.. s16\! s2.                              | %172
 } 
 
 pedal = {
@@ -967,6 +994,15 @@ pedal = {
  s2. s2.\sustainOn                                      | %162
  s2 s8 s4.\sustainOff s2                                | %163
  s2.\sustainOn s8 s4.\sustainOff  s4                    | %164
+ s1.                                                    | %165
+ s1\sustainOn s4 s4\sustainOff                          | %166
+ s1\sustainOn s4 s4\sustainOff                          | %167
+ s2\sustainOn s8 s8\sustainOff s16 s4..\sustainOn s8. s16\sustainOff | %168
+ s2.\sustainOn s2 s8. s16\sustainOff                    | %169
+ s16 s4..\sustainOn s8. s16\sustainOff s2\sustainOn s8. s16\sustainOff | %170
+ s16 s4..\sustainOn s8. s16\sustainOff s16 s4..\sustainOn s8. s16\sustainOff | %171
+ s16 s4..\sustainOn s8. s16\sustainOff s16 s4..\sustainOn s8. s16\sustainOff | %172
+ 
 }
 
 %-------Typeset music 
