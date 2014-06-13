@@ -302,7 +302,25 @@ upperOne =  \relative c {
      \times 2/3 { b8\rest( g[ aes] bes d c }              | %185
   bes8-.)\noBeam bes'-. bes'4-. b,,\rest b\rest
      \times 2/3 { b8\rest( f[ aes] bes d c }              | %186
-  \bar "|."
+  \phrasingSlurDown \tieDown 
+  bes4) \times 2/3 { b8\rest\( des,[ees]  g c bes }
+     aes4.  ces,8 ees f                                   | %187
+  g2.\)~ g8\noBeam g(\< bes g'f ees                       | %188
+  \slurUp \phrasingSlurUp \tieUp
+  bes2.)\(~ bes8 g bes bes'f ees\!                        | %189
+  d2.\)\(~ d8\> bes d d'a g                               | %190
+  d2.\)\(~-\riten d8 bes d bes'a g\!                      | %191
+  d8 bes d bes'a g d bes d bes'a g                        | %192
+  d8 a'c bes g ees bes g c,d f ees  \stemUp               | %193
+  d,2.\)_\pp-\menoMossoLegend b''8\rest \hideNotes 
+     \stemDown \tieDown c,8(_~ \unHideNotes c2 \stemUp    | %194
+  g'2.) d'(                                               | %195
+  c2.) b8\rest \hideNotes \stemDown c,8(~ \unHideNotes c2 | %196
+  \stemUp g'2.) e->(                                      | %197
+  fis2.)b8\rest \hideNotes \stemDown c,8(~ \unHideNotes c2| %198
+  \stemUp g'2.) d'(                                       | %199
+  e2.)
+  
 }
 
 upperTwo =  \relative c' {
@@ -415,6 +433,14 @@ upperTwo =  \relative c' {
   g2_. s1                                                 | %180
   \repeat unfold 2 { s1. | }                                %181-182
   s4 \times 2/3{ s8 des4 } s4 s4. ces4 s8                 | %183
+  \repeat unfold 10 { s1. | }                               %184-193
+  s2. s8 \stemUp c8 d fis bes a                           | %194
+  \stemDown \slurDown
+     a,4\rest <d bes>_.( <d bes>_.) e\rest g_.( g_.)      | %195
+  e4\rest <g ees>_.(<g ees>_.) s8 \stemUp c, d fis bes a  | %196
+  \stemDown a,4\rest <d bes>_.(<d bes>_.) g,\rest
+     <cis bes g>_.( <cis bes g>_.)                        | %197
+  a4\rest<d a fis>_.(<d a fis>_.) s8 \stemUp c d fis!bes a| %198
 }
 
 upperTre = \relative c' {
@@ -697,7 +723,15 @@ lowerOne = \relative c, {
   ees,8\( bes'd aes'd,bes  ees,bes'd bes'd,bes        | %182
   ees,8 bes'ees g ees bes\) ees,( ces'ees aes ees ces)| %183
   ees,8\( bes'ees g ees bes ees,bes'ees bes'ees,bes   | %184
-  ees,8 bes'ees g ees bes  ees, bes'ees bes'ees,bes\) | %187
+  ees,8 bes'ees g ees bes  ees, bes'ees bes'ees,bes\) | %185
+  ees,8\( bes'd aes'd,bes  ees,bes'd bes'd,bes        | %186
+  ees,8 bes'ees g ees bes\) ees,( ces'ees aes ees ces)| %187
+  ees,8\( bes'ees g ees bes  ees,bes'ees bes'ees,bes  | %188
+  ees,8 bes'ees g ees bes  ees,bes'ees bes'ees,bes\)  | %189
+  g8( d'g bes d bes g'd bes g d g,                    | %190
+  g,8 g')( d' g bes d a'g d bes g d                   | %191
+  g,8 d' d'4) d,\rest d2.\rest                        | %192
+  \restDownOne R1*6/4                                 | %193
 }
 
 lowerTwo = \relative c {
@@ -812,6 +846,9 @@ breaks = {
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 41 (177-180)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 42 (181-184)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 43 (185-188)
+  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 44 (189-193)
+  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 45 (194-198)
+  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 46 (199-203)
 }
 
 lowerStaff = <<
@@ -922,6 +959,9 @@ dynamics = {
   s2. s4 s2\<                                         | %182
   s2. s4\! s2\>                                       | %183
   s32 s32\! s8.^\sempreF s4 s1                        | %184
+  \repeat unfold 7 { s1. | }                            %185-191
+  \dimPiuRallentSpanner s1.\startTextSpan             | %192
+  s1 s4. s8\stopTextSpan                              | %193
   
 } 
 
@@ -1073,6 +1113,16 @@ pedal = {
  s1\sustainOn s4. s8\sustainOff                                     | %182
  s16 s4..\sustainOn s8 s4\sustainOff s2\sustainOn s16 s16\sustainOff| %183
  s16 s8.\sustainOn s2. s8. s8.\sustainOff s8                        | %184
+ s2.\sustainOn s4. s8\sustainOff s4                                 | %185
+ s2.\sustainOn s4. s8\sustainOff s4                                 | %186
+ s16 s4..\sustainOn s8 s4\sustainOff s2\sustainOn s16 s16\sustainOff| %187
+ s16 s4..\sustainOn s1                                              | %188
+ s1 s4. s8\sustainOff                                               | %189
+ s16 s4..\sustainOn s1                                              | %190
+ s1.                                                                | %191
+ s2. s2.\sustainOff                                                 | %192
+ s1.                                                                | %193
+ 
 }
 
 %-------Typeset music 

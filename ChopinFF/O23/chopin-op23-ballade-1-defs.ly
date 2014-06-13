@@ -25,6 +25,10 @@ hideTempo = \set Score.tempoHideNote = ##t
 
 lentoLegend = \markup \huge \right-align \bold \raise #1.5 "Lento."
 moderatoLegend = \markup \center-align \huge \bold "     Moderato."
+menoMossoLegend = \markup { \override #'(baseline-skip . 2.0) 
+  \left-column { \huge \bold "Meno mosso."
+  \italic \large "              sotto voce" }
+}
 fPesante = \markup \concat { \dynamic "f" \italic \larger "  pesante" }
 pDolce = \markup \concat { \dynamic "p" \italic \larger " dolce" }
 ffz = \markup { \center-align \dynamic "ffz" }
@@ -38,6 +42,7 @@ leggiero = \markup \italic \larger "leggiero"
 conForza = \markup \italic \larger "con forza"
 crescTxt = \markup \italic \larger "cresc."
 crescTiny = \markup \italic \small "cresc."
+riten = \markup \italic \larger "riten."
 smorzTxt = \markup \italic "smorz."
 sPiuMosso = \markup \italic \larger "sempre più mosso"
 piuF = \markup \concat { \italic " più " \dynamic "f"}
@@ -90,6 +95,10 @@ sempreCrescSpanner = {
 }
 semprePiuCrescSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre più cresc." }
+  \override TextSpanner #'(bound-details left-broken text) = ##f
+}
+dimPiuRallentSpanner = {
+  \override TextSpanner #'(bound-details left text) = \markup { \italic "dim. e più rallent." }
   \override TextSpanner #'(bound-details left-broken text) = ##f
 }
 
