@@ -35,6 +35,7 @@ pocoCresc = \markup \italic \larger "poco cresc."
 aTempo = \markup \italic \larger "a tempo"
 agitato = \markup \italic \larger "agitato"
 leggiero = \markup \italic \larger "leggiero"
+conForza = \markup \italic \larger "con forza"
 crescTxt = \markup \italic \larger "cresc."
 crescTiny = \markup \italic \small "cresc."
 smorzTxt = \markup \italic "smorz."
@@ -124,6 +125,11 @@ moveNoteOne = \once \override NoteColumn #'force-hshift = #1.0
 moveNoteTwo = \once \override NoteColumn #'force-hshift = #1.5
 moveNoteTre = \once \override NoteColumn #'force-hshift = #-0.7
 moveNoteQtr = \once \override NoteColumn #'force-hshift = #2.0
+moveNoteCin = \once \override NoteColumn #'force-hshift = #-0.1
+moveNoteSix = \once \override NoteColumn #'force-hshift = #0.3
+moveNoteSep = \once \override NoteColumn #'force-hshift = #1.3
+
+shortStemOne = \once \override Stem.length-fraction = #(magstep -4)
 
 slashFlag = \once \override Flag.stroke-style = #"grace"
 hideAccidental = \once \override Voice.Accidental.stencil = ##f

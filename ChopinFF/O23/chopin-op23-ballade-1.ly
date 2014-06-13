@@ -278,6 +278,21 @@ upperOne =  \relative c {
   \times 3/5 { <aes c,>4(<bes ees,><aes c,><g ees>
      <aes c,>) } \stemUp \acciaccatura { <aes f>8 }
      \stemDown <f'f,>4-._> b,,\rest <aes'f>(              | %172
+  <f g>4) \stemUp \slurDown \acciaccatura { bes!8 } \stemNeutral \slurNeutral
+     <aes f>4.->(<g f>8)<g ees>4-.(<aes ees>-.<a ees>-.)  | %173
+  <f bes,aes>2.( <g d bes aes>2) <g d bes aes>4           | %174
+  \stemDown g,4 \stemNeutral b\rest b\rest <ees'g,ees>2->\( <d bes ees,>4 | %175
+  <c bes ees,>2. <d a! f>2 <d a ees>4                     | %176
+  <bes d,>4\) b,\rest b\rest <bes''bes,>2_>\( b,,8\rest
+     <bes''bes,>8                                         | %177
+  <bes bes,>2 b,,4\rest \stemUp \slurUp c2->( d4          | %178
+  \times 3/4 { ees4\trill d ees g } 
+  \times 3/4 { <g d>-.) \moveNoteCin g2-^~( \times 2/3 { g8 f ees } }  | %179
+  ees2)\) b4\rest b\rest \stemNeutral 
+     \times 2/3 { b8\rest(^\conForza g[ aes] bes d c }    | %180
+  bes2.-\tenTxt) b4\rest \times 2/3 { b8\rest( g[ aes]
+     bes d c }                                            | %181
+  bes2.-\tenTxt)
       
   \bar "|."
 }
@@ -382,7 +397,14 @@ upperTwo =  \relative c' {
      \smallNotehead \moveNoteQtr ais b bis                | %153
   \repeat unfold 12 { s1. | }                               %154-165
   b2.\rest s                                              | %166
-  
+  \repeat unfold 7 { s1. | }                                %167-173
+  \stemUp \phrasingSlurUp bes'2.^^\( bes2 bes4(           | %174
+  ees,4)\) s4 s1 \stemDown \slurDown                      | %175
+  \repeat unfold 2 { s1. | }                                %176-177
+  s2. c,4_.( c\rest d_.)                                  | %178
+  \times 3/4 { ees_.( d_. ees_. g_.) }
+     \times 3/4 { g_.( aes_. bes_. \moveNoteSep aes_.) }  | %179
+  g2_. s1                                                 | %180
 }
 
 upperTre = \relative c' {
@@ -436,6 +458,9 @@ upperQtr = \relative c' {
   s1 s8 gis4.                              | %98
   s1.                                      | %99
   s1 s8 gis4 s8                            | %100
+  \repeat unfold 78 { s1. | }                %101-178
+  \stemUp s2. \times 3/4 { s4 
+     \moveNoteSix \shortStemOne d'2. }     | %179
 }
 
 upperStaff =  <<
@@ -649,6 +674,16 @@ lowerOne = \relative c, {
   bes,8( g'c e c g)  bes,( aes'c f c aes)             | %170
   bes,8( f'aes d aes f)  bes,( ees g ees' g,ees)      | %171
   bes8( ees aes c aes ees) bes( f'aes d aes f)        | %172
+  b,8( f'g d'g,f) c( ees g ees'ges, ees)              | %173
+  d8( f aes f'bes,aes)  bes,( f'aes d bes aes)        | %174
+  ees,8( bes'ees g bes ees g ees bes g ees bes)       | %175
+  f8( c'ees bes'ees,c)  f,( c'ees a ees c)            | %176
+  bes,8( bes'f'bes d f \clef treble d'bes f
+     \clef bass d bes f)                              | %177
+  bes,8( e g c g e) bes( e g c g e)                   | %178
+  bes8( f'a!c a f) bes,( f'aes d aes f)               | %179
+  ees,8\( bes'ees g ees bes  ees,bes'ees bes'ees,bes  | %180
+  ees,8 bes'ees g ees bes  ees,bes'ees bes'ees,bes\)  | %181
 }
 
 lowerTwo = \relative c {
@@ -759,7 +794,9 @@ breaks = {
   \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 37 (160-164)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 38 (165-168)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 39 (169-172)
-  
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 40 (173-176)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 41 (177-180)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 42 (181-184)
 }
 
 lowerStaff = <<
@@ -864,6 +901,8 @@ dynamics = {
   s8 s8\< s4.. s16\! s2.                              | %170
   s8 s8\< s4.. s16\! s2.                              | %171
   s8 s8\< s4.. s16\! s2.                              | %172
+  s4. s8\< s2. s4\!                                   | %173
+  s1.\ff                                              | %174
 } 
 
 pedal = {
@@ -1002,7 +1041,14 @@ pedal = {
  s16 s4..\sustainOn s8. s16\sustainOff s2\sustainOn s8. s16\sustainOff | %170
  s16 s4..\sustainOn s8. s16\sustainOff s16 s4..\sustainOn s8. s16\sustainOff | %171
  s16 s4..\sustainOn s8. s16\sustainOff s16 s4..\sustainOn s8. s16\sustainOff | %172
- 
+ s2\sustainOn s8 s8.\sustainOff s16\sustainOn s2 s16 s16\sustainOff | %173
+ s2\sustainOn s8 s8.\sustainOff s16\sustainOn s2 s16 s16\sustainOff | %174
+ s1\sustainOn s4.. s16\sustainOff                                   | %175
+ s2\sustainOn s8 s8.\sustainOff s16\sustainOn s2 s16 s16\sustainOff | %176
+ s1\sustainOn s4.. s16\sustainOff                                   | %177
+ s16 s2.\sustainOn s8. s4.. s16\sustainOff                          | %178
+ s16 s4..\sustainOn s8 s4\sustainOff  s2\sustainOn s16 s16\sustainOff | %179
+ s16 s8.\sustainOn s2. s8. s8.\sustainOff s8                              | %180
 }
 
 %-------Typeset music 
