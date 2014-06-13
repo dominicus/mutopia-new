@@ -292,8 +292,16 @@ upperOne =  \relative c {
      \times 2/3 { b8\rest(^\conForza g[ aes] bes d c }    | %180
   bes2.-\tenTxt) b4\rest \times 2/3 { b8\rest( g[ aes]
      bes d c }                                            | %181
-  bes2.-\tenTxt)
-      
+  bes2.-\tenTxt) b4\rest \times 2/3 { b8\rest( f [aes] 
+     bes d c }                                            | %182
+  bes4) \times 2/3 { b8\rest des,[_( ees] g c bes } aes4.
+     ces,8 ees f                                          | %183
+  g4) b\rest b\rest b\rest \times 2/3 { b8\rest( g[ aes]
+     bes d c }                                            | %184
+  bes8-.)\noBeam bes'-. bes'4-. b,,\rest b\rest 
+     \times 2/3 { b8\rest( g[ aes] bes d c }              | %185
+  bes8-.)\noBeam bes'-. bes'4-. b,,\rest b\rest
+     \times 2/3 { b8\rest( f[ aes] bes d c }              | %186
   \bar "|."
 }
 
@@ -405,6 +413,8 @@ upperTwo =  \relative c' {
   \times 3/4 { ees_.( d_. ees_. g_.) }
      \times 3/4 { g_.( aes_. bes_. \moveNoteSep aes_.) }  | %179
   g2_. s1                                                 | %180
+  \repeat unfold 2 { s1. | }                                %181-182
+  s4 \times 2/3{ s8 des4 } s4 s4. ces4 s8                 | %183
 }
 
 upperTre = \relative c' {
@@ -684,6 +694,10 @@ lowerOne = \relative c, {
   bes8( f'a!c a f) bes,( f'aes d aes f)               | %179
   ees,8\( bes'ees g ees bes  ees,bes'ees bes'ees,bes  | %180
   ees,8 bes'ees g ees bes  ees,bes'ees bes'ees,bes\)  | %181
+  ees,8\( bes'd aes'd,bes  ees,bes'd bes'd,bes        | %182
+  ees,8 bes'ees g ees bes\) ees,( ces'ees aes ees ces)| %183
+  ees,8\( bes'ees g ees bes ees,bes'ees bes'ees,bes   | %184
+  ees,8 bes'ees g ees bes  ees, bes'ees bes'ees,bes\) | %187
 }
 
 lowerTwo = \relative c {
@@ -797,6 +811,7 @@ breaks = {
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 40 (173-176)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 41 (177-180)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 42 (181-184)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 43 (185-188)
 }
 
 lowerStaff = <<
@@ -903,6 +918,11 @@ dynamics = {
   s8 s8\< s4.. s16\! s2.                              | %172
   s4. s8\< s2. s4\!                                   | %173
   s1.\ff                                              | %174
+  \repeat unfold 7 { s1. | }                            %175-181
+  s2. s4 s2\<                                         | %182
+  s2. s4\! s2\>                                       | %183
+  s32 s32\! s8.^\sempreF s4 s1                        | %184
+  
 } 
 
 pedal = {
@@ -1047,8 +1067,12 @@ pedal = {
  s2\sustainOn s8 s8.\sustainOff s16\sustainOn s2 s16 s16\sustainOff | %176
  s1\sustainOn s4.. s16\sustainOff                                   | %177
  s16 s2.\sustainOn s8. s4.. s16\sustainOff                          | %178
- s16 s4..\sustainOn s8 s4\sustainOff  s2\sustainOn s16 s16\sustainOff | %179
- s16 s8.\sustainOn s2. s8. s8.\sustainOff s8                              | %180
+ s16 s4..\sustainOn s8 s4\sustainOff s2\sustainOn s16 s16\sustainOff| %179
+ s16 s8.\sustainOn s2. s8. s8.\sustainOff s8                        | %180
+ s1\sustainOn s4. s8\sustainOff                                     | %181
+ s1\sustainOn s4. s8\sustainOff                                     | %182
+ s16 s4..\sustainOn s8 s4\sustainOff s2\sustainOn s16 s16\sustainOff| %183
+ s16 s8.\sustainOn s2. s8. s8.\sustainOff s8                        | %184
 }
 
 %-------Typeset music 

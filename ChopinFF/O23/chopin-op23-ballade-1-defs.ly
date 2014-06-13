@@ -44,6 +44,7 @@ piuF = \markup \concat { \italic " più " \dynamic "f"}
 menoMosso = \markup \override #'(baseline-skip . 1.7) \column { \larger \bold "Meno mosso." \italic "sotto voce"  }
 semprePP = \markup { \italic "sempre" \dynamic "pp" }
 semprePiuF = \markup { \italic "sempre più " \dynamic "f" }
+sempreF = \markup { \italic "sempre" \dynamic "f" }
 aTempoMenoMosso = \markup { \center-align \italic \larger "a tempo (meno mosso)   " }
 sottoVoce = \markup \italic \larger "sotto voce"
 moltoCresc = \markup \italic "molto cresc."
