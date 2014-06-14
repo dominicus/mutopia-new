@@ -312,15 +312,19 @@ upperOne =  \relative c {
   d2.\)\(~-\riten d8 bes d bes'a g\!                      | %191
   d8 bes d bes'a g d bes d bes'a g                        | %192
   d8 a'c bes g ees bes g c,d f ees  \stemUp               | %193
-  d,2.\)_\pp-\menoMossoLegend b''8\rest \hideNotes 
-     \stemDown \tieDown c,8(_~ \unHideNotes c2 \stemUp    | %194
+  d,2.\)_\pp-\menoMossoLegend b''8\rest \hideNotes \stemDown
+     \tieDown c,8(_~ \unHideNotes \moveNoteOne c2 \stemUp | %194
   g'2.) d'(                                               | %195
-  c2.) b8\rest \hideNotes \stemDown c,8(~ \unHideNotes c2 | %196
+  c2.) b8\rest \hideNotes \stemDown c,8(~ \unHideNotes
+     \moveNoteOne c2                                      | %196
   \stemUp g'2.) e->(                                      | %197
-  fis2.)b8\rest \hideNotes \stemDown c,8(~ \unHideNotes c2| %198
+  fis2.)b8\rest \hideNotes \stemDown c,8(~ \unHideNotes
+     \moveNoteOne c2                                      | %198
   \stemUp g'2.) d'(                                       | %199
-  e2.)
-  
+  e2.) s8 \stemDown \tweak Stem.transparent ##t bes,2( s8 | %200
+  \stemUp g'2.) e'(                                       | %201
+  fis2. e2) f8\rest fis                                   | %202
+  fis2.( e2) f8\rest fis                                  | %203
 }
 
 upperTwo =  \relative c' {
@@ -441,6 +445,16 @@ upperTwo =  \relative c' {
   \stemDown a,4\rest <d bes>_.(<d bes>_.) g,\rest
      <cis bes g>_.( <cis bes g>_.)                        | %197
   a4\rest<d a fis>_.(<d a fis>_.) s8 \stemUp c d fis!bes a| %198
+  \stemDown
+  b,4\rest<d bes>_.(<d bes>_.) e\rest <bes'g>_.(<bes g>_.)| %199
+  e,4\rest <bes'g>_.(<bes g>_.) b8\rest \stemUp bes, cis 
+     e a g \stemDown                                      | %200
+  b,4\rest <e cis bes>_.( <e cis bes>_.) e\rest
+     <cis'bes g>_.( <cis bes g>_.)                        | %201
+  g4\rest <cis bes g>_.(<cis bes g>_.) g\rest 
+     <cis bes g> g\rest                                   | %202
+  g4\rest <cis bes g>_.(<cis bes g>_.) g\rest 
+     <cis bes g> g\rest                                   | %203
 }
 
 upperTre = \relative c' {
@@ -470,6 +484,12 @@ upperTre = \relative c' {
   s1  e4. s8                               | %100
   \repeat unfold 12 { s1. | }                %101-112
   s4 a2 s2.                                | %113
+  \repeat unfold 80 { s1. | }                %114-193
+  s1 \tweak Stem.transparent ##t d,2       | %194
+  s1.                                      | %195
+  s1 \tweak Stem.transparent ##t d2        | %196
+  s1.                                      | %197
+  s1 \tweak Stem.transparent ##t d2        | %198
 }
 upperQtr = \relative c' {
   \time 4/4
@@ -497,6 +517,12 @@ upperQtr = \relative c' {
   \repeat unfold 78 { s1. | }                %101-178
   \stemUp s2. \times 3/4 { s4 
      \moveNoteSix \shortStemOne d'2. }     | %179
+  \repeat unfold 14 { s1. | }                %180-193
+  \stemDown s1 s8 fis,4.                   | %194
+  s1.                                      | %195
+  s1 s8 fis4.                              | %196
+  s1.                                      | %197
+  s1 s8 fis4.                              | %198
 }
 
 upperStaff =  <<
@@ -731,7 +757,18 @@ lowerOne = \relative c, {
   g8( d'g bes d bes g'd bes g d g,                    | %190
   g,8 g')( d' g bes d a'g d bes g d                   | %191
   g,8 d' d'4) d,\rest d2.\rest                        | %192
-  \restDownOne R1*6/4                                 | %193
+  \restDownOne R1*6/4 \stemNeutral \slurDown          | %193
+  d4\rest d,_.( d_.) d'\rest d,_.( d_.)               | %194
+  d'4\rest d,_.( d_.) b'\rest <g'd>_.( <g d>_.)       | %195
+  b,4\rest <g'd>_.( <g d>_.) d\rest d,_.( d_.)        | %196
+  d'4\rest d,_.( d_.) d'\rest d,_.( d_.)              | %197
+  d'4\rest d,_.( d_.) d'\rest d,_.( d_.)              | %198
+  d'4\rest d,_.( d_.) b'\rest <bes'g d>_.(<bes g d>_.)| %199
+  d,4\rest <bes'g d>_.(<bes g d>_.) g,\rest \stemDown
+     d_.( d_.)                                        | %200
+  a4\rest d_.( d_.) b'\rest <bes'g d>_.(<bes g d>_.)  | %201
+  d,4\rest <bes'g d>_.(<bes g d>_.) d,\rest <bes'g d> b,\rest | %202
+  b4\rest <bes'g d>_.(<bes g d>_.) b,\rest <bes'g d> b,\rest  | %203
 }
 
 lowerTwo = \relative c {
@@ -799,6 +836,15 @@ lowerTwo = \relative c {
   s4 c'( bes) s <aes d,>2                          | %142
   s4 c( bes) s <aes d,>2                           | %143
   s4 \clef treble f'4( ees) \clef bass s g,( f)    | %144
+  \repeat unfold 50 { s1. | }                        %145-194
+  s2. d(                                           | %195
+  c2.) s                                           | %196
+  \repeat unfold 2 { s1. | }                         %197-198
+  s2. d(                                           | %199
+  e2.) s                                           | %200
+  s2. e(                                           | %201
+  fis2. e2) c8\rest fis                            | %202
+  fis2.( e2) c8\rest fis                           | %203
 }
 breaks = {
   \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 1 ( 1- 4)
@@ -849,6 +895,7 @@ breaks = {
   \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 44 (189-193)
   \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 45 (194-198)
   \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 46 (199-203)
+  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 47 (204-207)
 }
 
 lowerStaff = <<
@@ -962,7 +1009,15 @@ dynamics = {
   \repeat unfold 7 { s1. | }                            %185-191
   \dimPiuRallentSpanner s1.\startTextSpan             | %192
   s1 s4. s8\stopTextSpan                              | %193
-  
+  \repeat unfold 2 { s1. | }                            %194-195
+  s2. s8 s8-\semprePP s2                              | %196
+  \repeat unfold 2 { s1. | }                            %197-198
+  s8\< s4. s4 s2^\crescTiny s4\!                      | %199
+  s2.\f s8 s8\p s2                                    | %200
+  s8\< s4. s4 s2^\crescTiny s4\!                      | %201
+  \sforzatoSpanner
+  s8\startTextSpan s8\stopTextSpan s4^\sempreCresc s1 | %202
+  s1\startTextSpan s4. s8\stopTextSpan                | %203
 } 
 
 pedal = {
@@ -1122,6 +1177,11 @@ pedal = {
  s1.                                                                | %191
  s2. s2.\sustainOff                                                 | %192
  s1.                                                                | %193
+ s1\sustainOn s4.. s16\sustainOff                                   | %194
+ s16 s8.\sustainOn s2 s4 s4.. s16\sustainOff                        | %195
+ s16 s8.\sustainOn s4 s4\sustainOff s16 s8.\sustainOn s4.. s16\sustainOff  | %196 
+ s16 s8.\sustainOn s4. s8\sustainOff s16 s8.\sustainOn s4.. s16\sustainOff | %197
+ s16 s8.\sustainOn s2.. s4.\sustainOff                              | %198
  
 }
 

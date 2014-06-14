@@ -50,6 +50,7 @@ menoMosso = \markup \override #'(baseline-skip . 1.7) \column { \larger \bold "M
 semprePP = \markup { \italic "sempre" \dynamic "pp" }
 semprePiuF = \markup { \italic "sempre più " \dynamic "f" }
 sempreF = \markup { \italic "sempre" \dynamic "f" }
+sempreCresc = \markup { \italic "sempre cresc." }
 aTempoMenoMosso = \markup { \center-align \italic \larger "a tempo (meno mosso)   " }
 sottoVoce = \markup \italic \larger "sotto voce"
 moltoCresc = \markup \italic "molto cresc."
@@ -101,7 +102,10 @@ dimPiuRallentSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "dim. e più rallent." }
   \override TextSpanner #'(bound-details left-broken text) = ##f
 }
-
+sforzatoSpanner = {
+  \override TextSpanner #'(bound-details left text) = \markup { \concat { \dynamic "sf" \musicglyph #"scripts.sforzato"  } }
+  \override TextSpanner #'(bound-details left-broken text) = ##f
+}
 setRestDirDown = \override Rest #'direction = #down
 setRestDirUp = \override Rest #'direction = #up
 doubleSlursOn = \set doubleSlurs = ##t
