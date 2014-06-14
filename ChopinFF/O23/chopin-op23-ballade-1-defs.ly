@@ -22,6 +22,7 @@ tempoLargo = \tempo 4 = 55
 tempoMod = \tempo 4 = 75
 tempoAgitato = \tempo 4 = 80
 hideTempo = \set Score.tempoHideNote = ##t
+hidePedal = \once \override Staff.SustainPedal.stencil = ##f
 
 lentoLegend = \markup \huge \right-align \bold \raise #1.5 "Lento."
 moderatoLegend = \markup \center-align \huge \bold "     Moderato."
@@ -29,6 +30,7 @@ menoMossoLegend = \markup { \override #'(baseline-skip . 2.0)
   \left-column { \huge \bold "Meno mosso."
   \italic \large "              sotto voce" }
 }
+prestoConFuoco = \markup \huge \bold \center-align "Presto con fuoco."
 fPesante = \markup \concat { \dynamic "f" \italic \larger "  pesante" }
 pDolce = \markup \concat { \dynamic "p" \italic \larger " dolce" }
 ffz = \markup { \center-align \dynamic "ffz" }
@@ -45,6 +47,7 @@ crescTiny = \markup \italic \small "cresc."
 riten = \markup \italic \larger "riten."
 smorzTxt = \markup \italic "smorz."
 sPiuMosso = \markup \italic \larger "sempre più mosso"
+appassPiuForte = \markup \override #'(baseline-skip . 1.7) \column { \italic \larger { "   appassionato" "il più forte possibile" } }
 piuF = \markup \concat { \italic " più " \dynamic "f"}
 menoMosso = \markup \override #'(baseline-skip . 1.7) \column { \larger \bold "Meno mosso." \italic "sotto voce"  }
 semprePP = \markup { \italic "sempre" \dynamic "pp" }
@@ -53,9 +56,10 @@ sempreF = \markup { \italic "sempre" \dynamic "f" }
 sempreCresc = \markup { \italic "sempre cresc." }
 aTempoMenoMosso = \markup { \center-align \italic \larger "a tempo (meno mosso)   " }
 sottoVoce = \markup \italic \larger "sotto voce"
-moltoCresc = \markup \italic "molto cresc."
+moltoCresc = \markup \italic \larger "molto cresc."
 animatoLegend = \markup \italic \larger "animato"
 pocoApocoCresc = \markup \italic "poco     a       poco    cresc."
+pocoRiten = \markup \italic \larger "poco riten."
 piuAnimato = \markup \italic "più animato"
 tenTxt = \markup { \center-align  \italic "  ten." }
 sharpPrall = \markup \override #'(baseline-skip . 1.7) \center-column { \teeny \musicglyph #"accidentals.sharp" \musicglyph #"scripts.prall" }

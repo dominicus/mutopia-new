@@ -325,6 +325,24 @@ upperOne =  \relative c {
   \stemUp g'2.) e'(                                       | %201
   fis2. e2) f8\rest fis                                   | %202
   fis2.( e2) f8\rest fis                                  | %203
+  fis2.( e2) f8\rest fis                                  | %204
+  a2.->(_\moltoCresc g2 a4                                | %205
+  \stemDown <bes d,bes>4) b,8\rest <d'bes'>8-.\( <ees c'>-.
+     <d bes'>-. <c a'>-.[ <bes g'>-.<a fis'>-.<bes g'>-.
+     <a f'>-. a16\rest <g ees'>-.]                        | %206
+  <g ees'>8-.<fis d'>-.<ees c'>-.<d bes'>-.<c a'>-.<bes g'>-.
+     \times 2/3 {<a fis'!>-.[-\pocoRiten\< <c ees>-.<c d>-.] }
+     \times 4/5 {<b d>16-.<bes d>-.<a d>-.<gis d'>-.<a d>-. }
+     <d bes>-.<d a>-.<d c>-.<d bes>-.\!                   | %207
+  \bar "||" \time 4/4
+  <d g,>8-._\ffz\) b\rest <bes''g d>->(\ff
+     a,)^\prestoConFuoco b,\rest<g''d bes> <g d bes>->( fis,)             | %208
+  b,8\rest <d'bes g> <d bes g>->( cis,) b\rest
+     <bes'g d> <bes g d>->( bes,)                         | %209
+  b8\rest <c'g ees> <c g ees>->\( d, cis c <c'g ees>-> d, | %210
+  cis c <c'fis,ees>-> d,cis c <a'fis d>-> c,\)            | %211
+  \dynLeft <bes'g d bes>4-.\fz <bes'g d>8->( a,) b,\rest
+     <g''d bes> <g d bes>->( fis,)                        | %212
 }
 
 upperTwo =  \relative c' {
@@ -455,6 +473,11 @@ upperTwo =  \relative c' {
      <cis bes g> g\rest                                   | %202
   g4\rest <cis bes g>_.(<cis bes g>_.) g\rest 
      <cis bes g> g\rest                                   | %203
+  g4\rest <cis bes g><cis bes g> g\rest 
+     <cis bes g> g\rest                                   | %204
+  b4\rest <e cis bes><e cis bes> a,\rest
+     <e'cis bes>\< d\rest                                 | %205
+  s8 s16\! s16_\appassPiuForte
 }
 
 upperTre = \relative c' {
@@ -766,9 +789,20 @@ lowerOne = \relative c, {
   d'4\rest d,_.( d_.) b'\rest <bes'g d>_.(<bes g d>_.)| %199
   d,4\rest <bes'g d>_.(<bes g d>_.) g,\rest \stemDown
      d_.( d_.)                                        | %200
-  a4\rest d_.( d_.) b'\rest <bes'g d>_.(<bes g d>_.)  | %201
+  f4\rest d_.( d_.) b'\rest <bes'g d>_.(<bes g d>_.)  | %201
   d,4\rest <bes'g d>_.(<bes g d>_.) d,\rest <bes'g d> b,\rest | %202
   b4\rest <bes'g d>_.(<bes g d>_.) b,\rest <bes'g d> b,\rest  | %203
+  d4\rest <bes'g d><bes g d> d,\rest <bes'g d> d,\rest        | %204
+  d4\rest <e'cis bes><e cis bes> d,\rest <e'cis bes> d,\rest  | %205
+  \stemNeutral \slurUp <d,d,>4\arpeggio <bes''d,>(
+     <d g,> <g bes,> <d g,> <bes d,>)                 | %206
+  <d,,d,> <c''fis,d>( <d c fis,> <fis c a>
+     <d c fis,> <c fis,d>)                            | %207
+  <g,g,>4 d'\rest <g'd bes> bes,,_.                   | %208
+  <g''d bes> d,-. <g'd bes> g,-.                      | %209
+  <g'c,a> a,,_. <g''ees c> a,-.                       | %210
+  <fis'd c> d,-. <fis'd c> a,-.                       | %211
+  <g'd g,>-. g,,_. <g''d bes> bes,_.                  | %212
 }
 
 lowerTwo = \relative c {
@@ -841,10 +875,13 @@ lowerTwo = \relative c {
   c2.) s                                           | %196
   \repeat unfold 2 { s1. | }                         %197-198
   s2. d(                                           | %199
-  e2.) s                                           | %200
-  s2. e(                                           | %201
+  e2.) f,\rest                                     | %200
+  f2.\rest e'(                                     | %201
   fis2. e2) c8\rest fis                            | %202
   fis2.( e2) c8\rest fis                           | %203
+  fis2.( e2) e8\rest fis                           | %204
+  a2.^>( g2)_( \staffUp \stemDown a4)              | %205
+  
 }
 breaks = {
   \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 1 ( 1- 4)
@@ -896,6 +933,7 @@ breaks = {
   \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 45 (194-198)
   \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 46 (199-203)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 47 (204-207)
+  \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 48 (208-212)
 }
 
 lowerStaff = <<
@@ -1018,6 +1056,7 @@ dynamics = {
   \sforzatoSpanner
   s8\startTextSpan s8\stopTextSpan s4^\sempreCresc s1 | %202
   s1\startTextSpan s4. s8\stopTextSpan                | %203
+  s1\startTextSpan s4. s8\stopTextSpan                | %204
 } 
 
 pedal = {
@@ -1171,18 +1210,38 @@ pedal = {
  s2.\sustainOn s4. s8\sustainOff s4                                 | %185
  s2.\sustainOn s4. s8\sustainOff s4                                 | %186
  s16 s4..\sustainOn s8 s4\sustainOff s2\sustainOn s16 s16\sustainOff| %187
- s16 s4..\sustainOn s1                                              | %188
- s1 s4. s8\sustainOff                                               | %189
- s16 s4..\sustainOn s1                                              | %190
- s1.                                                                | %191
- s2. s2.\sustainOff                                                 | %192
- s1.                                                                | %193
- s1\sustainOn s4.. s16\sustainOff                                   | %194
- s16 s8.\sustainOn s2 s4 s4.. s16\sustainOff                        | %195
+ s16 s4..\sustainOn s1                                  | %188
+ s1 s4. s8\sustainOff                                   | %189
+ s16 s4..\sustainOn s1                                  | %190
+ s1.                                                    | %191
+ s2. s2.\sustainOff                                     | %192
+ s1.                                                    | %193
+ s1\sustainOn s4.. s16\sustainOff                       | %194
+ s16 s8.\sustainOn s2 s4 s4.. s16\sustainOff            | %195
  s16 s8.\sustainOn s4 s4\sustainOff s16 s8.\sustainOn s4.. s16\sustainOff  | %196 
  s16 s8.\sustainOn s4. s8\sustainOff s16 s8.\sustainOn s4.. s16\sustainOff | %197
- s16 s8.\sustainOn s2.. s4.\sustainOff                              | %198
- 
+ s16 s8.\sustainOn s2.. s4.\sustainOff                  | %198
+ s1.\sustainOn                                          | %199
+ s2 s4\sustainOff s2\sustainOn s8 s8\sustainOff         | %200
+ s1\sustainOn s4 s16 s8.\sustainOff                     | %201
+ s2\sustainOn s16 s8.\sustainOff s16 s8.\sustainOn s4 s16 s8.\sustainOff | %202
+ s2\sustainOn s16 s8.\sustainOff s16 s8.\sustainOn s4 s16 s8.\sustainOff | %203
+ s2\sustainOn s16 s8.\sustainOff s16 s8.\sustainOn s4 s16 s8.\sustainOff | %204
+ s2\sustainOn s16 s8.\sustainOff s16 s8.\sustainOn s4 s16 s8.\sustainOff | %205
+ \repeat unfold 2 { s1. | }                               %206-207
+ s1                                                     | %208
+ s4.\sustainOn s8\sustainOff s16 s16\sustainOn s4 s8\sustainOff | %209
+ s4.\sustainOn s16 s16\sustainOff s2                    | %210
+ s1                                                     | %211
+ s2.\sustainOn s8. s16\sustainOff                       | %212
+}
+
+pedalTwo = {
+ \repeat unfold 7 { s1 | }                                %1-7
+ \repeat unfold 198 { s1. | }                             %7-205
+ s1\sustainOn s4. s8\sustainOff                         | %206
+ s2.\sustainOn s8. s16\sustainOff s2                    | %207
+ s2.\sustainOn  s8 s8\sustainOff                        | %208
 }
 
 %-------Typeset music 
@@ -1194,7 +1253,8 @@ pedal = {
         \new Dynamics = "dyns" { \dynamics }
         \new Staff = "lower" \with { \consists "Span_arpeggio_engraver" }
            { \clef bass \global \connectArpeggio \lowerStaff }
-        \new Dynamics = "ped" { \pedal }
+        \new Dynamics = "pedOne" { \pedal }
+        \new Dynamics = "pedTwo" { \pedalTwo }
     >>
     \layout{ 
      %{ \context {
@@ -1210,9 +1270,7 @@ pedal = {
     \context PianoStaff <<
         \set PianoStaff.midiInstrument = "acoustic grand"
         \new Staff = "upper" { \clef treble \global \upperStaff }
-        \new Dynamics = "dyns" { \dynamics }
         \new Staff = "lower" { \clef bass \global \lowerStaff }
-        \new Dynamics = "ped" { \pedal }
     >>
     \midi  { }
 }
