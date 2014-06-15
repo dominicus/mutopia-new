@@ -361,7 +361,12 @@ upperOne =  \relative c {
   fis,8 <fis'a,!> fis <fis'a,!> g, <g'bes,> g, <g bes,>\) | %225
   aes,8\( <aes'ees> aes <aes'ees> aes, <aes ees> g,<g'c,> | %226
   fis,8 <fis'a,!>fis <fis'a,!> g, <g'bes,>g,<g bes,>\)    | %227
-  
+  f,!8\( <f'!aes,> f <f'!aes,> f,<ees aes,> ees,<ees'aes,>| %228
+  d,8 <d'fis,> d <d'fis,> d, <cis e,> cis, <cis'e,>       | %229
+  c,!8 <c'!ees,!> c\)\( <c'ees,> b, <b'ees,> c, <c'ees,>  | %230
+  c,8<c'ees,>\)\( ees,<ees'!ges,>d,<d'ges,> ees,<ees'ges,>| %231
+  ees,<ees'ges,>\)\(ges,<ges'bes,>f,<f'gis,!>fis,<fis'a,!>| %232
+  fis, <fis'a,>\)( a, <a'c,> bes,<bes'd,>c,<c'ees,>)      | %233
 }
 
 upperTwo =  \relative c' {
@@ -511,6 +516,12 @@ upperTwo =  \relative c' {
   fis,4^> s g' s                                          | %225
   aes,4^> aes' s g,^>                                     | %226
   fis4^> s g' s                                           | %227
+  f,4 s2 ees4                                             | %228
+  d4 s2 cis4                                              | %229
+  c4 c' b c                                               | %230
+  c4 ees d ees                                            | %231
+  ees4 ges f fis                                          | %232
+  fis4 a bes c                                            | %233
 }
 
 upperTre = \relative c' {
@@ -857,6 +868,11 @@ lowerOne = \relative c, {
   d4_.) s g,_. s                                      | %225
   c2\( d4 ees                                         | %226
   d4_.\) s g,_. s                                     | %227
+  <b b,>4-. s <c c,>-. s                              | %228
+  <d d,>4-. s <e e,>-. s                              | %229
+  <fis fis,>4-. s2 <g g,>4-.                          | %230
+  <aes aes,>4-. s2 <a a,>4-.                          | %231
+  <bes bes,>4-. s2 <b b,>4-.                          | %232
 }
 
 lowerTwo = \relative c {
@@ -949,7 +965,11 @@ lowerTwo = \relative c {
   \hideNotes d,4) \unHideNotes <d'c a!> s <d bes g>| %225
   a4\rest <ees'aes,>2.^>                           | %226
   s4 <d c a!> s <d bes g>                          | %227
-  
+  s4 <d aes f> s <c g ees>                         | %228
+  s4 <a!fis> s <bes! g>                            | %229
+  s4 <ees c fis,> <ees c g> s                      | %230
+  s4 <ges ees aes,> <ges ees a,> s                 | %231
+  s4 <ges ees bes> <a!dis,b> s                     | %232
 }
 breaks = {
   \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 1 ( 1- 4)
@@ -1005,6 +1025,8 @@ breaks = {
   \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 49 (213-217)
   \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 50 (218-222)
   \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 51 (223-227)
+  \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 52 (228-232)
+  \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 53 (233-237)
 }
 
 lowerStaff = <<
@@ -1128,6 +1150,12 @@ dynamics = {
   s8\startTextSpan s8\stopTextSpan s4^\sempreCresc s1 | %202
   s1\startTextSpan s4. s8\stopTextSpan                | %203
   s1\startTextSpan s4. s8\stopTextSpan                | %204
+  \repeat unfold 3 { s1. | }                            %205-207
+  \repeat unfold 22 { s1 | }                            %208-229
+  s2 s2\cresc                                         | %230
+  \repeat unfold 3 { s1 | }                             %231-233
+  s4\ff s2.\<                                         | %234
+  s8 s4.\! s2                                         | %235
 } 
 
 pedal = {
@@ -1320,6 +1348,10 @@ pedal = {
  s4\sustainOn s16 s8.\sustainOff s4\sustainOn s8. s16\sustainOff     | %225
  s4..\sustainOn s16\sustainOff s2                                    | %226
  s16 s4\sustainOn s16 s8\sustainOff s16 s4.\sustainOn s16\sustainOff | %227
+
+ \repeat unfold 3 { s1 | }                                %231-232
+ s16 s8.\sustainOn s4 s32 s8..\sustainOff s4
+ s16 s8.\sustainOn s4 s32 s8..\sustainOff s4
 }
 
 pedalTwo = {
@@ -1328,6 +1360,12 @@ pedalTwo = {
  s1\sustainOn s4. s8\sustainOff                         | %206
  s2.\sustainOn s8. s16\sustainOff s2                    | %207
  s2.\sustainOn  s8 s8\sustainOff                        | %208
+ \repeat unfold 19 { s1 | }                               %209-227
+ s4\sustainOn s16 s8.\sustainOff s4..\sustainOn s16\sustainOff       | %228
+ s16 s8.\sustainOn s16 s8.\sustainOff s4..\sustainOn s16\sustainOff  | %229
+ s16 s8.\sustainOn s4 s32 s8..\sustainOff s4            | %230
+ \repeat unfold 2 { s1 | }                                %231-232
+ 
 }
 
 %-------Typeset music 
