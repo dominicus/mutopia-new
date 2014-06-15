@@ -350,6 +350,18 @@ upperOne =  \relative c {
   <bes'g d bes>4-. aes8\(^\< <aes'ees> aes,
      <aes ees>\!^\> g, ees'\!                             | %216
   fis, <fis'a,!> fis <fis'a,!> g, <g'bes,> g, <g bes,>\)  | %217
+  aes,8\( <aes'ees> aes <aes'ees> aes, <aes ees> g,<g'ees>| %218
+  fis,8 <fis'a,!>fis <fis'a,> g, <g'bes,>g,<g bes,>\)     | %219
+  f,!8\( <f'!aes,> f <f'!aes,> f,<ees aes,> ees,<ees'aes,>| %220
+  d,8 <d'aes> d <d'aes> d, <c aes> c, <c'aes>\)           | %221
+  c,8^\<\( <c'ees,> c\!<c'ees,> c,[<c'ees,>] bes,<bes'd,> | %222
+  bes, <bes'd,> a, <a'c,> g, <g'bes,> fis, <fis'a,>\)     | %223
+  <g bes,g>4-.\( aes8\< <aes'ees> aes,\! <aes ees>\>
+     g, ees'\!                                            | %224
+  fis,8 <fis'a,!> fis <fis'a,!> g, <g'bes,> g, <g bes,>\) | %225
+  aes,8\( <aes'ees> aes <aes'ees> aes, <aes ees> g,<g'c,> | %226
+  fis,8 <fis'a,!>fis <fis'a,!> g, <g'bes,>g,<g bes,>\)    | %227
+  
 }
 
 upperTwo =  \relative c' {
@@ -489,6 +501,16 @@ upperTwo =  \relative c' {
   \repeat unfold 8 { s1 | }                                 %208-215
   \stemUp s4 aes'^^ s8 aes4^> g8                          | %216
   fis,4^> s4 g' s                                         | %217
+  aes,4^> aes' s g,^>                                     | %218
+  fis4^> s g' s                                           | %219
+  f,4^> s2 ees4^>                                         | %220
+  d4^> d' s c,^>                                          | %221
+  s4 c' c bes^>                                           | %222
+  bes4^> a g fis                                          | %223
+  s4 aes'^^ s8 aes4^> g8                                  | %224
+  fis,4^> s g' s                                          | %225
+  aes,4^> aes' s g,^>                                     | %226
+  fis4^> s g' s                                           | %227
 }
 
 upperTre = \relative c' {
@@ -825,6 +847,16 @@ lowerOne = \relative c, {
   <fis'd c> d,-. <fis'd c> a,-.                       | %215
   <g'd g,>-. \stemDown \slurDown c,,2.(_>             | %216
   d4-.) s4 g, s4                                      | %217
+  c1(                                                 | %218
+  d4-.) s g,_. s                                      | %219
+  \phrasingSlurDown b2\( c                            | %220
+  d2 ees                                              | %221
+  fis,4_.\) s2 g4_.                                   | %222
+  c4_. s d2(                                          | %223
+  g4) c,2.(_>                                         | %224
+  d4_.) s g,_. s                                      | %225
+  c2\( d4 ees                                         | %226
+  d4_.\) s g,_. s                                     | %227
 }
 
 lowerTwo = \relative c {
@@ -906,8 +938,17 @@ lowerTwo = \relative c {
   \repeat unfold 2 { s1. | }                         %206-207
   \repeat unfold 8 { s1  | }                         %208-215
   s2. \stemUp \staffDown <ees aes,>4(              | %216
-  \hideNotes d,4) \unHideNotes <d'c a!> s4<d bes g>| %217
-  
+  \hideNotes d,4) \unHideNotes <d'c a!> s <d bes g>| %217
+  a4\rest <ees'aes,>2^>( <ees aes,>4)              | %218
+  s4 <d c a!> s <d bes g>                          | %219
+  s4 <d aes f> s <c aes ees>                       | %220
+  s4 <b aes f> s aes                               | %221
+  s4 <ees'c fis,>_( <d bes g>) s                   | %222
+  s4 <g ees a,> s <d a>                            | %223
+  <d bes>4 s2 <ees aes,>4(                         | %224
+  \hideNotes d,4) \unHideNotes <d'c a!> s <d bes g>| %225
+  a4\rest <ees'aes,>2.^>                           | %226
+  s4 <d c a!> s <d bes g>                          | %227
   
 }
 breaks = {
@@ -962,6 +1003,8 @@ breaks = {
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 47 (204-207)
   \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 48 (208-212)
   \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 49 (213-217)
+  \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 50 (218-222)
+  \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 51 (223-227)
 }
 
 lowerStaff = <<
@@ -1267,6 +1310,16 @@ pedal = {
  s1                                                     | %215
  s4 s2\sustainOn s8. s16\sustainOff                     | %216
  s4.\sustainOn s8\sustainOff s4.\sustainOn s8\sustainOff| %217
+ s2.\sustainOn s8. s16\sustainOff                       | %218
+ s4.\sustainOn s8\sustainOff s4.\sustainOn s8\sustainOff| %219
+ s4.\sustainOn s8\sustainOff s4.\sustainOn s8\sustainOff| %220
+ s1                                                     | %221
+ s4.\sustainOn s8\sustainOff s2                         | %222
+ s2\sustainOn s2\sustainOff                             | %223
+ s4 s2\sustainOn s8 s8\sustainOff                       | %224
+ s4\sustainOn s16 s8.\sustainOff s4\sustainOn s8. s16\sustainOff     | %225
+ s4..\sustainOn s16\sustainOff s2                                    | %226
+ s16 s4\sustainOn s16 s8\sustainOff s16 s4.\sustainOn s16\sustainOff | %227
 }
 
 pedalTwo = {
