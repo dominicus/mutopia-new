@@ -22,7 +22,6 @@ tempoLargo = \tempo 4 = 55
 tempoMod = \tempo 4 = 75
 tempoAgitato = \tempo 4 = 80
 hideTempo = \set Score.tempoHideNote = ##t
-hidePedal = \once \override Staff.SustainPedal.stencil = ##f
 
 lentoLegend = \markup \huge \right-align \bold \raise #1.5 "Lento."
 moderatoLegend = \markup \center-align \huge \bold "     Moderato."

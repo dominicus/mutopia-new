@@ -343,6 +343,13 @@ upperOne =  \relative c {
   cis c <c'fis,ees>-> d,cis c <a'fis d>-> c,\)            | %211
   \dynLeft <bes'g d bes>4-.\fz <bes'g d>8->( a,) b,\rest
      <g''d bes> <g d bes>->( fis,)                        | %212
+  b,8\rest <d'bes g> <d bes g>->( cis,) b\rest
+     <bes'g d> <bes g d>->( bes,)                         | %213
+  b8\rest <c'g ees><c g ees>->( d,) cis c <c'g ees>->\( d,| %214
+  cis8 c <c'fis,ees>-> d,cis c <a'fis d>-> c,\)           | %215
+  <bes'g d bes>4-. aes8\(^\< <aes'ees> aes,
+     <aes ees>\!^\> g, ees'\!                             | %216
+  fis, <fis'a,!> fis <fis'a,!> g, <g'bes,> g, <g bes,>\)  | %217
 }
 
 upperTwo =  \relative c' {
@@ -477,7 +484,11 @@ upperTwo =  \relative c' {
      <cis bes g> g\rest                                   | %204
   b4\rest <e cis bes><e cis bes> a,\rest
      <e'cis bes>\< d\rest                                 | %205
-  s8 s16\! s16_\appassPiuForte
+  s8 s16\! s16_\appassPiuForte s1 s4                      | %206
+  s1.                                                     | %207
+  \repeat unfold 8 { s1 | }                                 %208-215
+  \stemUp s4 aes'^^ s8 aes4^> g8                          | %216
+  fis,4^> s4 g' s                                         | %217
 }
 
 upperTre = \relative c' {
@@ -513,6 +524,10 @@ upperTre = \relative c' {
   s1 \tweak Stem.transparent ##t d2        | %196
   s1.                                      | %197
   s1 \tweak Stem.transparent ##t d2        | %198
+  \repeat unfold 9 { s1. | }                 %199-207
+  \repeat unfold 8 { s1 | }                  %208-215
+  s2. \stemUp g4                           | %216
+  
 }
 upperQtr = \relative c' {
   \time 4/4
@@ -546,6 +561,8 @@ upperQtr = \relative c' {
   s1 s8 fis4.                              | %196
   s1.                                      | %197
   s1 s8 fis4.                              | %198
+  
+  
 }
 
 upperStaff =  <<
@@ -751,7 +768,7 @@ lowerOne = \relative c, {
   \dynLeft <ees,aes, ees ces>4-.\arpeggio\fz
      d,\rest d\rest d2.\rest                                 | %164
   \unSqueezeNotation
-  \stemDown ces,4_> c\rest c\rest c2.\rest            | %165                                       | %165
+  \stemDown ces,4_> c\rest c\rest c2.\rest            | %165
   \dynLeft bes8\fz( f'bes d bes f bes, f'bes f'bes,f) | %166
   ees8( bes'ees g ees bes ees,bes'ees bes'ees,bes)    | %167
   f8( c'ees bes'ees,c)  f,( c'ees a! ees c)           | %168
@@ -802,7 +819,12 @@ lowerOne = \relative c, {
   <g''d bes> d,-. <g'd bes> g,-.                      | %209
   <g'c,a> a,,_. <g''ees c> a,-.                       | %210
   <fis'd c> d,-. <fis'd c> a,-.                       | %211
-  <g'd g,>-. g,,_. <g''d bes> bes,_.                  | %212
+  <g'd g,>-. g,,_. <g''d bes> bes,,_.                 | %212
+  <g''d g,> d,-. <g'd g,> g,-.                        | %213
+  <g'c,a> a,,_. <g''ees c> a,-.                       | %214
+  <fis'd c> d,-. <fis'd c> a,-.                       | %215
+  <g'd g,>-. \stemDown \slurDown c,,2.(_>             | %216
+  d4-.) s4 g, s4                                      | %217
 }
 
 lowerTwo = \relative c {
@@ -881,6 +903,11 @@ lowerTwo = \relative c {
   fis2.( e2) c8\rest fis                           | %203
   fis2.( e2) e8\rest fis                           | %204
   a2.^>( g2)_( \staffUp \stemDown a4)              | %205
+  \repeat unfold 2 { s1. | }                         %206-207
+  \repeat unfold 8 { s1  | }                         %208-215
+  s2. \stemUp \staffDown <ees aes,>4(              | %216
+  \hideNotes d,4) \unHideNotes <d'c a!> s4<d bes g>| %217
+  
   
 }
 breaks = {
@@ -934,6 +961,7 @@ breaks = {
   \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 46 (199-203)
   \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 47 (204-207)
   \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 48 (208-212)
+  \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 49 (213-217)
 }
 
 lowerStaff = <<
@@ -1234,6 +1262,11 @@ pedal = {
  s4.\sustainOn s16 s16\sustainOff s2                    | %210
  s1                                                     | %211
  s2.\sustainOn s8. s16\sustainOff                       | %212
+ s4.\sustainOn s8\sustainOff s4.\sustainOn s8\sustainOff| %213
+ s2\sustainOn s2\sustainOff                             | %214
+ s1                                                     | %215
+ s4 s2\sustainOn s8. s16\sustainOff                     | %216
+ s4.\sustainOn s8\sustainOff s4.\sustainOn s8\sustainOff| %217
 }
 
 pedalTwo = {
