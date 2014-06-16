@@ -129,10 +129,19 @@ cadenzaSizeOff = {
   \revert Beam.beam-thickness
 }
 
-subdivideBeamOn = {
+subdivideBeamOne = {
   \set subdivideBeams = ##t
   \set baseMoment = #(ly:make-moment 1/4)
 }
+subdivideBeamTwo = {
+  \set subdivideBeams = ##t
+  %\set baseMoment = #(ly:make-moment 1/4)
+}
+subdivideLenghtHalf = \set baseMoment = #(ly:make-moment 1/2)
+subdivideLenghtFourth = \set baseMoment = #(ly:make-moment 1/4)
+subdivideLenghtEigth = \set baseMoment = #(ly:make-moment 1/8)
+subdivideLenghtThreeSixt = \set baseMoment = #(ly:make-moment 3/16)
+
 subdivideBeamOff = \set subdivideBeams = ##f
 restDownOne = \once \override MultiMeasureRest.staff-position = #2
 

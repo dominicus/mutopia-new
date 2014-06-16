@@ -46,7 +46,7 @@
 %------------Music
 
 cadenzaOne = { 
-  \stemDown \cadenzaSizeOn \alignBeamOne \subdivideBeamOn
+  \stemDown \cadenzaSizeOn \alignBeamOne \subdivideBeamOne
   \scaleDurations 2/3 {
     ees16[ c a bes d c bes g f d ees e f fis a g f! ees]
   } \cadenzaSizeOff \subdivideBeamOff
@@ -366,7 +366,26 @@ upperOne =  \relative c {
   c,!8 <c'!ees,!> c\)\( <c'ees,> b, <b'ees,> c, <c'ees,>  | %230
   c,8<c'ees,>\)\( ees,<ees'!ges,>d,<d'ges,> ees,<ees'ges,>| %231
   ees,<ees'ges,>\)\(ges,<ges'bes,>f,<f'gis,!>fis,<fis'a,!>| %232
-  fis, <fis'a,>\)( a, <a'c,> bes,<bes'd,>c,<c'ees,>)      | %233
+  fis,8 <fis'a,>\) a,( <a'c,> bes,<bes'd,>c,<c'ees,>)     | %233
+  c,8(\( <c'ees,> bes, <bes'd,>) bes,( <bes'd,> a, <a'c,>)| %234
+  a,8( <a'c,> g, <g'bes,>) g,( <g'bes,> d, <d'fis,>)\)              | %235
+  b,8\rest bes'(\( <bes'd,> bes,) <bes'des,>->( bes,) <a'c,>->( a,) | %236
+  <a'c,>8->( a,) <g'bes,>->( g,) <g'bes,>->( g,) <d'fis,>->( d,)\)  | %237
+  b8\rest \stemUp \ottava #1 d'\( <d' bes g>-> d, \ottava #0 
+     \slurDown s4 <d bes g>8->( d,)                                 | %238
+  s4 <d bes g>8->( d,) \staffDown s4 <d bes g>8->( d,)\)            | %239
+  s4 <e'bes g>8->( d,) s4 <e'bes g>8->( d,)                         | %240
+  s4 <e'bes g>8->( d,) s4 <e'bes g>8->( d,)                         | %241
+  \staffUp b''2\rest \tuplet 6/4 2 { g,8\([ gis a bes b c]          | %242
+  \tupletDown \stemNeutral cis8[ d ees e f fis]  g[ gis a bes b c!] | %243
+  \tupletUp cis8[ d ees e f fis]  g[ gis a bes b c!]                | %244
+  cis8[ d ees e f fis] \ottava #1 g[ gis a bes b cis]\) }           | %245
+  \set subdivideBeams = ##t
+     ees16[\( d
+     f ees d
+     c b d c  bes a g fis]                                   %246
+  \bar "dashed"
+  
 }
 
 upperTwo =  \relative c' {
@@ -522,6 +541,9 @@ upperTwo =  \relative c' {
   c4 ees d ees                                            | %231
   ees4 ges f fis                                          | %232
   fis4 a bes c                                            | %233
+  c4^> bes bes^> a                                        | %234
+  c4^> bes bes^> d,                                       | %235
+  
 }
 
 upperTre = \relative c' {
@@ -873,6 +895,17 @@ lowerOne = \relative c, {
   <fis fis,>4-. s2 <g g,>4-.                          | %230
   <aes aes,>4-. s2 <a a,>4-.                          | %231
   <bes bes,>4-. s2 <b b,>4-.                          | %232
+  <c c,>4-. s2.                                       | %233
+  <bes bes,>4-. s <c c,>-. s                          | %234
+  <d d,>4-. s <c c,>-. s                              | %235
+  <bes bes,>4-. s <c c,>-. s                          | %236
+  <d d,>4-. s <c c,>-. s                              | %237
+  <bes bes,>4-. d,\rest \staffUp \slurUp
+     <d'''bes g>8_>( d,) s4                           | %238
+  <d bes g>8_>( d,) s4 \staffDown<d bes g>8_>([d,)] s4| %239
+  <fis,fis,>8->( <g g,>) s4 <cis cis,>8->( <d d,>) s4 | %240
+  <fis,fis,>8->( <g g,>) s4 <cis cis,>8->( <d d,>) s4 | %241
+  \stemNeutral <d, d,>2-> d'\rest                     | %242
 }
 
 lowerTwo = \relative c {
@@ -970,6 +1003,12 @@ lowerTwo = \relative c {
   s4 <ees c fis,> <ees c g> s                      | %230
   s4 <ges ees aes,> <ges ees a,> s                 | %231
   s4 <ges ees bes> <a!dis,b> s                     | %232
+  s4 <a fis d!c>2^>( <a fis d c>4)                 | %233
+  s4 <g d g,> s <g ees a,>                         | %234
+  s4 <bes g d>^> s <a fis d c>                     | %235
+  s4 <g d g,> s <g ees a,>                         | %236
+  s4 <bes g d>^> s <a fis d c>                     | %237
+  
 }
 breaks = {
   \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 1 ( 1- 4)
@@ -1027,6 +1066,8 @@ breaks = {
   \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 51 (223-227)
   \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 52 (228-232)
   \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 53 (233-237)
+  \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 54 (238-242)
+%  \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 55 (243-246)
 }
 
 lowerStaff = <<
@@ -1155,7 +1196,9 @@ dynamics = {
   s2 s2\cresc                                         | %230
   \repeat unfold 3 { s1 | }                             %231-233
   s4\ff s2.\<                                         | %234
-  s8 s4.\! s2                                         | %235
+  s16 s8.\! s2.                                       | %235
+  s8 s4.\< s2                     
+  s16 s8.\! s2.                                       
 } 
 
 pedal = {
@@ -1348,10 +1391,14 @@ pedal = {
  s4\sustainOn s16 s8.\sustainOff s4\sustainOn s8. s16\sustainOff     | %225
  s4..\sustainOn s16\sustainOff s2                                    | %226
  s16 s4\sustainOn s16 s8\sustainOff s16 s4.\sustainOn s16\sustainOff | %227
-
- \repeat unfold 3 { s1 | }                                %231-232
- s16 s8.\sustainOn s4 s32 s8..\sustainOff s4
- s16 s8.\sustainOn s4 s32 s8..\sustainOff s4
+ \repeat unfold 3 { s1 | }                                             %228-230
+ s16 s8.\sustainOn s4 s32 s8..\sustainOff s4                         | %231
+ s16 s8.\sustainOn s4 s32 s8..\sustainOff s4                         | %232
+ s2.\sustainOn s16 s8.\sustainOff                                    | %233
+ s16 s8.\sustainOn s16 s8.\sustainOff s4.\sustainOn s8\sustainOff    | %234
+ s16 s8.\sustainOn s16 s8.\sustainOff s4.\sustainOn s8\sustainOff    | %235
+ s16 s8.\sustainOn s16 s8.\sustainOff s4..\sustainOn s16\sustainOff  | %236
+ s16 s8.\sustainOn s16 s8.\sustainOff s4..\sustainOn s16\sustainOff  | %237
 }
 
 pedalTwo = {
