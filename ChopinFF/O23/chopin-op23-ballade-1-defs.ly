@@ -44,6 +44,7 @@ conForza = \markup \italic \larger "con forza"
 crescTxt = \markup \italic \larger "cresc."
 crescTiny = \markup \italic \small "cresc."
 riten = \markup \italic \larger "riten."
+accel = \markup \italic \larger "accel."
 smorzTxt = \markup \italic "smorz."
 sPiuMosso = \markup \italic \larger "sempre più mosso"
 appassPiuForte = \markup \override #'(baseline-skip . 1.7) \column { \italic \larger { "   appassionato" "il più forte possibile" } }
@@ -52,6 +53,7 @@ menoMosso = \markup \override #'(baseline-skip . 1.7) \column { \larger \bold "M
 semprePP = \markup { \italic "sempre" \dynamic "pp" }
 semprePiuF = \markup { \italic "sempre più " \dynamic "f" }
 sempreF = \markup { \italic "sempre" \dynamic "f" }
+sempreFF = \markup \center-align { \italic "sempre" \dynamic "ff" }
 sempreCresc = \markup { \italic "sempre cresc." }
 aTempoMenoMosso = \markup { \center-align \italic \larger "a tempo (meno mosso)   " }
 sottoVoce = \markup \italic \larger "sotto voce"
@@ -114,6 +116,7 @@ setRestDirUp = \override Rest #'direction = #up
 doubleSlursOn = \set doubleSlurs = ##t
 doubleSlursOff = \set doubleSlurs = ##f
 connectArpeggio = \set Staff.connectArpeggios = ##t
+allowTextScriptInStaff = \once \override TextScript.staff-padding = #'()
 
 cadenzaSizeOn = {
   \override NoteHead.font-size = #-4
@@ -144,6 +147,7 @@ subdivideLenghtThreeSixt = \set baseMoment = #(ly:make-moment 3/16)
 
 subdivideBeamOff = \set subdivideBeams = ##f
 restDownOne = \once \override MultiMeasureRest.staff-position = #2
+restDownTwo = \once \override MultiMeasureRest.staff-position = #-4
 
 alignBeamOne = \once \override Beam.positions = #'(-1.2 . -1.2)
 

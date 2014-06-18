@@ -374,18 +374,35 @@ upperOne =  \relative c {
   b8\rest \stemUp \ottava #1 d'\( <d' bes g>-> d, \ottava #0 
      \slurDown s4 <d bes g>8->( d,)                                 | %238
   s4 <d bes g>8->( d,) \staffDown s4 <d bes g>8->( d,)\)            | %239
-  s4 <e'bes g>8->( d,) s4 <e'bes g>8->( d,)                         | %240
+  s4 \allowTextScriptInStaff <e'bes g>8->(^\sempreFF d,) s4 <e'bes g>8->( d,)  | %240
   s4 <e'bes g>8->( d,) s4 <e'bes g>8->( d,)                         | %241
   \staffUp b''2\rest \tuplet 6/4 2 { g,8\([ gis a bes b c]          | %242
   \tupletDown \stemNeutral cis8[ d ees e f fis]  g[ gis a bes b c!] | %243
   \tupletUp cis8[ d ees e f fis]  g[ gis a bes b c!]                | %244
   cis8[ d ees e f fis] \ottava #1 g[ gis a bes b cis]\) }           | %245
-  \set subdivideBeams = ##t
+  %\set subdivideBeams = ##t
+  \scaleDurations 16/13 {
      ees16[\( d
      f ees d
-     c b d c  bes a g fis]                                   %246
-  \bar "dashed"
-  
+     c b d c  bes a g fis] }                                        | %246
+  a16 g f ees d \ottava #0 ees d f! ees d c b d c bes a             | %247
+  \scaleDurations 16/19 {
+     g16 fis a g fis ees d ees d f ees d c b d c bes a g }          | %248
+  \scaleDurations 16/20 {
+     fis16 ees d \staffDown c bes a g fis ees d c bes a g fis 
+     ees d c bes a }                                                | %249
+  \hideNotes g1\) \unHideNotes \stemUp \slurUp                      | %250
+  \scaleDurations 16/21 { d''16\rest a( bes c d e fis g a bes c
+     \staffUp d e fis g a bes c d e fis)  }                         | %251
+  g8-. \stemNeutral b,\rest b4\rest \clef bass<bes,g d>4.(-\riten
+     <bes g d>8                                                     | %252
+  <bes g d>2) \tuplet 6/4 { d,8\rest-\accel d[( g a c bes] }        | %253
+  bes8-.) d,\rest d4\rest bes2~\(                                   | %254
+  \scaleDurations 16/28 { bes16[ c d e fis g a bes \clef treble
+     c d e fis g a bes c d e fis g a bes c d e fis g a] }           | %255
+  bes8-.\) b,,\rest b4\rest \clef bass <d,bes g d>4.(-\riten
+     <d bes g d>8 \tupletDown                                       | %256
+  <d bes g d>2) \clef treble \tuplet 6/4 { b'8\rest d,[g bes ees d]}| %257
 }
 
 upperTwo =  \relative c' {
@@ -543,7 +560,8 @@ upperTwo =  \relative c' {
   fis4 a bes c                                            | %233
   c4^> bes bes^> a                                        | %234
   c4^> bes bes^> d,                                       | %235
-  
+  \repeat unfold 14 { s1 | }                                %236-249
+  \restDownOne R1                                         | %250
 }
 
 upperTre = \relative c' {
@@ -906,6 +924,35 @@ lowerOne = \relative c, {
   <fis,fis,>8->( <g g,>) s4 <cis cis,>8->( <d d,>) s4 | %240
   <fis,fis,>8->( <g g,>) s4 <cis cis,>8->( <d d,>) s4 | %241
   \stemNeutral <d, d,>2-> d'\rest                     | %242
+  d2\rest <e'cis bes!g>4. <e cis bes g>8\<            | %243
+  <fis cis bes g>2_>\! <e cis bes g>4.<e cis bes g>8\<| %244
+  <fis cis bes g>2_>\! <e cis bes g>_>                | %245
+  <g~c,~a~d,_~>1->\arpeggio                           | %246
+  \bar ":"
+  <g c,~a~d,_~>1(                                     | %247
+  <fis c a d,>1->)                                    | %248
+  \restDownTwo R1                                     | %249
+  g,,,1^>_~\( \stemDown                               | %250
+  \scaleDurations 16/21 { g16 a bes c d e fis
+     g a bes c d e fis g a bes c d e fis }            | %251
+  \slurDown \tupletDown
+  g8-.->\) \stemUp d,\rest d4\rest <g,g,>4.( <g g,>8  | %252
+  <g g,>2) \tuplet 6/4 { d'8\rest d,( g a c bes }     | %253
+  bes8_.) d\rest d4\rest g,,2~\(                      | %254
+  \scaleDurations 16/28 { g16[ a bes c d e fis g
+     a bes c d e fis g a bes \clef treble c d e fis
+     g a bes c d e fis] } \stemNeutral \tupletUp      | %255
+  g8-.\) b,\rest b4\rest \clef bass <g,,g,>4.(<g g,>8 | %256
+  <g g,>2) \tuplet 6/4 { d'8\rest d^( g bes ees d }   | %257
+  d8-.) d,\rest d4\rest \tuplet 3/2 {  \acciaccatura 
+     {bes,8} <bes bes'>4_^ \acciaccatura { b8 } <b b'>4_^
+     \acciaccatura { c8 } <c c'>4_^ }                 | %258
+  \tuplet 3/2 { \acciaccatura { cis8 } <cis cis'>4_^ 
+     \acciaccatura { d8 }<d d'>4_^ \acciaccatura { dis8 } 
+     <dis dis'>4_^ \acciaccatura { e8 } <e e'>4_.
+     <f f'>_.  <fis fis'>_. }                         | %259
+  \tuplet 3/2 { 
+  }
 }
 
 lowerTwo = \relative c {
@@ -1067,7 +1114,11 @@ breaks = {
   \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 52 (228-232)
   \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 53 (233-237)
   \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 54 (238-242)
-%  \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 55 (243-246)
+  \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 55 (243-246)
+  \repeat unfold 2 { s1 \mNoBreak } s1 \mBreak        % line 56 (247-249)
+  \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 57 (250-254)
+  \repeat unfold 2 { s1 \mNoBreak } s1 \mBreak        % line 58 (255-257)
+  \repeat unfold 6 { s1 \mNoBreak } s1 \mBreak        % line 59 (258-263)
 }
 
 lowerStaff = <<
@@ -1399,6 +1450,8 @@ pedal = {
  s16 s8.\sustainOn s16 s8.\sustainOff s4.\sustainOn s8\sustainOff    | %235
  s16 s8.\sustainOn s16 s8.\sustainOff s4..\sustainOn s16\sustainOff  | %236
  s16 s8.\sustainOn s16 s8.\sustainOff s4..\sustainOn s16\sustainOff  | %237
+ s1\sustainOn                                                        | %238
+ s2. s8 s32 s16.\sustainOff                                          | %239
 }
 
 pedalTwo = {
