@@ -376,8 +376,9 @@ upperOne =  \relative c {
   s4 <d bes g>8->( d,) \staffDown s4 <d bes g>8->( d,)\)            | %239
   s4 \allowTextScriptInStaff <e'bes g>8->(^\sempreFF d,) s4 <e'bes g>8->( d,)  | %240
   s4 <e'bes g>8->( d,) s4 <e'bes g>8->( d,)                         | %241
+  \tupletDown
   \staffUp b''2\rest \tuplet 6/4 2 { g,8\([ gis a bes b c]          | %242
-  \tupletDown \stemNeutral cis8[ d ees e f fis]  g[ gis a bes b c!] | %243
+  \stemNeutral cis8[ d ees e f fis]  g[ gis a bes b c!]             | %243
   \tupletUp cis8[ d ees e f fis]  g[ gis a bes b c!]                | %244
   cis8[ d ees e f fis] \ottava #1 g[ gis a bes b cis]\) }           | %245
   %\set subdivideBeams = ##t
@@ -396,13 +397,29 @@ upperOne =  \relative c {
      \staffUp d e fis g a bes c d e fis)  }                         | %251
   g8-. \stemNeutral b,\rest b4\rest \clef bass<bes,g d>4.(-\riten
      <bes g d>8                                                     | %252
+  \hideTupletBracket
   <bes g d>2) \tuplet 6/4 { d,8\rest-\accel d[( g a c bes] }        | %253
   bes8-.) d,\rest d4\rest bes2~\(                                   | %254
   \scaleDurations 16/28 { bes16[ c d e fis g a bes \clef treble
      c d e fis g a bes c d e fis g a bes c d e fis g a] }           | %255
   bes8-.\) b,,\rest b4\rest \clef bass <d,bes g d>4.(-\riten
      <d bes g d>8 \tupletDown                                       | %256
-  <d bes g d>2) \clef treble \tuplet 6/4 { b'8\rest d,[g bes ees d]}| %257
+  <d bes g d>2) \clef treble \tuplet 6/4 { b'8\rest d,[(g bes ees d]}| %257
+  d8-.) b\rest b4\rest \tuplet 3/2 { \ottava #1 \slurDown
+     \acciaccatura { \stemUp e''8 } \stemDown <e e,>4-^
+     \acciaccatura { \stemUp ees8 } \stemDown <ees ees,>4-^
+     \acciaccatura { \stemUp d8 } \stemDown <d d,>4-^ }             | %258
+  \hideTupletNumber
+  \tuplet 3/2 {  \acciaccatura { \stemUp cis8 } \stemDown <cis cis,>4-^
+     \acciaccatura { \stemUp c8 } \stemDown <c c,>4-^ \acciaccatura
+     { \stemUp b8 } \stemDown <b b,>4-^ \acciaccatura {\stemUp bes8}
+     \stemDown <bes bes,>4-. <a a,>-. <aes aes,>-. \ottava #0       | %259
+  <g g,>4-. <fis fis,>-. <f f,>-. <e e,>-. <ees ees,>-.<d d,>-.     | %260
+  <cis cis,>4-. <c c,>-. <b b,>-. <bes bes,>-.<a a,>-. <aes aes,>-.}| %261
+  <g g,>2-. b,\rest                                                  | %262
+  \ottava #1 <bes''g d bes>1-^ \ottava #0                           | %263
+  g,,,1\fermata                                                     | %264
+  \bar "|."
 }
 
 upperTwo =  \relative c' {
@@ -937,6 +954,7 @@ lowerOne = \relative c, {
      g a bes c d e fis g a bes c d e fis }            | %251
   \slurDown \tupletDown
   g8-.->\) \stemUp d,\rest d4\rest <g,g,>4.( <g g,>8  | %252
+  \hideTupletBracket
   <g g,>2) \tuplet 6/4 { d'8\rest d,( g a c bes }     | %253
   bes8_.) d\rest d4\rest g,,2~\(                      | %254
   \scaleDurations 16/28 { g16[ a bes c d e fis g
@@ -947,12 +965,18 @@ lowerOne = \relative c, {
   d8-.) d,\rest d4\rest \tuplet 3/2 {  \acciaccatura 
      {bes,8} <bes bes'>4_^ \acciaccatura { b8 } <b b'>4_^
      \acciaccatura { c8 } <c c'>4_^ }                 | %258
+  \hideTupletNumber
   \tuplet 3/2 { \acciaccatura { cis8 } <cis cis'>4_^ 
      \acciaccatura { d8 }<d d'>4_^ \acciaccatura { dis8 } 
      <dis dis'>4_^ \acciaccatura { e8 } <e e'>4_.
      <f f'>_.  <fis fis'>_. }                         | %259
-  \tuplet 3/2 { 
-  }
+  \tuplet 3/2 { <g g'>4_.<fis fis'>_.<f f'>_.<e e'>_.
+     <ees ees'>_.<d d'>_.                             | %260
+  <cis cis'>4_.<c c'>_.<b b'>_.<bes bes'>_.<a a'>_.
+     <aes aes'>_. }                                   | %261-end tuplets
+  <g g'>2_. d''\rest                                  | %262
+  <g'd g,>1-^                                         | %263
+  <g,,g,>1\fermata                                    | %264
 }
 
 lowerTwo = \relative c {
@@ -1248,8 +1272,26 @@ dynamics = {
   \repeat unfold 3 { s1 | }                             %231-233
   s4\ff s2.\<                                         | %234
   s16 s8.\! s2.                                       | %235
-  s8 s4.\< s2                     
-  s16 s8.\! s2.                                       
+  s8 s4.\< s2                                         | %236
+  s16 s8.\! s2.                                       | %237
+  \repeat unfold 5 { s1 | }                             %238-242
+  s2 s2\<                                             | %243
+  s2 s2\cresc                                         | %244
+  s2 s4... s32\fz                                     | %245
+  \repeat unfold 4 { s1 | }                             %246-249
+  s1-\conForza                                        | %250
+  s8 s4.\< s4... s32\fz                               | %251
+  s2 s2-\pPesante                                     | %252
+  s2 s8 s4.-\forteTxt                                 | %253
+  s2 s2-\sfSforzato                                   | %254
+  s2\< s4... s32\!                                    | %255
+  s2-\fzText s8 s4.-\pianoTxt                         | %256
+  s2 s8 s4.-\forteTxt                                 | %257
+  \pocoRitenSpanner s4 s4.^\fffTxt s4.\startTextSpan  | %258
+  s2 s8\stopTextSpan s4.^\accelerando                 | %259
+  s2 s2\<                                             | %260
+  s1                                                  | %261
+  s16 s4..\! s2                                       | %262
 } 
 
 pedal = {
@@ -1452,6 +1494,21 @@ pedal = {
  s16 s8.\sustainOn s16 s8.\sustainOff s4..\sustainOn s16\sustainOff  | %237
  s1\sustainOn                                                        | %238
  s2. s8 s32 s16.\sustainOff                                          | %239
+ \repeat unfold 6 { s1 | }                                             %240-245
+ s1\sustainOn                                                        | %246
+ s1                                                                  | %247
+ s4... s32\sustainOff s2                                             | %248
+ \repeat unfold 3 { s1 | }                                             %249-251
+ s4.. s16\sustainOn s2                                               | %252
+ s2 s128\sustainOff s4.....                                          | %253
+ s1                                                                  | %254
+ s1                                                                  | %255
+ s4.. s16\sustainOn s2                                               | %256
+ s2\sustainOff s2                                                    | %257
+ \repeat unfold 4 { s1 | }                                             %258-261
+ s64 s4....\sustainOn s2                                             | %262
+ s1                                                                  | %263
+ s2. s4\sustainOff                                                   | %264
 }
 
 pedalTwo = {

@@ -33,6 +33,10 @@ prestoConFuoco = \markup \huge \bold \center-align "Presto con fuoco."
 fPesante = \markup \concat { \dynamic "f" \italic \larger "  pesante" }
 pDolce = \markup \concat { \dynamic "p" \italic \larger " dolce" }
 ffz = \markup { \center-align \dynamic "ffz" }
+forteTxt = \markup \dynamic "f"
+fzText = \markup \dynamic "fz"
+pianoTxt = \markup \dynamic "p"
+fffTxt = \markup \dynamic "fff"
 dimTxt = \markup \italic \larger "dim."
 espressTxt = \markup \italic \larger "espress."
 tenutoTxt = \markup \italic \larger "tenuto"
@@ -41,10 +45,13 @@ aTempo = \markup \italic \larger "a tempo"
 agitato = \markup \italic \larger "agitato"
 leggiero = \markup \italic \larger "leggiero"
 conForza = \markup \italic \larger "con forza"
+pPesante = \markup { \dynamic "p" \italic \smaller "(pesante)" }
+sfSforzato = \markup { \dynamic "fz" \musicglyph #"scripts.sforzato" }
 crescTxt = \markup \italic \larger "cresc."
 crescTiny = \markup \italic \small "cresc."
 riten = \markup \italic \larger "riten."
 accel = \markup \italic \larger "accel."
+accelerando = \markup \italic \larger "accelerando"
 smorzTxt = \markup \italic "smorz."
 sPiuMosso = \markup \italic \larger "sempre più mosso"
 appassPiuForte = \markup \override #'(baseline-skip . 1.7) \column { \italic \larger { "   appassionato" "il più forte possibile" } }
@@ -111,6 +118,11 @@ sforzatoSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \concat { \dynamic "sf" \musicglyph #"scripts.sforzato"  } }
   \override TextSpanner #'(bound-details left-broken text) = ##f
 }
+pocoRitenSpanner = {
+  \override TextSpanner #'(bound-details left text) = \markup { \italic \larger "poco riten." }
+  \override TextSpanner #'(bound-details left-broken text) = ##f
+}
+
 setRestDirDown = \override Rest #'direction = #down
 setRestDirUp = \override Rest #'direction = #up
 doubleSlursOn = \set doubleSlurs = ##t
@@ -140,6 +152,10 @@ subdivideBeamTwo = {
   \set subdivideBeams = ##t
   %\set baseMoment = #(ly:make-moment 1/4)
 }
+
+hideTupletNumber = \override TupletNumber.transparent = ##t
+hideTupletBracket = \override TupletBracket.bracket-visibility = ##f
+
 subdivideLenghtHalf = \set baseMoment = #(ly:make-moment 1/2)
 subdivideLenghtFourth = \set baseMoment = #(ly:make-moment 1/4)
 subdivideLenghtEigth = \set baseMoment = #(ly:make-moment 1/8)
