@@ -186,9 +186,23 @@ halfNotehead = {
 }
 smallNotehead = \once \override NoteHead.font-size = #-3
 
-dynLeft = {
-  \once \override DynamicText.self-alignment-X = 2.5
+dynLeft = { \once \override DynamicText.self-alignment-X = 2.5 }
+
+shpSlurA = \shape #'((-0.4 . 3) (3 . 2) (0 . 0) (0.5 . 0.5)) PhrasingSlur
+shpSlurB = \shape #'((-0.4 . 0.2) (1.0 . 1.0) (-0.8 . 1.1) (0 . 0)) Slur
+shpSlurC = \shape #'((-0.6 . -0.5) (3 . 3) (0 . 0) (-0.7 . -1.6)) PhrasingSlur
+shpSlurD = \shape #'(( 0.3 . 1.0) (0.5 . 1.5) (0 . 0.5) (0 . 0.3)) Slur
+shpSlurE = \shape #'( ((-0.3 . 0.4) (1 . -0.4) (0 . 1) (0 . 1.6)) 
+                      ((-0.9 . 1.4) (0 . 1.4) (1 . 1.2) (0.5 . -1.6)) )PhrasingSlur
+
+posHairpinA = {
+            \once \override Hairpin.rotation = #'( 1.6 -1 0 )
+            \once \override Hairpin.extra-offset = #'( 0 . 0.4 )
+            \once \override Hairpin.padding = 0.0
 }
+posScriptA = \once \override TextScript.extra-offset = #'( 0 . -1.5 )
+
+noPadScript = \once \override TextScript.padding = 0.0
 
 ignoreClashOnce = \once \override NoteColumn.ignore-collision = ##t
 

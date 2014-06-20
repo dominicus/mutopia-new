@@ -57,18 +57,20 @@ upperOne =  \relative c {
   \setRestDirUp
   \time 4/4 \tempoLargo \hideTempo
   \trebleToBass
-  \stemNeutral
+  \stemNeutral \shpSlurA \shpSlurB
   c2-\hideF(\(_~^\lentoLegend c8 ees aes bes              | % 1
   \clef treble
-  c8) aes_( ees' bes'  c) aes( ees' bes'                  | % 2
+  c8) \shpSlurD aes_( ees' bes'  c) aes( ees' bes'        | % 2
   c8) g( bes aes  g4 fis8)\) b,8\rest                     | % 3
-  b8\rest fis'(^\(-\hideP g fis  eis) fis( \times 2/3 { a g ees) } | % 4
+  b8\rest \shpSlurE fis'(^\(-\hideP g fis  eis) fis(
+     \times 2/3 { a g ees) }                              | % 4
   ees8. d16 \times 2/3 { f!8 ees d\) } d4 b\rest          | % 5
   \stemNeutral b2\rest^\espressTxt c4.\( g8               | % 6
   bes1~                                                   | % 7
    \time 6/4 \tempoMod
   bes2.^\moderatoLegend b8\rest \stemDown \hideNotes c,8_~
-     \unHideNotes \shiftOnn \moveNoteOne c2-\hideMF       | % 8
+     \unHideNotes \shiftOnn \moveNoteOne \shortStemOne
+     c2-\hideMF                                           | % 8
   \stemUp g'2.\) d'(                                      | % 9
   c2.) b8\rest \stemDown \hideNotes c,8\(_~ \unHideNotes 
      \moveNoteOne c2                                      | %10
@@ -665,13 +667,15 @@ upperStaff =  <<
 lowerOne = \relative c, {
   \time 4/4
   \setRestDirDown
-  c2-\hideF\(_~ c8 ees aes bes                  | % 1
-  c8 aes ees' bes' \clef treble  c aes ees' bes'| % 2
+  \shpSlurC c2-\hideF\(_~ c8 ees aes bes        | % 1
+  c8_[ aes ees'bes'] \clef treble c aes ees'bes'| % 2
   c8 g bes aes  g4 fis8\) b8\rest               | % 3
-  b8\rest fis8_\(-\hideP g fis  eis fis \times 2/3 { a g ees }  | % 4
-  ees8. d16 \times 2/3 { f!8 ees d\) } d4 \staffDown b'\rest | %5
+  b8\rest fis8_\(-\hideP g fis  eis fis 
+     \tupletDown \times 2/3 { a g ees }         | % 4
+  ees8. d16 \tupletUp \times 2/3 { f!8 ees d\) }
+     d4 \staffDown b'\rest                      | % 5
   \clef bass
-  d,,2\rest <c' g ees>2(^>                      | % 6
+  d,,2\rest \stemDown <c' g ees>2(^>            | % 6
   <ees g,d>1\arpeggio)\sustainOn                | % 7
    \bar "||" \time 6/4 \stemNeutral
   d,2.\rest\sustainOff d,4-. d'\rest d\rest     | % 8
@@ -1153,9 +1157,9 @@ lowerStaff = <<
 
 dynamics = {
   s4-\fPesante s8 s8 s2                               | % 1
-  s4 s2-\dimTxt s4\>                                  | % 2
+  s4 \noPadScript s2-\dimTxt \posHairpinA s4\>        | % 2
   s2. s4\!                                            | % 3
-  s8 s8\p s2.                                         | % 4
+  s8 \posScriptA s8-\p s2.                            | % 4
   s1                                                  | % 5
   s4. s8\p s4. s8\<                                   | % 6
   s2. s8 s8\!                                         | % 7
