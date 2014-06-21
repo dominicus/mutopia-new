@@ -24,7 +24,7 @@ tempoAgitato = \tempo 4 = 80
 hideTempo = \set Score.tempoHideNote = ##t
 
 lentoLegend = \markup \huge \right-align \bold \raise #1.5 "Lento."
-moderatoLegend = \markup \center-align \huge \bold "     Moderato."
+moderatoLegend = \markup \center-align \huge \bold "         Moderato."
 menoMossoLegend = \markup { \override #'(baseline-skip . 2.0) 
   \left-column { \huge \bold "Meno mosso."
   \italic \large "              sotto voce" }
@@ -167,7 +167,7 @@ restDownTwo = \once \override MultiMeasureRest.staff-position = #-4
 
 alignBeamOne = \once \override Beam.positions = #'(-1.2 . -1.2)
 
-moveNoteOne = \once \override NoteColumn #'force-hshift = #1.0
+moveNoteOne = \once \override NoteColumn #'force-hshift = #0.8
 moveNoteTwo = \once \override NoteColumn #'force-hshift = #1.5
 moveNoteTre = \once \override NoteColumn #'force-hshift = #-0.7
 moveNoteQtr = \once \override NoteColumn #'force-hshift = #2.0
@@ -176,6 +176,9 @@ moveNoteSix = \once \override NoteColumn #'force-hshift = #0.3
 moveNoteSep = \once \override NoteColumn #'force-hshift = #1.3
 
 shortStemOne = \once \override Stem.length-fraction = #(magstep -4)
+shortStemTwo = \once \override Stem.length-fraction = #(magstep -3)
+shortStemTre = \override Stem.length-fraction = #(magstep -3)
+shortStemRev = \revert Stem.length-fraction
 
 slashFlag = \once \override Flag.stroke-style = #"grace"
 hideAccidental = \once \override Voice.Accidental.stencil = ##f
@@ -193,13 +196,40 @@ shpSlurB = \shape #'((-0.4 . 0.2) (1.0 . 1.0) (-0.8 . 1.1) (0 . 0)) Slur
 shpSlurC = \shape #'((-0.6 . -0.5) (3 . 3) (0 . 0) (-0.7 . -1.6)) PhrasingSlur
 shpSlurD = \shape #'(( 0.3 . 1.0) (0.5 . 1.5) (0 . 0.5) (0 . 0.3)) Slur
 shpSlurE = \shape #'( ((-0.3 . 0.4) (1 . -0.4) (0 . 1) (0 . 1.6)) 
-                      ((-0.9 . 1.4) (0 . 1.4) (1 . 1.2) (0.5 . -1.6)) )PhrasingSlur
+                      ((-0.9 . 1.4) (0 . 1.2) (1 . 1.0) (0.5 . -1.6)) )PhrasingSlur
+shpSlurF = \shape #'(( 0.3 . 0.8) (0.5 . 1.3) (-0.5 . 1.3) (0 . 0.8)) Tie
+shpSlurG = \shape #'((0 . -1.0) (0 . 0) (-2.0 . 2.0) (0 . 0.5)) PhrasingSlur
+shpSlurH = {  \shape #'((-1.2 . 0) (-0.5 . -0.4) (0.6 . -0.2) (0.7 . 0)) Tie
+              \shape #'( ((0 . 3) (0 . 3.5) (-1.0 . 5.5) (0.7 . 5.8)) 
+                         ((0 . 3) (0 . 3) (0.5 . 2.6) (0.5 . 2.4)) ) PhrasingSlur }
+shpSlurI = \shape #'(( 0 . 0.3) (0 . 0.3) (0 . 0.3) (0 . 0.3)) Slur
+shpSlurJ = \shape #'(( 0 . -0.6) (0 . -0.8) (0 . -0.8) (-0.2 . -0.6)) Slur
+shpSlurK = \shape #'(( 0 . -2.3) (0 . -2.3) (0 . -2.3) (0 . -2.3)) Slur
+shpSlurL = \shape #'(( 0 . -1.9) (0 . -1.9) (0 . -1.9) (0 . -1.9)) Slur
+shpSlurM = \shape #'((-1.2 . 0) (-0.5 . -0.4) (0.6 . -0.2) (0.7 . 0)) Tie
+shpSlurN = { \shpSlurM \shape #'((-0.3 . 3.2) (0 . 3.2) (-1.0 . 3.5) (0.7 . 2.6)) Slur }
+shpSlurO = \shape #'(( 0 . 1.2) (0 . 2.0) (-2.0 . 2.0) (0 . -1.6)) Slur
+shpSlurP = \shape #'( ((0 . -0.4) (0 . -0.4) (0 . -0.4) (0 . 0)) 
+                      ((0 . 2.3) (0 . 2.6) (0.5 . 2.6) (0.5 . 2.4)) )PhrasingSlur
+shpSlurQ = \shape #'((0 . -0.4) (0 . -0.6) (0 . -0.6) (0 . -0.3)) Slur
+shpSlurR = {  \shpSlurM
+              \shape #'( ((0 . 3) (0 . 3.5) (-1.0 . 5.5) (0.7 . 5.8)) 
+                         ((-2.3 . 0.3) (1 . 1.8) (-1.5 . -1.3) (-0.6 . -3.2)) ) PhrasingSlur }
+shpSlurS = \shape #'((0 . -0.4) (0 . 0.6) (-1 . 0.6) (-0.4 . -1.2)) PhrasingSlur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
             \once \override Hairpin.extra-offset = #'( 0 . 0.4 )
             \once \override Hairpin.padding = 0.0
 }
+posHairpinB = \once \override Hairpin.extra-offset = #'( -3.0 . 1 )
+posHairpinC = {
+            \once \override Hairpin.extra-offset = #'( -0.4 . 1 )
+            \once \override Hairpin.padding = 0.0
+}
+
+posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
+
 posScriptA = \once \override TextScript.extra-offset = #'( 0 . -1.5 )
 
 noPadScript = \once \override TextScript.padding = 0.0

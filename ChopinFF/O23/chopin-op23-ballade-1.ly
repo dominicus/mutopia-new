@@ -65,31 +65,31 @@ upperOne =  \relative c {
   b8\rest \shpSlurE fis'(^\(-\hideP g fis  eis) fis(
      \times 2/3 { a g ees) }                              | % 4
   ees8. d16 \times 2/3 { f!8 ees d\) } d4 b\rest          | % 5
-  \stemNeutral b2\rest^\espressTxt c4.\( g8               | % 6
-  bes1~                                                   | % 7
+  \stemNeutral b2\rest^\espressTxt \shpSlurG c4.\( g8     | % 6
+  \shpSlurF bes1~                                         | % 7
    \time 6/4 \tempoMod
-  bes2.^\moderatoLegend b8\rest \stemDown \hideNotes c,8_~
-     \unHideNotes \shiftOnn \moveNoteOne \shortStemOne
-     c2-\hideMF                                           | % 8
+  bes2.^\moderatoLegend b8\rest \stemDown \hideNotes
+     \shpSlurM c,8_~ \unHideNotes \shiftOnn \moveNoteOne
+     \shortStemTwo c2-\hideMF                             | % 8
   \stemUp g'2.\) d'(                                      | % 9
-  c2.) b8\rest \stemDown \hideNotes c,8\(_~ \unHideNotes 
-     \moveNoteOne c2                                      | %10
-  \stemUp g'2.\) e(                                       | %11
-  fis2.) b8\rest \stemDown \hideNotes c,8_~^( \unHideNotes 
-     \moveNoteOne c2                                      | %12
+  c2.) b8\rest \stemDown \hideNotes \shpSlurH c,8\(_~ 
+     \unHideNotes \moveNoteOne c2                         | %10
+  \stemUp g'2.\) \shpSlurJ e(                             | %11
+  fis2.) b8\rest \stemDown \hideNotes \shpSlurN c,8^(_~
+     \unHideNotes \moveNoteOne c2                         | %12
   \stemUp g'2.) g'(                                       | %13
-  f2.) \stemDown ees,(                                    | %14
-  \stemUp cis'2. d)\(                                     | %15
-  c!2.\) b8\rest \stemDown \hideNotes c,8_~^( \unHideNotes
-     \moveNoteOne c2                                      | %16
+  f2.) \stemDown \shpSlurO ees,(                          | %14
+  \stemUp cis'2. \shpSlurP d)\(                           | %15
+  c2.\) b8\rest \stemDown \hideNotes \shpSlurN c,8_~^( 
+     \unHideNotes \moveNoteOne c2                         | %16
   \stemUp g'2.) d'(                                       | %17
-  c2.) b8\rest \stemDown \hideNotes c,8_~^( \unHideNotes
-     \moveNoteOne c2                                      | %18
-  \stemUp g'2.) e(                                        | %19
-  fis2.) b8\rest \stemDown \hideNotes c,8_~^\( \unHideNotes
-     \moveNoteOne c2                                      | %20
+  c2.) b8\rest \stemDown \hideNotes \shpSlurN c,8_~^(
+     \unHideNotes \moveNoteOne c2                         | %18
+  \stemUp g'2.) \shpSlurQ e(                              | %19
+  fis2.) b8\rest \stemDown \hideNotes \shpSlurR c,8_~^\(
+     \unHideNotes \moveNoteOne c2                         | %20
   \stemUp g'2. g'                                         | %21
-  g2.\)\( d                                               | %22
+  \shpSlurS g2.\)\( d                                     | %22
   c2. g\)\(                                               | %23
   g'2. d                                                  | %24
   c2. g                                                   | %25
@@ -431,19 +431,33 @@ upperTwo =  \relative c' {
   \time 6/4
   \mergeDifferentlyHeadedOn
   s2. s8 \stemUp c8-\hideP d fis bes a \stemDown              | % 8
-  b,4\rest <d bes>-.( <d bes>-.) b\rest <g'd>-.( <g d>-.)     | % 9
-  c,4\rest <g' ees>-.( <g ees>-.) s8 \stemUp c,8^> d fis bes a \stemDown   | %10
-  b,4\rest <d bes>-.( <d bes>-.) g,\rest <cis a g>-.( <cis a g>-.)  | %11
-  a4\rest <d a fis>-.( <d a fis>-.) s8 \stemUp c^> d fis bes a \stemDown | %12
+  \shortStemTre
+  b,4\rest \shpSlurI <d bes>-.( <d bes>-.) b\rest
+     \shpSlurI <g'd>-.( <g d>-.)                              | % 9
+  c,4\rest \shpSlurI <g' ees>-.( <g ees>-.) s8 
+     \stemUp c,8^> d fis bes a \stemDown                      | %10
+  \shortStemRev
+  b,4\rest <d bes>-.( <d bes>-.) g,\rest \shpSlurK 
+     <cis a g>-.( <cis a g>-.)                                | %11
+  a4\rest \shortStemTre <d a fis>-.( <d a fis>-.) \shortStemRev
+     s8 \stemUp c^> d fis bes a \stemDown                     | %12
 %------------ Schirmer, Breitkopf & Härtel, and Cortot: Bar13 5th and 6th beat:<des bes g>
-  b,4\rest <d bes>-.( <d bes>-.) g\rest <des'bes g>-.( <des bes g>-.)  | %13
-  g,4\rest <bes c>-.( <bes c>-.) \stemUp ees,8^>[ f a ees' d b16\rest cis]  | %14
-  e,4\rest \stemDown <a f ees>-.( <a f ees>-.) e\rest <bes' f d>-.( <bes f d>-.)   | %15
-  e,4\rest <g ees>-.( <g ees>-.) s8 c,^[^> d fis bes a]       | %16
-  a,4\rest <d bes>-.( <d bes>-.) c\rest <g'd>-.(<g d>-.)      | %17
-  c,4\rest <g'ees>-.(<g ees>-.) s8 c,^[ d fis bes a]          | %18
-  a,4\rest <d bes>-.(<d bes>-.) g,\rest <cis a g>-.(<cis a g>-.)  | %19
-  a4\rest <d a fis>-.( <d a fis>-.) s8 c^[ d fis bes a]       | %20
+  b,4\rest \shortStemTre \shpSlurI <d bes>-.( <d bes>-.) 
+     g\rest \shpSlurI <des'bes g>-.( <des bes g>-.)           | %13
+  g,4\rest \shpSlurK <bes c>-.( <bes c>-.) \shortStemRev
+     \stemUp \posBeamA ees,8^>[ f a ees' d b16\rest cis]      | %14
+  e,4\rest \stemDown \shpSlurL \shortStemTre <a f ees>-.( <a f ees>-.)
+     e\rest \shpSlurI <bes' f d>-.( <bes f d>-.) \shortStemRev| %15
+  e,4\rest \shortStemTre \shpSlurI <g ees>-.( <g ees>-.) 
+     \shortStemRev s8 c,^[^> d fis bes a]                     | %16
+  a,4\rest \shpSlurI \shortStemTre <d bes>-.( <d bes>-.)
+     c\rest \shpSlurI <g'd>-.( <g d>-.)                       | %17
+  c,4\rest \shpSlurI <g'ees>-.(<g ees>-.) s8 \shortStemRev
+     c,^[^> d fis bes a]                                      | %18
+  a,4\rest \shortStemTre <d bes>-.(<d bes>-.) g,\rest
+     \shpSlurK <cis a g>-.( <cis a g>-.)                      | %19
+  a4\rest \shpSlurI <d a fis>-.( <d a fis>-.) \shortStemRev
+     s8 c^>^[ d fis bes a]                                    | %20
   a,4\rest <f'!d b>4-.( <f d b>-.) g\rest <d'b g f>-.( <d b g f>-.)  | %21
   a4\rest <ees'c g>-.( <ees c g>-.) e,\rest <g d>-.( <g d>-.) | %22
   c,4\rest <g'c,>-.( <g c,>-.) b,\rest <d bes>-.( <d bes>-.)  | %23
@@ -678,17 +692,18 @@ lowerOne = \relative c, {
   d,,2\rest \stemDown <c' g ees>2(^>            | % 6
   <ees g,d>1\arpeggio)\sustainOn                | % 7
    \bar "||" \time 6/4 \stemNeutral
-  d,2.\rest\sustainOff d,4-. d'\rest d\rest     | % 8
+  d,2.\rest\sustainOff d,4_.^\pDolce d'\rest d\rest     | % 8
   d4\rest g,_._( g_.) d'\rest bes'-.( bes-.)    | % 9
   d,4\rest <c'a>-.( <c a>-.) d,\rest d,_._( d_.)| %10
   d'4\rest g,_._( g_.) d'\rest a_._( a_.)       | %11
-  d4\rest d,_._( d_.) d'\rest d-.( d-.)         | %12
-  d4\rest g,_._( g_.) d'\rest e'-.( e-.)        | %13
-  d,4\rest f'-.( f-.) d,\rest f,_._( f_.)       | %14
+  d4\rest \shpSlurI d,_._( d_.) d'\rest d-.(d-.)| %12
+  d4\rest \shpSlurI g,_._(g_.) d'\rest e'-.(e-.)| %13
+  d,4\rest f'-.(f-.)d,\rest \shpSlurI f,_._(f_.)| %14
   d'4\rest bes_._( bes_.) d\rest bes'-.( bes-.) | %15
-  d,4\rest a'^.^( a^.) d,\rest d,_._( d_.)      | %16
+  d,4\rest a'^.^( a^.) d,\rest \shpSlurI d,_._( d_.)                   | %16
   d'4\rest g,_._( g_.) d'\rest bes'-.( bes-.)   | %17
-  d,4\rest <c'a>-.( <c a>-.) d,\rest d,_._( d_.)| %18
+  d,4\rest <c'a>-.( <c a>-.) d,\rest 
+     \shpSlurI d,_._( d_.)                      | %18
   d'4\rest g,_._( g_.) d'\rest a_._( a_.)       | %19
   d4\rest d,_._( d_.) d'\rest d-.( d-.)         | %20
   d4\rest g-.( g-.) d\rest g,_._( g_.)          | %21
@@ -1161,9 +1176,9 @@ dynamics = {
   s2. s4\!                                            | % 3
   s8 \posScriptA s8-\p s2.                            | % 4
   s1                                                  | % 5
-  s4. s8\p s4. s8\<                                   | % 6
+  s4. s8\p s4. \posHairpinC s8\<                      | % 6
   s2. s8 s8\!                                         | % 7
-  s2.\> s8\! s2-\pDolce s8                            | % 8
+  \posHairpinB s2.\> s8\! \noPadScript s2 s8  | % 8
   \repeat unfold 12 { s1. | }                         | % 9-20
   s4 s1\< s4                                          | %21
   s8\! s8\> s2 s2.\!                                  | %22
