@@ -73,10 +73,16 @@ tenTxt = \markup { \center-align  \italic "  ten." }
 sharpPrall = \markup \override #'(baseline-skip . 1.7) \center-column { \teeny \musicglyph #"accidentals.sharp" \musicglyph #"scripts.prall" }
 
 ritenSpanner = {
-  \override TextSpanner #'(bound-details left text) = \markup { \italic "ritenuto" }
+  \override TextSpanner #'(bound-details left text) = \markup { \italic "ritenuto    " }
   \override TextSpanner #'(bound-details left-broken text) = ##f
-  \once \override TextSpanner #'bound-details #'right #'padding = #4.0
-  \once \override TextSpanner #'bound-details #'right-broken #'padding = #0.5
+  \override TextSpanner #'(bound-details left stencil-align-dir-y) = #CENTER
+  \override TextSpanner.dash-fraction = #0.04
+  \override TextSpanner.dash-period = #14.0
+  \override TextSpanner.avoid-slur = #'inside
+  \override TextSpanner.outside-staff-priority = ##f
+  \override TextSpanner.staff-padding = 3.0
+  \override TextSpanner #'bound-details #'right #'padding = #4.0
+  \override TextSpanner #'bound-details #'right-broken #'padding = #0.5
 }
 menoFSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "poco  a  poco  meno  " \dynamic "f" }
@@ -178,6 +184,7 @@ moveNoteSep = \once \override NoteColumn #'force-hshift = #1.3
 shortStemOne = \once \override Stem.length-fraction = #(magstep -4)
 shortStemTwo = \once \override Stem.length-fraction = #(magstep -3)
 shortStemTre = \override Stem.length-fraction = #(magstep -3)
+shortStemQtr = \override Stem.length-fraction = #(magstep -2)
 shortStemRev = \revert Stem.length-fraction
 
 slashFlag = \once \override Flag.stroke-style = #"grace"
@@ -216,6 +223,25 @@ shpSlurR = {  \shpSlurM
               \shape #'( ((0 . 3) (0 . 3.5) (-1.0 . 5.5) (0.7 . 5.8)) 
                          ((-2.3 . 0.3) (1 . 1.8) (-1.5 . -1.3) (-0.6 . -3.2)) ) PhrasingSlur }
 shpSlurS = \shape #'((0 . -0.4) (0 . 0.6) (-1 . 0.6) (-0.4 . -1.2)) PhrasingSlur
+shpSlurT = \shape #'((0.5 . 0.8) (0.5 . 0.8) (1 . 1) (0.6 . 2)) Slur
+shpSlurU = \shape #'( ((0 . -2) (3 . 1.8) (1 . 1.8) (0 . -0.2)) 
+                      ((-2.0 . 4.0) (-1 . 3.7) (0.5 . 2.8) (0.0 . 2.6)) )PhrasingSlur
+shpSlurV = \shape #'((-0.3 . 1.4) (0 . 1.3) (0 . 0.6) (0 . 0)) PhrasingSlur
+shpSlurW = \shape #'((0.2 . 0.6) (0 . 0.8) (0 . 0.5) (0 . 0.3)) Slur
+shpSlurX = \shape #'((-0.2 . -1.9) (1 . -0.5) (-2 . 1) (0 . -0.6)) PhrasingSlur
+shpSlurY = \shape #'((0 . 0.3) (5 . -2) (-5 . -2) (0.6 . 0.6)) PhrasingSlur
+shpSlurZ = \shape #'( ((-0.5 . 0.0) (3 . -1.5) (-5 . -1.2) (0.0 . 0.7))
+                      ((0 . 0.5) (1 . -0.5) (-1 . -0.5) (0.4 . 0.4)) ) PhrasingSlur
+shpSlurAA = \shape #'( ((-0.9 . 0.7) (0 . 1.3) (-1 . 0.3) (0.0 . -1.5))
+                       ((-3.2 . 0.2) (0 . 3.5) (-1.0 . 1) (0.4 . -1.0))
+                       ((0.3 . 0.8) (0.3 . 0.4) (0.4 . 0.2) (0 . 0)) ) PhrasingSlur
+shpSlurAB = { \shape #'((-0.4 . -0.4) (0 . 1) (0 . 1.4) (0 . 0.6)) PhrasingSlur
+              \shape #'((0.3 . 0) (0.3 . 0.4) (-0.3 . 0.4) (-0.2 . 0)) Tie }
+shpSlurAC = \shape #'((-0.3 . 0.6) (0 . 0.8) (0 . 0.9) (0.6 . 0.6)) Slur
+shpSlurAD = \shape #'((-1.2 . 0.2) (-0.3 . 0.7) (0.3 . 0.7) (1.1 . 0.3)) Tie
+shpSlurAE = \shape #'((-1.2 . 0.4) (-0.6 . 1.2) (0.6 . 1.2) (1.1 . 0.6)) Tie
+shpSlurAF = \shape #'((-0.3 . 0) (0 . 0.1) (0 . 0.5) (0.6 . 0)) Slur
+shpSlurAG = \shape #'((-1.4 . 0.8) (-1.3 . 1.3) (-0.2 . 1.3) (0 . 0.9)) Tie
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -227,10 +253,51 @@ posHairpinC = {
             \once \override Hairpin.extra-offset = #'( -0.4 . 1 )
             \once \override Hairpin.padding = 0.0
 }
+posHairpinD = {
+            \once \override Hairpin.rotation = #'( -1.6 -1 0 )
+            \once \override Hairpin.extra-offset = #'( 0 . -1.0 )
+            \once \override Hairpin.padding = 0.0
+            \once \override Hairpin.height = 0.45
+}
+posHairpinE = {
+            \once \override Hairpin.extra-offset = #'( 1 . -1 )
+            \once \override Hairpin.padding = 2.0
+}
+posHairpinF = {
+            \once \override Hairpin.rotation = #'( 1.0 -1 0 )
+            \once \override Hairpin.extra-offset = #'( 0 . -0.6 )
+            \once \override Hairpin.padding = 0.3
+}
+posHairpinG = {
+            \once \override Hairpin.height = 0.49
+            \once \override Hairpin.padding = 0.0
+}
+posHairpinH = {
+            \override Beam.positions = #'( -2.6 . -1.7 )
+            \override Hairpin.rotation = #'( 4.0 -1 0 )
+            \override Hairpin.height = 0.42
+            \override Hairpin.padding = 0
+}
+posHairpinHrvt = {
+            \revert Beam.positions
+            \revert Hairpin.rotation
+            \revert Hairpin.height
+            \revert Hairpin.padding
+}
+posHairpinI = \once \override Hairpin.extra-offset = #'( 0 . 0.3 )
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
+posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
 
 posScriptA = \once \override TextScript.extra-offset = #'( 0 . -1.5 )
+posScriptB = \once \override Script.extra-offset = #'( 0.2 . -0.7 ) 
+posScriptC = \once \override TextScript.extra-offset = #'( 0.5 . 0.6 )
+posScriptD = \once \override Script.extra-offset = #'( 0.3 . -0.4 )
+posScriptE = \once \override TextScript.extra-offset = #'( -0.3 . -1.3 )
+posScriptF = \once \override TextScript.extra-offset = #'( 0 . -0.3 )
+
+posPedalD = \override SustainPedal.extra-offset = #'(0 . 1.0 )
+posPedalRev = \revert SustainPedal.extra-offset
 
 noPadScript = \once \override TextScript.padding = 0.0
 
