@@ -266,6 +266,13 @@ shpSlurAW = {
          \once \override Slur.padding = 0.0 }
 shpSlurAX = \shape #'((-0.6 . -0.5) (0 . 0) (-4 . 0.2) (-0.3 . -0.9)) PhrasingSlur
 shpSlurAY = \shape #'((-0.4 . 0.5) (2 . 0.9) (0 . 2) (0.4 . -1.6)) Slur
+shpSlurAZ = \shape #'((-0.8 . 1) (0 . 0.6) (0 . 0.6) (0.4 . 1)) Slur
+shpSlurBA = \shape #'((-0.6 . -0.7) (0 . 1) (0 . 1) (0.7 . -1)) Slur
+shpSlurBB = \shape #'( ((0 . 0.6) (0 . 0) (0 . -0.6) (-0.5 . -2.0))
+                      ((0 . 6) (1 . 5.5) (1.3 . 5.2) (1 . 3)) ) Slur
+shpSlurBC = \shape #'((0.6 . 2) (1 . 1) (0 . 0) (0 . 0)) Slur
+shpSlurBD = \shape #'((0.6 . 2) (0 . 0) (0 . -1) (-0.4 . -1.5)) Slur
+shpSlurBE = \shape #'((0 . 0.2) (0 . 0.8) (0 . 0.6) (0 . 0.4)) Slur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -318,6 +325,7 @@ posHairpinK = {
             \once \override Hairpin.extra-offset = #'( 0 . -3 )
             \once \override Hairpin.height = 0.5
 }
+posHairpinL = \once \override Hairpin.extra-offset = #'( 0.8 . 0 )
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
