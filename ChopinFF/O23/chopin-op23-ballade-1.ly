@@ -98,9 +98,8 @@ upperOne =  \relative c {
   ees2. d\)                                               | %28
   d4\rest \acciaccatura {bes8} \shpSlurAA a4\( gis a bes c| %29
   c2. bes                                                 | %30
-  %--------------------------------------------ISSUE HERE: OBSCURED DOT!
-  \ritenSpanner a2.\startTextSpan a2~ a8 a                | %31
-  a2.\arpeggio ~ a2 \posScriptD a4->_~                    | %32
+  \ritenSpanner \posDottedA a2.\startTextSpan \shpSlurAH a2~ a8 a | %31
+  \shpSlurAI a2.\arpeggio ~ a2 \posScriptD a4->~          | %32
   a16 bes a gis \stemDown a g'! e f  f g'f e \cadenzaOne  | %33
    \mBreak \stemNeutral
   cis8\) b8\rest \shpSlurAB d2->\(~ d4 c g                | %34
@@ -108,17 +107,19 @@ upperOne =  \relative c {
   g4\)\stopTextSpan \stemUp \posScriptE bes'4^\aTempo s2 a4 s  | %36
   s4 bes4 s2 aes4 s                                       | %37
   s4 g s2 c,4 s                                           | %38
-  s4 ees s2 g,4^( <a fis>                                 | %39
-  <bes g>4)^\agitato <bes bes'>2 s4 <a a'>2               | %40
+  s4 ees s2 \shpSlurAJ \shortStemSix g,4^( \shortStemOne <a fis>        | %39
+  \posScriptI <bes g>4)^\agitato \shortStemCin <bes bes'>2 s4 <a a'>2   | %40
   s4 <bes bes'>2 s4 <aes aes'>2                           | %41
   s4 <g'g,>2 s4 <c,c,>2  \slurUp                          | %42
-  s4 <ees ees,>2 s4 <fis,fis,>2 (                         | %43
-  bes4-.) c,8(^\sPiuMosso bes a g  g'4-.) c,8\( bes a g   | %44
-  f'!8_> c ees fis,\< c' ees fis_[ c' f! ees d c]         | %45
-  g'4-.\)-\hideF c,8( bes a g  g'4-.) c,8\( bes a g       | %46
+  s4 <ees ees,>2 s4 \shpSlurAS <fis,fis,>2 (              | %43
+  \posScriptJ g4-.) \shpSlurAQ \posScriptL c,8(^\sPiuMosso 
+     bes a g \posScriptK g'4-.) \shpSlurAT c,8\( bes a g  | %44
+  f'!8_> c ees fis, \posHairpinJ c'\< ees fis_[ c' f! ees d c]   | %45
+  g'4-.\)-\hideF c,8( bes a g  g'4-.) \shpSlurAX c,8\( bes a g   | %46
   \stemDown
   f'!8-> c ees fis, c' ees  fis c' f! ees d c             | %47
-  <bes-\hideMF g'>4-.\) b,8\rest <g''c>( bes d, <fis bes> a d, <bes fis> a d,) | %48
+  <bes-\hideMF g'>4-.\) b,8\rest \shpSlurAY <g''c>( bes d,
+     <fis bes> a d, <bes fis> a d,)                       | %48
   <g c>8( bes d <g c> bes d,<fis bes> a d,<bes fis> a d,) | %49
   <g c>8( bes d <g c> bes d,<fis, bes> a d,<bes fis>a d,) | %50
   <c'g>8( bes d <g c> bes d, <fis bes> a d,<bes fis> a d,)| %51
@@ -475,7 +476,7 @@ upperTwo =  \relative c' {
   g\rest <bes ees,> <bes ees,> <bes d,> <bes d,> <bes d,>     | %28
   <fis c> <fis c> <fis c> <fis c> <fis c> <fis c>             | %29
   e\rest <g!c,> <g c,><g bes,><g bes,><g bes,> \shortStemRev  | %30
-  \moveNoteTwo <g ees> <g ees> <g ees> <fis d> <fis d> <fis d>| %31
+  <g ees> <g ees> <g ees> <fis d> <fis d> <fis d>             | %31
   \shortStemQtr <e a,>4\arpeggio\pp \posHairpinF s1\< s4      | %32
   s2. s16\! \posScriptF s8.-\pocoCresc s2                     | %33
   s1.                                                         | %34
@@ -486,15 +487,16 @@ upperTwo =  \relative c' {
   d4) \shpSlurAF bes8\<( d\! \posHairpinI f\> \shpSlurAD ees\!~ 
      ees4) aes,8\<( cis\! \posHairpinI ees\> \shpSlurAG d\!~  | %37
   \posHairpinHrvt
-  d4) g,8( b d c~ c4) c,8( gis' bes a~                        | %38
-  a4) ees8( b' d c~c4)  ees,8\< d cis c                       | %39
-  bes4_\f bes'8->( d f ees) b4\rest a8->( cis ees d)          | %40
-  b4\rest bes8->( d f ees) b4\rest aes8->( cis ees d)         | %41
-  b4\rest g8->( b d c) b4\rest c,8->( gis' bes a)             | %42
-  b4\rest ees,8->( b' d c) b4\rest fis,8-> cis' ees d         | %43
-  bes4-\hideF g-> s4 bes g-> s4                               | %44
+  d4) \shpSlurAM g,8( b d \shpSlurAN c~ c4) \shpSlurAO c,8( gis' bes a~  | %38
+  a4) \shpSlurAP ees8( b' d \shpSlurAN c~ c4) 
+     \alignBeamTwo  ees,8\< d cis c                           | %39
+  bes4_\f \shpSlurAK bes'8( d f ees) b4\rest \shpSlurAL a8( cis ees d)   | %40
+  b4\rest \shpSlurAK bes8( d f ees) b4\rest \shpSlurAL aes8( cis ees d)  | %41
+  b4\rest \posScriptG \shpSlurAL g8->( b d c) b4\rest \shpSlurAU c,8->( gis' bes a) | %42
+  b4\rest \posScriptG \shpSlurAV ees,8->( b' d c) b4\rest fis,8-> cis' ees d     | %43
+  \posScriptM bes4-\f g-> s4 bes g-> s4                       | %44
   s1.                                                         | %45
-  bes'4 g-> s bes g-> s                                       | %46
+  bes'4 g-> s bes \noPadScript g-> s                          | %46
   \repeat unfold 3 { s1. | }                                  | %47-49
   \repeat unfold 17 { s1. | }                                 | %50-66
   s1 s4 \stemDown \ignoreClashOnce c,4_~                      | %67
@@ -744,16 +746,16 @@ lowerOne = \relative c, {
   <g g,>4_. g2 <f! f,!>4_. f2                   | %41
   <ees ees,>4_. ees2 <c c,>4_. \stemDown c2     | %42
   \stemNeutral
-  d,4_. <g'a,>( <fis c>) d,_. <ees'g,>( <d c>)  | %43
+  d,4_. <g'a,>( <fis c>) d,_. \shpSlurQ <ees'g,>( <d c>)  | %43
   \stemDown
-  g,4 \stemUp <g g,>2_( <d'g,>4_.) \stemDown g, d'\rest | %44
+  g,4 \stemUp \shpSlurAR <g g,>2_(<d'g,>4_.) \stemDown g, d'\rest| %44
   <ees c g>2._~ <ees c g>4 \stemUp <g g,> \stemNeutral <ees'ees,>| %45
   s4 <g,g,>2( <g d'>4-.) g d\rest               | %46
    \clef treble
   b''4\rest a2->(~ a4 <g g,> <ees'ees,>         | %47
   \stemDown
-  <d g,>4-.) b\rest b\rest <a fis ees>_._\fz s2 | %48
-  s4 d,2_( <a'fis ees>4_.)_\fz s2               | %49
+  <d g,>4-.) b\rest b\rest \posScriptO <a fis ees>_._\fz s2 | %48
+  s4 d,2_( \posScriptO <a'fis ees>4_.)_\fz s2               | %49
   s2. \clef bass <ees,fis a>4_._> s2            | %50
   s4 d2_( <ees fis a>4_._>) s2                  | %51
   g,2 d'4\rest \stemNeutral <cis cis,>_( <d d,>) d\rest | %52
@@ -1029,17 +1031,17 @@ lowerTwo = \relative c {
   s4 f( ees) s ees( d)                             | %37
   s4 d( c) s bes( a)                               | %38
   s4 g( fis) s2.                                   | %39
-  s4 f'( <ees bes>) s ees( <d a>)                  | %40
-  s4 f( <ees bes>) s ees( <d b aes>)               | %41
+  s4 \posScriptG f'^>( <ees bes>) s \posScriptH ees^>( <d a>)  | %40
+  s4 \posScriptG f^>( <ees bes>) s \posScriptH ees^>(<d b aes>)| %41
   s4 d( <c g>) s bes( <a ees>)                     | %42
   s1.                                              | %43
   d,4 s2. ees8( d) s4                              | %44
-  a'4\rest a2^>^\(~ a4 s2                          | %45
-  \stemDown <d d,>4^.\) s2. \stemUp ees8( d) s4    | %46
+  a'4\rest \posScriptG a2^>^\(~ a4 s2              | %45
+  \stemDown <d d,>4^.\) s2. \stemUp \posBeamC \shpSlurAW ees8( d) s4 | %46
   \clef treble \stemDown \tieDown
-  <ees c g>2.~ <ees c g>4 s2 \stemUp               | %47
+  \shortStemTre <ees c g>2.~ <ees c g>4 \shortStemRev s2 \stemUp     | %47
   s2. ees'4^>( d d,                                | %48
-  g,-.) d'(^\< d'\! ees^> d d,                     | %49
+  g,^.) d'( d' ees^> d d,                          | %49
   g,4) b'\rest \clef bass d,,( ees'd d,            | %50
   g,4-.) d'(\< d'\! ees d d,                       | %51
   g,4)( <d'd'>) s1                                 | %52
@@ -1189,13 +1191,13 @@ lowerStaff = <<
 
 dynamics = {
   s4-\fPesante s8 s8 s2                               | % 1
-  s4 \noPadScript s2-\dimTxt \posHairpinA s4\>        | % 2
+  s4 \noPadTxtScrp s2-\dimTxt \posHairpinA s4\>        | % 2
   s2. s4\!                                            | % 3
   s8 \posScriptA s8-\p s2.                            | % 4
   s1                                                  | % 5
   s4. s8\p s4. \posHairpinC s8\<                      | % 6
   s2. s8 s8\!                                         | % 7
-  \posHairpinB s2.\> s8\! \noPadScript s2 s8  | % 8
+  \posHairpinB s2.\> s8\! \noPadTxtScrp s2 s8  | % 8
   \repeat unfold 12 { s1. | }                         | % 9-20
   s1.                                                 | %21
   s1.                                                 | %22
@@ -1214,16 +1216,16 @@ dynamics = {
   s1.                                                 | %35
   s1.\p                                               | %36
   s1.                                                 | %37
-  s4 s16 s16-\crescTxt s4. s2.                        | %38
+  s4 s16 \noPadTxtScrp s16-\crescTxt s4. s2.          | %38
   s1.                                                 | %39
   s1.                                                 | %40
   \repeat unfold 3 { s1. | }                          | %41-43
-  s1.\f                                               | %44
+  s1.                                                 | %44
   s1.                                                 | %45
-  s1.\f                                               | %46
+  \posScriptN s1.\f                                   | %46
   s1.                                                 | %47
   s1.-\piuF                                           | %48
-  s1.                                                 | %49
+  s4 \posHairpinK s8\< s4 s8\! s2.                    | %49
   \repeat unfold 18 { s1. | }                           %50-67
   s1.\pp                                              | %68
   \repeat unfold 13 { s1. | }                           %69-81
@@ -1335,24 +1337,23 @@ pedal = {
  s1                                                     | % 7
  s2. s2\sustainOn s8 s8\sustainOff                      | % 8
  \repeat unfold 23 { s1. | }                              % 9-31
- s8 \posPedalD s8\sustainOn s1 s16 s8.\sustainOff      | %32
+ s8 \posPedalA s8\sustainOn s1 s16 s8.\sustainOff      | %32
  s16 s8.\sustainOn s1 s8 s16. s32\sustainOff \posPedalRev         | %33
  s4\sustainOn s s\sustainOff s\sustainOn s s\sustainOff            | %34
  s4\sustainOn s4. s4\sustainOff s8 s2                              | %35
  s4..\sustainOn s4\sustainOff s16 s4..\sustainOn s4\sustainOff s16 | %36
  s4..\sustainOn s4\sustainOff s16 s4..\sustainOn s4\sustainOff s16 | %37
- s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %38
- s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %39
- s2\sustainOn s4\sustainOff s4..\sustainOn s4\sustainOff s16  | %40
+ \repeat unfold 2 { s1. | }                                          %38-39
+ s2\sustainOn s4\sustainOff s4..\sustainOn s4\sustainOff s16       | %40
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %41
- s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %42
+ \posPedalB s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %42
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %43
  s1.                                                    | %44
- s2.\sustainOn s8 s8\sustainOff s2                      | %45
+ s2.\sustainOn s8 s8\sustainOff s2 \posPedalRev         | %45
  s1.                                                    | %46
- s2\sustainOn s4 s8 s8\sustainOff s2                    | %47
+ \posPedalC s2\sustainOn s4 s8 s8\sustainOff s2         | %47
  s1.                                                    | %48
- s2\sustainOn s8 s8\sustainOff s2.                      | %49
+ s2\sustainOn s8 s8\sustainOff s2. \posPedalRev         | %49
  s2\sustainOn s8 s32\sustainOff s16. s2.                | %50
  s2\sustainOn s8. s16\sustainOff s2.                    | %51
  s2\sustainOn s1\sustainOff                             | %52
@@ -1549,7 +1550,10 @@ pedal = {
 
 pedalTwo = {
  \repeat unfold 7 { s1 | }                                %1-7
- \repeat unfold 198 { s1. | }                             %7-205
+ \repeat unfold 30 { s1. | }                              %8-37
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %38
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %39
+ \repeat unfold 166 { s1. | }                             %40-205
  s1\sustainOn s4. s8\sustainOff                         | %206
  s2.\sustainOn s8. s16\sustainOff s2                    | %207
  s2.\sustainOn  s8 s8\sustainOff                        | %208

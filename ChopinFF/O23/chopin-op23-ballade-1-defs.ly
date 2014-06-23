@@ -172,9 +172,10 @@ restDownOne = \once \override MultiMeasureRest.staff-position = #2
 restDownTwo = \once \override MultiMeasureRest.staff-position = #-4
 
 alignBeamOne = \once \override Beam.positions = #'(-1.2 . -1.2)
+alignBeamTwo = \once \override Beam.positions = #'(-4.4 . -5.0)
 
 moveNoteOne = \once \override NoteColumn #'force-hshift = #0.8
-moveNoteTwo = \once \override NoteColumn #'force-hshift = #1.5
+moveNoteTwo = {}
 moveNoteTre = \once \override NoteColumn #'force-hshift = #-0.7
 moveNoteQtr = \once \override NoteColumn #'force-hshift = #2.0
 moveNoteCin = \once \override NoteColumn #'force-hshift = #-0.1
@@ -185,6 +186,8 @@ shortStemOne = \once \override Stem.length-fraction = #(magstep -4)
 shortStemTwo = \once \override Stem.length-fraction = #(magstep -3)
 shortStemTre = \override Stem.length-fraction = #(magstep -3)
 shortStemQtr = \override Stem.length-fraction = #(magstep -2)
+shortStemCin = \once \override Stem.length-fraction = #(magstep -2)
+shortStemSix = \once \override Stem.length-fraction = #(magstep -1)
 shortStemRev = \revert Stem.length-fraction
 
 slashFlag = \once \override Flag.stroke-style = #"grace"
@@ -242,6 +245,27 @@ shpSlurAD = \shape #'((-1.2 . 0.2) (-0.3 . 0.7) (0.3 . 0.7) (1.1 . 0.3)) Tie
 shpSlurAE = \shape #'((-1.2 . 0.4) (-0.6 . 1.2) (0.6 . 1.2) (1.1 . 0.6)) Tie
 shpSlurAF = \shape #'((-0.3 . 0) (0 . 0.1) (0 . 0.5) (0.6 . 0)) Slur
 shpSlurAG = \shape #'((-1.4 . 0.8) (-1.3 . 1.3) (-0.2 . 1.3) (0 . 0.9)) Tie
+shpSlurAH = \shape #'((0 . 0.6) (0 . 0.8) (0 . 0.8) (0 . 0.5)) Tie
+shpSlurAI = \shape #'((-0.2 . -0.8) (0 . -0.7) (-0.3 . -0.7) (-0.3 . -0.7)) Tie
+shpSlurAJ = \shape #'((-1.3 . 0.4) (0 . 0.5) (0 . 0) (0 . -0.7)) Slur
+shpSlurAK = \shape #'((0.7 . -0.3) (0.6 . 0.4) (0.6 . 0.5) (0.6 . 0.2)) Slur
+shpSlurAL = \shape #'((0.8 . 0.3) (0.6 . 0.4) (0.6 . 0.5) (0.6 . 0.2)) Slur
+shpSlurAM = \shape #'((-0.5 . 0.3) (0 . 0.6) (0.3 . 0.2) (0.6 . 0.0)) Slur
+shpSlurAN = \shape #'((-0.5 . -0.1) (-0.3 . 0.2) (0.3 . 0.2) (0.5 . -0.1)) Tie
+shpSlurAO = \shape #'((0 . 0.7) (0 . -0.9) (0.0 . -1.2) (0.0 . 0.5)) Slur
+shpSlurAP = \shape #'((-0.3 . 0.5) (0 . 1.0) (0.0 . 0.5) (0.4 . 0.3)) Slur
+shpSlurAQ = \shape #'((0 . 0) (0 . -0.2) (-0.5 . -1.0) (-0.8 . -0.9)) Slur
+shpSlurAR = \shape #'((0.7 . 1.0) (0 . 1.0) (0 . 0.5) (0.3 . 0.4)) Slur
+shpSlurAS = \shape #'((-0.7 . -1.8) (0 . -1.3) (0 . -1.3) (-0.3 . -1.3)) Slur
+shpSlurAT = \shape #'( ((0 . 0.0) (3 . 0.5) (-0.5 . 0.6) (0.5 . 1.0))
+                      ((0 . 1.7) (0 . 1.0) (0 . 0.6) (0 . 0)) ) PhrasingSlur
+shpSlurAU = \shape #'((0.9 . 1.7) (1.2 . -0.9) (0.0 . -1.0) (0.6 . 0.5)) Slur
+shpSlurAV = \shape #'((1.0 . 2.1) (0.6 . 0.9) (0.6 . 0.5) (0.6 . 0.2)) Slur
+shpSlurAW = {
+         \shape #'((0 . -0.3) (0 . -0.3) (0 . -0.3) (0 . -0.3)) Slur
+         \once \override Slur.padding = 0.0 }
+shpSlurAX = \shape #'((-0.6 . -0.5) (0 . 0) (-4 . 0.2) (-0.3 . -0.9)) PhrasingSlur
+shpSlurAY = \shape #'((-0.4 . 0.5) (2 . 0.9) (0 . 2) (0.4 . -1.6)) Slur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -285,9 +309,19 @@ posHairpinHrvt = {
             \revert Hairpin.padding
 }
 posHairpinI = \once \override Hairpin.extra-offset = #'( 0 . 0.3 )
+posHairpinJ = {
+            \once \override Hairpin.rotation = #'( 3.0 -1 0 )
+            \once \override Hairpin.extra-offset = #'( 0.2 . -0.7 )
+}
+posHairpinK = {
+            \once \override Hairpin.rotation = #'( 13.0 -1 0 )
+            \once \override Hairpin.extra-offset = #'( 0 . -3 )
+            \once \override Hairpin.height = 0.5
+}
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
+posBeamC = \once \override Beam.positions = #'(6 . 5.3)
 
 posScriptA = \once \override TextScript.extra-offset = #'( 0 . -1.5 )
 posScriptB = \once \override Script.extra-offset = #'( 0.2 . -0.7 ) 
@@ -295,11 +329,29 @@ posScriptC = \once \override TextScript.extra-offset = #'( 0.5 . 0.6 )
 posScriptD = \once \override Script.extra-offset = #'( 0.3 . -0.4 )
 posScriptE = \once \override TextScript.extra-offset = #'( -0.3 . -1.3 )
 posScriptF = \once \override TextScript.extra-offset = #'( 0 . -0.3 )
+posScriptG = \once \override Script.extra-offset = #'( 0 . -0.4 )
+posScriptH = \once \override Script.extra-offset = #'( 0 . 0.1 )
+posScriptI = \once \override TextScript.extra-offset = #'( 1.8 . -0.6 )
+posScriptJ = \once \override Script.extra-offset = #'( -0.3 . -1.4 )
+posScriptK = \once \override Script.extra-offset = #'( -0.4 . -0.4 )
+posScriptL = \once \override TextScript.extra-offset = #'( -0.7 . -0.7 )
+posScriptM = \once \override DynamicText.extra-offset = #'( 0 . -0.9 )
+posScriptN = {
+           \once \override DynamicText.extra-offset = #'( -3.3 . -1.3 )
+           \once \override DynamicText.padding = 0.0 }
+posScriptO = {
+           \once \override Script.extra-offset = #'( 0.3 . 0.5 )
+           \once \override DynamicText.extra-offset = #'( 0.4 . 0.7 ) }
 
-posPedalD = \override SustainPedal.extra-offset = #'(0 . 1.0 )
+posPedalA = \override SustainPedal.extra-offset = #'(0 . 1.0 )
+posPedalB = \override SustainPedal.extra-offset = #'(0 . 0.5 )
+posPedalC = \override SustainPedal.extra-offset = #'(0 . 0.3 )
 posPedalRev = \revert SustainPedal.extra-offset
 
-noPadScript = \once \override TextScript.padding = 0.0
+posDottedA = \once \override Staff.NoteCollision.prefer-dotted-right = ##f
+
+noPadTxtScrp = \once \override TextScript.padding = 0.0
+noPadScript = \once \override Script.padding = 0.0
 
 ignoreClashOnce = \once \override NoteColumn.ignore-collision = ##t
 
