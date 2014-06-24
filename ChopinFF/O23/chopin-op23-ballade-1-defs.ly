@@ -85,8 +85,9 @@ ritenSpanner = {
   \override TextSpanner #'bound-details #'right-broken #'padding = #0.5
 }
 menoFSpanner = {
-  \override TextSpanner #'(bound-details left text) = \markup { \italic "poco  a  poco  meno  " \dynamic "f" }
+  \override TextSpanner #'(bound-details left text) = \markup { \italic "poco    a    poco    meno  " \dynamic "f" "    " }
   \override TextSpanner #'(bound-details left-broken text) = ##f
+  \override TextSpanner.staff-padding = 5.0
 }
 piuPianoSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre  più " \dynamic "p" }
@@ -273,6 +274,9 @@ shpSlurBB = \shape #'( ((0 . 0.6) (0 . 0) (0 . -0.6) (-0.5 . -2.0))
 shpSlurBC = \shape #'((0.6 . 2) (1 . 1) (0 . 0) (0 . 0)) Slur
 shpSlurBD = \shape #'((0.6 . 2) (0 . 0) (0 . -1) (-0.4 . -1.5)) Slur
 shpSlurBE = \shape #'((0 . 0.2) (0 . 0.8) (0 . 0.6) (0 . 0.4)) Slur
+shpSlurBF = \shape #'((-0.7 . 0.0) (2 . 2.0) (-2 . 2.0) (0 . 0)) PhrasingSlur
+shpSlurBG = \shape #'((0 . 0.0) (0 . 1.0) (-2 . 1.0) (0 . -1.0)) PhrasingSlur
+shpSlurBH = \shape #'((0.2 . 0.5) (0 . 0.9) (0 . 0.9) (0 . 0.9)) Slur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -326,6 +330,22 @@ posHairpinK = {
             \once \override Hairpin.height = 0.5
 }
 posHairpinL = \once \override Hairpin.extra-offset = #'( 0.8 . 0 )
+posHairpinM = {
+            \once \override Hairpin.rotation = #'( 3.5 -1 0 )
+            \once \override Hairpin.extra-offset = #'( -1 . 0 )
+            \once \override Hairpin.bound-padding = 0
+}
+posHairpinN = {
+            \once \override Hairpin.rotation = #'( -10 1 0 )
+            \once \override Hairpin.extra-offset = #'( 0 . -2.4 )
+            \once \override Hairpin.bound-padding = 0
+}
+posHairpinO = {
+            \once \override Hairpin.rotation = #'( -4 0 0 )
+            \once \override Hairpin.height = 0.40
+            \once \override Hairpin.bound-padding = 0.0
+            \once \override Hairpin.minimum-length = 3.5
+}
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
@@ -360,6 +380,13 @@ posDottedA = \once \override Staff.NoteCollision.prefer-dotted-right = ##f
 
 noPadTxtScrp = \once \override TextScript.padding = 0.0
 noPadScript = \once \override Script.padding = 0.0
+
+setOttavaStyle = \set Staff.ottavation = #"8"
+posOttavaA = {
+       \setOttavaStyle
+       \override Staff.OttavaBracket.avoid-slur = #'inside
+       \override Staff.OttavaBracket.outside-staff-priority = ##f
+}
 
 ignoreClashOnce = \once \override NoteColumn.ignore-collision = ##t
 

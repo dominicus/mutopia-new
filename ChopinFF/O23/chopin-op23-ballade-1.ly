@@ -127,11 +127,14 @@ upperOne =  \relative c {
   \stemNeutral
   \shpSlurBA <c g>8( bes d, <a'd,> g bes, \clef bass <bes ees>d g, <g c!> bes d,)| %53
   \menoFSpanner
-  <c'g>8\startTextSpan\( bes d, <d'g,> c ees, <c'g> bes d, <d'g,> c ees,| %54
+  \shpSlurBG <c'g>8\startTextSpan\( bes d, <d'g,> c ees, <c'g> bes d,
+     <d'g,> c ees,                                        | %54
   <c'g> bes d, <d'g,> c ees, <c'g> bes d, <d'g,> c ees,\) | %55
   \clef treble
-  g8\(\< d'bes d g bes  d-> g bes \ottava #1 d g d'\!     | %56
-  bes\> d g, d \ottava #0 bes g d bes g d bes\! c,\)_(\<  | %57
+  \shpSlurBF g8\( \posHairpinM d'\< bes d g bes  d-> g bes 
+     \ottava #1 \posOttavaA d g d'\!                      | %56
+  \posHairpinN bes\> d g, d \ottava #0 bes g d bes g d
+     bes\! \shpSlurBH \posHairpinO c,\)_(\<               | %57
   g'8)\!\>( d'\! bes d g d'bes d g, d bes d,)_(\<         | %58
   fis8)\!\>( d'\! bes d fis d' bes d fis, d bes d,)_(\<\stopTextSpan | %59
   \piuPianoSpanner
