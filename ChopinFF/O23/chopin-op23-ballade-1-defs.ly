@@ -83,19 +83,25 @@ ritenSpanner = {
   \override TextSpanner.staff-padding = 3.0
   \override TextSpanner #'bound-details #'right #'padding = #4.0
   \override TextSpanner #'bound-details #'right-broken #'padding = #0.5
+  \override TextSpanner.thickness = 2.1
 }
 menoFSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "poco    a    poco    meno  " \dynamic "f" "    " }
   \override TextSpanner #'(bound-details left-broken text) = ##f
-  \override TextSpanner.staff-padding = 5.0
+  \override TextSpanner.staff-padding = 5.5
+}
+nullSpanner = {
+  \override TextSpanner #'(bound-details left text) = \markup { " " }
+  \override TextSpanner.staff-padding = 3.9
 }
 piuPianoSpanner = {
-  \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre  più " \dynamic "p" }
+  \override TextSpanner #'(bound-details left text) = \markup { \italic "  sempre    più " \dynamic "p" "   " }
   \override TextSpanner #'(bound-details left-broken text) = ##f
 }
 calandoSpanner = {
-  \override TextSpanner #'(bound-details left text) = \markup { \italic "calando" }
+  \override TextSpanner #'(bound-details left text) = \markup \center-align { \italic "     calando  " }
   \override TextSpanner #'(bound-details left-broken text) = ##f
+  \override TextSpanner.staff-padding = 3.1
 }
 piuDimSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "più dimin. e riten." }
@@ -277,6 +283,14 @@ shpSlurBE = \shape #'((0 . 0.2) (0 . 0.8) (0 . 0.6) (0 . 0.4)) Slur
 shpSlurBF = \shape #'((-0.7 . 0.0) (2 . 2.0) (-2 . 2.0) (0 . 0)) PhrasingSlur
 shpSlurBG = \shape #'((0 . 0.0) (0 . 1.0) (-2 . 1.0) (0 . -1.0)) PhrasingSlur
 shpSlurBH = \shape #'((0.2 . 0.5) (0 . 0.9) (0 . 0.9) (0 . 0.9)) Slur
+shpSlurBI = \shape #'((0.2 . 0.0) (1 . 0.9) (-1 . 0.9) (-0.2 . 0)) Slur
+shpSlurBJ = \shape #'((0.2 . 0.0) (1 . 5) (-12 . 6) (-0.2 . 0)) Slur
+shpSlurBK = \shape #'((0.2 . 0.5) (0.8 . -0.3) (-0.8 . -0.3) (-0.6 . 0.5)) Tie
+shpSlurBL = \shape #'((-0.8 . 0) (0 . -0.7) (0 . -0.7) (0 . 0)) Tie
+shpSlurBM = \shape #'((0.6 . 0.6) (0.5 . 0.5) (-0.6 . 0.3) (-1.0 . 0)) Slur
+shpSlurBN = \shape #'((0 . 0.4) (0 . 0.4) (0 . 0.4) (0 . 0.4)) Slur
+shpSlurBO = \shape #'((-0.9 . -0.6) (0 . 0) (-3.5 . 2.0) (0 . -0.1)) Slur
+shpSlurBP = \shape #'((-0.2 . -0.3) (2 . 0.1) (-2 . 0.1) (0.2 . -0.3)) Slur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -345,7 +359,19 @@ posHairpinO = {
             \once \override Hairpin.height = 0.40
             \once \override Hairpin.bound-padding = 0.0
             \once \override Hairpin.minimum-length = 3.5
+            \once \override Hairpin.extra-offset = #'( -0.3 . 0 )
 }
+posHairpinP = {
+            \override Hairpin.height = 0.40
+            \override Hairpin.bound-padding = 0.0
+            \override Hairpin.minimum-length = 2.6
+}
+posHairpinPrev = {
+            \revert Hairpin.height
+            \revert Hairpin.bound-padding
+            \revert Hairpin.minimum-length
+}
+posHairpinQ = \once \override Hairpin.extra-offset = #'( -0.7 . 0 )
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
@@ -370,10 +396,12 @@ posScriptN = {
 posScriptO = {
            \once \override Script.extra-offset = #'( 0.3 . 0.5 )
            \once \override DynamicText.extra-offset = #'( 0.4 . 0.7 ) }
+posScriptP = \once \override TextScript.extra-offset = #'( -1 . -0.4 )
 
 posPedalA = \override SustainPedal.extra-offset = #'(0 . 1.0 )
 posPedalB = \override SustainPedal.extra-offset = #'(0 . 0.5 )
 posPedalC = \override SustainPedal.extra-offset = #'(0 . 0.3 )
+posPedalD = \override SustainPedal.extra-offset = #'(1.2 . 0.9 )
 posPedalRev = \revert SustainPedal.extra-offset
 
 posDottedA = \once \override Staff.NoteCollision.prefer-dotted-right = ##f
@@ -389,6 +417,8 @@ posOttavaA = {
 }
 
 ignoreClashOnce = \once \override NoteColumn.ignore-collision = ##t
+ignoreClash = \override NoteColumn.ignore-collision = ##t
+ignoreClashRev = \revert NoteColumn.ignore-collision
 
 %---------Pavel's snippet from LSR to change clef at beginning of staff
 % Append markup in the text property to the grob

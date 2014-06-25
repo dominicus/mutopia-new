@@ -134,16 +134,24 @@ upperOne =  \relative c {
   \shpSlurBF g8\( \posHairpinM d'\< bes d g bes  d-> g bes 
      \ottava #1 \posOttavaA d g d'\!                      | %56
   \posHairpinN bes\> d g, d \ottava #0 bes g d bes g d
-     bes\! \shpSlurBH \posHairpinO c,\)_(\<               | %57
-  g'8)\!\>( d'\! bes d g d'bes d g, d bes d,)_(\<         | %58
-  fis8)\!\>( d'\! bes d fis d' bes d fis, d bes d,)_(\<\stopTextSpan | %59
-  \piuPianoSpanner
-  g8)\!(\>\startTextSpan d'\! bes d g bes d g bes \ottava #1 d g d' | %60
-  bes8 d g, d \ottava #0 bes g d bes g d bes d,)_(\<\stopTextSpan | %61
-  \calandoSpanner
-  ges8)\!\>(\startTextSpan d'\!bes d ges d'bes d ges,d bes d,\<)_( | %62
-  f8)\!\>( d'\! bes d f_\dimTxt d'bes d f,d bes c,)_(\stopTextSpan | %63
-  f8)(^\smorzTxt c'a c f a c f a c \ottava #1 f a         | %64 
+     bes\! \shpSlurBH \posHairpinO c,\)_(\<\stopTextSpan  | %57
+  \nullSpanner \posHairpinP
+  \shpSlurBI g'8)\!\>(\startTextSpan d'\! bes d g d'bes 
+     d g, d bes \posHairpinQ \shpSlurBN d,)_(\<           | %58
+  \shpSlurBI fis8)\!\>( d'\! bes d fis d' bes d fis, d 
+     bes\stopTextSpan \piuPianoSpanner \posHairpinQ 
+     \shpSlurBN d,)_(\<\startTextSpan                     | %59
+  \shpSlurBJ g8)\!(\> d'\! bes d g bes d g bes
+     \ottava #1 \posOttavaA d g d'                        | %60
+  bes8 d g, d \ottava #0 bes g d bes g d bes \posHairpinQ
+     \shpSlurBN d,)_(\<\stopTextSpan                      | %61
+  \calandoSpanner \shpSlurBO
+  ges8)\!\>(\startTextSpan d'\!bes d ges d'bes d ges,
+     d bes d,\<)_(                                        | %62
+  \shpSlurBO f8)\!\>( \posHairpinPrev d'\! bes d 
+     f_\dimTxt d'bes d f,d bes c,)_(\stopTextSpan         | %63
+  \shpSlurBO \posScriptP f8)(^\smorzTxt c'a c f a c f a c 
+     \ottava #1 \setOttavaStyle f a                       | %64 
   f'4) \ottava #0 b,,,\rest b\rest b2\rest b4\rest        | %65
   \restDownOne R1*6/4                                     | %66
   b2\rest b4\rest b\rest b\rest f->-\menoMosso~\(         | %67
@@ -767,9 +775,9 @@ lowerOne = \relative c, {
   <g'g,>4) d'\rest c,( <g'g,>) d'\rest c,(      | %55
   <g'g,>2.) d'4\rest <d'g>-.( <d g,>-.          | %56
   <d g>2) d,4\rest d\rest d\rest d,_(           | %57
-  <g~ g,_~>2.) <g g,>2 d4_(                     | %58
-  <fis~ fis,_~>2.) <fis fis,>2 d4_(             | %59
-  <g g,>2.) d'4\rest <d g>(-. <d g,>-.          | %60
+  g2.)~ g2 \shpSlurBM d4_(                      | %58
+  fis2.)~ fis2 d4_(                             | %59
+  g2.) d'4\rest <d g>(-. <d g,>-.               | %60
   <d g>2) d4\rest d\rest d\rest d,_(            | %61
   <ges~ ges,_~>2.) <ges ges,>2 d4_(             | %62
   f2.)(~ f2 g4                                  | %63
@@ -1048,8 +1056,12 @@ lowerTwo = \relative c {
   g,4) b'\rest \clef bass d,,( ees'd d,            | %50
   g,4-.)\shpSlurBD \posHairpinL d'(\< d'\! ees d d,| %51
   \shpSlurBC g,4)( <d'd'>) s1                      | %52
-  \repeat unfold 10 { s1. | }                      | %53-62
-  \stemDown f,,1.~                                 | %63
+  \repeat unfold 5 { s1. | }                         %53-57
+  \ignoreClash \shpSlurBL g,,2.~ g2 s4             | %58
+  \shpSlurBK fis2.~ fis2 s4                        | %59
+  g2. s \ignoreClashRev                            | %60
+  \repeat unfold 2 { s1. | }                         %61-62
+  \stemDown f1.~                                   | %63
   f2 s1                                            | %64
   s1.                                              | %65
   s1.                                              | %66
@@ -1364,11 +1376,11 @@ pedal = {
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %54
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %55
  s1.\sustainOn                                          | %56
- s1 s4 s4\sustainOff                                    | %57
+ s1 s4 s4\sustainOff \posPedalD                         | %57
  s1\sustainOn s4 s4\sustainOff                          | %58
- s1\sustainOn s4 s4\sustainOff                          | %59
- s1.\sustainOn                                          | %60
- s1 s4 s4\sustainOff                                    | %61
+ s4\sustainOn s2. s4 s4\sustainOff                      | %59
+ s4\sustainOn s1 s4                                     | %60
+ s1 s4 s4\sustainOff \posPedalRev                       | %61
  s1\sustainOn s4. s8\sustainOff                         | %62
  s1\sustainOn s4. s8\sustainOff                         | %63
  s1.\sustainOn                                          | %64
