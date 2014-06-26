@@ -172,16 +172,21 @@ upperOne =  \relative c {
   \times 2/3 { ees8 f ees } d4 ees g\) g->(~ \times 2/3 { g8 f ees) } | %81
   ees2. b4\rest g8[( aes] \times 2/3 { bes d c}           | %82
   bes2.)~ bes4 g8([ aes] \times 2/3 { bes d c) }          | %83
-  bes2.~ bes4 f8([ aes] \times 2/3 { bes d c }            | %84
-  bes4)_~ \times 2/3 { bes8[ des,_\( ees] g[ c bes]} aes4_~ aes8 ces,ees f | %85
+  bes2.~ bes4 f8([ aes] \times 2/3 { bes d c) }           | %84
+  \tupletSpan 4 \hideTupletBracket
+  bes4~ \times 2/3 { bes8[ \shpSlurBT des,_\( ees] 
+     g[ c bes]} aes4_~ aes8 ces,ees f                     | %85
   g2\) b4\rest b\rest g8([ aes] \times 2/3 { bes d c }    | %86
   bes4) bes'2.-> \times 2/3 { b,8\rest( g[ aes] bes d c } | %87
-  bes4) bes'2.-> \times 2/3 { b,8\rest( f[ aes] bes d c } | %88
-  bes4)_~ \times 2/3 { bes8[ des,_\( ees] g[ c bes]} aes4_~ aes8 ces,ees f | %89
+  bes4) bes'2.-> \tupletDown
+     \times 2/3 { b,8\rest( f[ aes]  \tupletUp bes d c }  | %88
+  bes4)_~ \times 2/3 { bes8[ \shpSlurBT des,_\( ees]
+     g[ c bes]} aes4_~ aes8 ces,ees f                     | %89
   g2.\)_~ g8\noBeam g( bes g'f ees                        | %90
-  d2.)~ d8 bes( d bes' d,ees                              | %91
-  e4 f2)~ f8 d\( f d'c bes                                | %92
-  gis8 a f'e d a \staffDown d,^[ \staffUp a f d e \acciaccatura { g } f] | %93
+  d2.)~ d8 bes( d bes' d, ees                             | %91
+  e4 f2)~ f8 \shpSlurBU d\( f d'c bes                     | %92
+  gis8 a f'e d a \staffDown \posBeamD d,^[ \staffUp a f
+     d e \slurDown \acciaccatura { g } f] \slurUp         | %93
   e,2.\)\pp b''8\rest \stemDown
      \hideNotes d,8_~^( \unHideNotes \moveNoteOne d2      | %94
   \stemUp a'2.) e'2.(                                     | %95
@@ -521,9 +526,11 @@ upperTwo =  \relative c' {
   g2.( a                                                      | %78
   bes2.) s                                                    | %79
   \repeat unfold 5 { s1. | }                                    %80-84
-  s4 \scaleDurations 2/3 { s8 des,4-> s4. } s4 s8 ces4-> s8   | %85
+  s4 \scaleDurations 2/3 { s8 des,4-> s4. } s4 s8 \posScriptR
+     ces4-> s8                                                | %85
   \repeat unfold 3 { s1. | }                                    %86-88
-  s4 \scaleDurations 2/3 { s8 des4-> s4. } s4 s8 ces4-> s8    | %89
+  s4 \scaleDurations 2/3 { s8 des4-> s4. } s4 s8 \posScriptR
+     ces4-> s8                                                | %89
   \repeat unfold 4 { s1. | }                                    %90-93
   s2. \stemUp s8 d8-\hidePP e^\aTempoMenoMosso gis c b        | %94
   c,4\rest \stemDown <e c>-.( <e c>-.) e\rest a-.( a-.)       | %95
@@ -806,14 +813,15 @@ lowerOne = \relative c, {
   ees,8( bes'g'ees bes'g ees'4) d,4\rest d\rest | %82
   ees,8( bes'g'ees bes'g ees'4) d,4\rest d\rest | %83
   ees,8( bes' aes'f bes aes d4) d,4\rest d\rest | %84
-  ees,8( bes'g'4) d\rest ees,8(ces'aes'4)d,\rest| %85
-  ees,8( bes'g'ees bes'g ees'4) d,\rest d\rest  | %86
-  ees,8( bes'g'ees bes'g ees'4) d,\rest d\rest  | %87
-  ees,8( bes'aes'f bes aes d4) d,\rest d\rest   | %88
-  ees,8( bes'g'4) d\rest ees,8(ces'aes'4)d,\rest| %89
-  ees,8( bes'g'ees bes'g ees'4) d,\rest d\rest  | %90
-  g,8( d'bes'g d'bes g'4) d,\rest d\rest        | %91
-  bes8( f'd'bes f'd bes'4) d,,\rest d\rest      | %92
+  ees,8( bes'g'4) d\rest \shpSlurBY ees,8(ces'
+     aes'4)d,\rest                              | %85
+  \shpSlurBV ees,8( bes'g'ees bes'g ees'4) d,\rest d\rest  | %86
+  \shpSlurBW ees,8( bes'g'ees bes'g ees'4) d,\rest d\rest  | %87
+  \shpSlurBX ees,8( bes'aes'f bes aes d4) d,\rest d\rest   | %88
+  ees,8( bes'g'4) d\rest ees,8(ces'aes'4)d,\rest           | %89
+  \shpSlurBV  ees,8( bes'g' ees bes'g ees'4) d,\rest d\rest| %90
+  \shpSlurBW g,8( d'bes'g d'bes g'4) d,\rest d\rest        | %91
+  \shpSlurBW bes8( f'd'bes f'd bes'4) d,,\rest d\rest      | %92
   d8( a'f' \clef treble d a'f d'4) b\rest b\rest| %93
   \clef bass \stemNeutral \slurDown
   d,,\rest e,_.(-\hidePP e_.) d'\rest e,_.( e_.)| %94
@@ -1072,9 +1080,9 @@ lowerTwo = \relative c {
   s2. g_(                                          | %80
   f2. bes,4) s2                                    | %81
   \repeat unfold 4 { s1. | }                         %82-85
-  \stemUp s2 bes'4^> s2.                           | %86
+  \stemUp s2 \posScriptQ bes'4^> s2.               | %86
   \repeat unfold 3 { s1. | }                         %87-89
-  s2 bes4^> s2.                                    | %90
+  s2 \posScriptQ bes4^> s2.                        | %90
   \repeat unfold 4 { s1. | }                         %91-94
   s2. e2.(                                         | %95
   d2.) a2.\rest                                    | %96
@@ -1249,9 +1257,9 @@ dynamics = {
   s1.-\semprePP                                       | %82
   \repeat unfold 7 { s1. | }                            %83-89
   \semprePiuPSpanner s1.\startTextSpan                | %90
-  s1 s4 s8\stopTextSpan \eRallSpanner s8\startTextSpan| %91
-  s1.                                                 | %92
-  s1 s4. s8\stopTextSpan                              | %93
+  s1 s4\stopTextSpan s8 \eRallSpanner s8\startTextSpan| %91
+  s1 s4 s8. s16\stopTextSpan                          | %92
+  \nullSpanner s1\startTextSpan s4. s8\stopTextSpan   | %93
   s2. s8 s2-\sottoVoce s8                             | %94
   s1.                                                 | %95
   s1 s2-\semprePP                                     | %96

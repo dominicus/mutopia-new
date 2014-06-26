@@ -78,12 +78,12 @@ ritenSpanner = {
   \override TextSpanner #'(bound-details left stencil-align-dir-y) = #CENTER
   \override TextSpanner.dash-fraction = #0.04
   \override TextSpanner.dash-period = #14.0
+  \override TextSpanner.thickness = 2.1
   \override TextSpanner.avoid-slur = #'inside
   \override TextSpanner.outside-staff-priority = ##f
   \override TextSpanner.staff-padding = 3.0
   \override TextSpanner #'bound-details #'right #'padding = #4.0
   \override TextSpanner #'bound-details #'right-broken #'padding = #0.5
-  \override TextSpanner.thickness = 2.1
 }
 menoFSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "poco    a    poco    meno  " \dynamic "f" "    " }
@@ -104,17 +104,29 @@ calandoSpanner = {
   \override TextSpanner.staff-padding = 3.1
 }
 piuDimSpanner = {
-  \override TextSpanner #'(bound-details left text) = \markup { \whiteout \italic "  più  dimin.   e riten." }
+  \override TextSpanner #'(bound-details left text) = \markup { \whiteout \italic "  più  dimin.   e riten.  " }
   \override TextSpanner #'(bound-details left-broken text) = ##f
-  \override TextSpanner.staff-padding = 0.0  
+  \override TextSpanner.staff-padding = 0.0
+  \override TextSpanner #'(bound-details left stencil-align-dir-y) = #CENTER
+  \override TextSpanner.dash-fraction = #0.04
+  \override TextSpanner.dash-period = #8.0
+  \override TextSpanner.thickness = 2.1
 }
 semprePiuPSpanner = {
-  \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre più " \dynamic "p" }
+  \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre più " \dynamic "p" "  " }
   \override TextSpanner #'(bound-details left-broken text) = ##f
+  \override TextSpanner.dash-period = #14.0
+  \override TextSpanner.dash-fraction = #0.04
+  \override TextSpanner.dash-period = #8.0
+  \override TextSpanner #'(bound-details left stencil-align-dir-y) = #CENTER
+  \override TextSpanner.thickness = 2.1
+  \override TextSpanner.staff-padding = 0.0
+  \override TextSpanner.extra-offset = #'( 1 . 1.2 )
 }
 eRallSpanner = {
-  \override TextSpanner #'(bound-details left text) = \markup { \italic " e  rall. " }
+  \override TextSpanner #'(bound-details left text) = \markup { \italic "e  rall. " }
   \override TextSpanner #'(bound-details left-broken text) = ##f
+  \override TextSpanner.extra-offset = #'( 0 . 1.7 )
 }
 sempreCrescSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre cresc." }
@@ -298,6 +310,13 @@ shpSlurBR = \shape #'( ((0 . 0) (0 . 0) (0 . 0.3) (0 . 0.4))
                        ((0 . -1.6) (0 . -1.9) (0 . -1.5) (0 . -1.1)) ) Slur
 shpSlurBS = \shape #'( ((0 . 0) (0 . 0) (0 . 0) (0 . 0))
                        ((-1 . 1.0) (0 . 1.6) (0 . 1) (0 . 0)) ) PhrasingSlur
+shpSlurBT = \shape #'((0 . 0) (1.5 . -2) (-1.5 . -3.4) (0 . 0)) PhrasingSlur
+shpSlurBU = \shape #'( ((0 . 0) (0 . 0) (0 . 0) (0 . 0))
+                       ((-2 . -0.4) (1 . 0.5) (0 . 0) (-0.2 . -3.2)) ) PhrasingSlur
+shpSlurBV = \shape #'((0 . 0) (0 . 1.5) (-1 . 1.7) (0 . 0.5)) Slur
+shpSlurBW = \shape #'((0 . 0) (0 . 0.7) (-1 . 0.7) (0 . 0)) Slur
+shpSlurBX = \shape #'((-0.5 . 1) (0 . -1.3) (-0.8 . -1.5) (0 . 0.5)) Slur
+shpSlurBY = \shape #'((-0.5 . 0.4) (0 . 0.9) (0 . 0.7) (0 . 0.7)) Slur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -383,6 +402,7 @@ posHairpinQ = \once \override Hairpin.extra-offset = #'( -0.7 . 0 )
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
 posBeamC = \once \override Beam.positions = #'(6 . 5.3)
+posBeamD = \once \override Beam.damping = #+inf.0
 
 posScriptA = \once \override TextScript.extra-offset = #'( 0 . -1.5 )
 posScriptB = \once \override Script.extra-offset = #'( 0.2 . -0.7 ) 
@@ -404,6 +424,8 @@ posScriptO = {
            \once \override Script.extra-offset = #'( 0.3 . 0.5 )
            \once \override DynamicText.extra-offset = #'( 0.4 . 0.7 ) }
 posScriptP = \once \override TextScript.extra-offset = #'( -1 . -0.4 )
+posScriptQ = \once \override Script.extra-offset = #'( 0.3 . -1 )
+posScriptR = \once \override Script.extra-offset = #'( 0 . 0.3 )
 
 posPedalA = \override SustainPedal.extra-offset = #'(0 . 1.0 )
 posPedalB = \override SustainPedal.extra-offset = #'(0 . 0.5 )
