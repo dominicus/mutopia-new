@@ -158,7 +158,7 @@ upperOne =  \relative c {
   f2.( g2) g4(                                            | %68
   ees2.)\)~ ees4 ees'4.\( d8                              | %69
   \stemUp c2.( d2) d4(                                    | %70
-  bes2.)\) \stemNeutral bes'2\(^\< bes4                   | %71
+  bes2.)\) \stemNeutral \shpSlurBS bes'2\(^\< bes4        | %71
   bes2->\! aes4 aes g fis                                 | %72
   fis2 g\) aes4.( ees8                                    | %73
   g2 f) g4.\( d8                                          | %74
@@ -166,9 +166,9 @@ upperOne =  \relative c {
   f,2.\)(\( g2) g4(                                       | %76
   ees2.)\)_~ ees4 ees'4.\( d8                             | %77
   \stemUp c2.( d2) d4(                                    | %78
-  bes2.)\) \stemNeutral bes'2->\( bes4                    | %79
+  bes2.)\) \stemNeutral bes'2->\(\< bes4\!                | %79
   %-----------------------------------correction to source bar40: bes2->bes2.
-  bes2. c,2\) d4\(                                        | %80
+  bes2.\> c,2\)\! d4\(                                    | %80
   \times 2/3 { ees8 f ees } d4 ees g\) g->(~ \times 2/3 { g8 f ees) } | %81
   ees2. b4\rest g8[( aes] \times 2/3 { bes d c}           | %82
   bes2.)~ bes4 g8([ aes] \times 2/3 { bes d c) }          | %83
@@ -779,14 +779,15 @@ lowerOne = \relative c, {
   fis2.)~ fis2 d4_(                             | %59
   g2.) d'4\rest <d g>(-. <d g,>-.               | %60
   <d g>2) d4\rest d\rest d\rest d,_(            | %61
-  <ges~ ges,_~>2.) <ges ges,>2 d4_(             | %62
+  ges2.)~ ges2 d4_(                             | %62
   f2.)(~ f2 g4                                  | %63
-  a!2) d4\rest d\rest <c'f>(\( <c f,>-.         | %64
+  a!2) d4\rest d\rest \shpSlurBQ <c'f>(\(
+     <c f,>-.                                   | %64
   \piuDimSpanner
-  <c~ f_~>2.)\startTextSpan <c f>2 <c f,>4(     | %65
-  <c~ f_~>2.) <c f>2 <c f,>4(                   | %66
-  <c f>2 <c f,>4 <c f> <c f,> \staffUp \hideNotes \stemDown
-      f)\)\stopTextSpan \unHideNotes \staffDown | %67
+  <c_~ f~>2.)\startTextSpan <c f>2 <c f,>4(     | %65
+  <c_~ f~>2.) <c f>2 \shpSlurBR <c f,>4(        | %66
+  <c f>2 <c f,>4 <c f> <c f,>\stopTextSpan \staffUp
+     \hideNotes \stemDown f)\) \unHideNotes \staffDown | %67
   \stemNeutral bes,,,4(_. bes' aes'f c'bes)     | %68
   ees,,4( bes' ees g bes ees)                   | %69
   c( ees f, ees'g f)                            | %70
@@ -1059,8 +1060,9 @@ lowerTwo = \relative c {
   \repeat unfold 5 { s1. | }                         %53-57
   \ignoreClash \shpSlurBL g,,2.~ g2 s4             | %58
   \shpSlurBK fis2.~ fis2 s4                        | %59
-  g2. s \ignoreClashRev                            | %60
-  \repeat unfold 2 { s1. | }                         %61-62
+  g2. s                                            | %60
+  s1.                                              | %61
+  ges2.~ ges2 s4  \ignoreClashRev                  | %62
   \stemDown f1.~                                   | %63
   f2 s1                                            | %64
   s1.                                              | %65
@@ -1380,15 +1382,15 @@ pedal = {
  s1\sustainOn s4 s4\sustainOff                          | %58
  s4\sustainOn s2. s4 s4\sustainOff                      | %59
  s4\sustainOn s1 s4                                     | %60
- s1 s4 s4\sustainOff \posPedalRev                       | %61
- s1\sustainOn s4. s8\sustainOff                         | %62
- s1\sustainOn s4. s8\sustainOff                         | %63
+ s1 s4 s4\sustainOff \posPedalE                         | %61
+ s1\sustainOn s4 s4\sustainOff                          | %62
+ s1\sustainOn s4 s4\sustainOff                          | %63
  s1.\sustainOn                                          | %64
  s1.                                                    | %65
  s1.                                                    | %66
- s1 s4 s4\sustainOff                                    | %67
+ s1 s4 \posPedalC s4\sustainOff                         | %67
  s1\sustainOn s2\sustainOff                             | %68
- s1\sustainOn s4. s8\sustainOff                         | %69
+ \posPedalA s1\sustainOn s4. s8\sustainOff              | %69
  s1\sustainOn s2\sustainOff                             | %70
  s1\sustainOn s4 s4\sustainOff                          | %71
  s1\sustainOn s4 s4\sustainOff                          | %72
@@ -1400,7 +1402,7 @@ pedal = {
  %---------------------------------- the SustainOff prior to 6th beat (bar 78) pulls
  %---------------------------------- the note column unexpectedly to left..why?
  s1\sustainOn s8. s16\sustainOff s4                     | %78
- s1\sustainOn s4. s8\sustainOff                         | %79
+ s1\sustainOn s4. s8\sustainOff \posPedalRev            | %79
  %---------------------------------- can't get this one to land on 4th beat
  %---------------------------------- ...trying results in notecolumn shifts
  s2.\sustainOn s2.\sustainOff                           | %80

@@ -104,8 +104,9 @@ calandoSpanner = {
   \override TextSpanner.staff-padding = 3.1
 }
 piuDimSpanner = {
-  \override TextSpanner #'(bound-details left text) = \markup { \italic "più dimin. e riten." }
+  \override TextSpanner #'(bound-details left text) = \markup { \whiteout \italic "  più  dimin.   e riten." }
   \override TextSpanner #'(bound-details left-broken text) = ##f
+  \override TextSpanner.staff-padding = 0.0  
 }
 semprePiuPSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre più " \dynamic "p" }
@@ -291,6 +292,12 @@ shpSlurBM = \shape #'((0.6 . 0.6) (0.5 . 0.5) (-0.6 . 0.3) (-1.0 . 0)) Slur
 shpSlurBN = \shape #'((0 . 0.4) (0 . 0.4) (0 . 0.4) (0 . 0.4)) Slur
 shpSlurBO = \shape #'((-0.9 . -0.6) (0 . 0) (-3.5 . 2.0) (0 . -0.1)) Slur
 shpSlurBP = \shape #'((-0.2 . -0.3) (2 . 0.1) (-2 . 0.1) (0.2 . -0.3)) Slur
+shpSlurBQ = \shape #'( ((-0.4 . 0.4) (1 . 1) (-1 . 2.5) (0 . 5))
+                      ((-2 . -2) (1 . -0.9) (-1.6 . -1.5) (0 . -0.7)) ) PhrasingSlur
+shpSlurBR = \shape #'( ((0 . 0) (0 . 0) (0 . 0.3) (0 . 0.4))
+                       ((0 . -1.6) (0 . -1.9) (0 . -1.5) (0 . -1.1)) ) Slur
+shpSlurBS = \shape #'( ((0 . 0) (0 . 0) (0 . 0) (0 . 0))
+                       ((-1 . 1.0) (0 . 1.6) (0 . 1) (0 . 0)) ) PhrasingSlur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -402,6 +409,7 @@ posPedalA = \override SustainPedal.extra-offset = #'(0 . 1.0 )
 posPedalB = \override SustainPedal.extra-offset = #'(0 . 0.5 )
 posPedalC = \override SustainPedal.extra-offset = #'(0 . 0.3 )
 posPedalD = \override SustainPedal.extra-offset = #'(1.2 . 0.9 )
+posPedalE = \override SustainPedal.extra-offset = #'(1.2 . 1.3 )
 posPedalRev = \revert SustainPedal.extra-offset
 
 posDottedA = \once \override Staff.NoteCollision.prefer-dotted-right = ##f
