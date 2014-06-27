@@ -546,13 +546,16 @@ upperTwo =  \relative c' {
      <c'a>_.(<c a>_.)\!                                       | %99
   \posScriptU g4\rest_\f \shpSlurI <c a e>_.( <c a e>_.) b8\rest
      \stemUp c,8 e gis b a                                    | %100
-  \stemDown \posHairpinS c,4\rest\< \shpSlurI <e c>_.( <e c>_.)
-     \posScriptV e\rest_\crescTinyB \shpSlurI \shortStemTwo
-     <c'a e>_.( <c a e>_.)\!                                  | %101
-  \posScriptP e,4\rest_\sfSforzato <dis'c a>_.(<dis c a>_.)
-     g,\rest <dis'c a> g,\rest                                 | %102
-  g4\rest <dis'c a> <dis c a> g,\rest <dis'c a> g,\rest       | %103
-  g4\rest <dis'c a> <dis c a> g,\rest <dis'c a> g,\rest       | %104
+  \stemDown \posHairpinS c,4\rest\< \shpSlurCB \posScriptY <e c>_.( <e c>_.) \posScriptYrev
+     \posScriptV e\rest_\crescTinyB \shpSlurCB \shortStemTwo
+     \posScriptY <c'a e>_.( <c a e>_.)\! \posScriptYrev       | %101
+  \posScriptW \posScriptP e,4\rest_\fzSforzato \sempreCrescSpanner \shpSlurCB \posScriptY
+     \textSpannerDown <dis'c a>_.(\startTextSpan <dis c a>_.) \posScriptYrev
+     g,\rest <dis'c a> \posHairpinT g,\rest\<                 | %102
+  \posScriptW g4\rest_\sfSforzato\! <dis'c a> <dis c a>
+     g,\rest <dis'c a> g,\rest                                | %103
+  \posScriptW g4\rest_\sfSforzato <dis'c a> <dis c a> g,\rest
+     <dis'c a> g,\rest\stopTextSpan                           | %104
   g4\rest<fis'dis c><fis dis c> g,\rest <fis'dis c><fis dis c>| %105
   \repeat unfold 4 { s1. | }                                  | %106-109
   \squeezeNotation
@@ -845,8 +848,10 @@ lowerOne = \relative c, {
   e4\rest e_.( e_.) e\rest e_.( e_.)            | %98
   e4\rest e_.( e_.) b'\rest <c'a e>_.(<c a e>_.)| %99
   b,4\rest<c'a e>_.(<c a e>_.)e,,\rest e_.( e_.)| %100
-  e4\rest e_.( e_.) d'\rest <c'a e>_.(<c a e>_.)| %101
-  d,4\rest <c'a e>_.(<c a e>_.) d,\rest <c'a e> d,\rest | %102
+  e4\rest \shpSlurCB \posScriptY e_.( e_.)   
+     d'\rest \shpSlurCB <c'a e>_.(<c a e>_.)    | %101
+  d,4\rest \shpSlurCB  <c'a e>_.(<c a e>_.)
+     \posScriptYrev d,\rest <c'a e> d,\rest     | %102
   d4\rest <c'a e><c a e> d,\rest <c'a e> d,\rest| %103
   d4\rest <c'a e><c a e> d,\rest <c'a e> d,\rest| %104
   \stemNeutral \slurUp
@@ -1104,10 +1109,10 @@ lowerTwo = \relative c {
   gis2.) a2.\rest                                  | %98
   a2.\rest e'(                                     | %99
   fis2.)-\hideF a,2.\rest                          | %100
-  a2.\rest fis'(                                   | %101
+  a2.\rest \shpSlurCA fis'(                        | %101
   gis2. fis2) f8\rest gis                          | %102
-  gis2.^>( fis2) f8\rest gis                       | %103
-  gis2.^>( fis2) f8\rest gis                       | %104
+  gis2.( fis2) f8\rest gis                         | %103
+  gis2.( fis2) f8\rest gis                         | %104
   a2.( gis2 a4)\arpeggio                           | %105
   \repeat unfold 7 { s1. | }                         %106-112
   \squeezeNotation
@@ -1282,9 +1287,9 @@ dynamics = {
   s2. s2.                                             | %99
   s2. s8 s8 s2                    \startStaff         | %100
   s2. s2.                                             | %101
-  s4 \sempreCrescSpanner s4\startTextSpan s2. s4\<    | %102
-  s1.\sf                                              | %103
-  s1\sf s4 s8. s16\stopTextSpan                       | %104
+  s4 s4 s2. s4      | %102
+  s1.                                                 | %103
+  s1 s4 s8. s16                                       | %104
   s2.^\moltoCresc s2.\<                               | %105
   s1.\ff                                              | %106
   \repeat unfold 5 { s1. | }                            %107-111
@@ -1448,10 +1453,11 @@ pedal = {
  s1\sustainOn s4. s16\sustainOff s16                    | %98
  s1.\sustainOn                                          | %99
  s2 s4\sustainOff s4\sustainOn s4. s16\sustainOff s16   | %100
- s1\sustainOn s4 s4\sustainOff                          | %101
+ \posPedalF s1\sustainOn s4 s4\sustainOff               | %101
  s2\sustainOn s4\sustainOff s2\sustainOn s8 s8\sustainOff| %102
  s2\sustainOn s4\sustainOff s2\sustainOn s8 s8\sustainOff| %103
- s2\sustainOn s4\sustainOff s2\sustainOn s8 s8\sustainOff| %104
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %104
+ \posPedalRev
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %105
  s1\sustainOn s4 s4\sustainOff                          | %106
  s1\sustainOn s4 s4\sustainOff                          | %107

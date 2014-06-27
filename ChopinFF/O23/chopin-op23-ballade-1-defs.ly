@@ -46,7 +46,8 @@ agitato = \markup \italic \larger "agitato"
 leggiero = \markup \italic \larger "leggiero"
 conForza = \markup \italic \larger "con forza"
 pPesante = \markup { \dynamic "p" \italic \smaller "(pesante)" }
-sfSforzato = \markup { \concatenate { \dynamic "fz" \raise #0.4 \musicglyph #"scripts.sforzato" } }
+fzSforzato = \markup { \dynamic "fz" \raise #0.4 \musicglyph #"scripts.sforzato"  }
+sfSforzato = \markup { \dynamic "sf" \raise #0.4 \musicglyph #"scripts.sforzato"  }
 crescTxt = \markup \italic \larger "cresc."
 crescTiny = \markup \italic \small \rotate #7.0  "cresc."
 crescTinyB = \markup \italic \small \rotate #4.0  "cresc."
@@ -132,6 +133,12 @@ eRallSpanner = {
 sempreCrescSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre cresc." }
   \override TextSpanner #'(bound-details left-broken text) = ##f
+  \override TextSpanner #'(bound-details left stencil-align-dir-y) = #CENTER
+  \override TextSpanner.dash-period = #14.0
+  \override TextSpanner.dash-fraction = #0.04
+  \override TextSpanner.dash-period = #8.0
+  \override TextSpanner.outside-staff-priority = ##f
+  \override TextSpanner.staff-padding = 3.4
 }
 semprePiuCrescSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre più cresc." }
@@ -329,6 +336,8 @@ shpSlurBY = \shape #'((-0.5 . 0.4) (0 . 0.9) (0 . 0.7) (0 . 0.7)) Slur
 shpSlurBZ = {  \shpSlurM
               \shape #'( ((0 . 3) (0 . 3.5) (-1.0 . 5.5) (0.7 . 5.8)) 
                          ((0 . 2) (0 . 2) (0 . 2) (0 . 2))  ) PhrasingSlur }
+shpSlurCA = \shape #'((0.3 . -2.5) (0 . -2.3) (0 . -2.3) (-0.3 . -2.3)) Slur
+shpSlurCB = \shape #'(( 0 . 0.6) (0 . 0.6) (0 . 0.6) (0 . 0.6)) Slur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -422,6 +431,10 @@ posHairpinS = {
             \once \override Hairpin.bound-padding = 0.0
             \once \override Hairpin.extra-offset = #'( 0 . 0.1 )
 }
+posHairpinT ={
+            \once \override Hairpin.outside-staff-priority = ##f
+            \once \override Hairpin.extra-offset = #'( 0 . 2.1 )
+}
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
@@ -447,7 +460,8 @@ posScriptN = {
 posScriptO = {
            \once \override Script.extra-offset = #'( 0.3 . 0.5 )
            \once \override DynamicText.extra-offset = #'( 0.4 . 0.7 ) }
-posScriptP = \once \override TextScript.extra-offset = #'( -1 . -0.4 )
+posScriptP = {
+  \once \override TextScript.extra-offset = #'( -1.4 . -1.3 ) }
 posScriptQ = \once \override Script.extra-offset = #'( 0.3 . -1 )
 posScriptR = \once \override Script.extra-offset = #'( 0 . 0.3 )
 posScriptS = \once \override DynamicText.extra-offset = #'( 0.6 . 1 )
@@ -462,12 +476,19 @@ posScriptV = {
           \once \override TextScript.padding = 0.0
           \once \override TextScript.extra-offset = #'(0.8 . 2.1 )
 }
+posScriptW = {
+          \once \override TextScript.outside-staff-priority = ##f
+          \once \override TextScript.extra-offset = #'(-1.2 . -1.6 )
+}
+posScriptY = \override Script.extra-offset = #'( 0.3 . 0.7 )
+posScriptYrev = \revert Script.extra-offset
 
 posPedalA = \override SustainPedal.extra-offset = #'(0 . 1.0 )
 posPedalB = \override SustainPedal.extra-offset = #'(0 . 0.5 )
 posPedalC = \override SustainPedal.extra-offset = #'(0 . 0.3 )
 posPedalD = \override SustainPedal.extra-offset = #'(1.2 . 0.9 )
 posPedalE = \override SustainPedal.extra-offset = #'(1.2 . 1.3 )
+posPedalF = \override SustainPedal.extra-offset = #'(0.5 . 0.6 )
 posPedalRev = \revert SustainPedal.extra-offset
 
 posDottedA = \once \override Staff.NoteCollision.prefer-dotted-right = ##f
