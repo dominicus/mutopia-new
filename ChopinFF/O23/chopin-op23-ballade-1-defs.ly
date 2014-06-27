@@ -46,9 +46,10 @@ agitato = \markup \italic \larger "agitato"
 leggiero = \markup \italic \larger "leggiero"
 conForza = \markup \italic \larger "con forza"
 pPesante = \markup { \dynamic "p" \italic \smaller "(pesante)" }
-sfSforzato = \markup { \dynamic "fz" \musicglyph #"scripts.sforzato" }
+sfSforzato = \markup { \concatenate { \dynamic "fz" \raise #0.4 \musicglyph #"scripts.sforzato" } }
 crescTxt = \markup \italic \larger "cresc."
-crescTiny = \markup \italic \small "cresc."
+crescTiny = \markup \italic \small \rotate #7.0  "cresc."
+crescTinyB = \markup \italic \small \rotate #4.0  "cresc."
 riten = \markup \italic \larger "riten."
 accel = \markup \italic \larger "accel."
 accelerando = \markup \italic \larger "accelerando"
@@ -62,7 +63,7 @@ semprePiuF = \markup { \italic "sempre più " \dynamic "f" }
 sempreF = \markup { \italic "sempre" \dynamic "f" }
 sempreFF = \markup \center-align { \italic "sempre" \dynamic "ff" }
 sempreCresc = \markup { \italic "sempre cresc." }
-aTempoMenoMosso = \markup { \center-align \italic \larger "a tempo (meno mosso)   " }
+aTempoMenoMosso = \markup { \center-align \italic  "a tempo (meno mosso)   " }
 sottoVoce = \markup \italic \larger "sotto voce"
 moltoCresc = \markup \italic \larger "molto cresc."
 animatoLegend = \markup \italic \larger "animato"
@@ -147,6 +148,14 @@ sforzatoSpanner = {
 pocoRitenSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic \larger "poco riten." }
   \override TextSpanner #'(bound-details left-broken text) = ##f
+}
+ppSpanner = {
+  \override TextSpanner.staff-padding = 0.2
+  \override TextSpanner #'(bound-details left text) = ##f
+  \override TextSpanner #'(bound-details right text) = \markup { \dynamic "pp" }
+  \override TextSpanner.avoid-slur = #'inside
+  \override TextSpanner.outside-staff-priority = ##f
+  \override TextSpanner #'(bound-details right stencil-align-dir-y) = #UP
 }
 
 setRestDirDown = \override Rest #'direction = #down
@@ -302,7 +311,7 @@ shpSlurBK = \shape #'((0.2 . 0.5) (0.8 . -0.3) (-0.8 . -0.3) (-0.6 . 0.5)) Tie
 shpSlurBL = \shape #'((-0.8 . 0) (0 . -0.7) (0 . -0.7) (0 . 0)) Tie
 shpSlurBM = \shape #'((0.6 . 0.6) (0.5 . 0.5) (-0.6 . 0.3) (-1.0 . 0)) Slur
 shpSlurBN = \shape #'((0 . 0.4) (0 . 0.4) (0 . 0.4) (0 . 0.4)) Slur
-shpSlurBO = \shape #'((-0.9 . -0.6) (0 . 0) (-3.5 . 2.0) (0 . -0.1)) Slur
+shpSlurBO = \shape #'((-0.9 . -0.6) (0 . 0) (-3.5 . 1) (0 . -0.1)) Slur
 shpSlurBP = \shape #'((-0.2 . -0.3) (2 . 0.1) (-2 . 0.1) (0.2 . -0.3)) Slur
 shpSlurBQ = \shape #'( ((-0.4 . 0.4) (1 . 1) (-1 . 2.5) (0 . 5))
                       ((-2 . -2) (1 . -0.9) (-1.6 . -1.5) (0 . -0.7)) ) PhrasingSlur
@@ -317,6 +326,9 @@ shpSlurBV = \shape #'((0 . 0) (0 . 1.5) (-1 . 1.7) (0 . 0.5)) Slur
 shpSlurBW = \shape #'((0 . 0) (0 . 0.7) (-1 . 0.7) (0 . 0)) Slur
 shpSlurBX = \shape #'((-0.5 . 1) (0 . -1.3) (-0.8 . -1.5) (0 . 0.5)) Slur
 shpSlurBY = \shape #'((-0.5 . 0.4) (0 . 0.9) (0 . 0.7) (0 . 0.7)) Slur
+shpSlurBZ = {  \shpSlurM
+              \shape #'( ((0 . 3) (0 . 3.5) (-1.0 . 5.5) (0.7 . 5.8)) 
+                         ((0 . 2) (0 . 2) (0 . 2) (0 . 2))  ) PhrasingSlur }
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -398,6 +410,18 @@ posHairpinPrev = {
             \revert Hairpin.minimum-length
 }
 posHairpinQ = \once \override Hairpin.extra-offset = #'( -0.7 . 0 )
+posHairpinR = {
+            \once \override Hairpin.rotation = #'( 8 0 0 )
+            \once \override Hairpin.height = 0.88
+            \once \override Hairpin.bound-padding = 0.0
+            \once \override Hairpin.extra-offset = #'( 1.6 . 0.9 )
+}
+posHairpinS = {
+            \once \override Hairpin.rotation = #'( 3 0 0 )
+            \once \override Hairpin.height = 0.86
+            \once \override Hairpin.bound-padding = 0.0
+            \once \override Hairpin.extra-offset = #'( 0 . 0.1 )
+}
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
@@ -426,6 +450,18 @@ posScriptO = {
 posScriptP = \once \override TextScript.extra-offset = #'( -1 . -0.4 )
 posScriptQ = \once \override Script.extra-offset = #'( 0.3 . -1 )
 posScriptR = \once \override Script.extra-offset = #'( 0 . 0.3 )
+posScriptS = \once \override DynamicText.extra-offset = #'( 0.6 . 1 )
+posScriptT = {
+          \once \override TextScript.staff-padding = 0.0
+          \once \override TextScript.padding = 0.0
+          \once \override TextScript.extra-offset = #'(0.5 . -0.5 )
+}
+posScriptU = \once \override DynamicText.extra-offset = #'(0 . -0.7)
+posScriptV = {
+          \once \override TextScript.staff-padding = 0.0
+          \once \override TextScript.padding = 0.0
+          \once \override TextScript.extra-offset = #'(0.8 . 2.1 )
+}
 
 posPedalA = \override SustainPedal.extra-offset = #'(0 . 1.0 )
 posPedalB = \override SustainPedal.extra-offset = #'(0 . 0.5 )
@@ -438,12 +474,31 @@ posDottedA = \once \override Staff.NoteCollision.prefer-dotted-right = ##f
 
 noPadTxtScrp = \once \override TextScript.padding = 0.0
 noPadScript = \once \override Script.padding = 0.0
+noPadDynTxt = \once \override DynamicText.padding = 0.0 \once \override DynamicText.staff-padding = 0.0
 
 setOttavaStyle = \set Staff.ottavation = #"8"
 posOttavaA = {
        \setOttavaStyle
        \override Staff.OttavaBracket.avoid-slur = #'inside
        \override Staff.OttavaBracket.outside-staff-priority = ##f
+}
+posOttavaB = {
+  \setOttavaStyle
+  %Pierre Perol-Schneider's angled ottava contribution
+  \override Staff.OttavaBracket.stencil = #ly:line-spanner::print
+  \override Staff.OttavaBracket.bound-details =
+    #`((left . ((Y . 0)
+                (attach-dir . ,LEFT)
+                (padding . 0)
+                (stencil-align-dir-y . ,CENTER)))
+       (right . ((Y . 3)
+                 (padding . 0)
+                 (attach-dir . ,RIGHT)
+                 (text . ,(make-draw-dashed-line-markup (cons 0 -1.2))))))
+  \override Staff.OttavaBracket.left-bound-info =
+     #ly:line-spanner::calc-left-bound-info-and-text
+  \override Staff.OttavaBracket.right-bound-info =
+     #ly:line-spanner::calc-right-bound-info
 }
 
 ignoreClashOnce = \once \override NoteColumn.ignore-collision = ##t
@@ -486,170 +541,3 @@ unSqueezeNotation = {
   \revert Staff.Accidental.stencil
   \revert Staff.NoteHead.stencil
 }
-
-%{
-ten = \tenuto
-
-hidePP = \tweak #'stencil ##f \pp
-
-
-piuPP = \markup { \right-align \concat { \italic \bold "più " \dynamic pp } }
-piuP = \markup { \left-align \concat { \italic \bold "più " \dynamic p } }
-
-breatheFermata = {
-  \once \override BreathingSign.text = \markup {
-  \combine
-  \musicglyph #"scripts.rcomma"
-  \raise #1
-  \musicglyph #"scripts.ufermata"
-  }
-  \breathe
-}
-shiftNoteRight = \override NoteColumn.force-hshift = #1.3
-shiftNoteRightTwo = \override NoteColumn.force-hshift = #0.5
-shiftNoteLeft = \override NoteColumn.force-hshift = #-1.0
-shiftNoteNone = \revert NoteColumn.force-hshift
-pushDynLeft = \once \override DynamicText.extra-offset = #'( -0.5 . 0 )
-moveDynOne = \once \override DynamicText.extra-offset = #'( -2.0 . -2.8 )
-moveDynTwo = \once \override Hairpin.extra-offset = #'( 1.6 . -1.5 )
-moveDynTre = \once \override Hairpin.extra-offset = #'( 0 . -1 )
-moveDynQtr = \once \override Hairpin.extra-offset = #'( 0 . 0.8 )
-moveDynCin = \once \override DynamicText.extra-offset = #'( 0 . 0.8 )
-moveDynSix = \once \override TextScript.extra-offset = #'( -0.5 . 3 )
-moveDynSep = \once \override DynamicText.extra-offset = #'( -2.5 . 2.5 )
-moveDynOct = \once \override DynamicText.extra-offset = #'( -3.2 . 3.5 )
-moveDynNov = \once \override DynamicText.extra-offset = #'( 0.6 . 1.4 )
-moveDynTen = \once \override DynamicText.extra-offset = #'( 0 . -2.4 )
-moveDynEle = \once \override DynamicText.extra-offset = #'( -1.5 . -2.5 )
-moveDynTwe = \once \override Hairpin.rotation = #'(9 0.5 0)
-moveDynThi = \once \override TextScript.extra-offset = #'( -0.7 . -4 )
-moveDynFou = \once \override DynamicText.extra-offset = #'( -2.5 . -3.8 )
-moveDynFif = \once \override DynamicText.extra-offset = #'( -4.8 . -4.7 )
-moveDynSixt = \once \override Hairpin.extra-offset = #'( -3 . 0 )
-moveDynSevt = \once \override Hairpin.extra-offset = #'( 0 . -0.6 )
-moveDynEigt = \once \override DynamicText.extra-offset = #'( 0 . -0.6 )
-openHairpin = \once \override Hairpin.height = #1
-lengthenHairpin = \once \override Hairpin.minimum-length = #8
-brokenHairpin = {
-  \override Hairpin.to-barline = ##f
-  \override Hairpin.after-line-breaking = ##t
-}
-spacerOne = { \hideNotes \shiftOff a,,8 \unHideNotes }
-timeSigParenth = \once \override Staff.TimeSignature.stencil = #(lambda (grob) (parenthesize-stencil 
-      (ly:time-signature::print grob) 0.1 0.4 0.4 0.1 ))
-timeSigShowBeg = {
-  \once \override Staff.TimeSignature #'break-visibility = #begin-of-line-visible
-  \set Staff.explicitKeySignatureVisibility = #begin-of-line-visible 
-}
-
-shapeSlurOne = \shape #'((0 . 0) (0 . 0) (0 . 0) (-0.5 . 0)) Slur
-shapeSlurTwo = \shape #'((-1.0 . 1.3) (0 . 1.0) (0 . 0.1) (-0.9 . 0.2)) Slur
-shapeSlurTre = \shape #'((1.0 . -0.8) (2 . -6.0) (-1 . 0.8) (0 . 1.2)) PhrasingSlur
-shapeSlurQtr = \shape #'((0.6 . 2) (2 . -1.5) (0 . 0) (0 . 0)) Slur
-shapeSlurCin = \shape #'((-0.5 . 0) (3 . 2) (-2 . 2) (-0.5 . -1.6)) PhrasingSlur
-shapeSlurSix = \shape #'(
-               ((0.4 . -1.6) (3 . 0.4) (0 . 0) (0 . 0))
-               ((0 . -0.4) (0 . -0.2) (0 . -0.4) (-0.5 . -1.2))
-               ) PhrasingSlur
-shapeSlurSep = \shape #'((0.5 . 2) (1 . 0.5) (0 . 0) (0 . 0)) Slur
-shapeSlurOct = \shape #'((0 . 0) (1 . -0.8) (-1 . -1) (-0.5 . -1)) Slur
-shapeSlurNov = \shape #'((0.4 . 2) (1 . 2.2) (0 . 2.2) (-0.7 . 2.7)) Slur
-shapeSlurEle = \shape #'((0.5 . 1) (0 . 0.3) (0 . 0.3) (-0.5 . 1)) Slur
-shapeSlurTwe = \shape #'((0 . 0) (0 . 0) (0 . 0) (2 . 0)) Slur
-shapeSlurThi = \shape #'((0 . 0) (0 . 0) (-0.5 . 0.6) (0 . -0.8)) PhrasingSlur
-shapeSlurFou = \shape #'((0.5 . -1.8) (1 . -0.5) (-1 . -0.4) (-0.5 . -1.8)) PhrasingSlur
-shapeSlurFif = \shape #'(
-               ((0.7 . -0.9) (3 . 1.2) (-1 . 1.2) (-0.5 . 0))
-               ((0 . 0) (2 . 1.3) (-1 . 1.3) (-0.5 . 0.5))
-               ) PhrasingSlur
-shapeSlurSixt = \shape #'((0.8 . -1.8) (4 . 2) (-7 . 2) (-0.5 . -2.5)) PhrasingSlur
-shapeSlurSevt = \shape #'((0 . -0.5) (2 . 2) (-3 . 0.5) (-0.5 . 0)) PhrasingSlur
-shapeSlurEigt = \shape #'((0.5 . 2.8) (0 . 2) (0 . 1.3) (0 . 1)) Slur
-shapeSlurNint = \shape #'((1.0 . 2.1) (1 . 1.3) (-1 . 0.3) (-1.5 . 0.8)) PhrasingSlur
-shapeSlurTwen = \shape #'((1.0 . 1.1) (1.5 . 0.4) (-1 . 0.0) (-0.5 . 0.3)) PhrasingSlur
-shapeSlurTwUn = \shape #'((0 . 0.4) (0 . 0.3) (0 . 0) (-0.5 . 0)) Slur
-
-alignBeamOne = \once \override Beam.damping = #4
-alignBeamTwo = \once \override Beam.positions = #'(0.3 . 0.7)
-alignBeamTre = \once \override Beam.positions = #'(1.0 . 2.0)
-alignBeamQtr = \once \override Beam.positions = #'(-5.5 . -6.6)
-alignBeamCin = \override Beam.positions = #'(2.2 . 2.6)
-alignBeamSix = \once \override Beam.positions = #'(5.7 . 8)
-alignBeamRev = \revert Beam.positions
-
-moveNoteOne = \once \override NoteColumn #'force-hshift = #-1.9
-moveNoteTwo = \once \override NoteColumn #'force-hshift = #1
-moveNoteTre = \once \override NoteColumn #'force-hshift = #-0.7
-
-moveScriptOne = \once \override TextScript.extra-offset = #'( -2.5 . -2.8 )
-
-preBrokenBeam = {
-  \override Beam.layer = #0
-  \override Stem.layer = #3
-  \override Accidental.layer = #3
-  \override NoteHead.layer = #15
-  \override StaffSymbol.layer = #3
-  \override TextScript.layer = #1
-}
-preBrokenBeamOne = { 
-  \once \override TextScript.staff-padding = #0
-  \once \override TextScript.vertical-skylines = #'()
-  \once \override TextScript.extra-offset = #'( -1 . 3.3 )
-}
-preBrokenBeamTwo = { 
-  \once \override TextScript.staff-padding = #0
-  \once \override TextScript.vertical-skylines = #'()
-  \once \override TextScript.extra-offset = #'( -1 . 4.2 )
-}
-preBrokenBeamTre = { 
-  \once \override TextScript.staff-padding = #0
-  \once \override TextScript.vertical-skylines = #'()
-  \once \override TextScript.extra-offset = #'( -0.9 . 4.8 )
-}
-postBrokenBeam = {
-  \revert Beam.layer
-  \revert Stem.layer
-  \revert NoteHead.layer
-  \revert StaffSymbol.layer
-  \revert TextScript.layer
-}
-breakBeamOne = \markup {
-                   \with-dimensions #'(2 . 7) #'(0 . 0)
-                   \with-color #white
-                   \filled-box #'(5.0 . 9.0) #'(1.0 . 1.8) #0
-}
-breakBeamTwo = \markup {
-                   \with-dimensions #'(2 . 7) #'(0 . 0)
-                   \with-color #white
-                   \filled-box #'(5.2 . 8.4) #'(1.0 . 1.8) #0
-}
-breakBeamTre = \markup {
-                   \with-dimensions #'(2 . 7) #'(0 . 0)
-                   \with-color #white
-                   \filled-box #'(5.2 . 8.4) #'(1.05 . 1.9) #0
-}
-breakBeamQtr = \markup {
-                   \with-dimensions #'(2 . 7) #'(0 . 0)
-                   \with-color #white
-                   \filled-box #'(5.3 . 8.6) #'(0.5 . 1.2) #0
-}
-breakBeamCin = \markup {
-                   \with-dimensions #'(2 . 7) #'(0 . 0)
-                   \with-color #white
-                   \filled-box #'(5.0 . 8.3) #'(0.5 . 1.2) #0
-}
-breakBeamSix = \markup {
-                   \with-dimensions #'(2 . 7) #'(0 . 0)
-                   \with-color #white
-                   \filled-box #'(5.2 . 8.2) #'(0.5 . 1.2) #0
-}
-breakBeamSep = \markup {
-                   \with-dimensions #'(2 . 7) #'(0 . 0)
-                   \with-color #white
-                   \filled-box #'(5.2 . 8.5) #'(0.5 . 1.2) #0
-}
-legendOne = \markup { \center-align \smaller "doux et soutenu" }
-legendTwo = \markup { \center-align \italic \smaller "doux mais en dehors" }
-
-
-%}

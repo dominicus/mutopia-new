@@ -151,7 +151,7 @@ upperOne =  \relative c {
   \shpSlurBO f8)\!\>( \posHairpinPrev d'\! bes d 
      f_\dimTxt d'bes d f,d bes c,)_(\stopTextSpan         | %63
   \shpSlurBO \posScriptP f8)(^\smorzTxt c'a c f a c f a c 
-     \ottava #1 \setOttavaStyle f a                       | %64 
+     \ottava #1 \posOttavaB f a                           | %64 
   f'4) \ottava #0 b,,,\rest b\rest b2\rest b4\rest        | %65
   \restDownOne R1*6/4                                     | %66
   b2\rest b4\rest b\rest b\rest f->-\menoMosso~\(         | %67
@@ -187,17 +187,18 @@ upperOne =  \relative c {
   e4 f2)~ f8 \shpSlurBU d\( f d'c bes                     | %92
   gis8 a f'e d a \staffDown \posBeamD d,^[ \staffUp a f
      d e \slurDown \acciaccatura { g } f] \slurUp         | %93
-  e,2.\)\pp b''8\rest \stemDown
-     \hideNotes d,8_~^( \unHideNotes \moveNoteOne d2      | %94
+  e,2.\) b''8\rest \stemDown \shpSlurN
+     \hideNotes d,8_~^( \unHideNotes \moveNoteOne
+      \shortStemCin d2                                    | %94
   \stemUp a'2.) e'2.(                                     | %95
-  d2.) s8 \stemDown
-     \hideNotes d,8_~^( \unHideNotes \moveNoteOne d2      | %96
-  \stemUp a'2.) fis->(                                    | %97
-  gis2.) b8\rest \stemDown
+  d2.) s8 \stemDown \shpSlurBZ
+     \hideNotes d,8_~^\( \unHideNotes \moveNoteOne d2     | %96
+  \stemUp a'2.\) fis->(                                   | %97
+  gis2.) b8\rest \stemDown \shpSlurN
      \hideNotes d,8_~^( \unHideNotes \moveNoteOne d2      | %98
   \stemUp a'2.) e'(                                       | %99
-  fis2.) \stemDown s8 c,2( s8                             | %100
-  \stemUp a'2.) fis'(                                     | %101
+  fis2.) \stemDown s8 \shpSlurBZ c,2\(\pp s8              | %100
+  \stemUp a'2.\) fis'(                                    | %101
   gis2. fis2) f8\rest gis                                 | %102
   gis2.( fis2) f8\rest gis                                | %103
   gis2.( fis2) f8\rest gis                                | %104
@@ -532,15 +533,24 @@ upperTwo =  \relative c' {
   s4 \scaleDurations 2/3 { s8 des4-> s4. } s4 s8 \posScriptR
      ces4-> s8                                                | %89
   \repeat unfold 4 { s1. | }                                    %90-93
-  s2. \stemUp s8 d8-\hidePP e^\aTempoMenoMosso gis c b        | %94
-  c,4\rest \stemDown <e c>-.( <e c>-.) e\rest a-.( a-.)       | %95
-  e\rest <a f>-.( <a f>-.) b8\rest \stemUp d,e gis c b \stemDown | %96
+  s2. \stemUp s8 \noPadTxtScrp d8-\hidePP_\sottoVoce e^\aTempoMenoMosso gis
+     c b                                                      | %94
+  c,4\rest \stemDown \shpSlurI <e c>-.( <e c>-.) e\rest 
+     \shpSlurI a-.( a-.)                                      | %95
+  e\rest \shpSlurI <a f>-.( <a f>-.) b8\rest \stemUp d,
+     e_\semprePP gis c b \stemDown                            | %96
   c,4\rest <e c>_.( <e c>)_.) a,\rest <e'c a>_.( <e c a>_.)   | %97
   a,\rest <e'b>_.( <e b>_.) s8 \stemUp d e! gis! c b          | %98
-  \stemDown c,4\rest <e c>_.( <e c>_.) d\rest <c'a>_.(<c a>_.)| %99
-  g4\rest <c a e>_.( <c a e>_.) b8\rest \stemUp c,8 e gis b a | %100
-  \stemDown c,4\rest <e c>_.( <e c>_.) e\rest <c'a e>_.( <c a e>_.) | %101
-  e,4\rest <dis'c a>_.(<dis c a>_.) g,\rest <dis'c a> g,\rest  | %102
+  \stemDown \posHairpinR c,4\rest\< \shpSlurI <e c>_.( 
+     <e c>_.) \posScriptT d\rest_\crescTiny \shpSlurI 
+     <c'a>_.(<c a>_.)\!                                       | %99
+  \posScriptU g4\rest_\f \shpSlurI <c a e>_.( <c a e>_.) b8\rest
+     \stemUp c,8 e gis b a                                    | %100
+  \stemDown \posHairpinS c,4\rest\< \shpSlurI <e c>_.( <e c>_.)
+     \posScriptV e\rest_\crescTinyB \shpSlurI \shortStemTwo
+     <c'a e>_.( <c a e>_.)\!                                  | %101
+  \posScriptP e,4\rest_\sfSforzato <dis'c a>_.(<dis c a>_.)
+     g,\rest <dis'c a> g,\rest                                 | %102
   g4\rest <dis'c a> <dis c a> g,\rest <dis'c a> g,\rest       | %103
   g4\rest <dis'c a> <dis c a> g,\rest <dis'c a> g,\rest       | %104
   g4\rest<fis'dis c><fis dis c> g,\rest <fis'dis c><fis dis c>| %105
@@ -810,23 +820,27 @@ lowerOne = \relative c, {
   c,,,4 e''( bes \stemUp g e' bes)              | %80
   f4 ees'!( a,) bes, \stemNeutral d'( aes)      | %81
   \stemDown
-  ees,8( bes'g'ees bes'g ees'4) d,4\rest d\rest | %82
-  ees,8( bes'g'ees bes'g ees'4) d,4\rest d\rest | %83
-  ees,8( bes' aes'f bes aes d4) d,4\rest d\rest | %84
-  ees,8( bes'g'4) d\rest \shpSlurBY ees,8(ces'
-     aes'4)d,\rest                              | %85
+  \shpSlurBW ees,8( bes'g'ees bes'g ees'4) d,4\rest d\rest | %82
+  \shpSlurBW ees,8( bes'g'ees bes'g ees'4) d,4\rest d\rest | %83
+  \shpSlurBX ees,8( bes' aes'f bes aes d4) d,4\rest d\rest | %84
+  ees,8( bes'g'4) d\rest \shpSlurBY ees,8(ces'aes'4)d,\rest| %85
   \shpSlurBV ees,8( bes'g'ees bes'g ees'4) d,\rest d\rest  | %86
   \shpSlurBW ees,8( bes'g'ees bes'g ees'4) d,\rest d\rest  | %87
   \shpSlurBX ees,8( bes'aes'f bes aes d4) d,\rest d\rest   | %88
-  ees,8( bes'g'4) d\rest ees,8(ces'aes'4)d,\rest           | %89
+  ees,8( bes'g'4) d\rest \shpSlurBY ees,8(ces'
+     aes'4)d,\rest                              | %89
   \shpSlurBV  ees,8( bes'g' ees bes'g ees'4) d,\rest d\rest| %90
   \shpSlurBW g,8( d'bes'g d'bes g'4) d,\rest d\rest        | %91
   \shpSlurBW bes8( f'd'bes f'd bes'4) d,,\rest d\rest      | %92
-  d8( a'f' \clef treble d a'f d'4) b\rest b\rest| %93
+  \ppSpanner d8(\startTextSpan a'f' 
+     \clef treble d a'f d'4) b\rest b\rest      | %93
   \clef bass \stemNeutral \slurDown
-  d,,\rest e,_.(-\hidePP e_.) d'\rest e,_.( e_.)| %94
-  d'\rest e,_.( e_.) b'\rest <a'e>_.( <a e>_.)  | %95
-  b,\rest <a'e>_.( <a e>_.) b,\rest \stemDown e,_.( e_.) | %96
+  d,,\rest\stopTextSpan \shpSlurI e,_.(-\hidePP e_.)
+     d'\rest \shpSlurI e,_.( e_.)               | %94
+  d'\rest \shpSlurI e,_.( e_.) b'\rest \shpSlurI
+     <a'e>_.( <a e>_.)                          | %95
+  b,\rest <a'e>_.( <a e>_.) b,\rest \stemDown
+     \shpSlurI e,_.( e_.)                       | %96
   e4\rest e_.( e_.) e\rest e_.( e_.)            | %97
   e4\rest e_.( e_.) e\rest e_.( e_.)            | %98
   e4\rest e_.( e_.) b'\rest <c'a e>_.(<c a e>_.)| %99
@@ -1091,7 +1105,7 @@ lowerTwo = \relative c {
   a2.\rest e'(                                     | %99
   fis2.)-\hideF a,2.\rest                          | %100
   a2.\rest fis'(                                   | %101
-  gis2.^> fis2) f8\rest gis                        | %102
+  gis2. fis2) f8\rest gis                          | %102
   gis2.^>( fis2) f8\rest gis                       | %103
   gis2.^>( fis2) f8\rest gis                       | %104
   a2.( gis2 a4)\arpeggio                           | %105
@@ -1259,16 +1273,16 @@ dynamics = {
   \semprePiuPSpanner s1.\startTextSpan                | %90
   s1 s4\stopTextSpan s8 \eRallSpanner s8\startTextSpan| %91
   s1 s4 s8. s16\stopTextSpan                          | %92
-  \nullSpanner s1\startTextSpan s4. s8\stopTextSpan   | %93
-  s2. s8 s2-\sottoVoce s8                             | %94
+  s1 s4. s8                                           | %93
+  s2. s8 s2 s8                                        | %94
   s1.                                                 | %95
-  s1 s2-\semprePP                                     | %96
+  s1 s2  \stopStaff                                   | %96
   s1.                                                 | %97
   s1.                                                 | %98
-  s2.\< s2.-\crescTiny                                | %99
-  s2.\f s8 s8\pp s2                                   | %100
-  s2.\< s2.-\crescTiny                                | %101
-  s4\fz \sempreCrescSpanner s4\startTextSpan s2. s4\< | %102
+  s2. s2.                                             | %99
+  s2. s8 s8 s2                    \startStaff         | %100
+  s2. s2.                                             | %101
+  s4 \sempreCrescSpanner s4\startTextSpan s2. s4\<    | %102
   s1.\sf                                              | %103
   s1\sf s4 s8. s16\stopTextSpan                       | %104
   s2.^\moltoCresc s2.\<                               | %105
