@@ -338,6 +338,10 @@ shpSlurBZ = {  \shpSlurM
                          ((0 . 2) (0 . 2) (0 . 2) (0 . 2))  ) PhrasingSlur }
 shpSlurCA = \shape #'((0.3 . -2.5) (0 . -2.3) (0 . -2.3) (-0.3 . -2.3)) Slur
 shpSlurCB = \shape #'(( 0 . 0.6) (0 . 0.6) (0 . 0.6) (0 . 0.6)) Slur
+shpSlurCC = \shape #'(( 0.3 . -0.8) (0 . -0.4) (0 . 0.2) (0 . 0)) Slur
+shpSlurCD = \shape #'(( 0 . -0.3) (0 . -0.5) (0 . -0.7) (-0.3 . -0.8)) Slur
+shpSlurCE = \shape #'(( 0 . 0) (1 . 0) (-1 . 0.3) (0.4 . -0.2)) PhrasingSlur
+shpSlurCF = \shape #'(( 0 . -0.8) (0 . -0.8) (0 . -0.6) (0 . -0.6)) Slur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -435,6 +439,12 @@ posHairpinT ={
             \once \override Hairpin.outside-staff-priority = ##f
             \once \override Hairpin.extra-offset = #'( 0 . 2.1 )
 }
+posHairpinU = {
+            \once \override Hairpin.bound-padding = 0.0
+            \once \override Hairpin.padding = 0.0
+            \once \override Hairpin.staff-padding = 0.0
+            \once \override Hairpin.height = 0.5
+}
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
@@ -482,6 +492,11 @@ posScriptW = {
 }
 posScriptY = \override Script.extra-offset = #'( 0.3 . 0.7 )
 posScriptYrev = \revert Script.extra-offset
+posScriptZ = {
+          \once \override TextScript.extra-offset = #'( -0.7 . 0.2 )
+          \once \override TextScript.padding = 0.0
+}
+posScriptAA = \override DynamicText.extra-offset = #'( -0.2 . -0.4 )
 
 posPedalA = \override SustainPedal.extra-offset = #'(0 . 1.0 )
 posPedalB = \override SustainPedal.extra-offset = #'(0 . 0.5 )
@@ -489,6 +504,7 @@ posPedalC = \override SustainPedal.extra-offset = #'(0 . 0.3 )
 posPedalD = \override SustainPedal.extra-offset = #'(1.2 . 0.9 )
 posPedalE = \override SustainPedal.extra-offset = #'(1.2 . 1.3 )
 posPedalF = \override SustainPedal.extra-offset = #'(0.5 . 0.6 )
+posPedalG = \override SustainPedal.extra-offset = #'(1.7 . 1.5 )
 posPedalRev = \revert SustainPedal.extra-offset
 
 posDottedA = \once \override Staff.NoteCollision.prefer-dotted-right = ##f

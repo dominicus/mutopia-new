@@ -202,11 +202,13 @@ upperOne =  \relative c {
   gis2. fis2) f8\rest gis                                 | %102
   gis2.( fis2) f8\rest gis                                | %103
   gis2.( fis2) f8\rest gis                                | %104
-  a2.( fis2 a4)                                           | %105
+  a2.( \posHairpinU fis2_\< a4)                           | %105
   \stemDown
-  <b gis e d!b>2.(\( <cis gis e d>2) <cis gis e d>4(      | %106
-  <a cis,a>2.)\) <a'cis,a>2\( <gis cis,gis>4              | %107
-  <fis cis fis,>2.( <gis dis b>2) <gis dis b>4(           | %108
+  \shpSlurCC \shpSlurCE \shortStemCin \posScriptAA <b gis e d!b>2.(\(\ff
+     <cis gis e d>2) \shpSlurCD <cis gis e d>4(           | %106
+  <a cis,a>2.)\) \shpSlurCE <a'cis,a>2\( <gis cis,gis>4   | %107
+  \shpSlurCC <fis cis fis,>2.( <gis dis b>2)
+     \shpSlurCD <gis dis b>4(                             | %108
   <e gis,e>2.)\) <e e,>2-^ <e e,>4-^                      | %109
   \squeezeNotation
   <e e,>2->(<d d,>4) \times 2/3 { <d d,>8([<e e,><d d,>] }
@@ -556,7 +558,8 @@ upperTwo =  \relative c' {
      g,\rest <dis'c a> g,\rest                                | %103
   \posScriptW g4\rest_\sfSforzato <dis'c a> <dis c a> g,\rest
      <dis'c a> g,\rest\stopTextSpan                           | %104
-  g4\rest<fis'dis c><fis dis c> g,\rest <fis'dis c><fis dis c>| %105
+  \posScriptZ g4\rest_\moltoCresc <fis'dis c><fis dis c> g,\rest
+     <fis'dis c><fis dis c>                                   | %105
   \repeat unfold 4 { s1. | }                                  | %106-109
   \squeezeNotation
   \moveNoteTre a1.                                            | %110
@@ -1113,7 +1116,7 @@ lowerTwo = \relative c {
   gis2. fis2) f8\rest gis                          | %102
   gis2.( fis2) f8\rest gis                         | %103
   gis2.( fis2) f8\rest gis                         | %104
-  a2.( gis2 a4)\arpeggio                           | %105
+  \shpSlurCF a2.( gis2 a4)\arpeggio                | %105
   \repeat unfold 7 { s1. | }                         %106-112
   \squeezeNotation
   s4 cis,( <fis a,>) s b,( <dis a>)                | %113
@@ -1290,8 +1293,8 @@ dynamics = {
   s4 s4 s2. s4      | %102
   s1.                                                 | %103
   s1 s4 s8. s16                                       | %104
-  s2.^\moltoCresc s2.\<                               | %105
-  s1.\ff                                              | %106
+  s2. s2.                                             | %105
+  s1.                                              | %106
   \repeat unfold 5 { s1. | }                            %107-111
   s2. s2.\<                                           | %112
   s2.\! s4 s2\<                                       | %113
@@ -1459,10 +1462,7 @@ pedal = {
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %104
  \posPedalRev
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %105
- s1\sustainOn s4 s4\sustainOff                          | %106
- s1\sustainOn s4 s4\sustainOff                          | %107
- s1\sustainOn s4 s4\sustainOff                          | %108
- s1\sustainOn s4 s4\sustainOff                          | %109
+ \repeat unfold 4 { s1. | }                               %106-109
  s2\sustainOn s4\sustainOff s16 s4\sustainOn s8 s8.\sustainOff s8  | %110
  s2\sustainOn s4\sustainOff s16 s4\sustainOn s8 s8.\sustainOff s8  | %111
  s2\sustainOn s4\sustainOff s2\sustainOn s8. s16\sustainOff  | %112
@@ -1602,7 +1602,12 @@ pedalTwo = {
  s2\sustainOn s8 s32\sustainOff s16. s2.                | %50
  \repeat unfold 2 { s1. | }                               %51-52
  s2\sustainOn s1\sustainOff                             | %53
- \repeat unfold 152 { s1. | }                             %54-205
+ \repeat unfold 52 { s1. | }                             %54-105
+ \posPedalG s1\sustainOn s4 s4\sustainOff               | %106
+ s1\sustainOn s4 s4\sustainOff                          | %107
+ s1\sustainOn s4 s4\sustainOff                          | %108
+ s1\sustainOn s4 s4\sustainOff \posPedalRev             | %109
+ \repeat unfold 96 { s1. | }                             %110-205
  s1\sustainOn s4. s8\sustainOff                         | %206
  s2.\sustainOn s8. s16\sustainOff s2                    | %207
  s2.\sustainOn  s8 s8\sustainOff                        | %208
