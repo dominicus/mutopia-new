@@ -342,6 +342,11 @@ shpSlurCC = \shape #'(( 0.3 . -0.8) (0 . -0.4) (0 . 0.2) (0 . 0)) Slur
 shpSlurCD = \shape #'(( 0 . -0.3) (0 . -0.5) (0 . -0.7) (-0.3 . -0.8)) Slur
 shpSlurCE = \shape #'(( 0 . 0) (1 . 0) (-1 . 0.3) (0.4 . -0.2)) PhrasingSlur
 shpSlurCF = \shape #'(( 0 . -0.8) (0 . -0.8) (0 . -0.6) (0 . -0.6)) Slur
+shpSlurCG = \shape #'( (( 0.5 . -2.6) (0.3 . -2) (0 . -1.6) (0.4 . -1.3))
+                       (( 0.3 . 2.6) (0.3 . 2.4) (0.3 . 2.4) (0.2 . 2)) ) Slur
+shpSlurCH = \shape #'( (( -0.7 . 0.2) (0 . 0) (0 . -1) (0 . -1.1))
+                       (( -0.5 . 0.7) (0.4 . 0) (0.2 . -0.4) (0.3 . -1)) ) PhrasingSlur
+shpSlurCI = \shape #'(( -0.7 . -0.9) (0 . 0) (0 . 0) (0.5 . -0.7)) PhrasingSlur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -444,6 +449,10 @@ posHairpinU = {
             \once \override Hairpin.padding = 0.0
             \once \override Hairpin.staff-padding = 0.0
             \once \override Hairpin.height = 0.5
+            \once \override Hairpin.extra-offset = #'( -0.6 . 0 )
+}
+posHairpinV = {
+            \once \override Hairpin.rotation = #'( 3 -1 0 )
 }
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
@@ -493,10 +502,14 @@ posScriptW = {
 posScriptY = \override Script.extra-offset = #'( 0.3 . 0.7 )
 posScriptYrev = \revert Script.extra-offset
 posScriptZ = {
-          \once \override TextScript.extra-offset = #'( -0.7 . 0.2 )
+          \once \override TextScript.extra-offset = #'( -1 . 0.2 )
           \once \override TextScript.padding = 0.0
 }
 posScriptAA = \override DynamicText.extra-offset = #'( -0.2 . -0.4 )
+posScriptAB = {
+          \once \override TextScript.outside-staff-priority = ##f 
+          \once \override TextScript.extra-offset = #'( -0.3 . 0 )
+}
 
 posPedalA = \override SustainPedal.extra-offset = #'(0 . 1.0 )
 posPedalB = \override SustainPedal.extra-offset = #'(0 . 0.5 )
@@ -506,6 +519,7 @@ posPedalE = \override SustainPedal.extra-offset = #'(1.2 . 1.3 )
 posPedalF = \override SustainPedal.extra-offset = #'(0.5 . 0.6 )
 posPedalG = \override SustainPedal.extra-offset = #'(1.7 . 1.5 )
 posPedalRev = \revert SustainPedal.extra-offset
+hideNextPedal = \once \omit Voice.SustainPedal
 
 posDottedA = \once \override Staff.NoteCollision.prefer-dotted-right = ##f
 
@@ -522,8 +536,8 @@ posOttavaA = {
 posOttavaB = {
   \setOttavaStyle
   %Pierre Perol-Schneider's angled ottava contribution
-  \override Staff.OttavaBracket.stencil = #ly:line-spanner::print
-  \override Staff.OttavaBracket.bound-details =
+  \once \override Staff.OttavaBracket.stencil = #ly:line-spanner::print
+  \once \override Staff.OttavaBracket.bound-details =
     #`((left . ((Y . 0)
                 (attach-dir . ,LEFT)
                 (padding . 0)
@@ -532,9 +546,9 @@ posOttavaB = {
                  (padding . 0)
                  (attach-dir . ,RIGHT)
                  (text . ,(make-draw-dashed-line-markup (cons 0 -1.2))))))
-  \override Staff.OttavaBracket.left-bound-info =
+  \once \override Staff.OttavaBracket.left-bound-info =
      #ly:line-spanner::calc-left-bound-info-and-text
-  \override Staff.OttavaBracket.right-bound-info =
+  \once \override Staff.OttavaBracket.right-bound-info =
      #ly:line-spanner::calc-right-bound-info
 }
 

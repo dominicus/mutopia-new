@@ -210,24 +210,28 @@ upperOne =  \relative c {
   \shpSlurCC <fis cis fis,>2.( <gis dis b>2)
      \shpSlurCD <gis dis b>4(                             | %108
   <e gis,e>2.)\) <e e,>2-^ <e e,>4-^                      | %109
-  \squeezeNotation
+  \squeezeNotation \tupletDown
   <e e,>2->(<d d,>4) \times 2/3 { <d d,>8([<e e,><d d,>] }
      <cis cis,><d d,><fis fis,><e e,>)                    | %110
   <d d,>2->(<cis cis,>4) \times 2/3 { <cis cis,>8([<d d,><cis cis,>] }
      <bis bis,><cis cis,><e e,><d d,>)                    | %111
-  \stemUp
-  <cis cis,>4( <b b,>4.<ais ais,>8) 
-     \times 3/4 {<b b,>4(<bis bis,><cis cis,><gis gis,>) }| %112
+  \stemUp \tupletSpan 2. 
+  <cis cis,>4( <b b,>4.<ais ais,>8) \times 3/4 {
+     <b b,>4(_\< <bis bis,><cis cis,><gis gis,>)\! }      | %112
   <b b,>4( a4. gis8 \grace { fis16[ gis] } fis4) eis8-.(
      fis-. gis-. a-.)                                     | %113
-  <b,gis e d>2.(\( <e cis gis e>2) <e cis gis e d>4(      | %114
+  \shpSlurCH <b,gis e d>2.(\( <e cis gis e>2) \shpSlurCG
+     <e cis gis e d>4(                                    | %114
   \stemNeutral \unSqueezeNotation
-  <a,cis,a>4)\) b\rest <a'cis,a>\(<a'cis,a>2<gis cis,gis>4| %115
-  <fis cis fis,>2.(<gis dis b>2)<gis dis a>4(             | %116
-  <e gis,e>2)\) b,4\rest \ottava #1 <e''~e,_~>2<e e,>8.<e e,>16  | %117
-  <e e,>4-. \ottava #0 b,,\rest b\rest <fis'~ fis,_~>2.->-\tenTxt| %118
-  <fis fis,>4 <fis fis,>-\sharpPrall\( <eis eis,>8<fis fis,>
-     <gis gis,><ais ais,><b b,><cis cis,><d!d,!><e e,>    |%119
+  <a,cis,a>4)\) b\rest \shpSlurCI <a'cis,a>\( <a'cis,a>2
+     <gis cis,gis>4                                       | %115
+  \shpSlurCC <fis cis fis,>2.(<gis dis b>2)<gis dis a>4(  | %116
+  <e gis,e>2)\) b,4\rest \ottava #1 \setOttavaStyle
+     <e''~e,_~>2<e e,>8.<e e,>16                          | %117
+  <e e,>4-._\semprePiuF \ottava #0 b,,\rest b\rest 
+     \shortStemOne <fis'~ fis,_~>2.->-\tenTxt             | %118
+  <fis fis,>4 \posScriptAB <fis fis,>-\sharpPrall\( <eis eis,>8<fis fis,>
+     <gis gis,><ais ais,><b b,><cis cis,><d!d,!><e e,>    | %119
   <fis fis,>4-.\) b,,\rest b\rest <gis'gis,>2->-\tenTxt <gis gis,>4-^ | %120
   gis,8\( gis'a gis <fisis fisis,><gis gis,><ais ais,>
      <bis bis,><cis cis,><dis dis,><e e,><fis fis,>       | %121
@@ -873,12 +877,12 @@ lowerOne = \relative c, {
   \unSqueezeNotation
   <b,b,>4 <b'fis ><dis a> <fis b, ><dis a><b fis>| %116
   <e,e,>4 <b'e,> <e gis,> <gis b,><e gis,> <b e,>| %117
-  <e,e,>4 <ais e> <cis fis,> <e ais,!> <cis fis,> <ais e>| %118
-  <e,e,>4 <ais'e> <cis fis,> <e ais,!> <cis fis,> <ais e>| %119
-  <e e,>4 <bis'e,><dis gis,><fis bis,> <dis gis,><bis e,>| %120
+  <e,e,>4 <ais e> <cis fis,> <e ais,!> <cis fis,> <ais e> | %118
+  <e,e,>4 <ais'e> <cis fis,> <e ais,!> <cis fis,> <ais e> | %119
+  <e e,>4 <bis'e,><dis gis,><fis bis,> <dis gis,><bis e,> | %120
   <e,,e,>4<bis''e,><dis gis,><fis bis,!><dis gis,><bis e,>| %121
-  <e,e,>4<cis'e,><e gis,><dis,dis,><b'dis,><dis gis,>    | %122
-  <cis,cis,>4<gis'cis,><cis e,><gis,gis,><gis'b,><b dis,>| %123
+  <e,e,>4<cis'e,><e gis,><dis,dis,><b'dis,><dis gis,>     | %122
+  <cis,cis,>4<gis'cis,><cis e,><gis,gis,><gis'b,><b dis,> | %123
   <eis,,eis,>4_. d'\rest d\rest <gis'dis b eis,>2->\arpeggio d,4\rest | %124
   \restDownOne R1*6/4 \slurDown \stemUp          | %125
   bes,4( d') d\rest bes,( d') d\rest             | %126
@@ -1296,12 +1300,12 @@ dynamics = {
   s2. s2.                                             | %105
   s1.                                              | %106
   \repeat unfold 5 { s1. | }                            %107-111
-  s2. s2.\<                                           | %112
-  s2.\! s4 s2\<                                       | %113
+  s2. s2.                                           | %112
+  s2. s4 s2\<                                       | %113
   s1.\ff                                              | %114
   \repeat unfold 3 { s1. | }                            %115-117
-  s1.-\semprePiuF                                     | %118
-  s2 s1\<                                             | %119
+  s1.                                                 | %118
+  s2 \posHairpinV s1\<                                | %119
   s16 s8.\! s4 s1                                     | %120
   s2 s1\<                                             | %121
   s16 s16\! s8 s1^\moltoCresc s4                      | %122
@@ -1465,14 +1469,13 @@ pedal = {
  \repeat unfold 4 { s1. | }                               %106-109
  s2\sustainOn s4\sustainOff s16 s4\sustainOn s8 s8.\sustainOff s8  | %110
  s2\sustainOn s4\sustainOff s16 s4\sustainOn s8 s8.\sustainOff s8  | %111
- s2\sustainOn s4\sustainOff s2\sustainOn s8. s16\sustainOff  | %112
- s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %113
- s1\sustainOn s4. s16\sustainOff s16                    | %114
+ s2\sustainOn s4\sustainOff s2\sustainOn s8. s16\sustainOff        | %112
+ \repeat unfold 2 { s1. | }                               %113-114
  s1\sustainOn s4 s4\sustainOff                          | %115
- s1\sustainOn s4 s4\sustainOff                          | %116
+ s16.. s64\sustainOn s4. s2. s4\sustainOff               | %116
  s1\sustainOn s4 s4\sustainOff                          | %117
  s1\sustainOn s4 s4\sustainOff                          | %118
- s2\sustainOn s8. s16\sustainOff s2.                    | %119
+ \hideNextPedal s2\sustainOn s8. s16\sustainOff s2.     | %119
  s1\sustainOn s4 s4\sustainOff                          | %120
  s2\sustainOn s8. s16\sustainOff s2.                    | %121
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %122
@@ -1607,7 +1610,12 @@ pedalTwo = {
  s1\sustainOn s4 s4\sustainOff                          | %107
  s1\sustainOn s4 s4\sustainOff                          | %108
  s1\sustainOn s4 s4\sustainOff \posPedalRev             | %109
- \repeat unfold 96 { s1. | }                             %110-205
+ \repeat unfold 3 { s1. | }                               %110-112
+ s16 s8.\sustainOn s4 s8 s8\sustainOff s2\sustainOn s16 s8.\sustainOff  | %113
+ s16.. s64\sustainOn s8 s2. s4. s16\sustainOff s16      | %114
+ \repeat unfold 4 { s1. | }                               %115-118
+ s16. s32\sustainOn s4. s8. \hideNextPedal s16\sustainOff s2.     | %119
+ \repeat unfold 86 { s1. | }                              %120-205
  s1\sustainOn s4. s8\sustainOff                         | %206
  s2.\sustainOn s8. s16\sustainOff s2                    | %207
  s2.\sustainOn  s8 s8\sustainOff                        | %208
