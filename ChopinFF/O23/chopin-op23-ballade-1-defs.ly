@@ -70,7 +70,7 @@ moltoCresc = \markup \italic \larger "molto cresc."
 animatoLegend = \markup \italic \larger "animato"
 pocoApocoCresc = \markup \italic "poco     a       poco    cresc."
 pocoRiten = \markup \italic \larger "poco riten."
-piuAnimato = \markup \italic "più animato"
+piuAnimato = \markup \italic \larger "più animato"
 tenTxt = \markup { \center-align  \italic "  ten." }
 sharpPrall = \markup \override #'(baseline-skip . 1.7) \center-column { \teeny \musicglyph #"accidentals.sharp" \musicglyph #"scripts.prall" }
 
@@ -163,6 +163,12 @@ ppSpanner = {
   \override TextSpanner.avoid-slur = #'inside
   \override TextSpanner.outside-staff-priority = ##f
   \override TextSpanner #'(bound-details right stencil-align-dir-y) = #UP
+}
+setDynTxtSpanStyle = {
+  \override DynamicTextSpanner.dash-period = #14.0
+  \override DynamicTextSpanner.dash-fraction = #0.04
+  \override DynamicTextSpanner.dash-period = #8.0
+  \override DynamicTextSpanner.thickness = 2.1
 }
 
 setRestDirDown = \override Rest #'direction = #down
@@ -347,6 +353,14 @@ shpSlurCG = \shape #'( (( 0.5 . -2.6) (0.3 . -2) (0 . -1.6) (0.4 . -1.3))
 shpSlurCH = \shape #'( (( -0.7 . 0.2) (0 . 0) (0 . -1) (0 . -1.1))
                        (( -0.5 . 0.7) (0.4 . 0) (0.2 . -0.4) (0.3 . -1)) ) PhrasingSlur
 shpSlurCI = \shape #'(( -0.7 . -0.9) (0 . 0) (0 . 0) (0.5 . -0.7)) PhrasingSlur
+shpSlurCJ = \shape #'(( 0 . 0.3) (1 . 0.4) (-2 . 0.1) (0.4 . 0)) PhrasingSlur
+shpSlurCK = \shape #'(( 0 . -0.3) (0 . -0.3) (-0.4 . -0.6) (-0.6 . -0.6)) Slur
+shpSlurCL = \shape #'( ((-0.6 . 0.6) (0 . 1.4) (0 . 0.8) (3.8 . 0.3))
+                       ((0 . 1) (0 . -2) (-1 . -4) (0 . 0.0))
+                       ((0 . 0.0) (0 . 0.0) (0 . 0.0) (0 . 0.0)) ) PhrasingSlur
+shpSlurCM = { \shape #'(( -0.7 . -1.1) (0 . -1.6) (0 . 0.2) (0 . 0)) PhrasingSlur
+              \once \override PhrasingSlur.staff-padding = 0.0
+}
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -452,8 +466,10 @@ posHairpinU = {
             \once \override Hairpin.extra-offset = #'( -0.6 . 0 )
 }
 posHairpinV = {
-            \once \override Hairpin.rotation = #'( 3 -1 0 )
+            \once \override Hairpin.rotation = #'( 2 -1 0 )
+            \revert Hairpin.height
 }
+posHairpinW = \once \override Hairpin.height = 0.48
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
@@ -510,6 +526,10 @@ posScriptAB = {
           \once \override TextScript.outside-staff-priority = ##f 
           \once \override TextScript.extra-offset = #'( -0.3 . 0 )
 }
+posScriptAC = \once \override Script.extra-offset = #'( 0 . 0.8 )
+posScriptAD = { }
+posScriptAE = \once \override DynamicText.extra-offset = #'(1.6 . -0.8 )
+posScrpRevExOff =  \revert Script.extra-offset
 
 posPedalA = \override SustainPedal.extra-offset = #'(0 . 1.0 )
 posPedalB = \override SustainPedal.extra-offset = #'(0 . 0.5 )
@@ -518,6 +538,7 @@ posPedalD = \override SustainPedal.extra-offset = #'(1.2 . 0.9 )
 posPedalE = \override SustainPedal.extra-offset = #'(1.2 . 1.3 )
 posPedalF = \override SustainPedal.extra-offset = #'(0.5 . 0.6 )
 posPedalG = \override SustainPedal.extra-offset = #'(1.7 . 1.5 )
+posPedalH = \once \override SustainPedal.extra-offset = #'(0.7 . 0)
 posPedalRev = \revert SustainPedal.extra-offset
 hideNextPedal = \once \omit Voice.SustainPedal
 
@@ -525,6 +546,8 @@ posDottedA = \once \override Staff.NoteCollision.prefer-dotted-right = ##f
 
 noPadTxtScrp = \once \override TextScript.padding = 0.0
 noPadScript = \once \override Script.padding = 0.0
+noPadSpanner = \once \override TextSpanner.padding = 0.0
+noPadPedal = \once \override SustainPedal.padding = 0.0
 noPadDynTxt = \once \override DynamicText.padding = 0.0 \once \override DynamicText.staff-padding = 0.0
 
 setOttavaStyle = \set Staff.ottavation = #"8"
@@ -551,6 +574,7 @@ posOttavaB = {
   \once \override Staff.OttavaBracket.right-bound-info =
      #ly:line-spanner::calc-right-bound-info
 }
+posOttavaC = \once \override Staff.OttavaBracket.staff-padding = 4.5
 
 ignoreClashOnce = \once \override NoteColumn.ignore-collision = ##t
 ignoreClash = \override NoteColumn.ignore-collision = ##t

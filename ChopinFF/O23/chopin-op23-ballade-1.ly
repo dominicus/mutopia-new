@@ -233,25 +233,29 @@ upperOne =  \relative c {
   <fis fis,>4 \posScriptAB <fis fis,>-\sharpPrall\( <eis eis,>8<fis fis,>
      <gis gis,><ais ais,><b b,><cis cis,><d!d,!><e e,>    | %119
   <fis fis,>4-.\) b,,\rest b\rest <gis'gis,>2->-\tenTxt <gis gis,>4-^ | %120
-  gis,8\( gis'a gis <fisis fisis,><gis gis,><ais ais,>
-     <bis bis,><cis cis,><dis dis,><e e,><fis fis,>       | %121
+  \posScriptAC \shpSlurCJ gis,8-^\( gis'a gis <fisis fisis,><gis gis,>
+     <ais ais,><bis bis,><cis cis,><dis dis,><e e,><fis fis,>         | %121
+  \posScrpRevExOff
   <gis gis,>4-.\)b,,\rest b\rest<gis'gis,>2-^<gis gis,>4-^| %122
-  <gis gis,>4-\sharpPrall\( <fisis fisis,>8
+  \posScriptAB <gis gis,>4-\sharpPrall\( <fisis fisis,>8
      <gis gis,><ais ais,><b b,><cis cis,><dis dis,>
      <eis eis,><fisis fisis,!><gis gis,!><ais ais,!>      | %123
-  <b b,>4-.\) <b gis>8-^ eis,dis b <b gis> eis,dis b
+  <b b,>4-.\) \noPadScript <b gis>8-^ eis,dis b <b gis> eis,dis b
      <b gis> eis, \clef bass                              | %124
   dis8 b <b gis> eis,dis b <b'gis>eis,dis b aes' f        | %125
-  bes!8\(-\piuAnimato aes ces f,bes aes ces f,bes aes ces f,| %126
-  bes aes ces f,bes aes ces f, bes aes ces f,             | %127
-  bes aes ces f,bes aes ces f, bes aes ces f,             | %128
-  bes\< aes ces f,bes aes ces f, bes aes ces f,           | %129
-  bes4-.\!\) \clef treble bes8\( d ces d cis f d aes'e aes| %130
+  \noPadTxtScrp bes!8\(-\piuAnimato aes ces f,bes aes ces f,
+     bes aes ces f,                                         | %126
+  bes aes ces f,bes aes ces f, bes aes ces f,               | %127
+  bes aes ces f,bes aes ces f, bes aes ces f,               | %128
+  \posHairpinW bes\< aes ces f,bes aes ces f, bes aes ces f,| %129
+  bes4-.\!\) \clef treble \shpSlurCL bes8\( d
+     ces d cis f d aes'e aes                              | %130
   f8_[ ces'g bes aes d] bes d ces! d cis f \stemDown      | %131
   d8 aes'e aes f ces'g ces aes d bes d                    | %132
-  ces8 d cis \ottava #1 f d aes'e aes f ces'g ces         | %133
+  ces8 d cis \ottava #1 \setOttavaStyle \posOttavaC f d
+     aes'e aes f ces'g ces                                | %133
   d8 aes ces f,bes aes c f,bes aes cis f,                 | %134
-  bes\< aes d-. f,bes aes ees'-.f,bes aes e'-. f,\!       | %135
+  bes\< aes d-. f,bes aes ees'-. f,bes aes e'-. f,\!      | %135
   f'->\> d cis e ees c b d cis bes a! c\!                 | %136
   b aes g bes aes \ottava #0 f d bes a! bes aes bes\)     | %137
   fis(-\animatoLegend g g'd ees b c g bes aes g f)        | %138
@@ -572,8 +576,10 @@ upperTwo =  \relative c' {
   <fis cis>2. <dis b a>4 <dis b a>8<dis b a><dis b a><dis b a>| %113
   s1.                                                         | %114
   \unSqueezeNotation
-  \repeat unfold 9 { s1. | }                                    %115-123
-  s4 \stemUp \hideNotes b''8 ^\( \unHideNotes s8 s1           | %124
+  \repeat unfold 6 { s1. | }                                    %115-120
+  \stemUp gis,2 s1                                            | %121
+  \repeat unfold 2 { s1. | }                                    %122-123
+  s4 \hideNotes \shpSlurCM b''8 ^\( \unHideNotes s8 s1        | %124
   s1 s4 ces,,,\)^(                                            | %125
   \hideNotes bes8) \unHideNotes s4. s1                        | %126
   \repeat unfold 14 { s1. | }                                   %127-140
@@ -884,17 +890,19 @@ lowerOne = \relative c, {
   <e,e,>4<cis'e,><e gis,><dis,dis,><b'dis,><dis gis,>     | %122
   <cis,cis,>4<gis'cis,><cis e,><gis,gis,><gis'b,><b dis,> | %123
   <eis,,eis,>4_. d'\rest d\rest <gis'dis b eis,>2->\arpeggio d,4\rest | %124
-  \restDownOne R1*6/4 \slurDown \stemUp          | %125
-  bes,4( d') d\rest bes,( d') d\rest             | %126
-  bes,4( d') d\rest bes,( d') d\rest             | %127
-  \stemDown \slurUp d4_>( f') d,\rest d_>( f') d,\rest | %128
-  d4_>( f') d,\rest d_>( f') d,\rest             | %129
-  \stemNeutral \ottava #-1 \dynLeft bes,,4\sf \ottava #0 
-     d''\rest d\rest <aes'f bes,> d,\rest d\rest | %130
-  <d'aes f>4 d,\rest d\rest <f'd aes> d,\rest d\rest   | %131
+  \restDownOne R1*6/4 \slurDown \stemUp                               | %125
+  bes,4( d') d\rest bes,( d') d\rest                                  | %126
+  bes,4( d') d\rest bes,( d') d\rest                                  | %127
+  \stemDown \slurUp \shpSlurCK d4_>( f') d,\rest
+     \shpSlurCK d_>( f') d,\rest                                      | %128
+  \shpSlurCK d4_>( f') d,\rest \shpSlurCK d_>( f') \posScriptAE
+     d,\rest\sf                                                       | %129
+  \stemNeutral \ottava #-1 \setOttavaStyle bes,,4 \ottava #0 
+     d''\rest d\rest <aes'f bes,> d,\rest d\rest          | %130
+  <d'aes f>4 d,\rest d\rest <f'd aes> d,\rest d\rest      | %131
   \clef treble
-  <aes''f bes,>4 b\rest b\rest <d aes f> b\rest b\rest | %132
-  <f'd aes> b,\rest b\rest <aes'f b,> b,\rest b\rest   | %133
+  <aes''f bes,>4 b\rest b\rest <d aes f> b\rest b\rest    | %132
+  <f'd aes> b,\rest b\rest <aes'f b,> b,\rest b\rest      | %133
   <d'~ aes~ f_~>1.(                              | %134
   <d aes f>2. <c aes ees>)                       | %135
   \doubleSlursOn
@@ -1298,21 +1306,21 @@ dynamics = {
   s1.                                                 | %103
   s1 s4 s8. s16                                       | %104
   s2. s2.                                             | %105
-  s1.                                              | %106
+  s1.                                                 | %106
   \repeat unfold 5 { s1. | }                            %107-111
-  s2. s2.                                           | %112
-  s2. s4 s2\<                                       | %113
+  s2. s2.                                             | %112
+  s2. s4 s2\<                                         | %113
   s1.\ff                                              | %114
   \repeat unfold 3 { s1. | }                            %115-117
   s1.                                                 | %118
   s2 \posHairpinV s1\<                                | %119
   s16 s8.\! s4 s1                                     | %120
-  s2 s1\<                                             | %121
+  s2 \posHairpinV s1\<                                | %121
   s16 s16\! s8 s1^\moltoCresc s4                      | %122
-  s4 s1\< s4                                          | %123
-  s1.\!-\ffz                                          | %124
+  s4 \posHairpinV s1\< s8 s8\!                        | %123
+  s1.^\ffz                                            | %124
   s4^\dimTxt s4\> s1                                  | %125
-  s2.\p s2.\cresc                                     | %126
+  s2.\p \noPadSpanner \setDynTxtSpanStyle s2.\cresc   | %126
   \repeat unfold 3 { s1. | }                            %127-129
   s1.\f                                               | %130
   s1.                                                 | %131
@@ -1472,18 +1480,18 @@ pedal = {
  s2\sustainOn s4\sustainOff s2\sustainOn s8. s16\sustainOff        | %112
  \repeat unfold 2 { s1. | }                               %113-114
  s1\sustainOn s4 s4\sustainOff                          | %115
- s16.. s64\sustainOn s4. s2. s4\sustainOff               | %116
+ s16.. s64\sustainOn s4. s2. s4\sustainOff              | %116
  s1\sustainOn s4 s4\sustainOff                          | %117
  s1\sustainOn s4 s4\sustainOff                          | %118
  \hideNextPedal s2\sustainOn s8. s16\sustainOff s2.     | %119
- s1\sustainOn s4 s4\sustainOff                          | %120
- s2\sustainOn s8. s16\sustainOff s2.                    | %121
- s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %122
- s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %123
- s1.\sustainOn                                          | %124
+ s16.. s64\sustainOn s8 s2. s8. \posPedalH s16\sustainOff s4          | %120
+ s1.                                                    | %121
+ s16.. s64\sustainOn s8 s4 s4\sustainOff s16. s32\sustainOn s4. s4\sustainOff  | %122
+ s16.. s64\sustainOn s4. s4\sustainOff s2.               | %123
+ \grace { s8\sustainOn s16 } s1.                            | %124
  s1 s4. s8\sustainOff                                   | %125
  \repeat unfold 4 { s1. | }                               %126-129
- s1.\sustainOn                                          | %130
+ s16.. \noPadPedal s64\sustainOn s4. s1                 | %130
  \repeat unfold 7 { s1. | }                               %131-137
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %138
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %139
@@ -1615,7 +1623,13 @@ pedalTwo = {
  s16.. s64\sustainOn s8 s2. s4. s16\sustainOff s16      | %114
  \repeat unfold 4 { s1. | }                               %115-118
  s16. s32\sustainOn s4. s8. \hideNextPedal s16\sustainOff s2.     | %119
- \repeat unfold 86 { s1. | }                              %120-205
+ s1 s4.... \posPedalH s64\sustainOn                               | %120
+ s2 s8. s16\sustainOff s2.                                        | %121
+ %s1.                                                              | %120
+ %s16. \noPadPedal s32\sustainOn s4. s8. s16\sustainOff s2.        | %121
+ s1.                                                    | %122
+ s2. s16. s32\sustainOn s4. s4\sustainOff               | %123
+ \repeat unfold 82 { s1. | }                              %124-205
  s1\sustainOn s4. s8\sustainOff                         | %206
  s2.\sustainOn s8. s16\sustainOff s2                    | %207
  s2.\sustainOn  s8 s8\sustainOff                        | %208
