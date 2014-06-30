@@ -6,11 +6,7 @@ staffDown = \change Staff = "lower"
 mBreak = { \break }
 mNoBreak = { \noBreak }
 
-
-
-global = {
-  \key g \minor
-}
+global = { \key g \minor }
 
 
 hideF = \tweak #'stencil ##f \f
@@ -22,6 +18,68 @@ tempoLargo = \tempo 4 = 55
 tempoMod = \tempo 4 = 75
 tempoAgitato = \tempo 4 = 80
 hideTempo = \set Score.tempoHideNote = ##t
+
+%-----------"Hairpins with added text"
+%----------- author = "Janek Warchoł and unknown author"
+%------------snippet-source = "http://lsr.dsi.unimi.it/LSR/Item?id=233"
+hairpinWithText =
+#(define-music-function (parser location text horiz-align vert-align)
+   (markup? number-or-string? number?)
+   #{
+     \once \override Hairpin.height = #(if (> 1 (abs vert-align)) 1.1 0.6666)
+     \once \override Voice.Hairpin.after-line-breaking =
+     #(lambda (grob)
+        (let* ((stencil (ly:hairpin::print grob))
+               (mrkup (grob-interpret-markup grob text))
+               (par-y (ly:grob-parent grob Y))
+               (grow-dir (ly:grob-property grob 'grow-direction))
+               (horiz-side (if (string? horiz-align)
+                               (cond
+                                ((string=? "opening" horiz-align)
+                                 (if (eq? grow-dir 1) RIGHT LEFT))
+                                ((string=? "closing" horiz-align)
+                                 (if (eq? grow-dir 1) LEFT RIGHT)))
+                               horiz-align))
+               (hairpin-dir (ly:grob-property par-y 'direction))
+               (new-stencil (ly:stencil-aligned-to
+                             ;; stencil-combine-at-edge doesn't work with fractional alignments,
+                             ;; so we have to use stencil-add when we want to put text in hairpin.
+                             (if (> 1 (abs vert-align))
+                                 (ly:stencil-add
+                                  (ly:stencil-aligned-to stencil X horiz-side)
+                                  (ly:stencil-aligned-to
+                                   (ly:stencil-aligned-to mrkup X horiz-side)
+                                   Y (* -1 vert-align)))
+                                 (ly:stencil-combine-at-edge
+                                  (ly:stencil-aligned-to stencil X horiz-side)
+                                  Y
+                                  (* -1 hairpin-dir vert-align)
+                                  (ly:stencil-aligned-to mrkup X horiz-side)
+                                  0.1))
+                             X LEFT))
+               (staff-space (ly:output-def-lookup (ly:grob-layout grob) 'staff-space))
+               (staff-line-thickness
+                (ly:output-def-lookup (ly:grob-layout grob) 'line-thickness))
+               (grob-name (lambda (x) (assq-ref (ly:grob-property x 'meta) 'name)))
+               (par-x (ly:grob-parent grob X))
+               (dyn-text (eq? (grob-name par-x) 'DynamicText ))
+               (dyn-text-stencil-x-length
+                (if dyn-text
+                    (interval-length
+                     (ly:stencil-extent (ly:grob-property par-x 'stencil) X))
+                    0))
+               (x-shift
+                (if dyn-text
+                    (-
+                     (+ staff-space dyn-text-stencil-x-length)
+                     (* 0.5 staff-line-thickness)) 0)))
+
+          (ly:grob-set-property! grob 'Y-offset 0)
+          (ly:grob-set-property! grob 'stencil
+            (ly:stencil-translate-axis
+             new-stencil
+             x-shift X))))
+   #})
 
 lentoLegend = \markup \huge \right-align \bold \raise #1.5 "Lento."
 moderatoLegend = \markup \center-align \huge \bold "         Moderato."
@@ -51,6 +109,7 @@ sfSforzato = \markup { \dynamic "sf" \raise #0.4 \musicglyph #"scripts.sforzato"
 crescTxt = \markup \italic \larger "cresc."
 crescTiny = \markup \italic \small \rotate #7.0  "cresc."
 crescTinyB = \markup \italic \small \rotate #4.0  "cresc."
+crescTinyC = \markup \italic \teeny "cresc."
 riten = \markup \italic \larger "riten."
 accel = \markup \italic \larger "accel."
 accelerando = \markup \italic \larger "accelerando"
@@ -67,8 +126,10 @@ sempreCresc = \markup { \italic "sempre cresc." }
 aTempoMenoMosso = \markup { \center-align \italic  "a tempo (meno mosso)   " }
 sottoVoce = \markup \italic \larger "sotto voce"
 moltoCresc = \markup \italic \larger "molto cresc."
-animatoLegend = \markup \italic \larger "animato"
-pocoApocoCresc = \markup \italic "poco     a       poco    cresc."
+animatoLegend = \markup \italic \larger "   animato"
+poco = \markup \italic \larger "poco"
+aTxt = \markup \italic \larger " a"
+crescTwo = \markup \center-align \italic \larger "cresc.  "
 pocoRiten = \markup \italic \larger "poco riten."
 piuAnimato = \markup \italic \larger "più animato"
 tenTxt = \markup { \center-align  \italic "  ten." }
@@ -141,8 +202,10 @@ sempreCrescSpanner = {
   \override TextSpanner.staff-padding = 3.4
 }
 semprePiuCrescSpanner = {
-  \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre più cresc." }
+  \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre più cresc.   " }
   \override TextSpanner #'(bound-details left-broken text) = ##f
+  \override TextSpanner.padding = 0.0
+  \alterBroken staff-padding #'(4.5 3.0) TextSpanner
 }
 dimPiuRallentSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "dim. e più rallent." }
@@ -198,7 +261,6 @@ subdivideBeamOne = {
 }
 subdivideBeamTwo = {
   \set subdivideBeams = ##t
-  %\set baseMoment = #(ly:make-moment 1/4)
 }
 
 hideTupletNumber = \override TupletNumber.transparent = ##t
@@ -215,9 +277,10 @@ restDownTwo = \once \override MultiMeasureRest.staff-position = #-4
 
 alignBeamOne = \once \override Beam.positions = #'(-1.2 . -1.2)
 alignBeamTwo = \once \override Beam.positions = #'(-4.4 . -5.0)
+alignBeamTre = \once \override Beam.positions = #'(-3.4 . -2.7)
 
 moveNoteOne = \once \override NoteColumn #'force-hshift = #0.8
-moveNoteTwo = {}
+moveNoteTwo = \once \override NoteColumn #'force-hshift = #1.5
 moveNoteTre = \once \override NoteColumn #'force-hshift = #-0.7
 moveNoteQtr = \once \override NoteColumn #'force-hshift = #2.0
 moveNoteCin = \once \override NoteColumn #'force-hshift = #-0.1
@@ -357,10 +420,21 @@ shpSlurCJ = \shape #'(( 0 . 0.3) (1 . 0.4) (-2 . 0.1) (0.4 . 0)) PhrasingSlur
 shpSlurCK = \shape #'(( 0 . -0.3) (0 . -0.3) (-0.4 . -0.6) (-0.6 . -0.6)) Slur
 shpSlurCL = \shape #'( ((-0.6 . 0.6) (0 . 1.4) (0 . 0.8) (3.8 . 0.3))
                        ((0 . 1) (0 . -2) (-1 . -4) (0 . 0.0))
-                       ((0 . 0.0) (0 . 0.0) (0 . 0.0) (0 . 0.0)) ) PhrasingSlur
-shpSlurCM = { \shape #'(( -0.7 . -1.1) (0 . -1.6) (0 . 0.2) (0 . 0)) PhrasingSlur
-              \once \override PhrasingSlur.staff-padding = 0.0
-}
+                       ((-2.6 . 1.4) (0 . 1.8) (-8 . 3.6) (0.5 . 0.0)) ) PhrasingSlur
+shpSlurCM = \shape #'(( -0.7 . -1.1) (0 . -1.6) (0 . 0.2) (0 . 0)) PhrasingSlur
+shpSlurCN = \shape #'(( -0.7 . -1.3) (1.5 . 1.6) (-1.5 . 1.6) (0.6 . -1.6)) Slur
+shpSlurCO = \shape #'(( -0.5 . 2.2) (1 . -3) (-1 . -3) (0.3 . 0.3)) PhrasingSlur
+shpSlurCP = \shape #'(( -0.9 . -1.8) (-1.2 . 3.3) (0 . 0) (0 . -1.3)) PhrasingSlur
+shpSlurCQ = \shape #'(( -0.7 . 0.4) (1 . 0.9) (-1 . 0.9) (0.6 . 0)) Slur
+shpSlurCR = \shape #'(( -0.7 . 0) (1 . -0.3) (1 . 0.2) (0.5 . 1.2)) Slur
+shpSlurCS = \shape #'(( -0.5 . -0.8) (4 . 2.6) (-0.5 . 3) (0.5 . 0.5)) PhrasingSlur
+shpSlurCT = \shape #'(( 0.5 . -2) (0.3 . -2) (0 . -2) (-0.2 . -2)) Slur
+shpSlurCU = \shape #'(( 0.2 . -0.3) (0.2 . 0.2) (0 . 1.8) (0.4 . 1.9)) Slur
+shpSlurCV = \shape #'( ((-1.3 . -0.6) (2 . 0.8) (-2 . 0.8) (0.8 . -0.9))
+                       ((-1.5 . -0.6) (3 . 0.8) (-3 . 0.8) (0 . 0)) ) PhrasingSlur
+shpSlurCW = \shape #'(( 0 . 0.4) (0.3 . -0.5) (-0.3 . -0.5) (-0.7 . 0)) Slur
+shpSlurCX = \shape #'(( 0.7 . 0) (0.4 . 0) (0 . 0) (-0.2 . -0.2)) Tie
+shpSlurCY = \shape #'((-0.3 . -0.3) (0 . -0.5) (-0.3 . -1.7) (-0.4 . -3.2)) Slur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -470,6 +544,18 @@ posHairpinV = {
             \revert Hairpin.height
 }
 posHairpinW = \once \override Hairpin.height = 0.48
+posHairpinY = {
+            \once \override Hairpin.rotation = #'( 0.9 -1 0 )
+            \once \override Hairpin.height = 0.86
+            \once \override Hairpin.bound-padding = 0.0
+            \once \override Hairpin.extra-offset = #'( -0.5 . 0.1 )
+}
+posHairpinZ = {
+            \once \override Hairpin.rotation = #'( -0.9 1 0 )
+            \once \override Hairpin.height = 0.86
+            \once \override Hairpin.bound-padding = 0.0
+            \once \override Hairpin.extra-offset = #'( -0.5 . 0.1 )
+}
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
@@ -527,8 +613,17 @@ posScriptAB = {
           \once \override TextScript.extra-offset = #'( -0.3 . 0 )
 }
 posScriptAC = \once \override Script.extra-offset = #'( 0 . 0.8 )
-posScriptAD = { }
+posScriptAD = {
+          \once \override TextScript.avoid-slur = #'inside
+          \once \override TextScript.outside-staff-priority = ##f
+          \once \override TextScript.extra-offset = #'(0.4 . -6.9)
+}
 posScriptAE = \once \override DynamicText.extra-offset = #'(1.6 . -0.8 )
+posScriptAF = {
+          \once \override TextScript.avoid-slur = #'inside
+          \once \override TextScript.outside-staff-priority = ##f
+          \once \override TextScript.extra-offset = #'(0.4 . -6.3)
+}
 posScrpRevExOff =  \revert Script.extra-offset
 
 posPedalA = \override SustainPedal.extra-offset = #'(0 . 1.0 )
@@ -548,7 +643,11 @@ noPadTxtScrp = \once \override TextScript.padding = 0.0
 noPadScript = \once \override Script.padding = 0.0
 noPadSpanner = \once \override TextSpanner.padding = 0.0
 noPadPedal = \once \override SustainPedal.padding = 0.0
-noPadDynTxt = \once \override DynamicText.padding = 0.0 \once \override DynamicText.staff-padding = 0.0
+noPadHairp = \once \override Hairpin.padding = 0.0
+noPadDynTxt = {
+            \once \override DynamicText.padding = 0.0
+            \once \override DynamicText.staff-padding = 0.0
+}
 
 setOttavaStyle = \set Staff.ottavation = #"8"
 posOttavaA = {
@@ -574,7 +673,9 @@ posOttavaB = {
   \once \override Staff.OttavaBracket.right-bound-info =
      #ly:line-spanner::calc-right-bound-info
 }
-posOttavaC = \once \override Staff.OttavaBracket.staff-padding = 4.5
+posOttavaC = { \alterBroken staff-padding #'( 4.5 5.7 ) Staff.OttavaBracket }
+
+%\once \override Staff.OttavaBracket.staff-padding = 4.5
 
 ignoreClashOnce = \once \override NoteColumn.ignore-collision = ##t
 ignoreClash = \override NoteColumn.ignore-collision = ##t
@@ -616,3 +717,4 @@ unSqueezeNotation = {
   \revert Staff.Accidental.stencil
   \revert Staff.NoteHead.stencil
 }
+

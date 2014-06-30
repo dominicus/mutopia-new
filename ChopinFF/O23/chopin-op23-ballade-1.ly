@@ -101,8 +101,7 @@ upperOne =  \relative c {
   \ritenSpanner \posDottedA a2.\startTextSpan \shpSlurAH a2~ a8 a | %31
   \shpSlurAI a2.\arpeggio ~ a2 \posScriptD a4->~          | %32
   a16 bes a gis \stemDown a g'! e f  f g'f e \cadenzaOne  | %33
-   \mBreak \stemNeutral
-  cis8\) b8\rest \shpSlurAB d2->\(~ d4 c g                | %34
+  \stemNeutral cis8\) b8\rest \shpSlurAB d2->\(~ d4 c g   | %34
   bes2. fis                                               | %35
   g4\)\stopTextSpan \stemUp \posScriptE bes'4^\aTempo s2 a4 s  | %36
   s4 bes4 s2 aes4 s                                       | %37
@@ -256,24 +255,33 @@ upperOne =  \relative c {
      aes'e aes f ces'g ces                                | %133
   d8 aes ces f,bes aes c f,bes aes cis f,                 | %134
   bes\< aes d-. f,bes aes ees'-. f,bes aes e'-. f,\!      | %135
+  \squeezeNotation
   f'->\> d cis e ees c b d cis bes a! c\!                 | %136
-  b aes g bes aes \ottava #0 f d bes a! bes aes bes\)     | %137
-  fis(-\animatoLegend g g'd ees b c g bes aes g f)        | %138
-  fis( g g'd ees b c g bes aes g f)                       | %139
-  fis\(\< g g'd ees b c g bes aes g f\!                   | %140
-  ees\> aes f d aes' f c aes'f bes,aes'f\)\!              | %141
-  fis(_\pocoApocoCresc g g'd ees b c g bes aes g f)       | %142
-  fis( g g'd ees b c g bes aes g f)                       | %143
-  fis8\(\< g g'd ees b c g bes aes g f\!                  | %144
+  b aes g bes aes \ottava #0 f d bes a! bes aes
+     \noPadTxtScrp bes\)-\animatoLegend                   | %137
+  \shpSlurCN fis(\p g g'd ees b c g bes aes g f)          | %138
+  \shpSlurCN fis( g g'd ees b c g bes aes g f)            | %139
+  \unSqueezeNotation
+  \shpSlurCO \noPadHairp fis\(\< g g'd ees b c g bes aes g f\! | %140
+  \noPadHairp ees\> aes f d aes' f c aes'f bes,aes'f\)\!       | %141
+  \shpSlurCN fis(_\poco g g'd_\aTxt ees b_\poco c g bes
+     aes g_\crescTwo f)                                   | %142
+  \shpSlurCN fis( g g'd ees b c g bes aes g f)            | %143
+  \shpSlurCP fis8\(\< g g'd ees b c g bes aes g f\!       | %144
   fes8 ees d des c ces bes a! c bes a aes\)               | %145
-  g\<( aes a bes c bes aes_\crescTiny bes b c des c\!)    | %146
-  a!\<( bes b c d! c bes_\crescTiny c cis d ees d\!)      | %147
-  b8\<\( c cis d ees d c_\crescTiny cis d ees e f\!       | %148
-  g8->\> f e ees d des c b bes a!bes aes\! \stemUp        | %149
-  g4\)\( bes,8 bes'd,_( ces' bes,bes'ees,g e des'         | %150
-  c,8 c') f,_( a! e des'  c, c'f,a fis ees'!              | %151
+  \shpSlurCR \posHairpinY g\<( aes a bes c bes
+     \posScriptAD aes-\crescTinyC bes b c des c\!)        | %146
+  \shpSlurCQ \posHairpinY \alignBeamTre a!\<( bes b c d! c
+     \posScriptAD bes-\crescTinyC c cis d ees d\!)        | %147
+  \shpSlurCS \posHairpinY b8\<\( c cis d ees d
+     \posScriptAF c-\crescTinyC cis d ees e f\!           | %148
+  \posHairpinZ g8->\> f e ees d des c b bes a!bes aes\!   | %149
+  \stemUp \textSpannerDown \semprePiuCrescSpanner g4\)\startTextSpan
+     \shpSlurCV bes,8\( bes' \shpSlurCW d,_( ces' bes,bes'
+     ees,g e des'                                         | %150
+  c,8 c') \shpSlurCY f,_( a! e des'  c, c'f,a fis ees'!   | %151
   d,8) d' g,_( b fis ees' d, d' g, b gis f'               | %152
-  e,8) e' a, cis ais g' fis, fis' b,_( dis bis a'!\)      | %153
+  e,8) e' a, cis ais g' fis, fis' b,_( dis bis a'!\)\stopTextSpan | %153
   \stemDown \squeezeNotation
   <cis a fis cis>4-.) bis,8\(\< cis dis eis fis gis a b cis dis\! | %154
   eis fis gis a fis cis a fis cis a fis cis\)             | %155
@@ -582,11 +590,14 @@ upperTwo =  \relative c' {
   s4 \hideNotes \shpSlurCM b''8 ^\( \unHideNotes s8 s1        | %124
   s1 s4 ces,,,\)^(                                            | %125
   \hideNotes bes8) \unHideNotes s4. s1                        | %126
-  \repeat unfold 14 { s1. | }                                   %127-140
-  ees'4. d c bes                                              | %141
+  \repeat unfold 10 { s1. | }                                   %127-136
+  \squeezeNotation s1 a''4 aes \unSqueezeNotation             | %137
+  \repeat unfold 3 { s1. | }                                    %138-140
+  ees4. d c bes                                               | %141
   \repeat unfold 8 { s1. | }                                    %142-149
   \stemDown \slurUp \shiftOnn
-  s2 d,4~ \smallNotehead \moveNoteQtr d4 s4 \hideNotes e4~    | %150
+  s2 \shpSlurCX d,4~ \smallNotehead \moveNoteQtr d4 s4
+     \hideNotes \shpSlurCX e4~                                           | %150
   \unHideNotes \smallNotehead \moveNoteTwo e4 f e~
      \smallNotehead \moveNoteQtr e f fis~                     | %151
   \smallNotehead \moveNoteQtr \hideAccidental fis4 g fis~
@@ -729,15 +740,15 @@ upperQtr = \relative c' {
 }
 
 upperStaff =  <<
-  { \upperOne } \\ 
-  { \upperTwo } \\
-  { \upperTre } \\
-  { \upperQtr }
+  { \voiceOne \upperOne } \\ 
+  { \voiceTwo \upperTwo } \\
+  { \voiceThree \upperTre } \\
+  { \voiceFour \upperQtr }
 >>
 
 lowerOne = \relative c, {
   \time 4/4
-  \setRestDirDown
+  \setRestDirUp
   \shpSlurC c2-\hideF\(_~ c8 ees aes bes        | % 1
   c8_[ aes ees'bes'] \clef treble c aes ees'bes'| % 2
   c8 g bes aes  g4 fis8\) b8\rest               | % 3
@@ -905,26 +916,28 @@ lowerOne = \relative c, {
   <f'd aes> b,\rest b\rest <aes'f b,> b,\rest b\rest      | %133
   <d'~ aes~ f_~>1.(                              | %134
   <d aes f>2. <c aes ees>)                       | %135
-  \doubleSlursOn
+  \doubleSlursOn \squeezeNotation
   <c aes~ ees>2.( <bes!aes d,>4) b,\rest b\rest  | %136
   \clef bass \doubleSlursOff
   \restDownOne R1*6/4 \stemDown                  | %137
   ees,,4-. <g'ees>2 bes,,4-. a'!_( bes)          | %138
   ees,4-. <g'ees>2 bes,,4-. a'!_( bes)           | %139
-  ees,4-. <ees'bes>2 aes,,4-. <c'aes>2           | %140
-  bes,4-. <aes'f>2 bes,4-. <aes'f>2              | %141
-  ees4-. <g'ees>2 bes,,4-. a'!_( bes)            | %142
-  ees,4-. <g'ees>2 bes,,4-. a'!_( bes)           | %143
+  \unSqueezeNotation
+  ees,4-. <ees'bes>2 \shortStemCin aes,,4-. <c'aes>2          | %140
+  bes,4-. <aes'f>2 bes,4-. <aes'f>2                           | %141
+  ees4-. <g'ees>2 \shortStemCin bes,,4-. a'!_( bes)           | %142
+  ees,4-. <g'ees>2 \shortStemCin bes,,4-. a'!_( bes)          | %143
   ees,4-. \clef treble <bes''g>2 \clef bass aes,,4-. <c'aes>2 | %144
   \stemNeutral bes,4_. d\rest <d'aes f>
-     <d aes f> <d aes f> <d aes f>               | %145
+     <d aes f> <d aes f> <d aes f>                            | %145
   <des bes ees,>4-^ d,8\rest <ees ees,>8
-     <ees ees,>4_.<c'aes>-^ <g g,>_. <ges ges,>_.| %146
+     <ees ees,>4_.<c'aes>-^ <g g,>_. <ges ges,>_.             | %146
   <ees'a,!>4-^ d,8\rest <f f,>8 <f f,>4_.
-     <d'bes>-^ <a a,>-. <aes aes,>-.             | %147
-  <f'b,>4-^ d,8\rest <g g,>8<g g,>4_.<ees'c>-^(
-     <c,c,>_>) d\rest                            | %148
-  <ees'aes,>4( ces,_>) d\rest <d'aes>( bes,_>) d\rest    | %149
+     <d'bes>-^ <a a,>-. <aes aes,>-.                          | %147
+  <f'b,>4-^ d,8\rest <g g,>8<g g,>4_. \shpSlurCT <ees'c>-^(
+     <c,c,>_>) d\rest                                         | %148
+  \shpSlurCU <ees'aes,>4( ces,_>) d\rest \shpSlurCU <d'aes>(
+     bes,_>) d\rest                                           | %149
   <ees ees,>4<g g,><aes aes,><g g,><ees ees,><bes'bes,>  | %150
   <a! a,!>4<f f,><bes bes,><a a,><f f,><c'c,>    | %151
   <b b,>4 <g g,> <c c,> <b b,> <g g,> <d'd,>     | %152
@@ -1070,6 +1083,7 @@ lowerOne = \relative c, {
 }
 
 lowerTwo = \relative c {
+  \setRestDirDown
   \time 4/4
   \repeat unfold 7 { s1 | }                          % 1-7
   \time 6/4
@@ -1134,8 +1148,10 @@ lowerTwo = \relative c {
   s4 cis,( <fis a,>) s b,( <dis a>)                | %113
   \unSqueezeNotation
   \repeat unfold 24 { s1. | } \stemUp                %114-137
+  \squeezeNotation
   s4 c'( bes) s <aes d,>2                          | %138
   s4 c( bes) s <aes d,>2                           | %139
+  \unSqueezeNotation
   s4 aes( g) s g( f)                               | %140
   s4 ees( d) s c( bes)                             | %141
   s4 c'( bes) s <aes d,>2                          | %142
@@ -1243,8 +1259,8 @@ breaks = {
 }
 
 lowerStaff = <<
-  { \lowerOne } \\
-  { \lowerTwo } \\
+  { \voiceOne \lowerOne } \\
+  { \voiceTwo \lowerTwo } \\
   { \breaks }
 >>
 
@@ -1330,11 +1346,11 @@ dynamics = {
   s1.                                                 | %135
   s1.                                                 | %136
   s1.                                                 | %137
-  s1.\p                                               | %138
+  s1.                                                 | %138
   \repeat unfold 11 { s1. | }                           %139-149
-  \semprePiuCrescSpanner s1.\startTextSpan            | %150
+  s1.                                                 | %150
   \repeat unfold 2 { s1. | }                            %151-152
-  s1 s4 s8... s64\stopTextSpan                        | %153
+  s1.                                                 | %153
   s1.\ff                                              | %154
   \repeat unfold 9 { s1. | }                            %155-163
   s1.\<                                               | %164
@@ -1495,10 +1511,10 @@ pedal = {
  \repeat unfold 7 { s1. | }                               %131-137
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %138
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %139
- s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %140
+ s2\sustainOn s4\sustainOff \noPadPedal s2\sustainOn s4\sustainOff  | %140
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %141
- s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %142
- s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %143
+ s2\sustainOn s4\sustainOff \noPadPedal s2\sustainOn s4\sustainOff  | %142
+ s2\sustainOn s4\sustainOff \noPadPedal s2\sustainOn s4\sustainOff  | %143
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %144
  s2\sustainOn s4\sustainOff s2.                         | %145
  s4.\sustainOn s8\sustainOff s4 s\sustainOn s\sustainOff s| %146
