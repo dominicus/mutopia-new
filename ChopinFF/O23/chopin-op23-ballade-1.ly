@@ -280,19 +280,27 @@ upperOne =  \relative c {
      \shpSlurCV bes,8\( bes' \shpSlurCW d,_( ces' bes,bes'
      ees,g e des'                                         | %150
   c,8 c') \shpSlurCY f,_( a! e des'  c, c'f,a fis ees'!   | %151
-  d,8) d' g,_( b fis ees' d, d' g, b gis f'               | %152
-  e,8) e' a, cis ais g' fis, fis' b,_( dis bis a'!\)\stopTextSpan | %153
-  \stemDown \squeezeNotation
-  <cis a fis cis>4-.) bis,8\(\< cis dis eis fis gis a b cis dis\! | %154
+  %\squeezeNotation
+  d,8) d' \shpSlurDB g,_( b fis ees' d, d' g, b gis f'    | %152
+  \squeezeNotationTwo
+  e,8) e' a, cis ais g' fis, fis' \shpSlurDC b,_( dis bis
+     a'!\)\stopTextSpan                                   | %153
+  \squeezeNotation \stemDown
+  \shortStemCin <cis a fis cis>4-.) \alignBeamQtr \shpSlurDD
+      bis,8\(cis dis eis \alignBeamCin fis gis a b cis dis| %154
   eis fis gis a fis cis a fis cis a fis cis\)             | %155
-  \unSqueezeNotation \stemNeutral
-  a8\( fis'\< dis a'a fis'  dis a'a fis'dis a'            | %156
-  fis\> a ees!\! a,fis a ees a,\< fis a ees a,            | %157
-  <bes'g ees bes>4-.\)\sf a,8(\p\<^\leggiero bes c d ees e g f g f  | %158
-  c'8 bes)( a bes c d ees e g_\crescTiny f g f            | %159
-  \squeezeNotation
-  c'8 bes) a( bes c d ees e g f g f\!                     | %160
-  bes4-.)_\piuF a,!8( bes c d ees e g\< f g f             | %161
+  \unSqueezeNotation \squeezeNotationTre
+  \stemNeutral
+  \shpSlurDE a8\( \posHairpinAB fis'\< dis a'a fis'
+     dis a'a fis'dis a'\!                                 | %156
+  fis\> a ees!\! a,fis a ees a, fis\< a ees a,            | %157
+  <bes'g ees bes>4-.\)\sf \shpSlurDF a,8(\p^\leggiero bes
+     c d ees e g f g f                                    | %158
+  \alignBeamSix c'8 \shpSlurDG bes)( a bes c d ees e g
+     \posScriptAH f_\crescTinyD g f                       | %159
+  %\squeezeNotation
+  c'8 bes) a( bes c d ees e g f g f                       | %160
+  bes4-.) a,!8(_\piuF bes c d ees e g\< f g f             | %161
   bes4-.) b,,\rest\! b\rest \ottava #1 \stemUp
      \acciaccatura { f''8 } \stemDown f'\fz\>\( 
      e\! ees d c bes                                      | %162
@@ -599,11 +607,13 @@ upperTwo =  \relative c' {
   s2 \shpSlurCX d,4~ \smallNotehead \moveNoteQtr d4 s4
      \hideNotes \shpSlurCX e4~                                           | %150
   \unHideNotes \smallNotehead \moveNoteTwo e4 f e~
-     \smallNotehead \moveNoteQtr e f fis~                     | %151
+     \smallNotehead \moveNoteQtr e f fis~                 | %151
+  %\squeezeNotation
   \smallNotehead \moveNoteQtr \hideAccidental fis4 g fis~
      \smallNotehead \moveNoteQtr fis g gis~               | %152
   \smallNotehead \moveNoteQtr gis4 a_( ais)~ 
      \smallNotehead \moveNoteQtr ais b bis                | %153
+  %\unSqueezeNotation
   \repeat unfold 12 { s1. | }                               %154-165
   b2.\rest s                                              | %166
   \repeat unfold 7 { s1. | }                                %167-173
@@ -938,23 +948,26 @@ lowerOne = \relative c, {
      <c,c,>_>) d\rest                                         | %148
   \shpSlurCU <ees'aes,>4( ces,_>) d\rest \shpSlurCU <d'aes>(
      bes,_>) d\rest                                           | %149
-  <ees ees,>4<g g,><aes aes,><g g,><ees ees,><bes'bes,>  | %150
-  <a! a,!>4<f f,><bes bes,><a a,><f f,><c'c,>    | %151
-  <b b,>4 <g g,> <c c,> <b b,> <g g,> <d'd,>     | %152
-  <cis cis,>4 <a a,> <e'e,><dis dis,><b b,><d d,>| %153
-  <cis,cis,>4_. d8\rest <a''fis cis a><a fis cis a>4-.(
-     <a fis cis a>-.<a fis cis a>-.<a fis cis a>-.)   | %154
-  <a fis cis a>2.-> d,,4\rest d\rest <ais ais,>_(     | %155
-  <gis gis,>4) d'8\rest <dis'a fis> <dis a fis>4(_>
-     <dis a fis>-.) d,\rest <c! c,!>_(                | %156
-  <ces ces,>4) d8\rest <ees'!a,fis><ees a,fis>4->( 
-     <ees a,fis>-.) d,\rest <ces ces,>_(              | %157
-  <bes bes,>4_.) d\rest d\rest d\rest <ees'c a>(
-     <d bes aes>                                      | %158
-  <ees bes g>4) d,\rest d\rest d\rest \clef treble
-     <ees''c a>( <d bes aes>                          | %159
+  <ees ees,>4<g g,><aes aes,><g g,><ees ees,><bes'bes,>       | %150
+  <a! a,!>4<f f,><bes bes,><a a,><f f,><c'c,>                 | %151
   \squeezeNotation
-  <ees bes g>4) b\rest b\rest b\rest <ees'c a>( <d bes aes>  | %160
+  <b b,>4 <g g,> <c c,> <b b,> <g g,> <d'd,>                  | %152
+  <cis cis,>4 <a a,> <e'e,><dis dis,><b b,><d d,>             | %153
+  <cis,cis,>4_. d8\rest <a''fis cis a> \shpSlurDA <a fis cis a>4-.(
+     <a fis cis a>-.<a fis cis a>-.<a fis cis a>-.)           | %154
+  \posScriptAG <a fis cis a>2.-> d,,4\rest d\rest
+     \shpSlurCZ <ais ais,>_(                                  | %155
+  %\unSqueezeNotation
+  <gis gis,>4) d'8\rest <dis'a fis> <dis a fis>4(_>
+     <dis a fis>-.) d,\rest \shpSlurI <c! c,!>_(              | %156
+  <ces ces,>4) d8\rest <ees'!a,fis><ees a,fis>4->( 
+     <ees a,fis>-.) d,\rest \shpSlurI <ces ces,>_(            | %157
+  \posHairpinAC <bes bes,>4_.) d\rest_\< d\rest d\rest
+     <ees'c a>( <d bes aes>                                   | %158
+  <ees bes g>4) d,\rest d\rest d\rest \clef treble
+     <ees''c a>( <d bes aes>                                | %159
+  %\squeezeNotation
+  <ees bes g>4) b\rest b\rest b\rest <ees'c a>( <d bes aes>\!  | %160
   <ees bes g>4) b,\rest b\rest b\rest <ees'c a>( <d bes aes> | %161
   <ees bes g>4) b,\rest b\rest <a! f ees c>_. b\rest b\rest  | %162
   \restDownOne R1*6/4   \clef bass                           | %163
@@ -1523,10 +1536,10 @@ pedal = {
  s2. s4..\sustainOn s16\sustainOff s4                   | %149
  s4.\sustainOn s8\sustainOff s1                         | %150
  \repeat unfold 3 { s1. | }                               %151-153
- s1.\sustainOn                                          | %154
- s1 s4 s4\sustainOff                                    | %155
- s1\sustainOn s4 s4\sustainOff                          | %156
- s1\sustainOn s4 s4\sustainOff                          | %157
+ s16.. s64\sustainOn \posHairpinAA s8\< s2. s4 s8\! s16 s16        | %154
+ s1 s4 s32 s16.\sustainOff s8                                      | %155
+ \posPedalB s16. s32\sustainOn s8 s4 s2 s4 s32 s16.\sustainOff s8  | %156
+ s16.. s64\sustainOn s8 s4 s2 s4 s16 s16\sustainOff s8 \posPedalRev| %157
  \repeat unfold 4 { s1. | }                               %159-161
  s2. s2.\sustainOn                                      | %162
  s2 s8 s4.\sustainOff s2                                | %163

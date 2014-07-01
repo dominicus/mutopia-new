@@ -110,6 +110,7 @@ crescTxt = \markup \italic \larger "cresc."
 crescTiny = \markup \italic \small \rotate #7.0  "cresc."
 crescTinyB = \markup \italic \small \rotate #4.0  "cresc."
 crescTinyC = \markup \italic \teeny "cresc."
+crescTinyD = \markup \italic \small "cresc."
 riten = \markup \italic \larger "riten."
 accel = \markup \italic \larger "accel."
 accelerando = \markup \italic \larger "accelerando"
@@ -205,7 +206,7 @@ semprePiuCrescSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre più cresc.   " }
   \override TextSpanner #'(bound-details left-broken text) = ##f
   \override TextSpanner.padding = 0.0
-  \alterBroken staff-padding #'(4.5 3.0) TextSpanner
+  \alterBroken staff-padding #'(4.5 2.7) TextSpanner
 }
 dimPiuRallentSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "dim. e più rallent." }
@@ -278,6 +279,9 @@ restDownTwo = \once \override MultiMeasureRest.staff-position = #-4
 alignBeamOne = \once \override Beam.positions = #'(-1.2 . -1.2)
 alignBeamTwo = \once \override Beam.positions = #'(-4.4 . -5.0)
 alignBeamTre = \once \override Beam.positions = #'(-3.4 . -2.7)
+alignBeamQtr = \once \override Beam.positions = #'(-2.5 . -1.4)
+alignBeamCin = \once \override Beam.positions = #'(-1.2 . 0.2)
+alignBeamSix = \once \override Beam.positions = #'(-2.5 . -2.5)
 
 moveNoteOne = \once \override NoteColumn #'force-hshift = #0.8
 moveNoteTwo = \once \override NoteColumn #'force-hshift = #1.5
@@ -286,6 +290,7 @@ moveNoteQtr = \once \override NoteColumn #'force-hshift = #2.0
 moveNoteCin = \once \override NoteColumn #'force-hshift = #-0.1
 moveNoteSix = \once \override NoteColumn #'force-hshift = #0.3
 moveNoteSep = \once \override NoteColumn #'force-hshift = #1.3
+
 
 shortStemOne = \once \override Stem.length-fraction = #(magstep -4)
 shortStemTwo = \once \override Stem.length-fraction = #(magstep -3)
@@ -435,6 +440,16 @@ shpSlurCV = \shape #'( ((-1.3 . -0.6) (2 . 0.8) (-2 . 0.8) (0.8 . -0.9))
 shpSlurCW = \shape #'(( 0 . 0.4) (0.3 . -0.5) (-0.3 . -0.5) (-0.7 . 0)) Slur
 shpSlurCX = \shape #'(( 0.7 . 0) (0.4 . 0) (0 . 0) (-0.2 . -0.2)) Tie
 shpSlurCY = \shape #'((-0.3 . -0.3) (0 . -0.5) (-0.3 . -1.7) (-0.4 . -3.2)) Slur
+shpSlurCZ = \shape #'( (( 0.4 . 0.5) (0 . 0.5) (0 . 0.5) (0 . 0.5))
+                       (( 0 . 0) (0 . 0.2) (0 . 0.3) (0 . 0.4)) ) Slur
+shpSlurDA = \shape #'(( -0.3 . -0.2) (0.4 . -0.3) (-0.4 . -0.3) (0.3 . 0.2)) Slur
+shpSlurDB = \shape #'(( 0 . 0.2) (0.3 . -0.8) (-0.3 . -0.2) (-0.1 . 0)) Slur
+shpSlurDC = \shape #'(( -0.6 . -1.8) (0.3 . -1.6) (0 . -1.5) (1.1 . -1.1)) Slur
+shpSlurDD = \shape #'(( -0.6 . 1.2) (5 . -1) (-5 . 2.5) (0.3 . 2)) PhrasingSlur
+shpSlurDE = \shape #'(( -1.2 . -2) (5 . 1.6) (-5 . 1.6) (0.3 . -2)) PhrasingSlur
+shpSlurDF = \shape #'(( -0.6 . 0.7) (1 . 1.8) (-1 . 1.8) (0.4 . 1.2)) Slur
+shpSlurDG = \shape #'( (( 1 . -0.3) (1.5 . 1.8) (-1 . 1.8) (0 . 1.4))
+                       (( 0 . 0) (0 . 0) (0 . 0) (0 . 0)) ) Slur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -556,6 +571,20 @@ posHairpinZ = {
             \once \override Hairpin.bound-padding = 0.0
             \once \override Hairpin.extra-offset = #'( -0.5 . 0.1 )
 }
+posHairpinAA = {
+            \once \override Hairpin.avoid-slur = #'inside
+            \once \override Hairpin.outside-staff-priority = ##f
+            \once \override Hairpin.rotation = #'( 5.6 -1 0 )
+            \once \override Hairpin.height = 0.5
+            \once \override Hairpin.extra-offset = #'( 1.7 . 16.0 )
+            \once \override Hairpin.thickness = 1.6
+}
+posHairpinAB = \once \override Hairpin.rotation = #'( 3 -1 0 )
+posHairpinAC = {
+            \alterBroken rotation #'((0.9 -1 0 ) (0.9 -1 0 )) Hairpin
+            \alterBroken extra-offset #'(( 0 . 11.6 ) ( 1 . 13.6 )) Hairpin
+            \alterBroken height #'( 1.2 0.2 ) Hairpin
+}
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
@@ -624,6 +653,8 @@ posScriptAF = {
           \once \override TextScript.outside-staff-priority = ##f
           \once \override TextScript.extra-offset = #'(0.4 . -6.3)
 }
+posScriptAG = \once \override Script.padding = 1.0
+posScriptAH = \once \override TextScript.padding = 1.4
 posScrpRevExOff =  \revert Script.extra-offset
 
 posPedalA = \override SustainPedal.extra-offset = #'(0 . 1.0 )
@@ -712,9 +743,38 @@ squeezeNotation = {
   #(lambda (grob)
      (ly:stencil-scale (ly:note-head::print grob) 0.96 1.02))
 }
+squeezeNotationTwo = {
+  \override Staff.AccidentalPlacement #'right-padding = #-0.05
+%  \override Staff.Accidental #'stencil =
+%  #(lambda (grob)
+%     (ly:stencil-scale (ly:accidental-interface::print grob) 0.92 1))
+%  \override Staff.NoteHead #'stencil =
+%  #(lambda (grob)
+%     (ly:stencil-scale (ly:note-head::print grob) 0.96 1.02))
+}
+squeezeNotationTre = {
+  \override Staff.AccidentalPlacement #'right-padding = #-0.15
+  \override Staff.AccidentalPlacement #'left-padding = #0.1
+  \override Staff.Accidental #'stencil =
+  #(lambda (grob)
+     (ly:stencil-scale (ly:accidental-interface::print grob) 0.92 1))
+  \override Staff.NoteHead #'stencil =
+  #(lambda (grob)
+     (ly:stencil-scale (ly:note-head::print grob) 0.96 1.02))
+}
 unSqueezeNotation = {
   \revert Staff.AccidentalPlacement.right-padding
   \revert Staff.Accidental.stencil
   \revert Staff.NoteHead.stencil
 }
 
+%{
+
+sharpOverSharp = \markup { \right-column { \musicglyph #"accidentals.sharp" \vspace #-0.12 \concat { \musicglyph #"accidentals.sharp" \hspace #0.1 } } }
+stackSharps = {
+  \once \override Accidental #'stencil = #ly:text-interface::print
+  \once \override Accidental #'text = #sharpOverSharp
+  \once \override Score.AccidentalPlacement.right-padding = #0.1
+  \once \override Score.AccidentalPlacement.left-padding = #-0.1
+}
+%}
