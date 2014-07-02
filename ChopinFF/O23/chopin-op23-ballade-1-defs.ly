@@ -460,10 +460,15 @@ shpSlurDL = \shape #'(( -5 . 0) (2 . -0.1) (-2 . 1.4) (0.4 . -1)) PhrasingSlur
 shpSlurDM = \shape #'(( 0 . 0.3) (0 . 0.4) (0.1 . 0.4) (0.3 . 0.3)) PhrasingSlur
 shpSlurDN = \shape #'(( -1.8 . -2) (1 . 0.9) (-1 . 1.3) (0.3 . -1.3)) Slur
 shpSlurDO = \shape #'( (( 0.4 . -1.4) (0 . 0) (0 . 0) (0 . -0.9))
-                       (( -1.6 . 2.5) (0 . 2.1) (0 . 2) (0.8 . 2)) ) PhrasingSlur
+                       (( -1.6 . 2.5) (0 . 2.3) (0 . 2.2) (0.8 . 2)) ) PhrasingSlur
 shpSlurDP = \shape #'(( -0.6 . -1.6) (1 . 1.5) (-1 . 1.7) (0.3 . -1.3)) Slur
 shpSlurDQ = \shape #'(( -0.3 . -0.6) (0 . 0) (0 . 0.6) (0.3 . -1.3)) Slur
 shpSlurDR = \shape #'(( -0.6 . 1.9) (1 . -0.3) (0 . 0) (0.7 . 1.3)) Slur
+shpSlurDS = \shape #'(( -0.7 . -1) (0.5 . 0.3) (-0.5 . 0.5) (0.6 . 0.1)) Slur
+shpSlurDT = \shape #'(( 0.5 . -0.6) (0.1 . -0.4) (0 . -0.3) (0 . -0.3)) Slur
+shpSlurDU = \shape #'((-0.6 . 1.1) (1 . -0.3) (0 . 0) (0.7 . 1.3)) Slur
+shpSlurDV = \shape #'((-0.6 . -2.1) (1 . 0.5) (0 . 0.5) (0.7 . -0.7)) Slur
+shpSlurDW = \shape #'((-0.8 . 0) (0 . 0.9) (0.5 . 0.5) (0.7 . 0.3)) Slur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -677,7 +682,9 @@ posScriptAJ = {
 posScriptAK = \once \override DynamicText.extra-offset = #'( -7.2 . 0 )
 posScriptAL = \once \override DynamicText.extra-offset = #'( 0.3 . -0.5 )
 posScriptAM = \once \override DynamicText.extra-offset = #'( 1.3 . 0 )
+posScriptAN = \once \override Script.extra-offset = #'(0.4 . -0.6)
 posScrpRevExOff =  \revert Script.extra-offset
+posScrpRevPad = \revert Script.padding
 
 posPedalA = \override SustainPedal.extra-offset = #'(0 . 1.0 )
 posPedalB = \override SustainPedal.extra-offset = #'(0 . 0.5 )

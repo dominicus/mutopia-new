@@ -316,15 +316,16 @@ upperOne =  \relative c {
      <ees g,ees>2 <d bes ees,>4                           | %167
   <c bes ees,>2.( <d a! f>2) <d a ees>4( \stemNeutral     | %168
   <bes d,>4)\) b\rest b\rest <bes'bes,>2( <b b,>4)        | %169
-  \times 3/5 { <c ees,>4(<des bes><c e,><b bes!><c e,>) }
-     \stemUp \acciaccatura { <c aes>8 } \stemDown
-     <aes'aes,>4-._> b,,\rest b8\rest <c'ees,>            | %170
-  \times 3/5 { <bes bes,>4(<c aes><bes bes,><a aes!>
+  \tupletUp
+  \times 3/5 { \shpSlurDS <c ees,>4(<des bes><c e,><b bes!><c e,>) }
+     \shortStemRev \stemUp \acciaccatura { \shpSlurDT <c aes>8 } \stemDown
+     \posScrpRevPad <aes'aes,>4-. b,,\rest b8\rest <c'ees,> | %170
+  \times 3/5 { \shortStemTre <bes bes,>4(<c aes><bes bes,><a aes!>
      <bes bes,>) } \stemUp \acciaccatura { <a f>8 }
-     \stemDown <bes'bes,>4-._> b,,\rest b8\rest <bes'd,>  | %171
+     \stemDown <bes'bes,>4-. b,,\rest b8\rest <bes'd,>    | %171
   \times 3/5 { <aes c,>4(<bes ees,><aes c,><g ees>
      <aes c,>) } \stemUp \acciaccatura { <aes f>8 }
-     \stemDown <f'f,>4-._> b,,\rest <aes'f>(              | %172
+     \stemDown <f'f,>4-. b,,\rest <aes'f>(                | %172
   <f g>4) \stemUp \slurDown \acciaccatura { bes!8 } \stemNeutral \slurNeutral
      <aes f>4.->(<g f>8)<g ees>4-.(<aes ees>-.<a ees>-.)  | %173
   <f bes,aes>2.( <g d bes aes>2) <g d bes aes>4           | %174
@@ -979,10 +980,10 @@ lowerOne = \relative c, {
   bes8 \shpSlurDN f'( bes d bes f bes, f'bes f'bes,f) | %166
   \shpSlurDP ees8( bes'ees g ees bes ees,bes'ees bes'ees,bes)    | %167
   \shpSlurDQ f8( c'ees bes'ees,c) \shpSlurDR f,( c'ees a! ees c) | %168
-  bes8( f'bes d bes f)  bes,( f'bes f'bes,f)          | %169
-  bes,8( g'c e c g)  bes,( aes'c f c aes)             | %170
-  bes,8( f'aes d aes f)  bes,( ees g ees' g,ees)      | %171
-  bes8( ees aes c aes ees) bes( f'aes d aes f)        | %172
+  \shpSlurDU bes8( f'bes d bes f) \shpSlurDR bes,( f'bes f'bes,f)| %169
+  \shpSlurDR bes,8( g'c e c g) \shpSlurDR bes,( aes'c f c aes)   | %170
+  \shpSlurDU bes,8( f'aes d aes f) \shpSlurDV bes,( ees g ees' g,ees)| %171
+  \shpSlurDW bes8( ees aes c aes ees) \shpSlurDU bes( f'aes d aes f) | %172
   b,8( f'g d'g,f) c( ees g ees'ges, ees)              | %173
   d8( f aes f'bes,aes)  bes,( f'aes d bes aes)        | %174
   ees,8( bes'ees g bes ees g ees bes g ees bes)       | %175
@@ -1372,9 +1373,9 @@ dynamics = {
   s1.                                                 | %165
   \posScriptAL s1.\ff                                 | %166
   \repeat unfold 3 { s1. | }                            %167-169
-  s8 s8\< s4.. s16\! s2.                              | %170
-  s8 s8\< s4.. s16\! s2.                              | %171
-  s8 s8\< s4.. s16\! s2.                              | %172
+  s8 s8\< s4.. s16\! \posScriptAN s2.^>               | %170
+  s8 s8\< s4.. s16\! \posScriptAN s2.^>               | %171
+  s8 s8\< s4.. s16\! \posScriptAN s2.^>               | %172
   s4. s8\< s2. s4\!                                   | %173
   s1.\ff                                              | %174
   \repeat unfold 7 { s1. | }                            %175-181
@@ -1661,7 +1662,7 @@ pedalTwo = {
  \repeat unfold 42 { s1. | }                              %124-165
  s16. s32\sustainOn s8 s1 s4\sustainOff                 | %166
  s16. s32\sustainOn s8 s1 s4\sustainOff                 | %167
- \repeat unfold 39 { s1. | }                              %168-205
+ \repeat unfold 38 { s1. | }                              %168-205
  s1\sustainOn s4. s8\sustainOff                         | %206
  s2.\sustainOn s8. s16\sustainOff s2                    | %207
  s2.\sustainOn  s8 s8\sustainOff                        | %208
