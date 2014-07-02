@@ -298,20 +298,21 @@ upperOne =  \relative c {
      c d ees e g f g f                                    | %158
   \alignBeamSix c'8 \shpSlurDG bes)( a bes c d ees e g
      \posScriptAH f_\crescTinyD g f                       | %159
-  %\squeezeNotation
-  c'8 bes) a( bes c d ees e g f g f                       | %160
-  bes4-.) a,!8(_\piuF bes c d ees e g\< f g f             | %161
-  bes4-.) b,,\rest\! b\rest \ottava #1 \stemUp
-     \acciaccatura { f''8 } \stemDown f'\fz\>\( 
-     e\! ees d c bes                                      | %162
+  c'8 bes) \shpSlurDI a( bes c d ees e g f g f            | %160
+  bes4-.) \shpSlurDI a,!8(_\piuF bes c d ees e
+     \posHairpinW g\< f g f                               | %161
+  bes4-.) b,,\rest\! b\rest \ottava #1 \posOttavaD \stemUp
+  \acciaccatura { \posScriptAI \shpSlurDJ f''8_\fzSforzato } 
+     \stemDown \shpSlurDK f'\( e ees d c bes              | %162
   \ottava #0 a8 g f e ees d c bes a g f e                 | %163
-  ees des ces bes aes ges \stemUp f ees des
-     ces bes \staffDown aes!                              | %164
+  ees! des ces bes aes ges \stemUp f ees des
+     ces bes \staffDown aes!\)                            | %164
   \unSqueezeNotation
-  ges8 f ees des ces bes aes ges f ees des ces!           | %165
+  \shpSlurDL \alignBeamOct ges8\( f ees des ces bes 
+     \alignBeamSep aes ges f ees des \posScriptAM ces!\fz | %165
   \hideNotes bes8\) \unHideNotes \staffUp s8 s2 
-     <g'''d bes>2-^_\( <g d aes>4(                        | %166
-  <ees g,>)\) b'\rest <ees~ g,_~ees_~>->\( 
+     \shpSlurDM \noPadScript <g'''d bes>2-^_\(<g d aes>4( | %166
+  <ees g,>)\) b'\rest \shpSlurDO <ees~ g,_~ees_~>->\( 
      <ees g,ees>2 <d bes ees,>4                           | %167
   <c bes ees,>2.( <d a! f>2) <d a ees>4( \stemNeutral     | %168
   <bes d,>4)\) b\rest b\rest <bes'bes,>2( <b b,>4)        | %169
@@ -965,19 +966,19 @@ lowerOne = \relative c, {
   \posHairpinAC <bes bes,>4_.) d\rest_\< d\rest d\rest
      <ees'c a>( <d bes aes>                                   | %158
   <ees bes g>4) d,\rest d\rest d\rest \clef treble
-     <ees''c a>( <d bes aes>                                | %159
+     <ees''c a>( <d bes aes>                                  | %159
   %\squeezeNotation
-  <ees bes g>4) b\rest b\rest b\rest <ees'c a>( <d bes aes>\!  | %160
-  <ees bes g>4) b,\rest b\rest b\rest <ees'c a>( <d bes aes> | %161
-  <ees bes g>4) b,\rest b\rest <a! f ees c>_. b\rest b\rest  | %162
-  \restDownOne R1*6/4   \clef bass                           | %163
-  \dynLeft <ees,aes, ees ces>4-.\arpeggio\fz
-     d,\rest d\rest d2.\rest                                 | %164
+  <ees bes g>4) b\rest b\rest b\rest \shpSlurDH <ees'c a>( <d bes aes>\!  | %160
+  <ees bes g>4) b,\rest b\rest b\rest \shpSlurDH <ees'c a>( <d bes aes>   | %161
+  <ees bes g>4) b,\rest b\rest \noPadScript <a! f ees c>_. b\rest b\rest  | %162
+  \restDownOne R1*6/4 \once \override Staff.Clef.right-padding = -0.3   \clef bass                           | %163
+  \dynLeft \posScriptAJ <ees,aes, ees ces>4-.\arpeggio
+     \posScriptAK d,\rest_\fz d\rest d2.\rest                | %164
   \unSqueezeNotation
   \stemDown ces,4_> c\rest c\rest c2.\rest            | %165
-  \dynLeft bes8\fz( f'bes d bes f bes, f'bes f'bes,f) | %166
-  ees8( bes'ees g ees bes ees,bes'ees bes'ees,bes)    | %167
-  f8( c'ees bes'ees,c)  f,( c'ees a! ees c)           | %168
+  bes8 \shpSlurDN f'( bes d bes f bes, f'bes f'bes,f) | %166
+  \shpSlurDP ees8( bes'ees g ees bes ees,bes'ees bes'ees,bes)    | %167
+  \shpSlurDQ f8( c'ees bes'ees,c) \shpSlurDR f,( c'ees a! ees c) | %168
   bes8( f'bes d bes f)  bes,( f'bes f'bes,f)          | %169
   bes,8( g'c e c g)  bes,( aes'c f c aes)             | %170
   bes,8( f'aes d aes f)  bes,( ees g ees' g,ees)      | %171
@@ -1365,10 +1366,11 @@ dynamics = {
   \repeat unfold 2 { s1. | }                            %151-152
   s1.                                                 | %153
   s1.\ff                                              | %154
-  \repeat unfold 9 { s1. | }                            %155-163
-  s1.\<                                               | %164
+  \repeat unfold 8 { s1. | }                            %155-162
+  s1 s4. s8
+  \posHairpinAD s1.\<                                 | %164
   s1.                                                 | %165
-  s1.\ff                                              | %166
+  \posScriptAL s1.\ff                                 | %166
   \repeat unfold 3 { s1. | }                            %167-169
   s8 s8\< s4.. s16\! s2.                              | %170
   s8 s8\< s4.. s16\! s2.                              | %171
@@ -1541,12 +1543,10 @@ pedal = {
  \posPedalB s16. s32\sustainOn s8 s4 s2 s4 s32 s16.\sustainOff s8  | %156
  s16.. s64\sustainOn s8 s4 s2 s4 s16 s16\sustainOff s8 \posPedalRev| %157
  \repeat unfold 4 { s1. | }                               %159-161
- s2. s2.\sustainOn                                      | %162
+ s2. s16.. \noPadPedal s64\sustainOn s8 s2                          | %162
  s2 s8 s4.\sustainOff s2                                | %163
- s2.\sustainOn s8 s4.\sustainOff  s4                    | %164
- s1.                                                    | %165
- s1\sustainOn s4 s4\sustainOff                          | %166
- s1\sustainOn s4 s4\sustainOff                          | %167
+ s16. s32\sustainOn s4 s2 s4.\sustainOff  s4            | %164
+ \repeat unfold 3 { s1. | }                               %165-167
  s2\sustainOn s8 s8\sustainOff s16 s4..\sustainOn s8. s16\sustainOff | %168
  s2.\sustainOn s2 s8. s16\sustainOff                    | %169
  s16 s4..\sustainOn s8. s16\sustainOff s2\sustainOn s8. s16\sustainOff | %170
@@ -1658,7 +1658,10 @@ pedalTwo = {
  %s16. \noPadPedal s32\sustainOn s4. s8. s16\sustainOff s2.        | %121
  s1.                                                    | %122
  s2. s16. s32\sustainOn s4. s4\sustainOff               | %123
- \repeat unfold 82 { s1. | }                              %124-205
+ \repeat unfold 42 { s1. | }                              %124-165
+ s16. s32\sustainOn s8 s1 s4\sustainOff                 | %166
+ s16. s32\sustainOn s8 s1 s4\sustainOff                 | %167
+ \repeat unfold 39 { s1. | }                              %168-205
  s1\sustainOn s4. s8\sustainOff                         | %206
  s2.\sustainOn s8. s16\sustainOff s2                    | %207
  s2.\sustainOn  s8 s8\sustainOff                        | %208

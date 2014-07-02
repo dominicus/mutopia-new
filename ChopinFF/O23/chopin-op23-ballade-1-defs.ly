@@ -282,6 +282,8 @@ alignBeamTre = \once \override Beam.positions = #'(-3.4 . -2.7)
 alignBeamQtr = \once \override Beam.positions = #'(-2.5 . -1.4)
 alignBeamCin = \once \override Beam.positions = #'(-1.2 . 0.2)
 alignBeamSix = \once \override Beam.positions = #'(-2.5 . -2.5)
+alignBeamSep = \once \override Beam.positions = #'( 1.8 . -0.6)
+alignBeamOct = \once \override Beam.positions = #'( 4.2 . 2.2)
 
 moveNoteOne = \once \override NoteColumn #'force-hshift = #0.8
 moveNoteTwo = \once \override NoteColumn #'force-hshift = #1.5
@@ -450,6 +452,18 @@ shpSlurDE = \shape #'(( -1.2 . -2) (5 . 1.6) (-5 . 1.6) (0.3 . -2)) PhrasingSlur
 shpSlurDF = \shape #'(( -0.6 . 0.7) (1 . 1.8) (-1 . 1.8) (0.4 . 1.2)) Slur
 shpSlurDG = \shape #'( (( 1 . -0.3) (1.5 . 1.8) (-1 . 1.8) (0 . 1.4))
                        (( 0 . 0) (0 . 0) (0 . 0) (0 . 0)) ) Slur
+shpSlurDH = \shape #'(( 0 . -0.4) (0 . -0.6) (0 . -0.6) (-0.3 . -0.4)) Slur
+shpSlurDI = \shape #'(( 0 . 0) (1 . 0.6) (-1 . 0.6) (0.3 . 0.1)) Slur
+shpSlurDJ = \shape #'(( 0.2 . -0.1) (0 . -0.2) (-0.1 . -0.4) (-0.3 . -0.6)) Slur
+shpSlurDK = \shape #'(( -0.3 . -0.4) (10 . 2.7) (-4 . 3.2) (0 . 1)) PhrasingSlur
+shpSlurDL = \shape #'(( -5 . 0) (2 . -0.1) (-2 . 1.4) (0.4 . -1)) PhrasingSlur
+shpSlurDM = \shape #'(( 0 . 0.3) (0 . 0.4) (0.1 . 0.4) (0.3 . 0.3)) PhrasingSlur
+shpSlurDN = \shape #'(( -1.8 . -2) (1 . 0.9) (-1 . 1.3) (0.3 . -1.3)) Slur
+shpSlurDO = \shape #'( (( 0.4 . -1.4) (0 . 0) (0 . 0) (0 . -0.9))
+                       (( -1.6 . 2.5) (0 . 2.1) (0 . 2) (0.8 . 2)) ) PhrasingSlur
+shpSlurDP = \shape #'(( -0.6 . -1.6) (1 . 1.5) (-1 . 1.7) (0.3 . -1.3)) Slur
+shpSlurDQ = \shape #'(( -0.3 . -0.6) (0 . 0) (0 . 0.6) (0.3 . -1.3)) Slur
+shpSlurDR = \shape #'(( -0.6 . 1.9) (1 . -0.3) (0 . 0) (0.7 . 1.3)) Slur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -581,10 +595,11 @@ posHairpinAA = {
 }
 posHairpinAB = \once \override Hairpin.rotation = #'( 3 -1 0 )
 posHairpinAC = {
-            \alterBroken rotation #'((0.9 -1 0 ) (0.9 -1 0 )) Hairpin
-            \alterBroken extra-offset #'(( 0 . 11.6 ) ( 1 . 13.6 )) Hairpin
+            \alterBroken rotation #'((0.9 -1 0 ) (2 -1 0 )) Hairpin
+            \alterBroken extra-offset #'(( 0 . 11.6 ) ( 1 . 12.6 )) Hairpin
             \alterBroken height #'( 1.2 0.2 ) Hairpin
 }
+posHairpinAD = \alterBroken extra-offset #'(( 0 . 0 ) ( 0 . 0.8 )) Hairpin
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
@@ -610,8 +625,7 @@ posScriptN = {
 posScriptO = {
            \once \override Script.extra-offset = #'( 0.3 . 0.5 )
            \once \override DynamicText.extra-offset = #'( 0.4 . 0.7 ) }
-posScriptP = {
-  \once \override TextScript.extra-offset = #'( -1.4 . -1.3 ) }
+posScriptP = \once \override TextScript.extra-offset = #'( -1.4 . -1.3 )
 posScriptQ = \once \override Script.extra-offset = #'( 0.3 . -1 )
 posScriptR = \once \override Script.extra-offset = #'( 0 . 0.3 )
 posScriptS = \once \override DynamicText.extra-offset = #'( 0.6 . 1 )
@@ -655,6 +669,14 @@ posScriptAF = {
 }
 posScriptAG = \once \override Script.padding = 1.0
 posScriptAH = \once \override TextScript.padding = 1.4
+posScriptAI = \once \override TextScript.extra-offset = #'( -0.7 . -0.9 )
+posScriptAJ = {
+  \once \override Arpeggio.right-padding = 0.0
+  \once \override Staff.AccidentalPlacement.left-padding = #-0.1
+}
+posScriptAK = \once \override DynamicText.extra-offset = #'( -7.2 . 0 )
+posScriptAL = \once \override DynamicText.extra-offset = #'( 0.3 . -0.5 )
+posScriptAM = \once \override DynamicText.extra-offset = #'( 1.3 . 0 )
 posScrpRevExOff =  \revert Script.extra-offset
 
 posPedalA = \override SustainPedal.extra-offset = #'(0 . 1.0 )
@@ -705,6 +727,10 @@ posOttavaB = {
      #ly:line-spanner::calc-right-bound-info
 }
 posOttavaC = { \alterBroken staff-padding #'( 4.5 5.7 ) Staff.OttavaBracket }
+posOttavaD = { 
+         \setOttavaStyle
+         \once \override Staff.OttavaBracket.staff-padding = 5.7
+}
 
 %\once \override Staff.OttavaBracket.staff-padding = 4.5
 
