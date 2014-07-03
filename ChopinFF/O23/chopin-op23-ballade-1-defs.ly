@@ -266,6 +266,11 @@ subdivideBeamTwo = {
 
 hideTupletNumber = \override TupletNumber.transparent = ##t
 hideTupletBracket = \override TupletBracket.bracket-visibility = ##f
+onceHideTuplet = {
+            \once \hideTupletBracket
+            \once \hideTupletNumber
+}
+
 
 subdivideLenghtHalf = \set baseMoment = #(ly:make-moment 1/2)
 subdivideLenghtFourth = \set baseMoment = #(ly:make-moment 1/4)
@@ -469,6 +474,21 @@ shpSlurDT = \shape #'(( 0.5 . -0.6) (0.1 . -0.4) (0 . -0.3) (0 . -0.3)) Slur
 shpSlurDU = \shape #'((-0.6 . 1.1) (1 . -0.3) (0 . 0) (0.7 . 1.3)) Slur
 shpSlurDV = \shape #'((-0.6 . -2.1) (1 . 0.5) (0 . 0.5) (0.7 . -0.7)) Slur
 shpSlurDW = \shape #'((-0.8 . 0) (0 . 0.9) (0.5 . 0.5) (0.7 . 0.3)) Slur
+shpSlurDX = \shape #'((-1.2 . -2.7) (0 . -0.6) (-0.5 . -0.4) (-0.2 . -2.1)) PhrasingSlur
+shpSlurDY = \shape #'((0.6 . -1.0) (0 . -1) (-0.3 . -1) (-0.5 . -1.1)) Slur
+shpSlurDZ = \shape #'((-0.3 . -1.9) (0 . -1.6) (-0.3 . -0.9) (0.1 . -0.4)) Slur
+shpSlurEA = \shape #'((0.6 . -0.8) (1.4 . 0.3) (-1 . 0.5) (0 . -0.9)) PhrasingSlur
+shpSlurEB = \shape #'((-0.1 . 0.9) (0 . 0.9) (0.3 . 0.9) (0.9 . 0.9)) Slur
+shpSlurEC = \shape #'((0.6 . -0.8) (1.4 . 0) (0.5 . 1.5) (0.3 . -2.0)) PhrasingSlur
+shpSlurED = \shape #'((-0.4 . -2.3) (0 . -0.7) (0 . 0.3) (0 . 0.3)) Slur
+shpSlurEF = \shape #'((-0.9 . -2.0) (1 . 0) (-1 . 0.6) (0.4 . -0.3)) Slur
+shpSlurEG = \shape #'((-0.5 . 3.5) (0 . 1.5) (-0.8 . 1.2) (0.4 . 1)) Slur
+shpSlurEH = \shape #'( ((-0.3 . 0.8) (1 . 0.4) (-1 . 1.0) (0 . 2.7))
+                       (( 0 . 1) (1 . 1.3) (-1 . 1.2) (0.8 . -1.2)) ) PhrasingSlur
+shpSlurEI = \shape #'((0 . 0.2) (0 . 0.2) (0 . 0) (0.7 . -1.6)) Slur
+shpSlurEJ = \shape #'((0 . 2.4) (1 . -3.4) (-1 . -5) (0.4 . 1.0)) PhrasingSlur
+shpSlurEK = \shape #'((0 . 0) (1 . -0.5) (0 . -1.3) (0.4 . 0.3)) Slur
+shpSlurEL = \shape #'((-0.6 . 3.1) (1 . 1) (0 . 0) (0.7 . 1.3)) Slur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -605,11 +625,19 @@ posHairpinAC = {
             \alterBroken height #'( 1.2 0.2 ) Hairpin
 }
 posHairpinAD = \alterBroken extra-offset #'(( 0 . 0 ) ( 0 . 0.8 )) Hairpin
+posHairpinAE = {
+            \once \override Hairpin.avoid-slur = #'inside
+            \once \override Hairpin.outside-staff-priority = ##f
+            \once \override Hairpin.rotation = #'( -2 -1 0 )
+            \once \override Hairpin.extra-offset = #'( 18 . -1.7 )
+}
+posHairpinAF = \once \override Hairpin.height = 0.46
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
 posBeamC = \once \override Beam.positions = #'(6 . 5.3)
 posBeamD = \once \override Beam.damping = #+inf.0
+posBeamE = \once \override Beam.positions = #'(0.5 . 1.7)
 
 posScriptA = \once \override TextScript.extra-offset = #'( 0 . -1.5 )
 posScriptB = \once \override Script.extra-offset = #'( 0.2 . -0.7 ) 
@@ -676,13 +704,25 @@ posScriptAG = \once \override Script.padding = 1.0
 posScriptAH = \once \override TextScript.padding = 1.4
 posScriptAI = \once \override TextScript.extra-offset = #'( -0.7 . -0.9 )
 posScriptAJ = {
-  \once \override Arpeggio.right-padding = 0.0
-  \once \override Staff.AccidentalPlacement.left-padding = #-0.1
+         \once \override Arpeggio.right-padding = 0.0
+         \once \override Staff.AccidentalPlacement.left-padding = #-0.1
 }
 posScriptAK = \once \override DynamicText.extra-offset = #'( -7.2 . 0 )
 posScriptAL = \once \override DynamicText.extra-offset = #'( 0.3 . -0.5 )
 posScriptAM = \once \override DynamicText.extra-offset = #'( 1.3 . 0 )
 posScriptAN = \once \override Script.extra-offset = #'(0.4 . -0.6)
+posScriptAO = \once \override Script.avoid-slur = #'inside
+posScriptAP = {
+        \override Script.padding = 0.0
+        \override Script.extra-offset = #'( 0.3 . 0.3 )
+}
+posScriptAPrev = {
+        \revert Script.padding
+        \revert Script.extra-offset
+}
+posScriptAQ = \once \override TupletNumber.extra-offset = #'( 0 . 0.6)
+posScriptAR = \once \override TextScript.extra-offset = #'(0.8 . 7.6)
+posScriptAS = \once \override TextScript.extra-offset = #'( 0 . -1.2 )
 posScrpRevExOff =  \revert Script.extra-offset
 posScrpRevPad = \revert Script.padding
 
@@ -694,6 +734,8 @@ posPedalE = \override SustainPedal.extra-offset = #'(1.2 . 1.3 )
 posPedalF = \override SustainPedal.extra-offset = #'(0.5 . 0.6 )
 posPedalG = \override SustainPedal.extra-offset = #'(1.7 . 1.5 )
 posPedalH = \once \override SustainPedal.extra-offset = #'(0.7 . 0)
+posPedalI = \once \override Staff.SustainPedal.extra-offset = #'( 0 . -1.5)
+posPedalJ = \once \override Staff.SustainPedal.extra-offset = #'( 0.8 . 0.4)
 posPedalRev = \revert SustainPedal.extra-offset
 hideNextPedal = \once \omit Voice.SustainPedal
 

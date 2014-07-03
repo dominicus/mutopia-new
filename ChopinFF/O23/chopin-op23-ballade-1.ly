@@ -328,24 +328,27 @@ upperOne =  \relative c {
      \stemDown <f'f,>4-. b,,\rest <aes'f>(                | %172
   <f g>4) \stemUp \slurDown \acciaccatura { bes!8 } \stemNeutral \slurNeutral
      <aes f>4.->(<g f>8)<g ees>4-.(<aes ees>-.<a ees>-.)  | %173
-  <f bes,aes>2.( <g d bes aes>2) <g d bes aes>4           | %174
-  \stemDown g,4 \stemNeutral b\rest b\rest <ees'g,ees>2->\( <d bes ees,>4 | %175
+  \shortStemTwo \shpSlurDY <f bes,aes>2.( <g d bes aes>2)
+     <g d bes aes>4                                       | %174
+  \stemDown g,4 \stemNeutral b\rest b\rest \shpSlurEA
+     <ees'g,ees>2->\( <d bes ees,>4                       | %175
   <c bes ees,>2. <d a! f>2 <d a ees>4                     | %176
-  <bes d,>4\) b,\rest b\rest <bes''bes,>2_>\( b,,8\rest
-     <bes''bes,>8                                         | %177
-  <bes bes,>2 b,,4\rest \stemUp \slurUp c2->( d4          | %178
-  \times 3/4 { ees4\trill d ees g } 
-  \times 3/4 { <g d>-.) \moveNoteCin g2-^~( \times 2/3 { g8 f ees } }  | %179
-  ees2)\) b4\rest b\rest \stemNeutral 
+  <bes d,>4\) b,\rest b\rest \shpSlurEC <bes''bes,>2_>\(
+     b,,8\rest <bes''bes,>8                               | %177
+  <bes bes,>2 b,,4\rest \stemUp \slurUp \shpSlurEF c2->(d4| %178
+  \times 3/4 { \posScriptAO ees4\trill d ees g } 
+  \onceHideTuplet \times 3/4 { <g d>-.) \moveNoteCin
+     \shpSlurED g2-^~( \times 2/3 { g8 f ees) } }         | %179
+  ees2\) b4\rest b\rest \stemNeutral \tupletSpan 4
      \times 2/3 { b8\rest(^\conForza g[ aes] bes d c }    | %180
-  bes2.-\tenTxt) b4\rest \times 2/3 { b8\rest( g[ aes]
-     bes d c }                                            | %181
-  bes2.-\tenTxt) b4\rest \times 2/3 { b8\rest( f [aes] 
-     bes d c }                                            | %182
-  bes4) \times 2/3 { b8\rest des,[_( ees] g c bes } aes4.
-     ces,8 ees f                                          | %183
-  g4) b\rest b\rest b\rest \times 2/3 { b8\rest( g[ aes]
-     bes d c }                                            | %184
+  bes2.-\tenTxt) b4\rest \times 2/3 { \shpSlurEI b8\rest( 
+     g[ aes] bes d \posHairpinAE c\< }                    | %181
+  \posScriptAR bes2._\tenTxt) b4\rest
+     \times 2/3 { \shpSlurEI b8\rest( f [aes] bes d c\! } | %182
+  bes4) \times 2/3 { b8\rest \shpSlurEK des,[_( ees] g c 
+     bes } aes4. \posBeamE ces,8 ees f                    | %183
+  g4) \posScriptAS b\rest_\sempreF b\rest b\rest
+     \times 2/3 { b8\rest( g[ aes] bes d c }              | %184
   bes8-.)\noBeam bes'-. bes'4-. b,,\rest b\rest 
      \times 2/3 { b8\rest( g[ aes] bes d c }              | %185
   bes8-.)\noBeam bes'-. bes'4-. b,,\rest b\rest
@@ -619,15 +622,16 @@ upperTwo =  \relative c' {
   \repeat unfold 12 { s1. | }                               %154-165
   b2.\rest s                                              | %166
   \repeat unfold 7 { s1. | }                                %167-173
-  \stemUp \phrasingSlurUp bes'2.^^\( bes2 bes4(           | %174
-  ees,4)\) s4 s1 \stemDown \slurDown                      | %175
-  \repeat unfold 2 { s1. | }                                %176-177
-  s2. c,4_.( c\rest d_.)                                  | %178
-  \times 3/4 { ees_.( d_. ees_. g_.) }
-     \times 3/4 { g_.( aes_. bes_. \moveNoteSep aes_.) }  | %179
-  g2_. s1                                                 | %180
+  \stemUp \phrasingSlurUp \shpSlurDX bes'2.^^\( bes2 \shpSlurDZ bes4(    | %174
+  ees,4)\) s4 s1 \stemDown \slurDown                                     | %175
+  \repeat unfold 2 { s1. | }                                               %176-177
+  s2. \posScriptAP \shpSlurEB c,4_.( c\rest d_.)                         | %178
+  \onceHideTuplet \times 3/4 { \shpSlurEB ees_.( d_. ees_. g_.) }
+     \hideTupletBracket \posScriptAQ \times 3/4 { \shpSlurEB 
+     g_.( aes_. bes_. \moveNoteSep aes_.) }                              | %179
+  g2_. s1   \posScriptAPrev                               | %180
   \repeat unfold 2 { s1. | }                                %181-182
-  s4 \times 2/3{ s8 des4 } s4 s4. ces4 s8                 | %183
+  s4 \hideTupletNumber \times 2/3{s8 des4 } s4 s4. ces4 s8| %183
   \repeat unfold 10 { s1. | }                               %184-193
   s2. s8 \stemUp c8 d fis bes a                           | %194
   \stemDown \slurDown
@@ -739,7 +743,7 @@ upperQtr = \relative c' {
   s1.                                      | %99
   s1 s8 gis4 s8                            | %100
   \repeat unfold 78 { s1. | }                %101-178
-  \stemUp s2. \times 3/4 { s4 
+  \stemUp s2. \onceHideTuplet \times 3/4 { s4 
      \moveNoteSix \shortStemOne d'2. }     | %179
   \repeat unfold 14 { s1. | }                %180-193
   \stemDown s1 s8 fis,4.                   | %194
@@ -984,19 +988,20 @@ lowerOne = \relative c, {
   \shpSlurDR bes,8( g'c e c g) \shpSlurDR bes,( aes'c f c aes)   | %170
   \shpSlurDU bes,8( f'aes d aes f) \shpSlurDV bes,( ees g ees' g,ees)| %171
   \shpSlurDW bes8( ees aes c aes ees) \shpSlurDU bes( f'aes d aes f) | %172
-  b,8( f'g d'g,f) c( ees g ees'ges, ees)              | %173
-  d8( f aes f'bes,aes)  bes,( f'aes d bes aes)        | %174
-  ees,8( bes'ees g bes ees g ees bes g ees bes)       | %175
-  f8( c'ees bes'ees,c)  f,( c'ees a ees c)            | %176
-  bes,8( bes'f'bes d f \clef treble d'bes f
-     \clef bass d bes f)                              | %177
-  bes,8( e g c g e) bes( e g c g e)                   | %178
-  bes8( f'a!c a f) bes,( f'aes d aes f)               | %179
-  ees,8\( bes'ees g ees bes  ees,bes'ees bes'ees,bes  | %180
-  ees,8 bes'ees g ees bes  ees,bes'ees bes'ees,bes\)  | %181
-  ees,8\( bes'd aes'd,bes  ees,bes'd bes'd,bes        | %182
-  ees,8 bes'ees g ees bes\) ees,( ces'ees aes ees ces)| %183
-  ees,8\( bes'ees g ees bes ees,bes'ees bes'ees,bes   | %184
+  \shpSlurDU b,8( f'g d'g,f) \shpSlurDU c( ees g ees'ges, ees)       | %173
+  \shpSlurDV d8( f aes f'bes,aes) \shpSlurDU bes,( f'aes d bes aes)  | %174
+  ees,8( bes'ees g bes ees g ees bes g ees bes)                      | %175
+  \shpSlurDQ f8( c'ees bes'ees,c) \shpSlurDU f,( c'ees a ees c)      | %176
+  \grace { \posPedalI s16\sustainOn s16  } \shpSlurEG bes,8( bes'f'bes d f
+     \clef treble d'bes f \clef bass d bes \posPedalJ f)\sustainOff  | %177
+  \shpSlurDU bes,8( e g c g e) \shpSlurDU bes( e g c g e)            | %178
+  \shpSlurDU bes8( f'a!c a f) \shpSlurDU bes,( f'aes d aes f)        | %179
+  \shpSlurEH ees,8\(\sustainOn bes'ees g ees bes  ees,bes'ees bes'
+     ees,\sustainOff bes                                             | %180
+  ees,8 bes'ees g ees bes  ees,bes'ees bes'ees,bes\)                 | %181
+  \shpSlurEJ ees,8\( bes'd aes'd,bes  ees,bes'd bes'd,bes            | %182
+  ees,8 bes'ees g ees bes\) \shpSlurEL ees,( ces'ees aes ees ces)    | %183
+  \shpSlurEH ees,8\( bes'ees g ees bes ees,bes'ees bes'ees,bes       | %184
   ees,8 bes'ees g ees bes  ees, bes'ees bes'ees,bes\) | %185
   ees,8\( bes'd aes'd,bes  ees,bes'd bes'd,bes        | %186
   ees,8 bes'ees g ees bes\) ees,( ces'ees aes ees ces)| %187
@@ -1379,9 +1384,9 @@ dynamics = {
   s4. s8\< s2. s4\!                                   | %173
   s1.\ff                                              | %174
   \repeat unfold 7 { s1. | }                            %175-181
-  s2. s4 s2\<                                         | %182
-  s2. s4\! s2\>                                       | %183
-  s32 s32\! s8.^\sempreF s4 s1                        | %184
+  s2. s4 s2                                           | %182
+  s2. s4 \posHairpinAF s2\>                           | %183
+  s32 s32\! s8. s4 s1                                 | %184
   \repeat unfold 7 { s1. | }                            %185-191
   \dimPiuRallentSpanner s1.\startTextSpan             | %192
   s1 s4. s8\stopTextSpan                              | %193
@@ -1555,12 +1560,13 @@ pedal = {
  s16 s4..\sustainOn s8. s16\sustainOff s16 s4..\sustainOn s8. s16\sustainOff | %172
  s2\sustainOn s8 s8.\sustainOff s16\sustainOn s2 s16 s16\sustainOff | %173
  s2\sustainOn s8 s8.\sustainOff s16\sustainOn s2 s16 s16\sustainOff | %174
- s1\sustainOn s4.. s16\sustainOff                                   | %175
- s2\sustainOn s8 s8.\sustainOff s16\sustainOn s2 s16 s16\sustainOff | %176
- s1\sustainOn s4.. s16\sustainOff                                   | %177
+ \repeat unfold 2 { s1. | }                                           %175-176
+ s1.
+ %s2. s4\sustainOn s4.. s16\sustainOff                | %177
  s16 s2.\sustainOn s8. s4.. s16\sustainOff                          | %178
- s16 s4..\sustainOn s8 s4\sustainOff s2\sustainOn s16 s16\sustainOff| %179
- s16 s8.\sustainOn s2. s8. s8.\sustainOff s8                        | %180
+ s16 s4..\sustainOn s8 s4\sustainOff s2\sustainOn s8\sustainOff| %179
+ s1.
+ %s16 s8.\sustainOn s2. s8. s8.\sustainOff s8                        | %180
  s1\sustainOn s4. s8\sustainOff                                     | %181
  s1\sustainOn s4. s8\sustainOff                                     | %182
  s16 s4..\sustainOn s8 s4\sustainOff s2\sustainOn s16 s16\sustainOff| %183
@@ -1655,14 +1661,19 @@ pedalTwo = {
  s16. s32\sustainOn s4. s8. \hideNextPedal s16\sustainOff s2.     | %119
  s1 s4.... \posPedalH s64\sustainOn                               | %120
  s2 s8. s16\sustainOff s2.                                        | %121
- %s1.                                                              | %120
- %s16. \noPadPedal s32\sustainOn s4. s8. s16\sustainOff s2.        | %121
  s1.                                                    | %122
  s2. s16. s32\sustainOn s4. s4\sustainOff               | %123
  \repeat unfold 42 { s1. | }                              %124-165
  s16. s32\sustainOn s8 s1 s4\sustainOff                 | %166
  s16. s32\sustainOn s8 s1 s4\sustainOff                 | %167
- \repeat unfold 38 { s1. | }                              %168-205
+ \repeat unfold 7 { s1. | }                               %168-174
+ s1\sustainOn s4.. s16\sustainOff                                   | %175
+ s2\sustainOn s8 s8.\sustainOff s16\sustainOn s2 s16 s16\sustainOff | %176
+ %\grace { s16\sustainOn s16 } s2  s4\sustainOff s2.   | %177
+ s1.
+ s1.                                                                | %178
+ s1.                                                                | %179
+ \repeat unfold 26 { s1. | }                              %180-205
  s1\sustainOn s4. s8\sustainOff                         | %206
  s2.\sustainOn s8. s16\sustainOff s2                    | %207
  s2.\sustainOn  s8 s8\sustainOff                        | %208
