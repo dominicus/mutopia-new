@@ -209,8 +209,13 @@ semprePiuCrescSpanner = {
   \alterBroken staff-padding #'(4.5 2.7) TextSpanner
 }
 dimPiuRallentSpanner = {
-  \override TextSpanner #'(bound-details left text) = \markup { \italic "dim. e più rallent." }
+  \override TextSpanner #'(bound-details left text) = \markup { \italic \larger "dim. e più rallent.    " }
   \override TextSpanner #'(bound-details left-broken text) = ##f
+  \override TextSpanner.dash-period = #14.0
+  \override TextSpanner.dash-fraction = #0.04
+  \override TextSpanner.dash-period = #8.0
+  \once \override TextSpanner.staff-padding = 0
+  \once \override TextSpanner.extra-offset = #'( 0.3 . -1.4 )
 }
 sforzatoSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \concat { \dynamic "sf" \musicglyph #"scripts.sforzato"  } }
@@ -489,6 +494,24 @@ shpSlurEI = \shape #'((0 . 0.2) (0 . 0.2) (0 . 0) (0.7 . -1.6)) Slur
 shpSlurEJ = \shape #'((0 . 2.4) (1 . -3.4) (-1 . -5) (0.4 . 1.0)) PhrasingSlur
 shpSlurEK = \shape #'((0 . 0) (1 . -0.5) (0 . -1.3) (0.4 . 0.3)) Slur
 shpSlurEL = \shape #'((-0.6 . 3.1) (1 . 1) (0 . 0) (0.7 . 1.3)) Slur
+shpSlurEM = \shape #'( ((-0.3 . -1.1) (1 . 1) (-1 . 1) (0 . -0.7))
+                       (( 0 . 2) (1 . 1.4) (-1 . 1.5) (0.8 . -1.2)) ) PhrasingSlur
+shpSlurEN = \shape #'((0.3 . 0.3) (0.5 . -0.4) (-0.5 . -0.4) (0.3 . 0.2)) Tie
+shpSlurEO = \shape #'( ((0 . 0) (0 . 0.3) (-0.5 . 0.5) (0.4 . 1))
+                       ((0 . 1.3) (0.3 . 0.8) (-0.1 . 0.7) (-0.2 . 0)) ) Slur
+shpSlurEP = { \shape #'((0.4 . -0.4) (0.5 . 0.1) (-0.5 . 0.1) (-0.3 . -0.3)) Tie
+              \shape #'((0.1 . -0.8) (1 . 1) (-1 . 1.5) (0.2 . -0.7)) PhrasingSlur }
+shpSlurEQ = { \shape #'((0.7 . -0.3) (1 . 0.4) (-1 . 0.4) (-0.3 . -0.3)) Tie
+              \shape #'((0.5 . -1.6) (1 . 0.3) (-2 . 1.5) (-0.1 . -0.7)) PhrasingSlur }
+shpSlurER = { \shape #'((0.7 . -0.3) (1 . 0.4) (-1 . 0.4) (-0.3 . -0.3)) Tie
+              \shape #'( ((0 . -1.3) (2.5 . 2.5) (-2 . 1.5) (0 . -1.4))
+                         ((0 . 7.6) (0.3 . 6.9) (0.7 . 6.3) (0.7 . 4.6)) ) PhrasingSlur }
+shpSlurES = \shape #'((-0.5 . 3) (1 . -1.6) (-1 . 0.4) (0.4 . 2.2)) Slur
+shpSlurET = \shape #'((-0.5 . 3) (1 . 1) (-1 . -1.4) (0.4 . 0)) Slur
+shpSlurEU = { \shpSlurM \shape #'((-0.5 . 2.9) (0 . 2.9) (-1.0 . 3.1) (0.7 . 2.6)) Slur }
+shpSlurEV = \shape #'((0 . 0.6) (0 . 0.7) (0.3 . 0.7) (0.4 . 0.6)) Slur
+shpSlurEW = \shape #'((0 . -0.5) (0 . -0.5) (0.3 . -0.5) (-0.3 . -0.5)) Slur
+shpSlurEX = \shape #'((0.3 . -2) (0.5 . -0.5) (-0.5 . -0.5) (0 . -2)) Slur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -629,9 +652,16 @@ posHairpinAE = {
             \once \override Hairpin.avoid-slur = #'inside
             \once \override Hairpin.outside-staff-priority = ##f
             \once \override Hairpin.rotation = #'( -2 -1 0 )
-            \once \override Hairpin.extra-offset = #'( 18 . -1.7 )
+            \once \override Hairpin.extra-offset = #'( 18 . -0.7 )
 }
 posHairpinAF = \once \override Hairpin.height = 0.46
+posHairpinAG = {
+            \override Hairpin.extra-offset = #'(0 . 0)
+            \revert Hairpin.rotation
+            \once \alterBroken rotation #'((5 0 0 ) (0 -1 0 )) Hairpin
+            \once \alterBroken height #'( 1.0 0.2 ) Hairpin
+}
+posHairpinAH = \once \override Hairpin.rotation = #'( 1.3 -1 0 )
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
@@ -721,8 +751,13 @@ posScriptAPrev = {
         \revert Script.extra-offset
 }
 posScriptAQ = \once \override TupletNumber.extra-offset = #'( 0 . 0.6)
-posScriptAR = \once \override TextScript.extra-offset = #'(0.8 . 7.6)
+posScriptAR = \once \override TextScript.extra-offset = #'(0.8 . 10.6)
 posScriptAS = \once \override TextScript.extra-offset = #'( 0 . -1.2 )
+posScriptAT = \once \override DynamicText.extra-offset = #'( -3 . -0.1 )
+posScriptAU = {
+           \once \override TextScript.padding = 0.0
+           \once \override TextScript.staff-padding = 0.0
+           \once \override TextScript.extra-offset = #'( 1.7 . 0.4 ) }
 posScrpRevExOff =  \revert Script.extra-offset
 posScrpRevPad = \revert Script.padding
 

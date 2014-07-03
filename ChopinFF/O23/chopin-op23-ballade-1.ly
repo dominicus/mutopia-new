@@ -328,8 +328,8 @@ upperOne =  \relative c {
      \stemDown <f'f,>4-. b,,\rest <aes'f>(                | %172
   <f g>4) \stemUp \slurDown \acciaccatura { bes!8 } \stemNeutral \slurNeutral
      <aes f>4.->(<g f>8)<g ees>4-.(<aes ees>-.<a ees>-.)  | %173
-  \shortStemTwo \shpSlurDY <f bes,aes>2.( <g d bes aes>2)
-     <g d bes aes>4                                       | %174
+  \shortStemTwo \shpSlurDY <f bes,aes>2.( \shortStemRev 
+     <g d bes aes>2) <g d bes aes>4                       | %174
   \stemDown g,4 \stemNeutral b\rest b\rest \shpSlurEA
      <ees'g,ees>2->\( <d bes ees,>4                       | %175
   <c bes ees,>2. <d a! f>2 <d a ees>4                     | %176
@@ -339,10 +339,10 @@ upperOne =  \relative c {
   \times 3/4 { \posScriptAO ees4\trill d ees g } 
   \onceHideTuplet \times 3/4 { <g d>-.) \moveNoteCin
      \shpSlurED g2-^~( \times 2/3 { g8 f ees) } }         | %179
-  ees2\) b4\rest b\rest \stemNeutral \tupletSpan 4
+  \shortStemRev ees2\) b4\rest b\rest \stemNeutral \tupletSpan 4
      \times 2/3 { b8\rest(^\conForza g[ aes] bes d c }    | %180
-  bes2.-\tenTxt) b4\rest \times 2/3 { \shpSlurEI b8\rest( 
-     g[ aes] bes d \posHairpinAE c\< }                    | %181
+  bes2.-\tenTxt) b4\rest \times 2/3 { 
+     \shpSlurEI b8\rest( g[ aes] bes d \posHairpinAE c\< }| %181
   \posScriptAR bes2._\tenTxt) b4\rest
      \times 2/3 { \shpSlurEI b8\rest( f [aes] bes d c\! } | %182
   bes4) \times 2/3 { b8\rest \shpSlurEK des,[_( ees] g c 
@@ -350,30 +350,29 @@ upperOne =  \relative c {
   g4) \posScriptAS b\rest_\sempreF b\rest b\rest
      \times 2/3 { b8\rest( g[ aes] bes d c }              | %184
   bes8-.)\noBeam bes'-. bes'4-. b,,\rest b\rest 
-     \times 2/3 { b8\rest( g[ aes] bes d c }              | %185
+     \times 2/3 { \shpSlurEI b8\rest( g[ aes] bes d c }   | %185
   bes8-.)\noBeam bes'-. bes'4-. b,,\rest b\rest
-     \times 2/3 { b8\rest( f[ aes] bes d c }              | %186
+     \times 2/3 { \shpSlurEI b8\rest( f[ aes] bes d c }   | %186
   \phrasingSlurDown \tieDown 
-  bes4) \times 2/3 { b8\rest\( des,[ees]  g c bes }
-     aes4.  ces,8 ees f                                   | %187
-  g2.\)~ g8\noBeam g(\< bes g'f ees                       | %188
-  \slurUp \phrasingSlurUp \tieUp
-  bes2.)\(~ bes8 g bes bes'f ees\!                        | %189
-  d2.\)\(~ d8\> bes d d'a g                               | %190
-  d2.\)\(~-\riten d8 bes d bes'a g\!                      | %191
-  d8 bes d bes'a g d bes d bes'a g                        | %192
-  d8 a'c bes g ees bes g c,d f ees  \stemUp               | %193
-  d,2.\)_\pp-\menoMossoLegend b''8\rest \hideNotes \stemDown
-     \tieDown c,8(_~ \unHideNotes \moveNoteOne c2 \stemUp | %194
-  g'2.) d'(                                               | %195
-  c2.) b8\rest \hideNotes \stemDown c,8(~ \unHideNotes
-     \moveNoteOne c2                                      | %196
-  \stemUp g'2.) e->(                                      | %197
-  fis2.)b8\rest \hideNotes \stemDown c,8(~ \unHideNotes
-     \moveNoteOne c2                                      | %198
-  \stemUp g'2.) d'(                                       | %199
+  bes4) \times 2/3 { b8\rest \shpSlurEK des,[_( ees] g c
+     bes } aes4. \posBeamE ces,8 ees f                                   | %187
+  \shpSlurEN g2.)~ g8\noBeam \posHairpinAG \shpSlurEO g(\< bes g'f ees   | %188
+  \slurUp \phrasingSlurUp\tieUp \shpSlurEP bes2.)\(~bes8 g bes g'f ees\! | %189
+  \shpSlurEQ d2.\)\(~ \posHairpinAH d8\> bes d bes'a g                   | %190
+  \shpSlurER d2.\)\(~-\riten d8 bes d bes'a g\!                          | %191
+  \dimPiuRallentSpanner d8\startTextSpan bes d bes'a g d bes d bes'a g   | %192
+  d8 a'c bes g ees bes g c,d f ees\stopTextSpan  \stemUp                 | %193
+  d,2.\)-\menoMossoLegend b''8\rest \hideNotes
+     \stemDown \tieDown \shpSlurEU c,8(_~ \unHideNotes \moveNoteOne c2   | %194
+  \stemUp g'2.) d'(                                                      | %195
+  c2.) b8\rest \hideNotes \stemDown \shpSlurEU c,8(~ \unHideNotes
+     \moveNoteOne c2                                                     | %196
+  \stemUp g'2.) e->(                                                     | %197
+  fis2.) b8\rest \hideNotes \stemDown \shpSlurH c,8\(~ \unHideNotes
+     \moveNoteOne c2                                                     | %198
+  \stemUp g'2.\) d'(                                                     | %199
   e2.) s8 \stemDown \tweak Stem.transparent ##t bes,2( s8 | %200
-  \stemUp g'2.) e'(                                       | %201
+  \stemUp g'2.) \shpSlurEX e'(                                           | %201
   fis2. e2) f8\rest fis                                   | %202
   fis2.( e2) f8\rest fis                                  | %203
   fis2.( e2) f8\rest fis                                  | %204
@@ -632,14 +631,17 @@ upperTwo =  \relative c' {
   g2_. s1   \posScriptAPrev                               | %180
   \repeat unfold 2 { s1. | }                                %181-182
   s4 \hideTupletNumber \times 2/3{s8 des4 } s4 s4. ces4 s8| %183
-  \repeat unfold 10 { s1. | }                               %184-193
+  \repeat unfold 3 { s1. | }                                %184-186
+  s4 \times 2/3{s8 des4 } s4 s4. ces4 s8                  | %187
+  \repeat unfold 6 { s1. | }                                %188-193
   s2. s8 \stemUp c8 d fis bes a                           | %194
-  \stemDown \slurDown
-     a,4\rest <d bes>_.( <d bes>_.) e\rest g_.( g_.)      | %195
-  e4\rest <g ees>_.(<g ees>_.) s8 \stemUp c, d fis bes a  | %196
-  \stemDown a,4\rest <d bes>_.(<d bes>_.) g,\rest
-     <cis bes g>_.( <cis bes g>_.)                        | %197
-  a4\rest<d a fis>_.(<d a fis>_.) s8 \stemUp c d fis!bes a| %198
+  \stemDown \slurDown a,4\rest \posScriptAP \shpSlurEV <d bes>_.(
+     <d bes>_.) e\rest \shpSlurEV g_.( g_.)                              | %195
+  e4\rest \shpSlurEV <g ees>_.(<g ees>_.) s8 \stemUp c, d fis bes a      | %196
+  \stemDown a,4\rest \shpSlurEV <d bes>_.(<d bes>_.) g,\rest
+     \shpSlurEV <cis bes g>_.( <cis bes g>_.)                                       | %197
+  a4\rest \shpSlurEV <d a fis>_.(<d a fis>_.) \posScriptAPrev s8
+     \stemUp c d fis!bes a                                               | %198
   \stemDown
   b,4\rest<d bes>_.(<d bes>_.) e\rest <bes'g>_.(<bes g>_.)| %199
   e,4\rest <bes'g>_.(<bes g>_.) b8\rest \stemUp bes, cis 
@@ -1002,20 +1004,21 @@ lowerOne = \relative c, {
   \shpSlurEJ ees,8\( bes'd aes'd,bes  ees,bes'd bes'd,bes            | %182
   ees,8 bes'ees g ees bes\) \shpSlurEL ees,( ces'ees aes ees ces)    | %183
   \shpSlurEH ees,8\( bes'ees g ees bes ees,bes'ees bes'ees,bes       | %184
-  ees,8 bes'ees g ees bes  ees, bes'ees bes'ees,bes\) | %185
-  ees,8\( bes'd aes'd,bes  ees,bes'd bes'd,bes        | %186
-  ees,8 bes'ees g ees bes\) ees,( ces'ees aes ees ces)| %187
-  ees,8\( bes'ees g ees bes  ees,bes'ees bes'ees,bes  | %188
-  ees,8 bes'ees g ees bes  ees,bes'ees bes'ees,bes\)  | %189
-  g8( d'g bes d bes g'd bes g d g,                    | %190
-  g,8 g')( d' g bes d a'g d bes g d                   | %191
-  g,8 d' d'4) d,\rest d2.\rest                        | %192
-  \restDownOne R1*6/4 \stemNeutral \slurDown          | %193
-  d4\rest d,_.( d_.) d'\rest d,_.( d_.)               | %194
-  d'4\rest d,_.( d_.) b'\rest <g'd>_.( <g d>_.)       | %195
-  b,4\rest <g'd>_.( <g d>_.) d\rest d,_.( d_.)        | %196
-  d'4\rest d,_.( d_.) d'\rest d,_.( d_.)              | %197
-  d'4\rest d,_.( d_.) d'\rest d,_.( d_.)              | %198
+  ees,8 bes'ees g ees bes  ees, bes'ees bes'ees,bes\)                | %185
+  \shpSlurEJ ees,8\( bes'd aes'd,bes  ees,bes'd bes'd,bes            | %186
+  ees,8 bes'ees g ees bes\) \shpSlurEL ees,( ces'ees aes ees ces)    | %187
+  \shpSlurEM
+  ees,8\( bes'ees g ees bes  ees,bes'ees bes'ees,bes                 | %188
+  ees,8 bes'ees g ees bes  ees,bes'ees bes'ees,bes\)                 | %189
+  \shpSlurES g8( d'g bes d bes g'd bes g d g,                        | %190
+  g,8) \shpSlurET g'( d' g bes d a'g d bes g d                       | %191
+  g,8 d' d'4) d,\rest d2.\rest                                       | %192
+  \restDownOne R1*6/4 \stemNeutral \slurDown                         | %193
+  d4\rest \posScriptAT d,_.(^\pp d_.) d'\rest d,_.( d_.)             | %194
+  d'4\rest d,_.( d_.) b'\rest <g'd>_.( <g d>_.)                      | %195
+  b,4\rest <g'd>_.( <g d>_.) \posScriptAU d\rest-\semprePP d,_.( d_.)| %196
+  d'4\rest d,_.( d_.) d'\rest d,_.( d_.)                             | %197
+  d'4\rest d,_.( d_.) d'\rest \shpSlurI d,_.( d_.)                   | %198
   d'4\rest d,_.( d_.) b'\rest <bes'g d>_.(<bes g d>_.)| %199
   d,4\rest <bes'g d>_.(<bes g d>_.) g,\rest \stemDown
      d_.( d_.)                                        | %200
@@ -1178,7 +1181,7 @@ lowerTwo = \relative c {
   s4 c( bes) s <aes d,>2                           | %143
   s4 \clef treble f'4( ees) \clef bass s g,( f)    | %144
   \repeat unfold 50 { s1. | }                        %145-194
-  s2. d(                                           | %195
+  s2. \shpSlurEW d(                                | %195
   c2.) s                                           | %196
   \repeat unfold 2 { s1. | }                         %197-198
   s2. d(                                           | %199
@@ -1388,10 +1391,10 @@ dynamics = {
   s2. s4 \posHairpinAF s2\>                           | %183
   s32 s32\! s8. s4 s1                                 | %184
   \repeat unfold 7 { s1. | }                            %185-191
-  \dimPiuRallentSpanner s1.\startTextSpan             | %192
-  s1 s4. s8\stopTextSpan                              | %193
+  s1.                                                 | %192
+  s1.                                                 | %193
   \repeat unfold 2 { s1. | }                            %194-195
-  s2. s8 s8-\semprePP s2                              | %196
+  s2. s8 s8 s2                                        | %196
   \repeat unfold 2 { s1. | }                            %197-198
   s8\< s4. s4 s2^\crescTiny s4\!                      | %199
   s2.\f s8 s8\p s2                                    | %200
