@@ -218,8 +218,9 @@ dimPiuRallentSpanner = {
   \once \override TextSpanner.extra-offset = #'( 0.3 . -1.4 )
 }
 sforzatoSpanner = {
-  \override TextSpanner #'(bound-details left text) = \markup { \concat { \dynamic "sf" \musicglyph #"scripts.sforzato"  } }
+  \override TextSpanner #'(bound-details left text) = \markup { \concat { \dynamic "sf" \raise #0.4 \musicglyph #"scripts.sforzato" "  " } }
   \override TextSpanner #'(bound-details left-broken text) = ##f
+  \once \override TextSpanner.extra-offset = #'( -1.9 . 0.7 )
 }
 pocoRitenSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic \larger "poco riten." }
@@ -512,6 +513,8 @@ shpSlurEU = { \shpSlurM \shape #'((-0.5 . 2.9) (0 . 2.9) (-1.0 . 3.1) (0.7 . 2.6
 shpSlurEV = \shape #'((0 . 0.6) (0 . 0.7) (0.3 . 0.7) (0.4 . 0.6)) Slur
 shpSlurEW = \shape #'((0 . -0.5) (0 . -0.5) (0.3 . -0.5) (-0.3 . -0.5)) Slur
 shpSlurEX = \shape #'((0.3 . -2) (0.5 . -0.5) (-0.5 . -0.5) (0 . -2)) Slur
+shpSlurEY = \shape #'((0.3 . -2.4) (0.5 . -2.2) (-0.5 . -2.0) (-0.6 . -2.4)) Slur
+shpSlurEZ = \shape #'(( 0 . -1.3) (0 . -1.3) (0 . -1.3) (0 . -1.3)) Slur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -662,6 +665,19 @@ posHairpinAG = {
             \once \alterBroken height #'( 1.0 0.2 ) Hairpin
 }
 posHairpinAH = \once \override Hairpin.rotation = #'( 1.3 -1 0 )
+posHairpinAI = {
+    \revert Hairpin.extra-offset
+    \revert Hairpin.height
+    \revert Hairpin.rotation
+    \once \override Hairpin.extra-offset = #'(-7.6 . 13.3)
+    \once \override Hairpin.rotation = #'( 3.3 -1 0 )
+    \once \override Hairpin.height = 1.1
+}
+posHairpinAJ = {
+    \once \override Hairpin.extra-offset = #'(23.6 . -1.6)
+    \once \override Hairpin.rotation = #'( 6 -1 0 )
+    \once \override Hairpin.height = 0.9
+}
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
@@ -758,6 +774,12 @@ posScriptAU = {
            \once \override TextScript.padding = 0.0
            \once \override TextScript.staff-padding = 0.0
            \once \override TextScript.extra-offset = #'( 1.7 . 0.4 ) }
+posScriptAV = \once \override TextScript.extra-offset = #'( 8.7 . 5.0 )
+posScriptAW = \once \override TextScript.extra-offset = #'( 16.2 . 5.5 )
+posScriptAX = \once \override DynamicText.extra-offset = #'( 0 . -2.4 )
+posScriptAY = \once \override TextScript.extra-offset = #'( 2.1 . -10 )
+posScriptAZ = \once \override TextScript.extra-offset = #'( -1.9 . -1.9 )
+posScriptBA = \once \override TextScript.extra-offset = #'( -4 . -0.8 )
 posScrpRevExOff =  \revert Script.extra-offset
 posScrpRevPad = \revert Script.padding
 

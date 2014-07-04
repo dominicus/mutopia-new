@@ -371,7 +371,8 @@ upperOne =  \relative c {
   fis2.) b8\rest \hideNotes \stemDown \shpSlurH c,8\(~ \unHideNotes
      \moveNoteOne c2                                                     | %198
   \stemUp g'2.\) d'(                                                     | %199
-  e2.) s8 \stemDown \tweak Stem.transparent ##t bes,2( s8 | %200
+  \posScriptAX e2.)_\f s8 \stemDown \shpSlurN
+     \tweak Stem.transparent ##t bes,2( s8                               | %200
   \stemUp g'2.) \shpSlurEX e'(                                           | %201
   fis2. e2) f8\rest fis                                   | %202
   fis2.( e2) f8\rest fis                                  | %203
@@ -643,14 +644,15 @@ upperTwo =  \relative c' {
   a4\rest \shpSlurEV <d a fis>_.(<d a fis>_.) \posScriptAPrev s8
      \stemUp c d fis!bes a                                               | %198
   \stemDown
-  b,4\rest<d bes>_.(<d bes>_.) e\rest <bes'g>_.(<bes g>_.)| %199
-  e,4\rest <bes'g>_.(<bes g>_.) b8\rest \stemUp bes, cis 
-     e a g \stemDown                                      | %200
-  b,4\rest <e cis bes>_.( <e cis bes>_.) e\rest
-     <cis'bes g>_.( <cis bes g>_.)                        | %201
-  g4\rest <cis bes g>_.(<cis bes g>_.) g\rest 
-     <cis bes g> g\rest                                   | %202
-  g4\rest <cis bes g>_.(<cis bes g>_.) g\rest 
+  b,4\rest \posScriptAP \shpSlurEV <d bes>_.(<d bes>_.) \shpSlurEV
+     e\rest <bes'g>_.(<bes g>_.)                                         | %199
+  e,4\rest \posHairpinAJ <bes'g>_.(\< <bes g>_.) \posScriptAY
+     b8\rest^\pianoTxt \stemUp bes, cis e a g\! \stemDown                | %200
+  \posHairpinAI b,4\rest \shpSlurEZ <e cis bes>_.( <e cis bes>_.) e\rest
+     <cis'bes g>_.( <cis bes g>_.)                                       | %201
+  \posScriptAZ g4\rest_\sfSforzato <cis bes g>_.(
+     \posScriptBA <cis bes g>_.)_\sempreCresc g\rest <cis bes g> g\rest  | %202
+  g4\rest <cis bes g>_.(<cis bes g>_.) \posScriptAPrev g\rest 
      <cis bes g> g\rest                                   | %203
   g4\rest <cis bes g><cis bes g> g\rest 
      <cis bes g> g\rest                                   | %204
@@ -1019,10 +1021,10 @@ lowerOne = \relative c, {
   b,4\rest <g'd>_.( <g d>_.) \posScriptAU d\rest-\semprePP d,_.( d_.)| %196
   d'4\rest d,_.( d_.) d'\rest d,_.( d_.)                             | %197
   d'4\rest d,_.( d_.) d'\rest \shpSlurI d,_.( d_.)                   | %198
-  d'4\rest d,_.( d_.) b'\rest <bes'g d>_.(<bes g d>_.)| %199
-  d,4\rest <bes'g d>_.(<bes g d>_.) g,\rest \stemDown
-     d_.( d_.)                                        | %200
-  f4\rest d_.( d_.) b'\rest <bes'g d>_.(<bes g d>_.)  | %201
+  d'4\rest \posScriptAV d,_.(^\crescTinyD \posHairpinAI d_.)_\<
+     b'\rest <bes'g d>_.(<bes g d>_.)                                | %199
+  d,4\rest <bes'g d>_.(\! <bes g d>_.) g,\rest \stemDown d_.( d_.)   | %200
+  f4\rest d_.( d_.) b'\rest <bes'g d>_.(<bes g d>_.)                 | %201
   d,4\rest <bes'g d>_.(<bes g d>_.) d,\rest <bes'g d> b,\rest | %202
   b4\rest <bes'g d>_.(<bes g d>_.) b,\rest <bes'g d> b,\rest  | %203
   d4\rest <bes'g d><bes g d> d,\rest <bes'g d> d,\rest        | %204
@@ -1186,7 +1188,7 @@ lowerTwo = \relative c {
   \repeat unfold 2 { s1. | }                         %197-198
   s2. d(                                           | %199
   e2.) f,\rest                                     | %200
-  f2.\rest e'(                                     | %201
+  \posScriptAW f2.\rest^\crescTinyB \shpSlurEY e'( | %201
   fis2. e2) c8\rest fis                            | %202
   fis2.( e2) c8\rest fis                           | %203
   fis2.( e2) e8\rest fis                           | %204
@@ -1396,12 +1398,11 @@ dynamics = {
   \repeat unfold 2 { s1. | }                            %194-195
   s2. s8 s8 s2                                        | %196
   \repeat unfold 2 { s1. | }                            %197-198
-  s8\< s4. s4 s2^\crescTiny s4\!                      | %199
-  s2.\f s8 s8\p s2                                    | %200
-  s8\< s4. s4 s2^\crescTiny s4\!                      | %201
-  \sforzatoSpanner
-  s8\startTextSpan s8\stopTextSpan s4^\sempreCresc s1 | %202
-  s1\startTextSpan s4. s8\stopTextSpan                | %203
+  s8 s4. s4 s2 s4                                     | %199
+  s2. s8 s8 s2                                        | %200
+  s8 s4. s4 s2 s4                                     | %201
+  s1.                                                 | %202
+  \sforzatoSpanner s1\startTextSpan s4.s8\stopTextSpan| %203
   s1\startTextSpan s4. s8\stopTextSpan                | %204
   \repeat unfold 3 { s1. | }                            %205-207
   \repeat unfold 22 { s1 | }                            %208-229
