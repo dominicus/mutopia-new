@@ -374,33 +374,34 @@ upperOne =  \relative c {
   \posScriptAX e2.)_\f s8 \stemDown \shpSlurN
      \tweak Stem.transparent ##t bes,2( s8                               | %200
   \stemUp g'2.) \shpSlurEX e'(                                           | %201
-  fis2. e2) f8\rest fis                                   | %202
-  fis2.( e2) f8\rest fis                                  | %203
-  fis2.( e2) f8\rest fis                                  | %204
-  a2.->(_\moltoCresc g2 a4                                | %205
-  \stemDown <bes d,bes>4) b,8\rest <d'bes'>8-.\( <ees c'>-.
+  fis2. e2) f8\rest fis                                                  | %202
+  fis2.( e2) f8\rest fis                                                 | %203
+  fis2.( e2) f8\rest fis                                                 | %204
+  \posScriptBC \shpSlurFB a2.->(-\moltoCresc g2 a4                       | %205
+  \stemDown <bes d,bes>4) b,8\rest \shpSlurFA <d'bes'>8-.\( <ees c'>-.
      <d bes'>-. <c a'>-.[ <bes g'>-.<a fis'>-.<bes g'>-.
-     <a f'>-. a16\rest <g ees'>-.]                        | %206
+     <a f'>-. a16\rest <g ees'>-.]                                       | %206
   <g ees'>8-.<fis d'>-.<ees c'>-.<d bes'>-.<c a'>-.<bes g'>-.
-     \times 2/3 {<a fis'!>-.[-\pocoRiten\< <c ees>-.<c d>-.] }
+     \times 2/3 { \posScriptBB <a fis'!>-.[-\pocoRiten\< <c ees>-.<c d>-.] }
      \times 4/5 {<b d>16-.<bes d>-.<a d>-.<gis d'>-.<a d>-. }
-     <d bes>-.<d a>-.<d c>-.<d bes>-.\!                   | %207
+     <d bes>-.<d a>-.<d c>-.<d bes>-.\!                                  | %207
   \bar "||" \time 4/4
-  <d g,>8-._\ffz\) b\rest <bes''g d>->(\ff
-     a,)^\prestoConFuoco b,\rest<g''d bes> <g d bes>->( fis,)             | %208
-  b,8\rest <d'bes g> <d bes g>->( cis,) b\rest
-     <bes'g d> <bes g d>->( bes,)                         | %209
-  b8\rest <c'g ees> <c g ees>->\( d, cis c <c'g ees>-> d, | %210
-  cis c <c'fis,ees>-> d,cis c <a'fis d>-> c,\)            | %211
-  \dynLeft <bes'g d bes>4-.\fz <bes'g d>8->( a,) b,\rest
-     <g''d bes> <g d bes>->( fis,)                        | %212
-  b,8\rest <d'bes g> <d bes g>->( cis,) b\rest
-     <bes'g d> <bes g d>->( bes,)                         | %213
-  b8\rest <c'g ees><c g ees>->( d,) cis c <c'g ees>->\( d,| %214
-  cis8 c <c'fis,ees>-> d,cis c <a'fis d>-> c,\)           | %215
-  <bes'g d bes>4-. aes8\(^\< <aes'ees> aes,
-     <aes ees>\!^\> g, ees'\!                             | %216
-  fis, <fis'a,!> fis <fis'a,!> g, <g'bes,> g, <g bes,>\)  | %217
+  \posScriptBE <d g,>8-.^\ffz\) b\rest \shpSlurFC <bes''g d>->(\ff
+     a,)^\prestoConFuoco b,\rest<g''d bes> \shpSlurFD <g d bes>->( fis,) | %208
+  b,8\rest <d'bes g> \shpSlurFD <d bes g>->( cis,) b\rest
+     <bes'g d> \shpSlurFD <bes g d>->( bes,)                             | %209
+  b8\rest <c'g ees> \shpSlurFE <c g ees>->\( d, cis c <c'g ees>-> d,     | %210
+  cis c <c'fis,ees>-> d,cis c <a'fis d>-> \posScriptBD c,\)_\fzWhiteTxt  | %211
+  \shortStemCin <bes'g d bes>4-. \shpSlurFC <bes'g d>8->( a,)
+     b,\rest <g''d bes> \shpSlurFD <g d bes>->( fis,)                    | %212
+  b,8\rest <d'bes g> \shpSlurFD <d bes g>->( cis,) b\rest
+     <bes'g d> \shpSlurFD <bes g d>->( bes,)                             | %213
+  b8\rest <c'g ees> \shpSlurFF <c g ees>->( d,) cis c
+     \shpSlurFG <c'g ees>->\( d,                                         | %214
+  cis8 c <c'fis,ees>-> d,cis c <a'fis d>-> c,\)                          | %215
+  <bes'g d bes>4-. \shpSlurFH \posHairpinAL aes8\(^\< <aes'ees>
+     \posBeamF aes, \posHairpinAM <aes ees>\!^\> g, ees'\!               | %216
+  fis, <fis'a,!> fis <fis'a,!> \posBeamG g, <g'bes,> g, <g bes,>\)       | %217
   aes,8\( <aes'ees> aes <aes'ees> aes, <aes ees> g,<g'ees>| %218
   fis,8 <fis'a,!>fis <fis'a,> g, <g'bes,>g,<g bes,>\)     | %219
   f,!8\( <f'!aes,> f <f'!aes,> f,<ees aes,> ees,<ees'aes,>| %220
@@ -657,7 +658,7 @@ upperTwo =  \relative c' {
   g4\rest <cis bes g><cis bes g> g\rest 
      <cis bes g> g\rest                                   | %204
   b4\rest <e cis bes><e cis bes> a,\rest
-     <e'cis bes>\< d\rest                                 | %205
+     \posHairpinAK <e'cis bes>\< d\rest                   | %205
   s8 s16\! s16_\appassPiuForte s1 s4                      | %206
   s1.                                                     | %207
   \repeat unfold 8 { s1 | }                                 %208-215
@@ -755,8 +756,8 @@ upperQtr = \relative c' {
   s1 s8 fis4.                              | %196
   s1.                                      | %197
   s1 s8 fis4.                              | %198
-  
-  
+  s1.                                      | %199
+  s1 cis4. s8                              | %200
 }
 
 upperStaff =  <<
@@ -1041,8 +1042,9 @@ lowerOne = \relative c, {
   <g''d g,> d,-. <g'd g,> g,-.                        | %213
   <g'c,a> a,,_. <g''ees c> a,-.                       | %214
   <fis'd c> d,-. <fis'd c> a,-.                       | %215
-  <g'd g,>-. \stemDown \slurDown c,,2.(_>             | %216
-  d4-.) s4 g, s4                                      | %217
+  <g'd g,>-. \stemDown \slurDown
+     \posScriptBF \shpSlurFJ c,,2.(->                 | %216
+  d4-.) s4 \posScriptBG g,-. s4                       | %217
   c1(                                                 | %218
   d4-.) s g,_. s                                      | %219
   \phrasingSlurDown b2\( c                            | %220
@@ -1195,7 +1197,7 @@ lowerTwo = \relative c {
   a2.^>( g2)_( \staffUp \stemDown a4)              | %205
   \repeat unfold 2 { s1. | }                         %206-207
   \repeat unfold 8 { s1  | }                         %208-215
-  s2. \stemUp \staffDown <ees aes,>4(              | %216
+  s2. \stemUp \staffDown \shpSlurFI <ees aes,>4(   | %216
   \hideNotes d,4) \unHideNotes <d'c a!> s <d bes g>| %217
   a4\rest <ees'aes,>2^>( <ees aes,>4)              | %218
   s4 <d c a!> s <d bes g>                          | %219
@@ -1680,7 +1682,7 @@ pedalTwo = {
  \repeat unfold 26 { s1. | }                              %180-205
  s1\sustainOn s4. s8\sustainOff                         | %206
  s2.\sustainOn s8. s16\sustainOff s2                    | %207
- s2.\sustainOn  s8 s8\sustainOff                        | %208
+ s2.\sustainOn  s8 \posPedalK s8\sustainOff             | %208
  \repeat unfold 19 { s1 | }                               %209-227
  s4\sustainOn s16 s8.\sustainOff s4..\sustainOn s16\sustainOff       | %228
  s16 s8.\sustainOn s16 s8.\sustainOff s4..\sustainOn s16\sustainOff  | %229

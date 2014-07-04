@@ -93,6 +93,7 @@ pDolce = \markup \concat { \dynamic "p" \italic \larger " dolce" }
 ffz = \markup { \center-align \dynamic "ffz" }
 forteTxt = \markup \dynamic "f"
 fzText = \markup \dynamic "fz"
+fzWhiteTxt = \markup \whiteout \dynamic "fz"
 pianoTxt = \markup \dynamic "p"
 fffTxt = \markup \dynamic "fff"
 dimTxt = \markup \italic \larger "dim."
@@ -515,6 +516,16 @@ shpSlurEW = \shape #'((0 . -0.5) (0 . -0.5) (0.3 . -0.5) (-0.3 . -0.5)) Slur
 shpSlurEX = \shape #'((0.3 . -2) (0.5 . -0.5) (-0.5 . -0.5) (0 . -2)) Slur
 shpSlurEY = \shape #'((0.3 . -2.4) (0.5 . -2.2) (-0.5 . -2.0) (-0.6 . -2.4)) Slur
 shpSlurEZ = \shape #'(( 0 . -1.3) (0 . -1.3) (0 . -1.3) (0 . -1.3)) Slur
+shpSlurFA = \shape #'(( -1 . -0.5) (10 . 0) (-3 . 4) (0 . 0)) PhrasingSlur
+shpSlurFB = \shape #'(( 0 . -0.6) (0 . -0.4) (0 . -0.4) (0 . -1)) Slur
+shpSlurFC = \shape #'(( 0.4 . -0.6) (0 . -0.4) (0.4 . -0.9) (0.3 . -2)) Slur
+shpSlurFD = \shape #'(( 0.4 . -0.6) (0 . -0.4) (0.7 . -0.9) (0.4 . -1.7)) Slur
+shpSlurFE = \shape #'(( -0.4 . -0.2) (4 . 2) (-2 . 2.5) (0.8 . 0.7)) PhrasingSlur
+shpSlurFF = \shape #'(( 0.4 . -0.6) (0 . -0.4) (0.7 . -0.7) (0.4 . -1.2)) Slur
+shpSlurFG = \shape #'(( -0.4 . -0.2) (2 . 0.5) (-1 . 2.3) (0.5 . 0.4)) PhrasingSlur
+shpSlurFH = \shape #'(( -0.4 . 0.1) (1 . 0) (-1 . 1.5) (0.5 . -1.0)) PhrasingSlur
+shpSlurFI = \shape #'(( 0 . -0.6) (1 . 0) (-0.2 . 0.8) (-0.2 . 0.9)) Slur
+shpSlurFJ = \shape #'(( 0.7 . 0.8) (0.5 . 1.2) (0 . 1) (0 . 0.9)) Slur
 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
@@ -678,12 +689,26 @@ posHairpinAJ = {
     \once \override Hairpin.rotation = #'( 6 -1 0 )
     \once \override Hairpin.height = 0.9
 }
+posHairpinAK = {
+    \once \override Hairpin.rotation = #'( -6 -0.5 0 )
+    \once \override Hairpin.height = 0.6
+}
+posHairpinAL = {
+    \once \override Hairpin.rotation = #'( 4 1 0 )
+    \once \override Hairpin.height = 0.5
+}
+posHairpinAM = {
+    \once \override Hairpin.rotation = #'( -4 -1 0 )
+    \once \override Hairpin.height = 0.5
+}
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
 posBeamC = \once \override Beam.positions = #'(6 . 5.3)
 posBeamD = \once \override Beam.damping = #+inf.0
 posBeamE = \once \override Beam.positions = #'(0.5 . 1.7)
+posBeamF = \once \override Beam.positions = #'(-2.7 . -2.7)
+posBeamG = \once \override Beam.positions = #'(-0.8 . -2.5)
 
 posScriptA = \once \override TextScript.extra-offset = #'( 0 . -1.5 )
 posScriptB = \once \override Script.extra-offset = #'( 0.2 . -0.7 ) 
@@ -780,6 +805,15 @@ posScriptAX = \once \override DynamicText.extra-offset = #'( 0 . -2.4 )
 posScriptAY = \once \override TextScript.extra-offset = #'( 2.1 . -10 )
 posScriptAZ = \once \override TextScript.extra-offset = #'( -1.9 . -1.9 )
 posScriptBA = \once \override TextScript.extra-offset = #'( -4 . -0.8 )
+posScriptBB = {
+          \once \override TextScript.avoid-slur = #'inside
+          \once \override TextScript.outside-staff-priority = ##f
+          \once \override TextScript.extra-offset = #'( 0 . 1.3 ) }
+posScriptBC = \once \override TextScript.extra-offset = #'( -0.2 . -11.6 )
+posScriptBD = \once \override TextScript.extra-offset = #'( 1.3 . 0 )
+posScriptBE = \once \override TextScript.extra-offset = #'( 0 . -11.2 )
+posScriptBF = \once \override Script.extra-offset = #'( 0.1 . -6.4 )
+posScriptBG = \once \override Script.extra-offset = #'( 0 . -3.7 )
 posScrpRevExOff =  \revert Script.extra-offset
 posScrpRevPad = \revert Script.padding
 
@@ -793,6 +827,7 @@ posPedalG = \override SustainPedal.extra-offset = #'(1.7 . 1.5 )
 posPedalH = \once \override SustainPedal.extra-offset = #'(0.7 . 0)
 posPedalI = \once \override Staff.SustainPedal.extra-offset = #'( 0 . -1.5)
 posPedalJ = \once \override Staff.SustainPedal.extra-offset = #'( 0.8 . 0.4)
+posPedalK = \once \override SustainPedal.extra-offset = #'( 0.3 . 3.2 )
 posPedalRev = \revert SustainPedal.extra-offset
 hideNextPedal = \once \omit Voice.SustainPedal
 
