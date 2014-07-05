@@ -103,9 +103,10 @@ pocoCresc = \markup \italic \larger "poco cresc."
 aTempo = \markup \italic \larger "a tempo"
 agitato = \markup \italic \larger "agitato"
 leggiero = \markup \italic \larger "leggiero"
-conForza = \markup \italic \larger "con forza"
-pPesante = \markup { \dynamic "p" \italic \smaller "(pesante)" }
-fzSforzato = \markup { \dynamic "fz" \raise #0.4 \musicglyph #"scripts.sforzato"  }
+conForza = \markup \italic \larger \whiteout "   con forza"
+pPesante = \markup { \whiteout { \dynamic "p" \italic \smaller "(pesante)" } }
+fzSforzato = \markup { \whiteout { \dynamic "fz" \raise #0.4 \musicglyph #"scripts.sforzato" } }
+fzSforzatoHi = \markup { \whiteout { \dynamic "fz" \raise #0.9 \musicglyph #"scripts.sforzato" } }
 sfSforzato = \markup { \dynamic "sf" \raise #0.4 \musicglyph #"scripts.sforzato"  }
 crescTxt = \markup \italic \larger "cresc."
 crescTiny = \markup \italic \small \rotate #7.0  "cresc."
@@ -113,8 +114,9 @@ crescTinyB = \markup \italic \small \rotate #4.0  "cresc."
 crescTinyC = \markup \italic \teeny "cresc."
 crescTinyD = \markup \italic \small "cresc."
 riten = \markup \italic \larger "riten."
-accel = \markup \italic \larger "accel."
-accelerando = \markup \italic \larger "accelerando"
+ritenSm = \markup \italic "riten."
+accel = \markup \italic "accel."
+accelerando = \markup \italic \larger \whiteout \raise #0.2 "  accelerando"
 smorzTxt = \markup \italic "smorz."
 sPiuMosso = \markup \italic \larger "sempre più mosso"
 appassPiuForte = \markup \override #'(baseline-skip . 1.7) \column { \italic \larger { "   appassionato" "il più forte possibile" } }
@@ -123,7 +125,7 @@ menoMosso = \markup \override #'(baseline-skip . 1.7) \column { \larger \bold "M
 semprePP = \markup { \italic "sempre" \dynamic "pp" }
 semprePiuF = \markup { \italic "sempre più " \dynamic "f" }
 sempreF = \markup { \italic "sempre" \dynamic "f" }
-sempreFF = \markup \center-align { \italic "sempre" \dynamic "ff" }
+sempreFF = \markup { \raise #0.5 \italic "sempre"  \dynamic "ff" }
 sempreCresc = \markup { \italic "sempre cresc." }
 aTempoMenoMosso = \markup { \center-align \italic  "a tempo (meno mosso)   " }
 sottoVoce = \markup \italic \larger "sotto voce"
@@ -224,8 +226,12 @@ sforzatoSpanner = {
   \once \override TextSpanner.extra-offset = #'( -1.9 . 0.7 )
 }
 pocoRitenSpanner = {
-  \override TextSpanner #'(bound-details left text) = \markup { \italic \larger "poco riten." }
+  \override TextSpanner #'(bound-details left text) = \markup { \italic \larger \whiteout "poco riten.  " }
+  \override TextSpanner #'(bound-details right text) = \accelerando
+  \override TextSpanner #'(bound-details right stencil-align-dir-y) = #CENTER
   \override TextSpanner #'(bound-details left-broken text) = ##f
+  \override TextSpanner.outside-staff-priority = ##f
+  \override TextSpanner.staff-padding = 2.9
 }
 ppSpanner = {
   \override TextSpanner.staff-padding = 0.2
@@ -526,7 +532,42 @@ shpSlurFG = \shape #'(( -0.4 . -0.2) (2 . 0.5) (-1 . 2.3) (0.5 . 0.4)) PhrasingS
 shpSlurFH = \shape #'(( -0.4 . 0.1) (1 . 0) (-1 . 1.5) (0.5 . -1.0)) PhrasingSlur
 shpSlurFI = \shape #'(( 0 . -0.6) (1 . 0) (-0.2 . 0.8) (-0.2 . 0.9)) Slur
 shpSlurFJ = \shape #'(( 0.7 . 0.8) (0.5 . 1.2) (0 . 1) (0 . 0.9)) Slur
+shpSlurFK = \shape #'(( -0.6 . 4) (0 . -4) (2 . -6) (0.8 . 1.0)) PhrasingSlur
+shpSlurFL = \shape #'(( -0.6 . 4.3) (1 . -2) (-2 . -3) (0.8 . 2.0)) PhrasingSlur
+shpSlurFM = \shape #'(( -0.6 . -2) (1 . 1.5) (-1 . 1.5) (0.6 . 0.2)) PhrasingSlur
+shpSlurFN = \shape #'(( 0 . 0.5) (1 . 0.3) (-1 . 0.7) (0 . 0.4)) PhrasingSlur
+shpSlurFO = \shape #'((-0.4 . 0) (1 . -0.6) (-1 . -1) (0 . 0.4)) Slur
+shpSlurFP = \shape #'((0.4 . 2.3) (1 . 2) (-1 . 2) (-0.2 . 3.0)) Slur
+shpSlurFQ = \shape #'((-0.6 . 1.8) (0 . -4.0) (-1 . -3) (0.8 . 0.7)) PhrasingSlur
+shpSlurFR = \shape #'(( 0.3 . 1.8) (1 . 1.6) (-1 . 1.6) (1.1 . 0.8)) PhrasingSlur
+shpSlurFS = \shape #'(( -0.6 . 3.7) (1 . -3) (3 . -6.5) (0.8 . 0.5)) PhrasingSlur
+shpSlurFT = \shape #'(( -0.6 . 3.7) (1 . -3) (0 . -7) (0.6 . 0)) PhrasingSlur
+shpSlurFU = \shape #'(( -0.6 . 2.7) (1 . -3.7) (-1 . -5) (0.2 . -0.3)) PhrasingSlur
+shpSlurFV = \shape #'(( -0.4 . -0.8) (1 . -0.2) (-1 . 0.2) (0.3 . -0.1)) PhrasingSlur
+shpSlurFW = \shape #'( (( -0.6 . -0.2) (1 . -0.2) (-1 . 0) (0.3 . 0))
+                       (( -0.6 . 3.1) (0 . 2.5) (0 . 1.1) (0.3 . 0.1)) ) PhrasingSlur
+shpSlurFX = { \shape #'(( -0.4 . 0) (1 . -1.0) (-1 . -1.1) (0.3 . -0.4)) PhrasingSlur
+              \shape #'((0 . 0) (0 . -0.3) (0 . -0.3) (0 . -0.3)) Slur }
+shpSlurFY = \shape #'((0 . 0) (1 . 0.2) (0 . -0.6) (0 . -1.2)) Slur
+shpSlurFZ = \shape #'((-0.4 . 0.3) (1 . -0.2) (-1 . -0.2) (0.6 . 1)) PhrasingSlur
+shpSlurGA = \shape #'((0 . 0) (8 . -0.3) (-2 . 3) (0.3 . -1)) PhrasingSlur
+shpSlurGB = \shape #'( ((-0.5 . 0) (0.5 . 0.5) (-0.1 . 1.2) (0.3 . 1.3))
+                       ((0 . -0.8) (3 . 1) (-3 . 1.3) (0.6 . -2.4)) ) PhrasingSlur
+shpSlurGC = \shape #'( ((0 . 0) (0.5 . 0.5) (-0.1 . 1.2) (0 . 2))
+                       ((-1 . -0.5) (3 . -2) (-6 . 6) (-0.3 . 6))
+                       ((-1 . 7.5) (0 . 6.5) (0 . 5.5) (0 . 4.5)) ) PhrasingSlur
+shpSlurGD = \shape #'((0 . 0) (0 . -1) (0 . 0.3) (0 . -1)) Slur
+shpSlurGE = \shape #'((-0.4 . 0.6) (0 . -0.3) (-2 . 3) (0.5 . 6.4)) PhrasingSlur
+shpSlurGF = \shape #'( ((-0.7 . 2.7) (0 . 2.3) (0 . 2.3) (0 . 2.7))
+                       ((-0.2 . 0.7) (0 . 1) (0 . 1) (-0.3 . -0.8)) ) PhrasingSlur
+shpSlurGG = \shape #'((0.4 . 1) (0 . 1.3) (0 . 1.3) (-1 . 1)) Slur
+shpSlurGH = \shape #'((-0.4 . 1) (0 . 1.9) (0 . 1.2) (0 . 1.3)) Slur
+shpSlurGI = \shape #'((-0.4 . 0.8) (0 . 1.4) (0 . 0.6) (0 . 0.3)) Slur
+shpSlurGJ = { \shape #'((-0.4 . 0.2) (-0.2 . 0.2) (0 . 0.2) (0 . 0.2)) Tie
+              \shape #'( ((0 . 0.2) (0 . 0.2) (0 . 0.2) (0 . 0.2))
+                         ((-1 . 0) (3 . -0.5) (-3 . -1) (-0.9 . 3)) ) PhrasingSlur }
 
+posHairpinToBlnF = \once \override Hairpin.to-barline = ##f 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
             \once \override Hairpin.extra-offset = #'( 0 . 0.4 )
@@ -701,6 +742,22 @@ posHairpinAM = {
     \once \override Hairpin.rotation = #'( -4 -1 0 )
     \once \override Hairpin.height = 0.5
 }
+posHairpinAN = {
+    \once \override Hairpin.extra-offset = #'(0 . -2.1)
+    \once \override Hairpin.rotation = #'( 28 1 0 )
+    \once \override Hairpin.height = 0.4
+}
+posHairpinAO = {
+    \once \override Hairpin.extra-offset = #'(10.2 . -6)
+    \once \override Hairpin.rotation = #'( 13.5 1 0 )
+    \once \override Hairpin.height = 0.56
+}
+posHairpinAP = {
+            \once \override Hairpin.rotation = #'( 3 0 0 )
+            \once \override Hairpin.extra-offset = #'( -40 . -1.6 )
+            \once \override Hairpin.height = 0.8
+}
+posHairpinAQ = \once \override Hairpin.extra-offset = #'( 2.7 . 0 )
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
@@ -709,6 +766,10 @@ posBeamD = \once \override Beam.damping = #+inf.0
 posBeamE = \once \override Beam.positions = #'(0.5 . 1.7)
 posBeamF = \once \override Beam.positions = #'(-2.7 . -2.7)
 posBeamG = \once \override Beam.positions = #'(-0.8 . -2.5)
+posBeamH = \once \override Beam.positions = #'(-4.6 . -4.6)
+posBeamI = \once \override Beam.positions = #'(-7.7 . 0.5)
+posBeamJ = \once \override Beam.positions = #'(-6.5 . -2)
+posBeamK = \once \override Beam.positions = #'(2.8 . 6.4)
 
 posScriptA = \once \override TextScript.extra-offset = #'( 0 . -1.5 )
 posScriptB = \once \override Script.extra-offset = #'( 0.2 . -0.7 ) 
@@ -814,6 +875,25 @@ posScriptBD = \once \override TextScript.extra-offset = #'( 1.3 . 0 )
 posScriptBE = \once \override TextScript.extra-offset = #'( 0 . -11.2 )
 posScriptBF = \once \override Script.extra-offset = #'( 0.1 . -6.4 )
 posScriptBG = \once \override Script.extra-offset = #'( 0 . -3.7 )
+posScriptBH = \once \override Script.extra-offset = #'( 0 . 0.5 )
+posScriptBI = \once \override TextScript.extra-offset = #'( 0 . -5.2 )
+posScriptBJ = \once \override TupletNumber.extra-offset = #'( 0 . -5.9 )
+posScriptBK = \once \override TextScript.extra-offset = #'( 0.4 . -0.4 )
+posScriptBL = \once \override TextScript.extra-offset = #'( 0.2 . 0.2 )
+posScriptBM = \once \override Script.extra-offset = #'( 0 . -4.1 )
+posScriptBN = \once \override TupletNumber.extra-offset = #'( 0 . 0.7 )
+posScriptBO = \once \override TextScript.extra-offset = #'( -2.2 . -10.1 )
+posScriptBP = \once \override TextScript.extra-offset = #'( 3.4 . -12.9 )
+posScriptBQ = \once \override TextScript.extra-offset = #'( 0 . 10.3 )
+posScriptBR = \once \override TupletNumber.extra-offset = #'( 0 . -8.2 )
+posScriptBS = \once \override TupletNumber.extra-offset = #'( 0 . 7.2 )
+posScriptBT = \once \override TextScript.extra-offset = #'( 0 . -0.5 )
+posScriptBU = \once \override Script.extra-offset = #'(-0.3 . -0.7 )
+posScriptBV = \once \override TupletNumber.extra-offset = #'(0 . 7 )
+posScriptBW = \once \override DynamicText.extra-offset = #'(3.4 . -1.1 )
+posScriptBX = \once \override TupletNumber.extra-offset = #'(1.7 . -11.3)
+posScriptBY = \once \override TupletNumber.extra-offset = #'(1.7 . 9.6 )
+
 posScrpRevExOff =  \revert Script.extra-offset
 posScrpRevPad = \revert Script.padding
 
@@ -836,7 +916,7 @@ posDottedA = \once \override Staff.NoteCollision.prefer-dotted-right = ##f
 noPadTxtScrp = \once \override TextScript.padding = 0.0
 noPadScript = \once \override Script.padding = 0.0
 noPadSpanner = \once \override TextSpanner.padding = 0.0
-noPadPedal = \once \override SustainPedal.padding = 0.0
+noPadPedal = \once \override Staff.SustainPedal.padding = 0.0
 noPadHairp = \once \override Hairpin.padding = 0.0
 noPadDynTxt = {
             \once \override DynamicText.padding = 0.0
