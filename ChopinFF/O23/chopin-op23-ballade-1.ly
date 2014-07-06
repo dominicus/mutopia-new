@@ -8,20 +8,24 @@
 #(set-default-paper-size "letter")
 #(set-global-staff-size 18)
 
+%--------Definitions
+\include "chopin-op23-ballade-1-defs.ly"
+
 \paper {
-    top-margin = 8\mm                              %-minimum top-margin: 8mm
-    top-markup-spacing.basic-distance = #5         %-dist. from bottom of top margin to the first markup/title
-    markup-system-spacing.basic-distance = #6      %-dist. from header/title to first system
-    top-system-spacing.basic-distance = #12        %-dist. from top margin to system in pages with no titles
-    last-bottom-spacing.basic-distance = #11       %-pads music from copyright block
+    top-margin = 6\mm                              %-minimum top-margin: 8mm
+    top-markup-spacing.basic-distance = #3         %-dist. from bottom of top margin to the first markup/title
+    markup-system-spacing.basic-distance = #3      %-dist. from header/title to first system
+    top-system-spacing.basic-distance = #8         %-dist. from top margin to system in pages with no titles
+    last-bottom-spacing.basic-distance = #4        %-pads music from copyright block
     ragged-bottom = ##t
-    ragged-last-bottom = ##t
+    ragged-last-bottom = ##t    
+    bookTitleMarkup = \myTitles
 }
 
 \header {
     title = "Première Ballade."
     composer = \markup "Fr.Chopin (1810-1849),Op.23"
-    poet = \markup \italic "à Mr. le Baron de Stockhausen."
+    dedication = \markup \italic "à Mr. le Baron de Stockhausen."
     date = "1836"
     style = "Romantic"
     source = "Klindworth; Bote & Bock,n.d.[1880]" % "Mikuli; Schirmer, 1894"
@@ -40,299 +44,269 @@
     tagline = ##f
 }
 
-%--------Definitions
-\include "chopin-op23-ballade-1-defs.ly"
-
 %------------Music
 
-cadenzaOne = { 
-  \stemDown \cadenzaSizeOn \alignBeamOne \subdivideBeamOne
-  \scaleDurations 2/3 {
-    ees16[ c a bes d c bes g f d ees e f fis a g f! ees]
-  } \cadenzaSizeOff \subdivideBeamOff
-}
-
 upperOne =  \relative c {
-  %\voiceOneStyle
-  \setRestDirUp
-  \time 4/4 \tempoLargo \hideTempo
-  \trebleToBass
-  \stemNeutral \shpSlurA \shpSlurB
-  c2-\hideF(\(_~^\lentoLegend c8 ees aes bes              | % 1
+  \setRestDirUp \time 4/4 \tempoLargo \hideTempo \trebleToBass
+%{  1 %}
+  \stemNeutral \shpSlurB c2-\hideF(\(_~^\lentoLegend c8 ees aes bes                              | % 1
   \clef treble
-  c8) \shpSlurD aes_( ees' bes'  c) aes( ees' bes'        | % 2
-  c8) g( bes aes  g4 fis8)\) b,8\rest                     | % 3
-  b8\rest \shpSlurE fis'(^\(-\hideP g fis  eis) fis(
-     \times 2/3 { a g ees) }                              | % 4
-  ees8. d16 \times 2/3 { f!8 ees d\) } d4 b\rest          | % 5
-  \stemNeutral b2\rest^\espressTxt \shpSlurG c4.\( g8     | % 6
-  \shpSlurF bes1~                                         | % 7
-   \time 6/4 \tempoMod
-  bes2.^\moderatoLegend b8\rest \stemDown \hideNotes
-     \shpSlurM c,8_~ \unHideNotes \shiftOnn \moveNoteOne
-     \shortStemTwo c2-\hideMF                             | % 8
-  \stemUp g'2.\) d'(                                      | % 9
-  c2.) b8\rest \stemDown \hideNotes \shpSlurH c,8\(_~ 
-     \unHideNotes \moveNoteOne c2                         | %10
-  \stemUp g'2.\) \shpSlurJ e(                             | %11
-  fis2.) b8\rest \stemDown \hideNotes \shpSlurN c,8^(_~
-     \unHideNotes \moveNoteOne c2                         | %12
-  \stemUp g'2.) g'(                                       | %13
-  f2.) \stemDown \shpSlurO ees,(                          | %14
-  \stemUp cis'2. \shpSlurP d)\(                           | %15
-  c2.\) b8\rest \stemDown \hideNotes \shpSlurN c,8_~^( 
-     \unHideNotes \moveNoteOne c2                         | %16
-  \stemUp g'2.) d'(                                       | %17
-  c2.) b8\rest \stemDown \hideNotes \shpSlurN c,8_~^(
-     \unHideNotes \moveNoteOne c2                         | %18
-  \stemUp g'2.) \shpSlurQ e(                              | %19
-  fis2.) b8\rest \stemDown \hideNotes \shpSlurR c,8_~^\(
-     \unHideNotes \moveNoteOne c2                         | %20
-  \stemUp g'2. g'                                         | %21
-  \shpSlurS g2.\)\( d                                     | %22
-  c2. \shpSlurU g\)\(                                     | %23
-  g'2. d                                                  | %24
-  c2. g                                                   | %25
-  f2.\) \shpSlurX d'~\(                                   | %26
-  d4 \slurDown \acciaccatura  { d8 } c4 \slurNeutral b c d ees                   | %27
-  ees2. d\)                                               | %28
-  d4\rest \acciaccatura {bes8} \shpSlurAA a4\( gis a bes c| %29
-  c2. bes                                                 | %30
-  \ritenSpanner \posDottedA a2.\startTextSpan \shpSlurAH a2~ a8 a | %31
-  \shpSlurAI a2.\arpeggio ~ a2 \posScriptD a4->~          | %32
-  a16 bes a gis \stemDown a g'! e f  f g'f e \cadenzaOne  | %33
-  \stemNeutral cis8\) b8\rest \shpSlurAB d2->\(~ d4 c g   | %34
-  bes2. fis                                               | %35
-  g4\)\stopTextSpan \stemUp \posScriptE bes'4^\aTempo s2 a4 s  | %36
-  s4 bes4 s2 aes4 s                                       | %37
-  s4 g s2 c,4 s                                           | %38
-  s4 ees s2 \shpSlurAJ \shortStemSix g,4^( \shortStemOne <a fis>        | %39
-  \posScriptI <bes g>4)^\agitato \shortStemCin <bes bes'>2 s4 <a a'>2   | %40
-  s4 <bes bes'>2 s4 <aes aes'>2                           | %41
-  s4 <g'g,>2 s4 <c,c,>2  \slurUp                          | %42
-  s4 <ees ees,>2 s4 \shpSlurAS <fis,fis,>2 (              | %43
-  \posScriptJ g4-.) \shpSlurAQ \posScriptL c,8(^\sPiuMosso 
-     bes a g \posScriptK g'4-.) \shpSlurAT c,8\( bes a g  | %44
-  f'!8_> c ees fis, \posHairpinJ c'\< ees fis_[ c' f! ees d c]   | %45
-  g'4-.\)-\hideF c,8( bes a g  g'4-.) \shpSlurAX c,8\( bes a g   | %46
-  \stemDown
-  f'!8-> c ees fis, c' ees  fis c' f! ees d c             | %47
-  <bes-\hideMF g'>4-.\) b,8\rest \shpSlurAY <g''c>( bes d,
-     <fis bes> a d, <bes fis> a d,)                       | %48
-  \shpSlurAZ <g c>8( bes d <g c> bes d,<fis bes> a d,<bes fis> a d,) | %49
-  <g c>8( bes d <g c> bes d,<fis, bes> a d,<bes fis>a d,) | %50
-  \shpSlurAZ <c'g>8( bes d <g c> bes d, <fis bes> a d,<bes fis> a d,)| %51
-  \shpSlurAZ <c'g>8( bes d <g c> bes d, <a'd,>g bes,<ees bes> d g,)  | %52
-  \stemNeutral
-  \shpSlurBA <c g>8( bes d, <a'd,> g bes, \clef bass <bes ees>d g, <g c!> bes d,)| %53
-  \menoFSpanner
-  \shpSlurBG <c'g>8\startTextSpan\( bes d, <d'g,> c ees, <c'g> bes d,
-     <d'g,> c ees,                                        | %54
-  <c'g> bes d, <d'g,> c ees, <c'g> bes d, <d'g,> c ees,\) | %55
+  c8) \shpSlurD aes_( \posScriptBZ ees'_\dimTxt bes'c) \shpSlurA aes(ees'bes'                    | % 2
+  c8) \shpSlurGK g( bes aes  g4 fis8)\) b,8\rest                                                 | % 3
+  b8\rest \shpSlurE fis'(^\(-\hideP g fis  eis) fis( \times 2/3 { a g ees) }                     | % 4
+%{  5 %}
+  ees8. d16 \times 2/3 { f!8 ees d\) } d4 b\rest                                                 | % 5
+  \stemNeutral b2\rest^\espressTxt \shpSlurG c4.\( g8                                            | % 6
+  \shpSlurF bes1~                                                                                | % 7
+  \time 6/4 \tempoMod
+  \posHairpinB bes2.^\moderatoLegend\> b8\rest\! \stemDown \hideNotes \shpSlurM c,8_~
+     \unHideNotes \shiftOnn \moveNoteOne c2-\hideMF                                              | % 8
+  \stemUp g'2.\) d'(                                                                             | % 9
+  c2.) b8\rest \stemDown \hideNotes \shpSlurH c,8\(_~ \unHideNotes \moveNoteOne c2               | %10
+%{ 11 %}
+  \stemUp g'2.\) \shpSlurJ e(                                                                    | %11
+  fis2.) b8\rest \stemDown \hideNotes \shpSlurN c,8^(_~ \unHideNotes \moveNoteOne c2             | %12
+  \stemUp g'2.) g'(                                                                              | %13
+  f2.) \stemDown \shpSlurO ees,(                                                                 | %14
+  \stemUp cis'2. \shpSlurP d)\(                                                                  | %15
+%{ 16 %}
+  c2.\) b8\rest \stemDown \hideNotes \shpSlurN c,8_~^( \unHideNotes \moveNoteOne c2              | %16
+  \stemUp g'2.) d'(                                                                              | %17
+  c2.) b8\rest \stemDown \hideNotes \shpSlurN c,8_~^( \unHideNotes \moveNoteOne c2               | %18
+  \stemUp g'2.) \shpSlurQ e(                                                                     | %19
+  fis2.) b8\rest \stemDown \hideNotes \shpSlurR c,8_~^\( \unHideNotes \moveNoteOne c2            | %20
+%{ 21 %}
+  \stemUp g'2. g'                                                                                | %21
+  \shpSlurS g2.\)\( d                                                                            | %22
+  c2. \shpSlurU g\)\(                                                                            | %23
+  g'2. d                                                                                         | %24
+  c2. g                                                                                          | %25
+%{ 26 %}
+  \posScriptCB f2.\)-\tenutoTxt \shpSlurX d'~\(                                                  | %26
+  d4 \slurDown \acciaccatura  { d8 } c4 \slurNeutral b c d ees                                   | %27
+  ees2. d\)                                                                                      | %28
+  d4\rest \acciaccatura {bes8} \shpSlurAA a4\( gis a bes c                                       | %29
+  c2. bes                                                                                        | %30
+%{ 31 %}
+  \ritenSpanner \posDottedA a2.\startTextSpan \shpSlurAH a2~ a8 a                                | %31
+  \shpSlurAI a2.\arpeggio ~ a2 \posScriptD a4->~                                                 | %32
+  a16 bes a gis \stemDown a g'! e f  f g'f e \stemDown \cadenzaSizeOn \alignBeamOne
+     \subdivideBeamOne \scaleDurations 2/3 {ees16[ c a bes d c bes g f d ees e f fis a g f!ees] }
+     \cadenzaSizeOff \subdivideBeamOff                                                           | %33
+%{ 34 %}
+  \stemNeutral cis8\) b8\rest \shpSlurAB d2->\(~ d4 c g                                          | %34
+  bes2. fis                                                                                      | %35
+  g4\)\stopTextSpan \stemUp \posScriptE bes'4^\aTempo s2 a4 s                                    | %36
+  s4 bes4 s2 aes4 s                                                                              | %37
+%{ 38 %}
+  s4 g s2 c,4 s                                                                                  | %38
+  s4 ees s2 \shpSlurAJ \shortStemSix g,4^( \shortStemOne <a fis>                                 | %39
+  <bes g>4) \shortStemCin <bes bes'>2 s4 <a a'>2                            | %40
+  s4 <bes bes'>2 s4 <aes aes'>2                                                                  | %41
+%{ 42 %}
+  s4 <g'g,>2 s4 <c,c,>2  \slurUp                                                                 | %42
+  s4 <ees ees,>2 s4 \shpSlurAS <fis,fis,>2 (                                                     | %43
+  \posScriptJ g4-.) \shpSlurAQ \posScriptL c,8(^\sPiuMosso bes a g \posScriptK g'4-.)
+     \shpSlurAT c,8\( bes a g                                                                    | %44
+  f'!8_> c ees fis, \posHairpinJ c'\< ees fis_[ c' f! ees d c]                                   | %45
+%{ 46 %}
+  g'4-.\)-\hideF c,8( bes a g  g'4-.) \shpSlurAX c,8\( bes a g                                   | %46
+  \stemDown f'!8-> c ees fis, c' ees  fis c' f! ees d c                                          | %47
+  <bes-\hideMF g'>4-.\) b,8\rest \shpSlurAY <g''c>( bes d, <fis bes> a d, <bes fis> a d,)        | %48
+  \shpSlurAZ <g c>8( bes d <g c> bes d,<fis bes> a d,<bes fis> a d,)                             | %49
+  <g c>8( bes d <g c> bes d,<fis, bes> a d,<bes fis>a d,)                                        | %50
+%{ 50 %}
+  \shpSlurAZ <c'g>8( bes d <g c> bes d, <fis bes> a d,<bes fis> a d,)                            | %51
+  \shpSlurAZ <c'g>8( bes d <g c> bes d, <a'd,>g bes,<ees bes> d g,)                              | %52
+  \stemNeutral \shpSlurBA <c g>8( bes d, <a'd,> g bes, \clef bass <bes ees>d g, <g c!> bes d,)   | %53
+%{ 54 %}
+  \menoFSpanner \shpSlurBG <c'g>8\startTextSpan\( bes d, <d'g,> c ees, <c'g> bes d, <d'g,> c ees,| %54
+  <c'g> bes d, <d'g,> c ees, <c'g> bes d, <d'g,> c ees,\)                                        | %55
   \clef treble
-  \shpSlurBF g8\( \posHairpinM d'\< bes d g bes  d-> g bes 
-     \ottava #1 \posOttavaA d g d'\!                      | %56
-  \posHairpinN bes\> d g, d \ottava #0 bes g d bes g d
-     bes\! \shpSlurBH \posHairpinO c,\)_(\<\stopTextSpan  | %57
-  \nullSpanner \posHairpinP
-  \shpSlurBI g'8)\!\>(\startTextSpan d'\! bes d g d'bes 
-     d g, d bes \posHairpinQ \shpSlurBN d,)_(\<           | %58
-  \shpSlurBI fis8)\!\>( d'\! bes d fis d' bes d fis, d 
-     bes\stopTextSpan \piuPianoSpanner \posHairpinQ 
-     \shpSlurBN d,)_(\<\startTextSpan                     | %59
-  \shpSlurBJ g8)\!(\> d'\! bes d g bes d g bes
-     \ottava #1 \posOttavaA d g d'                        | %60
-  bes8 d g, d \ottava #0 bes g d bes g d bes \posHairpinQ
-     \shpSlurBN d,)_(\<\stopTextSpan                      | %61
-  \calandoSpanner \shpSlurBO
-  ges8)\!\>(\startTextSpan d'\!bes d ges d'bes d ges,
-     d bes d,\<)_(                                        | %62
-  \shpSlurBO f8)\!\>( \posHairpinPrev d'\! bes d 
-     f_\dimTxt d'bes d f,d bes c,)_(\stopTextSpan         | %63
-  \shpSlurBO \posScriptP f8)(^\smorzTxt c'a c f a c f a c 
-     \ottava #1 \posOttavaB f a                           | %64 
-  f'4) \ottava #0 b,,,\rest b\rest b2\rest b4\rest        | %65
-  \restDownOne R1*6/4                                     | %66
-  b2\rest b4\rest b\rest b\rest f->-\menoMosso~\(         | %67
-  f2.( g2) g4(                                            | %68
-  ees2.)\)~ ees4 ees'4.\( d8                              | %69
-  \stemUp c2.( d2) d4(                                    | %70
-  bes2.)\) \stemNeutral \shpSlurBS bes'2\(^\< bes4        | %71
-  bes2->\! aes4 aes g fis                                 | %72
-  fis2 g\) aes4.( ees8                                    | %73
-  g2 f) g4.\( d8                                          | %74
-  f4 ees d \times 2/3 { c8[ d c] } b c d ees              | %75
-  f,2.\)(\( g2) g4(                                       | %76
-  ees2.)\)_~ ees4 ees'4.\( d8                             | %77
-  \stemUp c2.( d2) d4(                                    | %78
-  bes2.)\) \stemNeutral bes'2->\(\< bes4\!                | %79
+  \shpSlurBF g8\( \posHairpinM d'\< bes d g bes  d-> g bes \ottava #1 \posOttavaA d g d'\!       | %56
+  \posHairpinN bes\> d g, d \ottava #0 bes g d bes g d bes\! \shpSlurBH \posHairpinO
+     c,\)_(\<\stopTextSpan                                                                       | %57
+%{ 58 %}
+  \nullSpanner \posHairpinP \shpSlurBI
+     g'8)\!\>(\startTextSpan d'\! bes d g d'bes d g, d bes \posHairpinQ \shpSlurBN d,)_(\<       | %58
+  \shpSlurBI fis8)\!\>( d'\! bes d fis d' bes d fis, d bes\stopTextSpan
+     \piuPianoSpanner \posHairpinQ \shpSlurBN d,)_(\<\startTextSpan                              | %59
+  \shpSlurBJ g8)\!(\> d'\! bes d g bes d g bes \ottava #1 \posOttavaA d g d'                     | %60
+  bes8 d g, d \ottava #0 bes g d bes g d bes \posHairpinQ \shpSlurBN d,)_(\<\stopTextSpan        | %61
+%{ 62 %}
+  \calandoSpanner \shpSlurBO ges8)\!\>(\startTextSpan d'\!bes d ges d'bes d ges,d bes d,\<)_(    | %62
+  \shpSlurBO f8)\!\>( \posHairpinPrev d'\! bes d f_\dimTxt d'bes d f,d bes c,)_(\stopTextSpan    | %63
+  \shpSlurBO \posScriptP f8)(^\smorzTxt c'a c f a c f a c \ottava #1 \posOttavaB f a             | %64 
+  f'4) \ottava #0 b,,,\rest b\rest b2\rest b4\rest                                               | %65
+%{ 66 %}
+  \restDownOne R1*6/4                                                      | %66
+  b2\rest b4\rest b\rest b\rest \shpSlurGP f->-\menoMosso~\(                          | %67
+  f2.( g2) g4(                                                             | %68
+  ees2.)\)~ ees4 \shpSlurGQ ees'4.\( d8                                | %69
+  \stemUp c2.( d2) d4(                                                     | %70
+%{ 71 %}
+  bes2.)\) \stemNeutral \shpSlurBS bes'2\(^\< bes4                         | %71
+  bes2->\! aes4 aes g fis                                                  | %72
+  fis2 g\) aes4.( ees8                                                     | %73
+  g2 f) \shpSlurGU g4.\( d8                                                      | %74
+%{ 75 %}
+  f4 ees d \times 2/3 { c8[ d c] } b c d ees                               | %75
+  f,2.\)(\( g2) g4(                                                        | %76
+  ees2.)\)_~ ees4 \shpSlurGQ ees'4.\( d8                                              | %77
+  \stemUp c2.( d2) d4(                                                     | %78
+  bes2.)\) \stemNeutral \shpSlurGY bes'2->\(\< bes4\!                      | %79
+%{ 79 %}
   %-----------------------------------correction to source bar40: bes2->bes2.
-  bes2.\> c,2\)\! d4\(                                    | %80
-  \times 2/3 { ees8 f ees } d4 ees g\) g->(~ \times 2/3 { g8 f ees) } | %81
-  ees2. b4\rest g8[( aes] \times 2/3 { bes d c}           | %82
-  bes2.)~ bes4 g8([ aes] \times 2/3 { bes d c) }          | %83
-  bes2.~ bes4 f8([ aes] \times 2/3 { bes d c) }           | %84
+  bes2.\> c,2\)\! d4\(                                                     | %80
+  \times 2/3 { ees8 f ees } d4 ees g\) \posScriptCD g_>(~ \times 2/3 { g8 f ees) }      | %81
+  ees2. b4\rest g8[( aes] \times 2/3 { bes d c}                            | %82
+%{ 83 %}
+  bes2.)~ bes4 g8([ aes] \times 2/3 { bes d c) }                           | %83
+  bes2.~ bes4 f8([ aes] \times 2/3 { bes d c) }                            | %84
   \tupletSpan 4 \hideTupletBracket
-  bes4~ \times 2/3 { bes8[ \shpSlurBT des,_\( ees] 
-     g[ c bes]} aes4_~ aes8 ces,ees f                     | %85
-  g2\) b4\rest b\rest g8([ aes] \times 2/3 { bes d c }    | %86
-  bes4) bes'2.-> \times 2/3 { b,8\rest( g[ aes] bes d c } | %87
-  bes4) bes'2.-> \tupletDown
-     \times 2/3 { b,8\rest( f[ aes]  \tupletUp bes d c }  | %88
-  bes4)_~ \times 2/3 { bes8[ \shpSlurBT des,_\( ees]
-     g[ c bes]} aes4_~ aes8 ces,ees f                     | %89
-  g2.\)_~ g8\noBeam g( bes g'f ees                        | %90
-  d2.)~ d8 bes( d bes' d, ees                             | %91
-  e4 f2)~ f8 \shpSlurBU d\( f d'c bes                     | %92
-  gis8 a f'e d a \staffDown \posBeamD d,^[ \staffUp a f
-     d e \slurDown \acciaccatura { g } f] \slurUp         | %93
-  e,2.\) b''8\rest \stemDown \shpSlurN
-     \hideNotes d,8_~^( \unHideNotes \moveNoteOne
-      \shortStemCin d2                                    | %94
-  \stemUp a'2.) e'2.(                                     | %95
-  d2.) s8 \stemDown \shpSlurBZ
-     \hideNotes d,8_~^\( \unHideNotes \moveNoteOne d2     | %96
-  \stemUp a'2.\) fis->(                                   | %97
-  gis2.) b8\rest \stemDown \shpSlurN
-     \hideNotes d,8_~^( \unHideNotes \moveNoteOne d2      | %98
-  \stemUp a'2.) e'(                                       | %99
-  fis2.) \stemDown s8 \shpSlurBZ c,2\(\pp s8              | %100
-  \stemUp a'2.\) fis'(                                    | %101
-  gis2. fis2) f8\rest gis                                 | %102
-  gis2.( fis2) f8\rest gis                                | %103
-  gis2.( fis2) f8\rest gis                                | %104
-  a2.( \posHairpinU fis2_\< a4)                           | %105
-  \stemDown
-  \shpSlurCC \shpSlurCE \shortStemCin \posScriptAA <b gis e d!b>2.(\(\ff
-     <cis gis e d>2) \shpSlurCD <cis gis e d>4(           | %106
-  <a cis,a>2.)\) \shpSlurCE <a'cis,a>2\( <gis cis,gis>4   | %107
-  \shpSlurCC <fis cis fis,>2.( <gis dis b>2)
-     \shpSlurCD <gis dis b>4(                             | %108
-  <e gis,e>2.)\) <e e,>2-^ <e e,>4-^                      | %109
-  \squeezeNotation \tupletDown
-  <e e,>2->(<d d,>4) \times 2/3 { <d d,>8([<e e,><d d,>] }
-     <cis cis,><d d,><fis fis,><e e,>)                    | %110
-  <d d,>2->(<cis cis,>4) \times 2/3 { <cis cis,>8([<d d,><cis cis,>] }
-     <bis bis,><cis cis,><e e,><d d,>)                    | %111
-  \stemUp \tupletSpan 2. 
-  <cis cis,>4( <b b,>4.<ais ais,>8) \times 3/4 {
-     <b b,>4(_\< <bis bis,><cis cis,><gis gis,>)\! }      | %112
-  <b b,>4( a4. gis8 \grace { fis16[ gis] } fis4) eis8-.(
-     fis-. gis-. a-.)                                     | %113
-  \shpSlurCH <b,gis e d>2.(\( <e cis gis e>2) \shpSlurCG
-     <e cis gis e d>4(                                    | %114
+  bes4~ \times 2/3 { bes8[ \shpSlurBT des,_\( ees] g[ c bes]} aes4_~ aes8 ces,ees f              | %85
+%{ 86 %}
+  g2\) b4\rest b\rest g8([ aes] \times 2/3 { bes d c }                                           | %86
+  bes4) bes'2.-> \times 2/3 { b,8\rest( g[ aes] bes d c }                                        | %87
+  bes4) bes'2.-> \tupletDown \times 2/3 { b,8\rest f[( aes]  \tupletUp bes d c }                 | %88
+%{ 89 %}
+  bes4)_~ \times 2/3 { bes8[ \shpSlurBT des,_\( ees] g[ c bes]} aes4_~ aes8 ces,ees f            | %89
+  \semprePiuPSpanner g2.\)_~\startTextSpan g8\noBeam g( bes g'f ees                              | %90
+  d2.)~ d8 bes( d bes' d,\stopTextSpan \eRallSpanner ees\startTextSpan                           | %91
+%{ 92 %}
+  e4 f2)~ f8 \shpSlurBU d\( f d'c bes\stopTextSpan                                               | %92
+  gis8 a f'e d a \staffDown \posBeamD d,^[ \staffUp a f d e \slurDown \acciaccatura { g } f] \slurUp | %93
+  e,2.\) b''8\rest \stemDown \shpSlurN \hideNotes d,8_~^( \unHideNotes \moveNoteOne \shortStemCin d2 | %94
+%{ 95 %}
+  \stemUp a'2.) e'2.(                                                                            | %95
+  d2.) s8 \stemDown \shpSlurBZ \hideNotes d,8_~^\( \unHideNotes \moveNoteOne d2                  | %96
+  \stemUp a'2.\) fis->(                                                                          | %97
+  gis2.) b8\rest \stemDown \shpSlurN \hideNotes d,8_~^( \unHideNotes \moveNoteOne d2             | %98
+%{ 99 %}
+  \stemUp a'2.) e'(                                                                              | %99
+  fis2.) \stemDown s8 \shpSlurBZ c,2\(\pp s8                                                     | %100
+  \stemUp a'2.\) \shpSlurHB fis'(                                                                | %101
+  gis2. fis2) f8\rest gis                                                                        | %102
+%{103%}
+  gis2.( fis2) f8\rest gis                                                                       | %103
+  gis2.( fis2) f8\rest gis                                                                       | %104
+  a2.( \posHairpinU fis2_\< a4)                                                                  | %105
+  \stemDown \shpSlurCC \shpSlurCE \shortStemCin \posScriptAA <b gis e d!b>2.(\(\ff
+     \posScriptZ <cis gis e d>2)_\moltoCresc \shpSlurCD <cis gis e d>4(                          | %106
+%{107%}
+  <a cis,a>2.)\) \shpSlurCE <a'cis,a>2\( <gis cis,gis>4                                          | %107
+  \shpSlurCC <fis cis fis,>2.( <gis dis b>2) \shpSlurCD <gis dis b>4(                            | %108
+  <e gis,e>2.)\) <e e,>2-^ <e e,>4-^                                                             | %109
+  \squeezeNotation \tupletDown <e e,>2->(<d d,>4) \times 2/3 { <d d,>8([<e e,><d d,>] }
+     <cis cis,><d d,><fis fis,><e e,>)                                                           | %110
+%{111%}
+  <d d,>2->( <cis cis,>4) \times 2/3 { <cis cis,>8([ <d d,> <cis cis,>] }
+     <bis bis,> <cis cis,> <e e,> <d d,>)                                                        | %111
+  \stemUp \tupletSpan 2. \tupletUp
+  <cis cis,>4( <b b,>4. <ais ais,>8) \times 3/4 { 
+     \posScriptCG \shpSlurHC \posHairpinAT <b b,>4(_\< <bis bis,> <cis cis,> <gis gis,>)\! }     | %112
+  \tupletDown <b b,>4( a4. gis8 \grace { fis16[ gis] } fis4) eis8-.( fis-. gis-. a-.)            | %113
+  \shpSlurCH <b,gis e d>2.(\( <e cis gis e>2) \shpSlurCG <e cis gis e d>4(                       | %114
+%{115%}
   \stemNeutral \unSqueezeNotation
-  <a,cis,a>4)\) b\rest \shpSlurCI <a'cis,a>\( <a'cis,a>2
-     <gis cis,gis>4                                       | %115
-  \shpSlurCC <fis cis fis,>2.(<gis dis b>2)<gis dis a>4(  | %116
-  <e gis,e>2)\) b,4\rest \ottava #1 \setOttavaStyle
-     <e''~e,_~>2<e e,>8.<e e,>16                          | %117
-  <e e,>4-._\semprePiuF \ottava #0 b,,\rest b\rest 
-     \shortStemOne <fis'~ fis,_~>2.->-\tenTxt             | %118
-  <fis fis,>4 \posScriptAB <fis fis,>-\sharpPrall\( <eis eis,>8<fis fis,>
-     <gis gis,><ais ais,><b b,><cis cis,><d!d,!><e e,>    | %119
-  <fis fis,>4-.\) b,,\rest b\rest <gis'gis,>2->-\tenTxt <gis gis,>4-^ | %120
-  \posScriptAC \shpSlurCJ gis,8-^\( gis'a gis <fisis fisis,><gis gis,>
-     <ais ais,><bis bis,><cis cis,><dis dis,><e e,><fis fis,>         | %121
-  \posScrpRevExOff
-  <gis gis,>4-.\)b,,\rest b\rest<gis'gis,>2-^<gis gis,>4-^| %122
-  \posScriptAB <gis gis,>4-\sharpPrall\( <fisis fisis,>8
-     <gis gis,><ais ais,><b b,><cis cis,><dis dis,>
-     <eis eis,><fisis fisis,!><gis gis,!><ais ais,!>      | %123
-  <b b,>4-.\) \noPadScript <b gis>8-^ eis,dis b <b gis> eis,dis b
-     <b gis> eis, \clef bass                              | %124
-  dis8 b <b gis> eis,dis b <b'gis>eis,dis b aes' f        | %125
-  \noPadTxtScrp bes!8\(-\piuAnimato aes ces f,bes aes ces f,
-     bes aes ces f,                                         | %126
-  bes aes ces f,bes aes ces f, bes aes ces f,               | %127
-  bes aes ces f,bes aes ces f, bes aes ces f,               | %128
-  \posHairpinW bes\< aes ces f,bes aes ces f, bes aes ces f,| %129
-  bes4-.\!\) \clef treble \shpSlurCL bes8\( d
-     ces d cis f d aes'e aes                              | %130
-  f8_[ ces'g bes aes d] bes d ces! d cis f \stemDown      | %131
-  d8 aes'e aes f ces'g ces aes d bes d                    | %132
-  ces8 d cis \ottava #1 \setOttavaStyle \posOttavaC f d
-     aes'e aes f ces'g ces                                | %133
-  d8 aes ces f,bes aes c f,bes aes cis f,                 | %134
-  bes\< aes d-. f,bes aes ees'-. f,bes aes e'-. f,\!      | %135
+  <a,cis,a>4)\) b\rest \shpSlurCI <a'cis,a>\( <a'cis,a>2 <gis cis,gis>4                          | %115
+  \shpSlurCC <fis cis fis,>2.(<gis dis b>2)<gis dis a>4(                                         | %116
+  <e gis,e>2)\) b,4\rest \ottava #1 \setOttavaStyle <e''~e,_~>2 <e e,>8. <e e,>16                | %117
+  <e e,>4-._\semprePiuF \ottava #0 b,,\rest b\rest \shortStemOne <fis'~ fis,_~>2.->-\tenTxt      | %118
+%{119%}
+  <fis fis,>4 \posScriptAB <fis fis,>-\sharpPrall\( <eis eis,>8 <fis fis,> <gis gis,>
+     <ais ais,> <b b,> <cis cis,> <d!d,!> <e e,>                                                 | %119
+  <fis fis,>4-.\) b,,\rest b\rest <gis'gis,>2->-\tenTxt <gis gis,>4-^                            | %120
+  \posScriptAC \shpSlurCJ gis,8-^\( gis'a gis <fisis fisis,> <gis gis,> <ais ais,> <bis bis,>
+     <cis cis,> <dis dis,> <e e,> <fis fis,> \posScrpRevExOff                                    | %121
+  <gis gis,>4-.\)b,,\rest b\rest<gis'gis,>2-^<gis gis,>4-^                                       | %122
+%{123%}
+  \posScriptAB <gis gis,>4-\sharpPrall\( <fisis fisis,>8 <gis gis,> <ais ais,> <b b,>
+     <cis cis,> <dis dis,> <eis eis,> <fisis fisis,!> <gis gis,!> <ais ais,!>                    | %123
+  <b b,>4-.\) \noPadScript <b gis>8-^ eis,dis b <b gis> eis,dis b <b gis> eis,                   | %124
+  \clef bass dis8 b <b gis> eis,dis b <b'gis>eis,dis b aes' f                                    | %125
+%{126%}
+  \noPadTxtScrp bes!8\(-\piuAnimato aes ces f,bes aes ces f,bes aes ces f,                       | %126
+  bes aes ces f,bes aes ces f, bes aes ces f,                                                    | %127
+  bes aes ces f,bes aes ces f, bes aes ces f,                                                    | %128
+%{129%}
+  \posHairpinW bes\< aes ces f,bes aes ces f, bes aes ces f,                                     | %129
+  bes4-.\!\) \clef treble \shpSlurCL bes8\( d ces d cis f d aes'e aes                            | %130
+  f8_[ ces'g bes aes d] bes d ces! d cis f \stemDown                                             | %131
+%{132%}
+  d8 aes'e aes f ces'g ces aes d bes d                                                           | %132
+  ces8 d cis \ottava #1 \setOttavaStyle \posOttavaC f d aes'e aes f ces'g ces                    | %133
+  d8 aes ces f,bes aes c f,bes aes cis f,                                                        | %134
+%{135%}
+  bes\< aes d-. f,bes aes ees'-. f,bes aes e'-. f,\!                                             | %135
   \squeezeNotation
-  f'->\> d cis e ees c b d cis bes a! c\!                 | %136
-  b aes g bes aes \ottava #0 f d bes a! bes aes
-     \noPadTxtScrp bes\)-\animatoLegend                   | %137
-  \shpSlurCN fis(\p g g'd ees b c g bes aes g f)          | %138
-  \shpSlurCN fis( g g'd ees b c g bes aes g f)            | %139
+  f'->\> d cis e ees c b d cis bes a! c\!                                                        | %136
+  b aes g bes aes \ottava #0 f d bes a! bes aes \noPadTxtScrp bes\)-\animatoLegend               | %137
+%{138%}
+  \shpSlurCN fis(\p g g'd ees b c g bes aes g f)                                                 | %138
+  \shpSlurCN fis( g g'd ees b c g bes aes g f)                                                   | %139
   \unSqueezeNotation
-  \shpSlurCO \noPadHairp fis\(\< g g'd ees b c g bes aes g f\! | %140
-  \noPadHairp ees\> aes f d aes' f c aes'f bes,aes'f\)\!       | %141
-  \shpSlurCN fis(_\poco g g'd_\aTxt ees b_\poco c g bes
-     aes g_\crescTwo f)                                   | %142
-  \shpSlurCN fis( g g'd ees b c g bes aes g f)            | %143
-  \shpSlurCP fis8\(\< g g'd ees b c g bes aes g f\!       | %144
-  fes8 ees d des c ces bes a! c bes a aes\)               | %145
-  \shpSlurCR \posHairpinY g\<( aes a bes c bes
-     \posScriptAD aes-\crescTinyC bes b c des c\!)        | %146
-  \shpSlurCQ \posHairpinY \alignBeamTre a!\<( bes b c d! c
-     \posScriptAD bes-\crescTinyC c cis d ees d\!)        | %147
-  \shpSlurCS \posHairpinY b8\<\( c cis d ees d
-     \posScriptAF c-\crescTinyC cis d ees e f\!           | %148
-  \posHairpinZ g8->\> f e ees d des c b bes a!bes aes\!   | %149
-  \stemUp \textSpannerDown \semprePiuCrescSpanner g4\)\startTextSpan
-     \shpSlurCV bes,8\( bes' \shpSlurCW d,_( ces' bes,bes'
-     ees,g e des'                                         | %150
-  c,8 c') \shpSlurCY f,_( a! e des'  c, c'f,a fis ees'!   | %151
-  %\squeezeNotation
-  d,8) d' \shpSlurDB g,_( b fis ees' d, d' g, b gis f'    | %152
+  \shpSlurCO \noPadHairp fis\(\< g g'd ees b c g bes aes g f\!                                   | %140
+%{141%}
+  \noPadHairp ees\> aes f d aes' f c aes'f bes,aes'f\)\!                                         | %141
+  \shpSlurCN fis(_\poco g g'd_\aTxt ees b_\poco c g bes aes g_\crescTwo f)                       | %142
+  \shpSlurCN fis( g g'd ees b c g bes aes g f)                                                   | %143
+%{144%}
+  \shpSlurCP fis8\(\< g g'd ees b c g bes aes g f\!                                              | %144
+  fes8 ees d des c ces bes a! c bes a aes\)                                                      | %145
+  \shpSlurCR \posHairpinY g\<( aes a bes c bes \posScriptAD aes-\crescTinyC bes b c des c\!)     | %146
+%{147%}
+  \shpSlurCQ \posHairpinY \alignBeamTre a!\<(bes b c d!c \posScriptAD bes-\crescTinyC c cis d ees d\!) | %147
+  \shpSlurCS \posHairpinY b8\<\( c cis d ees d \posScriptAF c-\crescTinyC cis d ees e f\!        | %148
+  \posHairpinZ g8->\> f e ees d des c b bes a!bes aes\!                                          | %149
+%{150%}
+  \stemUp \textSpannerDown \semprePiuCrescSpanner
+  g4\)\startTextSpan \shpSlurCV bes,8\( bes' \shpSlurCW d,_( ces'bes,bes' ees,g e des'           | %150
+  c,8 c') \shpSlurCY f,_( a! e des'  c, c'f,a fis ees'!                                          | %151
+  d,8) d' \shpSlurDB g,_( b fis ees' d, d' g, b gis f'                                           | %152
+%{153%}
   \squeezeNotationTwo
-  e,8) e' a, cis ais g' fis, fis' \shpSlurDC b,_( dis bis
-     a'!\)\stopTextSpan                                   | %153
-  \squeezeNotation \stemDown
-  \shortStemCin <cis a fis cis>4-.) \alignBeamQtr \shpSlurDD
-      bis,8\(cis dis eis \alignBeamCin fis gis a b cis dis| %154
-  eis fis gis a fis cis a fis cis a fis cis\)             | %155
+  e,8) e' a, cis ais g' fis, fis' \shpSlurDC b,_( dis bis a'!\)\stopTextSpan                     | %153
+  \squeezeNotation \stemDown \shortStemCin
+  <cis a fis cis>4-.)\alignBeamQtr\shpSlurDD bis,8\(cis dis eis \alignBeamCin fis gis a b cis dis| %154
+  eis fis gis a fis cis a fis cis a fis cis\)                                                    | %155
+%{156%}
   \unSqueezeNotation \squeezeNotationTre
-  \stemNeutral
-  \shpSlurDE a8\( \posHairpinAB fis'\< dis a'a fis'
-     dis a'a fis'dis a'\!                                 | %156
-  fis\> a ees!\! a,fis a ees a, fis\< a ees a,            | %157
-  <bes'g ees bes>4-.\)\sf \shpSlurDF a,8(\p^\leggiero bes
-     c d ees e g f g f                                    | %158
-  \alignBeamSix c'8 \shpSlurDG bes)( a bes c d ees e g
-     \posScriptAH f_\crescTinyD g f                       | %159
-  c'8 bes) \shpSlurDI a( bes c d ees e g f g f            | %160
-  bes4-.) \shpSlurDI a,!8(_\piuF bes c d ees e
-     \posHairpinW g\< f g f                               | %161
-  bes4-.) b,,\rest\! b\rest \ottava #1 \posOttavaD \stemUp
-  \acciaccatura { \posScriptAI \shpSlurDJ f''8_\fzSforzato } 
-     \stemDown \shpSlurDK f'\( e ees d c bes              | %162
-  \ottava #0 a8 g f e ees d c bes a g f e                 | %163
-  ees! des ces bes aes ges \stemUp f ees des
-     ces bes \staffDown aes!\)                            | %164
+  \stemNeutral \shpSlurDE a8\( \posHairpinAB fis'\< dis a'a fis'dis a'a fis'dis a'\!             | %156
+  fis\> a ees!\! a,fis a ees a, fis\< a ees a,                                                   | %157
+  <bes'g ees bes>4-.\)\sf \shpSlurDF a,8(\p^\leggiero bes c d ees e g f g f                      | %158
+%{159%}
+  \alignBeamSix c'8 \shpSlurDG bes)( a bes c d ees e g \posScriptAH f_\crescTinyD g f            | %159
+  c'8 bes) \shpSlurDI a( bes c d ees e g f g f                                                   | %160
+  bes4-.) \shpSlurDI a,!8(_\piuF bes c d ees e \posHairpinW g\< f g f                            | %161
+  bes4-.) b,,\rest\! b\rest \ottava #1 \posOttavaD \stemUp \acciaccatura { 
+    \posScriptAI \shpSlurDJ f''8_\fzSforzato } \stemDown \shpSlurDK f'\( e ees d c bes           | %162
+%{163%}
+  \ottava #0 a8 g f e ees d c bes a g f e                                                        | %163
+  ees! des ces bes aes ges \stemUp f ees des ces bes \staffDown aes!\)                           | %164
   \unSqueezeNotation
-  \shpSlurDL \alignBeamOct ges8\( f ees des ces bes 
-     \alignBeamSep aes ges f ees des \posScriptAM ces!\fz | %165
-  \hideNotes bes8\) \unHideNotes \staffUp s8 s2 
-     \shpSlurDM \noPadScript <g'''d bes>2-^_\(<g d aes>4( | %166
-  <ees g,>)\) b'\rest \shpSlurDO <ees~ g,_~ees_~>->\( 
-     <ees g,ees>2 <d bes ees,>4                           | %167
-  <c bes ees,>2.( <d a! f>2) <d a ees>4( \stemNeutral     | %168
-  <bes d,>4)\) b\rest b\rest <bes'bes,>2( <b b,>4)        | %169
-  \tupletUp
-  \times 3/5 { \shpSlurDS <c ees,>4(<des bes><c e,><b bes!><c e,>) }
-     \shortStemRev \stemUp \acciaccatura { \shpSlurDT <c aes>8 } \stemDown
-     \posScrpRevPad <aes'aes,>4-. b,,\rest b8\rest <c'ees,> | %170
-  \times 3/5 { \shortStemTre <bes bes,>4(<c aes><bes bes,><a aes!>
-     <bes bes,>) } \stemUp \acciaccatura { <a f>8 }
-     \stemDown <bes'bes,>4-. b,,\rest b8\rest <bes'd,>    | %171
-  \times 3/5 { <aes c,>4(<bes ees,><aes c,><g ees>
-     <aes c,>) } \stemUp \acciaccatura { <aes f>8 }
-     \stemDown <f'f,>4-. b,,\rest <aes'f>(                | %172
+  \shpSlurDL \alignBeamOct ges8\( f ees des ces bes \alignBeamSep aes ges f ees des
+     \posScriptAM ces!\fz \hideNotes                                                             | %165
+%{166%}
+  bes8\) \unHideNotes \staffUp s8 s2 \shpSlurDM \noPadScript <g'''d bes>2-^_\(<g d aes>4(        | %166
+  <ees g,>)\) b'\rest \shpSlurDO <ees~ g,_~ees_~>->\( <ees g,ees>2 <d bes ees,>4                 | %167
+  <c bes ees,>2.( <d a! f>2) <d a ees>4( \stemNeutral                                            | %168
+%{169%}
+  <bes d,>4)\) b\rest b\rest <bes'bes,>2( <b b,>4)                                               | %169
+  \tupletUp \times 3/5 { \shpSlurDS <c ees,>4(<des bes><c e,><b bes!><c e,>) } \stemUp
+     \shortStemRev \acciaccatura { \shpSlurDT <c aes>8 }
+     \stemDown \posScrpRevPad <aes'aes,>4-. b,,\rest b8\rest <c'ees,>                            | %170
+  \times 3/5 { \shortStemTre <bes bes,>4(<c aes><bes bes,><a aes!> <bes bes,>) }
+     \stemUp \acciaccatura { <a f>8 } \stemDown <bes'bes,>4-. b,,\rest b8\rest <bes'd,>          | %171
+%{172%}
+  \times 3/5 { <aes c,>4(<bes ees,><aes c,><g ees> <aes c,>) }
+     \stemUp \acciaccatura { <aes f>8 } \stemDown <f'f,>4-. b,,\rest <aes'f>(                    | %172
   <f g>4) \stemUp \slurDown \acciaccatura { bes!8 } \stemNeutral \slurNeutral
-     <aes f>4.->(<g f>8)<g ees>4-.(<aes ees>-.<a ees>-.)  | %173
-  \shortStemTwo \shpSlurDY <f bes,aes>2.( \shortStemRev 
-     <g d bes aes>2) <g d bes aes>4                       | %174
-  \stemDown g,4 \stemNeutral b\rest b\rest \shpSlurEA
-     <ees'g,ees>2->\( <d bes ees,>4                       | %175
-  <c bes ees,>2. <d a! f>2 <d a ees>4                     | %176
+     <aes f>4.->( <g f>8) <g ees>4-.( <aes ees>-. <a ees>-.)                                     | %173
+  \shortStemTwo \shpSlurDY <f bes,aes>2.( \shortStemRev <g d bes aes>2) <g d bes aes>4           | %174
+%{175%}
+  \stemDown g,4 \stemNeutral b\rest b\rest \shpSlurEA <ees'g,ees>2->\( <d bes ees,>4             | %175
+  <c bes ees,>2. <d a! f>2 <d a ees>4                                                            | %176
   <bes d,>4\) b,\rest b\rest \shpSlurEC <bes''bes,>2_>\(
      b,,8\rest <bes''bes,>8                               | %177
   <bes bes,>2 b,,4\rest \stemUp \slurUp \shpSlurEF c2->(d4| %178
@@ -491,9 +465,9 @@ upperTwo =  \relative c' {
   \mergeDifferentlyHeadedOn
   s2. s8 \stemUp c8-\hideP d fis bes a \stemDown              | % 8
   \shortStemTre
-  b,4\rest \shpSlurI <d bes>-.( <d bes>-.) b\rest
-     \shpSlurI <g'd>-.( <g d>-.)                              | % 9
-  c,4\rest \shpSlurI <g' ees>-.( <g ees>-.) s8 
+  b,4\rest \shpSlurGM \posScriptAP <d bes>-.( <d bes>-.) b\rest
+     \shpSlurGM <g'd>-.( <g d>-.)                             | % 9
+  c,4\rest \shpSlurGM <g' ees>-.( <g ees>-.) \posScriptAPrev s8 
      \stemUp c,8^> d fis bes a \stemDown                      | %10
   \shortStemRev
   b,4\rest <d bes>-.( <d bes>-.) g,\rest \shpSlurK 
@@ -517,7 +491,7 @@ upperTwo =  \relative c' {
      \shpSlurK <cis a g>-.( <cis a g>-.)                      | %19
   a4\rest \shpSlurI <d a fis>-.( <d a fis>-.) \shortStemRev
      s8 c^>^[ d fis bes a]                                    | %20
-  a,4\rest \shortStemTre \shpSlurI <f'!d b>4-.( <f d b>-.)
+  a,4\rest \shortStemTre \shpSlurI <f'd b>4-.( <f d b>-.)
      g\rest \shpSlurK <d'b g f>-.( <d b g f>-.)               | %21
   \posHairpinE a4\rest <ees'c g>-.( <ees c g>-.) e,\rest 
      \shpSlurI <g d>-.( \shpSlurI <g d>-.)                    | %22
@@ -525,15 +499,15 @@ upperTwo =  \relative c' {
      \shpSlurI <d bes>-.( <d bes>-.)                          | %23
   g4\rest \shpSlurI <ees'c g>-.( <ees c g>-.) d,\rest
      \shpSlurI <g d>-.( <g d>-.)                              | %24
-  \posHairpinD d4\rest\< \shpSlurI <g c,>-.( <g c,>-.) a,\rest 
-     \shpSlurL <cis bes>-.( <cis bes>-.)\!                    | %25
+  d4\rest \shpSlurI <g c,>-.( <g c,>-.) a,\rest 
+     \shpSlurL <cis bes>-.( <cis bes>-.)                      | %25
   a4\rest \shpSlurI <d bes>-.( <d bes>-.) e\rest
      \shpSlurI <bes'f d>-.( <bes f d>-.) \shortStemRev        | %26
-  \shortStemTre \posScriptC <a! ees>4_\tenutoTxt
+  \shortStemTre \posScriptC <a! ees>4
      <a ees> <a ees> <a ees> <a ees> <a ees>                  | %27
   g\rest <bes ees,> <bes ees,> <bes d,> <bes d,> <bes d,>     | %28
-  <fis c> <fis c> <fis c> <fis c> <fis c> <fis c>             | %29
-  e\rest <g!c,> <g c,><g bes,><g bes,><g bes,> \shortStemRev  | %30
+  <fis c>\< <fis c> <fis c> <fis c> <fis c> <fis c>             | %29
+  e\rest\> <g!c,> <g c,><g bes,>\!<g bes,><g bes,> \shortStemRev  | %30
   <g ees> <g ees> <g ees> <fis d> <fis d> <fis d>             | %31
   \shortStemQtr <e a,>4\arpeggio\pp \posHairpinF s1\< s4      | %32
   s2. s16\! \posScriptF s8.-\pocoCresc s2                     | %33
@@ -548,7 +522,7 @@ upperTwo =  \relative c' {
   d4) \shpSlurAM g,8( b d \shpSlurAN c~ c4) \shpSlurAO c,8( gis' bes a~  | %38
   a4) \shpSlurAP ees8( b' d \shpSlurAN c~ c4) 
      \alignBeamTwo  ees,8\< d cis c                           | %39
-  bes4_\f \shpSlurAK bes'8( d f ees) b4\rest \shpSlurAL a8( cis ees d)   | %40
+  bes4_\f \shpSlurAK bes'8( \posScriptI d^\agitato f ees) b4\rest \shpSlurAL a8( cis ees d)   | %40
   b4\rest \shpSlurAK bes8( d f ees) b4\rest \shpSlurAL aes8( cis ees d)  | %41
   b4\rest \posScriptG \shpSlurAL g8->( b d c) b4\rest \shpSlurAU c,8->( gis' bes a) | %42
   b4\rest \posScriptG \shpSlurAV ees,8->( b' d c) b4\rest fis,8-> cis' ees d     | %43
@@ -558,14 +532,14 @@ upperTwo =  \relative c' {
   \repeat unfold 3 { s1. | }                                  | %47-49
   \repeat unfold 17 { s1. | }                                 | %50-66
   s1 s4 \stemDown \ignoreClashOnce c,4_~                      | %67
-  c2._( d                                                     | %68
+  \shpSlurGT c2._( d                                          | %68
   ees2.) s                                                    | %69
-  g2._( a                                                     | %70
+  \shpSlurGT g2._( a                                          | %70
   bes2.) s                                                    | %71
   \repeat unfold 4 { s1. | } \slurDown                          %72-75
-  c,!2.( d                                                    | %76
+  \shpSlurGT c,!2.( d                                         | %76
   ees2.) s                                                    | %77
-  g2.( a                                                      | %78
+  \shpSlurGT g2.( a                                           | %78
   bes2.) s                                                    | %79
   \repeat unfold 5 { s1. | }                                    %80-84
   s4 \scaleDurations 2/3 { s8 des,4-> s4. } s4 s8 \posScriptR
@@ -581,23 +555,23 @@ upperTwo =  \relative c' {
   e\rest \shpSlurI <a f>-.( <a f>-.) b8\rest \stemUp d,
      e_\semprePP gis c b \stemDown                            | %96
   c,4\rest <e c>_.( <e c>)_.) a,\rest <e'c a>_.( <e c a>_.)   | %97
-  a,\rest <e'b>_.( <e b>_.) s8 \stemUp d e! gis! c b          | %98
-  \stemDown \posHairpinR c,4\rest\< \shpSlurI <e c>_.( 
-     <e c>_.) \posScriptT d\rest_\crescTiny \shpSlurI 
-     <c'a>_.(<c a>_.)\!                                       | %99
+  a,\rest <e'b>_.( \posHairpinR <e b>_.)\< s8 \stemUp d e! gis! c b          | %98
+  \stemDown c,4\rest\! \shpSlurHA \posScriptAP  <e c>_.( 
+     <e c>_.) \posScriptAPrev \posScriptT d\rest_\crescTiny \shpSlurI 
+     <c'a>_.(<c a>_.)                                       | %99
   \posScriptU g4\rest_\f \shpSlurI <c a e>_.( <c a e>_.) b8\rest
      \stemUp c,8 e gis b a                                    | %100
-  \stemDown \posHairpinS c,4\rest\< \shpSlurCB \posScriptY <e c>_.( <e c>_.) \posScriptYrev
+  \stemDown \posScriptCE c,4\rest_\fzSforzato \shpSlurCB \posScriptY <e c>_.( <e c>_.) \posScriptYrev
      \posScriptV e\rest_\crescTinyB \shpSlurCB \shortStemTwo
-     \posScriptY <c'a e>_.( <c a e>_.)\! \posScriptYrev       | %101
-  \posScriptW \posScriptP e,4\rest_\fzSforzato \sempreCrescSpanner \shpSlurCB \posScriptY
+     \posScriptY <c'a e>_.( <c a e>_.) \posScriptYrev       | %101
+  \posHairpinS e,4\rest\< \sempreCrescSpanner \shpSlurCB \posScriptY
      \textSpannerDown <dis'c a>_.(\startTextSpan <dis c a>_.) \posScriptYrev
      g,\rest <dis'c a> \posHairpinT g,\rest\<                 | %102
   \posScriptW g4\rest_\sfSforzato\! <dis'c a> <dis c a>
      g,\rest <dis'c a> g,\rest                                | %103
   \posScriptW g4\rest_\sfSforzato <dis'c a> <dis c a> g,\rest
      <dis'c a> g,\rest\stopTextSpan                           | %104
-  \posScriptZ g4\rest_\moltoCresc <fis'dis c><fis dis c> g,\rest
+  g4\rest <fis'dis c><fis dis c> g,\rest
      <fis'dis c><fis dis c>                                   | %105
   \repeat unfold 4 { s1. | }                                  | %106-109
   \squeezeNotation
@@ -784,17 +758,17 @@ lowerOne = \relative c, {
   \time 4/4
   \setRestDirUp
   \shpSlurC c2-\hideF\(_~ c8 ees aes bes        | % 1
-  c8_[ aes ees'bes'] \clef treble c aes ees'bes'| % 2
-  c8 g bes aes  g4 fis8\) b8\rest               | % 3
+  c8_[ aes ees'bes'] \clef treble c aes \posHairpinA ees'\>bes'| % 2
+  c8 g bes aes  g4 fis8\!\) b8\rest             | % 3
   b8\rest fis8_\(-\hideP g fis  eis fis 
      \tupletDown \times 2/3 { a g ees }         | % 4
   ees8. d16 \tupletUp \times 2/3 { f!8 ees d\) }
      d4 \staffDown b'\rest                      | % 5
   \clef bass
-  d,,2\rest \stemDown <c' g ees>2(^>            | % 6
+  d,,2\rest \stemDown \shpSlurGL <c' g ees>2(^> | % 6
   <ees g,d>1\arpeggio)\sustainOn                | % 7
    \bar "||" \time 6/4 \stemNeutral
-  d,2.\rest\sustainOff d,4_.^\pDolce d'\rest d\rest     | % 8
+  d,2.\rest\sustainOff d,4_. \posScriptCA d'\rest^\pDolce d\rest     | % 8
   d4\rest g,_._( g_.) d'\rest bes'-.( bes-.)    | % 9
   d,4\rest <c'a>-.( <c a>-.) d,\rest d,_._( d_.)| %10
   d'4\rest g,_._( g_.) d'\rest a_._( a_.)       | %11
@@ -808,12 +782,14 @@ lowerOne = \relative c, {
      \shpSlurI d,_._( d_.)                      | %18
   d'4\rest g,_._( g_.) d'\rest a_._( a_.)       | %19
   d4\rest d,_._( d_.) d'\rest d-.( d-.)         | %20
-  d4\rest g-.^\<( g-.) d\rest g,_._( g_.)\!     | %21
+  d4\rest \posHairpinAR g-._\<( g-.) d\rest g,_._( g_.)\!     | %21
   d'4\rest \stemUp c2 d4\rest d2                | %22
   d4\rest ees2 d4\rest \shortStemQtr d2 \stemDown    | %23
   b8->(^\> c d\! c g'4)  cis,8->( d ees d g4)        | %24
-  d8->( ees f ees g4) \stemUp \grace { \posBeamB \shpSlurV \shpSlurW dis16->_([_\( e]) \slashFlag f8 }
-    \stemDown \posScriptB \afterGrace e2.\trill { \stemUp \posBeamB dis16[ e]\) } | %25
+  \posHairpinD d8->_\<( ees f ees g4) \stemUp 
+     \grace { \posBeamB \shpSlurV \shpSlurW dis16->_([_\( e]) \slashFlag f8 }
+     \stemDown \posScriptB \afterGrace
+     e2.\trill { \stemUp \posBeamB dis16[ e]\!\) }   | %25
   \stemDown \shpSlurY f2.^\p~_\( f4 
      \stemUp <e e,> <f f,>                      | %26
   <fis~ fis,_~>2. <fis fis,>4 <eis eis,> <fis fis,>\)  | %27
@@ -823,7 +799,7 @@ lowerOne = \relative c, {
   <c c,>2. <d d,>                               | %31
    <cis cis,>4\)\arpeggio \stemNeutral \doubleSlursOff 
    <e' a, e>-.( <e a, e>-. <e a, e>-. <e a, e>-. <e a, e>-.)     | %32
-  <c,!c,!>4 <f'ees!a,f>-.( <f ees a,f>-. <f ees a,f>-.
+  <c,!c,!>4 \shpSlurGN <f'ees!a,f>-.( <f ees a,f>-. <f ees a,f>-.
      <f ees a,f>-. <f ees a,f>-.)                                | %33
   <bes,,bes,>4 <bes'f d>( <d bes f>) ees,,<c''g ees>( <ees c g>) | %34
   d,,4_. g'2 d2._(                              | %35
@@ -841,7 +817,7 @@ lowerOne = \relative c, {
   <ees c g>2._~ <ees c g>4 \stemUp <g g,> \stemNeutral <ees'ees,>| %45
   s4 <g,g,>2( <g d'>4-.) g d\rest               | %46
    \clef treble
-  b''4\rest a2->(~ a4 <g g,> <ees'ees,>         | %47
+  b''4\rest \shpSlurGO a2->(~ a4 <g g,> <ees'ees,>          | %47
   \stemDown
   <d g,>4-.) b\rest b\rest \posScriptO <a fis ees>_._\fz s2 | %48
   s4 d,2_( \posScriptO <a'fis ees>4_.)_\fz s2               | %49
@@ -861,15 +837,15 @@ lowerOne = \relative c, {
   f2.)(~ f2 g4                                  | %63
   a!2) d4\rest d\rest \shpSlurBQ <c'f>(\(
      <c f,>-.                                   | %64
-  \piuDimSpanner
+  \piuDimSpanner \shortStemRev
   <c_~ f~>2.)\startTextSpan <c f>2 <c f,>4(     | %65
   <c_~ f~>2.) <c f>2 \shpSlurBR <c f,>4(        | %66
   <c f>2 <c f,>4 <c f> <c f,>\stopTextSpan \staffUp
-     \hideNotes \stemDown f)\) \unHideNotes \staffDown | %67
-  \stemNeutral bes,,,4(_. bes' aes'f c'bes)     | %68
+     \hideNotes \stemDown f)\) \unHideNotes \staffDown     | %67
+  \stemNeutral \shpSlurGR bes,,,4(_. bes' aes'f c'bes)     | %68
   ees,,4( bes' ees g bes ees)                   | %69
   c( ees f, ees'g f)                            | %70
-  bes,,( f' bes d f bes)                        | %71
+  \shpSlurGS bes,,( f' bes d f bes)             | %71
   c,4( ees f, bes d aes')                       | %72
   bes,( d ees, aes c g')                        | %73
   aes,( c d,g b f')                             | %74
@@ -877,24 +853,24 @@ lowerOne = \relative c, {
   f,4( aes bes,aes'c bes)                       | %76
   ees,,4( bes'ees g bes ees)                    | %77
   c( ees f,ees'g f)                             | %78
-  bes,,4( f'bes d f bes)                        | %79
-  c,,,4 e''( bes \stemUp g e' bes)              | %80
+  \shpSlurGW bes,,4( f'bes d f bes)             | %79
+  c,,,4 \shpSlurGV e''( bes \stemUp g e' bes)   | %80
   f4 ees'!( a,) bes, \stemNeutral d'( aes)      | %81
   \stemDown
-  \shpSlurBW ees,8( bes'g'ees bes'g ees'4) d,4\rest d\rest | %82
-  \shpSlurBW ees,8( bes'g'ees bes'g ees'4) d,4\rest d\rest | %83
-  \shpSlurBX ees,8( bes' aes'f bes aes d4) d,4\rest d\rest | %84
-  ees,8( bes'g'4) d\rest \shpSlurBY ees,8(ces'aes'4)d,\rest| %85
-  \shpSlurBV ees,8( bes'g'ees bes'g ees'4) d,\rest d\rest  | %86
-  \shpSlurBW ees,8( bes'g'ees bes'g ees'4) d,\rest d\rest  | %87
-  \shpSlurBX ees,8( bes'aes'f bes aes d4) d,\rest d\rest   | %88
-  ees,8( bes'g'4) d\rest \shpSlurBY ees,8(ces'
-     aes'4)d,\rest                              | %89
-  \shpSlurBV  ees,8( bes'g' ees bes'g ees'4) d,\rest d\rest| %90
-  \shpSlurBW g,8( d'bes'g d'bes g'4) d,\rest d\rest        | %91
-  \shpSlurBW bes8( f'd'bes f'd bes'4) d,,\rest d\rest      | %92
-  \ppSpanner d8(\startTextSpan a'f' 
-     \clef treble d a'f d'4) b\rest b\rest      | %93
+  \shortStemQtr \shpSlurBW ees,8( bes'g'ees bes'g \shortStemRev ees'4) d,4\rest d\rest | %82
+  \shortStemQtr \shpSlurBW ees,8( bes'g'ees bes'g \shortStemRev ees'4) d,4\rest d\rest | %83
+  \shortStemQtr \shpSlurBX ees,8( bes' aes'f bes aes \shortStemRev d4) d,4\rest d\rest | %84
+  \shortStemQtr ees,8( bes' \shortStemRev g'4) d\rest \shpSlurBY \shortStemQtr ees,8(ces' \shortStemRev aes'4)d,\rest| %85
+  \shortStemQtr \shpSlurBV ees,8( bes'g'ees bes'g \shortStemRev ees'4) d,\rest d\rest  | %86
+  \shortStemQtr \shpSlurBW ees,8( bes'g'ees bes'g \shortStemRev ees'4) d,\rest d\rest  | %87
+  \shortStemQtr \shpSlurBX ees,8( bes'aes'f bes aes \shortStemRev d4) d,\rest d\rest   | %88
+  \shortStemQtr ees,8( bes' \shortStemRev g'4) d\rest \shpSlurBY \shortStemQtr  ees,8(ces'
+     \shortStemRev aes'4)d,\rest                                                       | %89
+  \shortStemQtr \shpSlurBV  ees,8( bes'g' ees bes'g \shortStemRev ees'4) d,\rest d\rest| %90
+  \shortStemQtr \shpSlurBW g,8( d'bes'g d'bes \shortStemRev g'4) d,\rest d\rest        | %91
+  \shpSlurBW bes8( f'd'bes f'd bes'4) d,,\rest d\rest                                  | %92
+  \ppSpanner \shortStemQtr d8(\startTextSpan a'f' 
+     \clef treble d a'f \shortStemRev d'4) b\rest b\rest                               | %93
   \clef bass \stemNeutral \slurDown
   d,,\rest\stopTextSpan \shpSlurI e,_.(-\hidePP e_.)
      d'\rest \shpSlurI e,_.( e_.)               | %94
@@ -922,7 +898,7 @@ lowerOne = \relative c, {
   <fis fis,>4 <d'fis,>( <a'a,>) <b,,b,> <d'~ fis,>( <a'd,b>)   | %110
   <e,e,>4 <cis'e,>( <gis'gis,>) <a,,a,><cis'~e,>( <gis'cis,a>) | %111
   <d,d,>4 <b'd,>(<fis'fis,>) <cis,cis,> <cis'gis>(<eis b>)     | %112
-  <fis,,fis,>^> fis'2 <bes,bes,>4 fis'2          | %113
+  \posScriptCF <fis,,fis,>^> fis'2 <bes,bes,>4 fis'2           | %113
   <e,e,>4<gis'b,><b ees,><d gis,><b ees,><gis b,>| %114
   <a,a,>4 <cis'e,> <e a,> <a cis, ><e a,><cis e,>| %115
   \unSqueezeNotation
@@ -1130,8 +1106,8 @@ lowerTwo = \relative c {
   \repeat unfold 7 { s1 | }                          % 1-7
   \time 6/4
   \repeat unfold 14 { s1. | }                        %8-21
-  \stemDown s4^\> \shpSlurT c,-._( g''-.) s\!
-     \shpSlurT d,-._( g'-.)                        | %22
+  \stemDown \posHairpinAS s4^\> \shpSlurT c,-._( 
+     g''-.)\! s \shpSlurT d,-._( g'-.)             | %22
   s4 \shpSlurT ees,4-._( g'-.) s^\<
      \shpSlurT d,-._( g'-.)\!                      | %23
   \repeat unfold 11 { s1. | }                      | %24-34
@@ -1178,9 +1154,9 @@ lowerTwo = \relative c {
   d2.) a2.\rest                                    | %96
   a2.\rest fis^>(                                  | %97
   gis2.) a2.\rest                                  | %98
-  a2.\rest e'(                                     | %99
+  a2.\rest \shpSlurGZ e'(                          | %99
   fis2.)-\hideF a,2.\rest                          | %100
-  a2.\rest \shpSlurCA fis'(                        | %101
+  a2.\rest \shpSlurCA fis'(            | %101
   gis2. fis2) f8\rest gis                          | %102
   gis2.( fis2) f8\rest gis                         | %103
   gis2.( fis2) f8\rest gis                         | %104
@@ -1237,67 +1213,71 @@ lowerTwo = \relative c {
   
 }
 breaks = {
-  \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 1 ( 1- 4)
-  \repeat unfold 3 { s1 \mNoBreak } 
-     \repeat unfold 2 { s1. \mNoBreak }  s1. \mBreak  % line 2 ( 5-10)
-  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 3 (11-15)
-  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 4 (16-20)
-  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 5 (21-25)
-  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 6 (26-30)
-  \repeat unfold 2 { s1. \mNoBreak } s1. \mBreak      % line 7 (31-33)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 8 (34-37)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 9 (38-41)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 10 (42-45)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 11 (46-49)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 12 (50-53)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 13 (54-57)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 14 (58-61)
-  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 15 (62-66)
-  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 16 (67-71)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 17 (72-75)
-  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 18 (76-80)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 19 (81-84)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 20 (85-88)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 21 (89-92)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 22 (93-96)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 23 (97-100)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 24 (101-104)
-  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 25 (105-109)
-  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 25 (110-114)
-  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 26 (115-119)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 27 (120-123)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 28 (124-127)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 29 (128-131)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 30 (132-135)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 31 (136-139)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 32 (140-143)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 33 (144-147)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 34 (148-151)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 35 (152-155)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 36 (156-159)
-  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 37 (160-164)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 38 (165-168)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 39 (169-172)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 40 (173-176)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 41 (177-180)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 42 (181-184)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 43 (185-188)
-  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 44 (189-193)
-  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 45 (194-198)
-  \repeat unfold 4 { s1. \mNoBreak } s1. \mBreak      % line 46 (199-203)
-  \repeat unfold 3 { s1. \mNoBreak } s1. \mBreak      % line 47 (204-207)
-  \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 48 (208-212)
-  \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 49 (213-217)
-  \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 50 (218-222)
-  \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 51 (223-227)
-  \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 52 (228-232)
-  \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 53 (233-237)
-  \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 54 (238-242)
-  \repeat unfold 3 { s1 \mNoBreak } s1 \mBreak        % line 55 (243-246)
-  \repeat unfold 2 { s1 \mNoBreak } s1 \mBreak        % line 56 (247-249)
-  \repeat unfold 4 { s1 \mNoBreak } s1 \mBreak        % line 57 (250-254)
-  \repeat unfold 2 { s1 \mNoBreak } s1 \mBreak        % line 58 (255-257)
-  \repeat unfold 6 { s1 \mNoBreak } s1 \mBreak        % line 59 (258-263)
+  \repeat unfold 3 { s1 | \mNoBreak } s1 | \mBreak        % line 1 ( 1- 4)
+  \repeat unfold 3 { s1 | \mNoBreak }
+     \repeat unfold 2 {s1.| \mNoBreak} s1. | \mBreak    % line 2 ( 5-10)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak    % line 3 (11-15)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak    % line 4 (16-20)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak    % line 5 (21-25)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak    % line 6 (26-30)
+%{%}
+  \repeat unfold 2 { s1. | \mNoBreak } s1. | \mBreak    % line 7 (31-33)
+    
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak    % line 8 (34-37)
+   
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak    % line 9 (38-41)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak    % line 10 (42-45)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak    % line 11 (46-49)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak    % line 12 (50-53)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak    % line 13 (54-57)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak    % line 14 (58-61)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak    % line 15 (62-66)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 16 (67-71)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 17 (72-75)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 18 (76-80)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 19 (81-84)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 20 (85-88)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 21 (89-92)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 22 (93-96)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 23 (97-100)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 24 (101-104)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 25 (105-109)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 25 (110-114)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 26 (115-119)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 27 (120-123)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 28 (124-127)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 29 (128-131)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 30 (132-135)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 31 (136-139)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 32 (140-143)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 33 (144-147)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 34 (148-151)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 35 (152-155)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 36 (156-159)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 37 (160-164)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 38 (165-168)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 39 (169-172)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 40 (173-176)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 41 (177-180)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 42 (181-184)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 43 (185-188)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 44 (189-193)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 45 (194-198)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 46 (199-203)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 47 (204-207)
+  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak        % line 48 (208-212)
+  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak        % line 49 (213-217)
+  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak        % line 50 (218-222)
+  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak        % line 51 (223-227)
+  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak        % line 52 (228-232)
+  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak        % line 53 (233-237)
+  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak        % line 54 (238-242)
+  \repeat unfold 3 { s1  | \mNoBreak } s1  | \mBreak        % line 55 (243-246)
+  \repeat unfold 2 { s1  | \mNoBreak } s1  | \mBreak        % line 56 (247-249)
+  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak        % line 57 (250-254)
+  \repeat unfold 2 { s1  | \mNoBreak } s1  | \mBreak        % line 58 (255-257)
+  \repeat unfold 6 { s1  | \mNoBreak } s1                   % line 59 (258-263)
+  %}
 }
 
 lowerStaff = <<
@@ -1307,14 +1287,14 @@ lowerStaff = <<
 >>
 
 dynamics = {
-  s4-\fPesante s8 s8 s2                               | % 1
-  s4 \noPadTxtScrp s2-\dimTxt \posHairpinA s4\>        | % 2
-  s2. s4\!                                            | % 3
-  s8 \posScriptA s8-\p s2.                            | % 4
+  \posScriptA s4-\fPesante s8 s8 s2                   | % 1
+  s1                                                  | % 2
+  s2. s4                                              | % 3
+  s8 \posScriptA s8-\pianoTxt s2.                     | % 4
   s1                                                  | % 5
-  s4. s8\p s4. \posHairpinC s8\<                      | % 6
+  s4. s8-\pianoTxt s4. \posHairpinC s8\<              | % 6
   s2. s8 s8\!                                         | % 7
-  \posHairpinB s2.\> s8\! \noPadTxtScrp s2 s8  | % 8
+  s2. s8 s2 s8                                        | % 8
   \repeat unfold 12 { s1. | }                         | % 9-20
   s1.                                                 | %21
   s1.                                                 | %22
@@ -1322,16 +1302,16 @@ dynamics = {
   s1.                                                 | %24
   s1.                                                 | %25
   s1.                                                 | %26
-  s1\< s4 s4\!                                        | %27
-  s1\> s2\!                                           | %28
-  s1.\<                                               | %29
-  s2.\!\> s2.\!                                       | %30
+  \posHairpinC s1\< s4 s4\!                           | %27
+  \posHairpinC s1\> s2\!                              | %28
+  s1.                                                 | %29
+  s2. s2.                                             | %30
   \posHairpinG s1\< s4 s16. s32\! s8                  | %31
   s1.                                                 | %32
   s1.                                                 | %33
   s1.                                                 | %34
   s1.                                                 | %35
-  s1.\p                                               | %36
+  \posScriptU s1.\p                                   | %36
   s1.                                                 | %37
   s4 s16 \noPadTxtScrp s16-\crescTxt s4. s2.          | %38
   s1.                                                 | %39
@@ -1344,13 +1324,13 @@ dynamics = {
   s1.-\piuF                                           | %48
   s4 \posHairpinK s8\< s4 s8\! s2.                    | %49
   \repeat unfold 18 { s1. | }                           %50-67
-  s1.\pp                                              | %68
+  \posScriptCC s1.\pp                                 | %68
   \repeat unfold 13 { s1. | }                           %69-81
   s1.-\semprePP                                       | %82
   \repeat unfold 7 { s1. | }                            %83-89
-  \semprePiuPSpanner s1.\startTextSpan                | %90
-  s1 s4\stopTextSpan s8 \eRallSpanner s8\startTextSpan| %91
-  s1 s4 s8. s16\stopTextSpan                          | %92
+  s1.                                                 | %90
+  s1 s4 s8 s8                                         | %91
+  s1 s4 s8. s16                                       | %92
   s1 s4. s8                                           | %93
   s2. s8 s2 s8                                        | %94
   s1.                                                 | %95
@@ -1367,7 +1347,7 @@ dynamics = {
   s1.                                                 | %106
   \repeat unfold 5 { s1. | }                            %107-111
   s2. s2.                                             | %112
-  s2. s4 s2\<                                         | %113
+  s2. s4 \posHairpinAU s2\<                           | %113
   s1.\ff                                              | %114
   \repeat unfold 3 { s1. | }                            %115-117
   s1.                                                 | %118
@@ -1671,7 +1651,7 @@ pedalTwo = {
  \repeat unfold 2 { s1. | }                               %51-52
  s2\sustainOn s1\sustainOff                             | %53
  \repeat unfold 52 { s1. | }                             %54-105
- \posPedalG s1\sustainOn s4 s4\sustainOff               | %106
+ s4 \posPedalL s2.\sustainOn s4 \posPedalG s4\sustainOff| %106
  s1\sustainOn s4 s4\sustainOff                          | %107
  s1\sustainOn s4 s4\sustainOff                          | %108
  s1\sustainOn s4 s4\sustainOff \posPedalRev             | %109

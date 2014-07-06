@@ -3,11 +3,31 @@
 %--------Definitions for Chopin Ballade 1
 staffUp = \change Staff = "upper"
 staffDown = \change Staff = "lower"
-mBreak = { \break }
-mNoBreak = { \noBreak }
+mBreak = {
+  \break 
+}
+mNoBreak = {
+  \noBreak
+}
 
 global = { \key g \minor }
 
+myTitles = \markup {
+       \override #'(baseline-skip . 1)
+       \column {
+         \override #'(baseline-skip . 1)
+       \column {
+         \fill-line {
+           \huge \larger \larger \bold
+           \fromproperty #'header:title
+         }
+       \fill-line {
+         \fromproperty #'header:dedication
+         \fromproperty #'header:composer
+       }
+      }
+     }
+    }
 
 hideF = \tweak #'stencil ##f \f
 hideP = \tweak #'stencil ##f \p
@@ -101,15 +121,15 @@ espressTxt = \markup \italic \larger "espress."
 tenutoTxt = \markup \italic \larger "tenuto"
 pocoCresc = \markup \italic \larger "poco cresc."
 aTempo = \markup \italic \larger "a tempo"
-agitato = \markup \italic \larger "agitato"
+agitato = \markup \italic \larger \raise #2.5 "agitato"
 leggiero = \markup \italic \larger "leggiero"
 conForza = \markup \italic \larger \whiteout "   con forza"
 pPesante = \markup { \whiteout { \dynamic "p" \italic \smaller "(pesante)" } }
 fzSforzato = \markup { \whiteout { \dynamic "fz" \raise #0.4 \musicglyph #"scripts.sforzato" } }
 fzSforzatoHi = \markup { \whiteout { \dynamic "fz" \raise #0.9 \musicglyph #"scripts.sforzato" } }
-sfSforzato = \markup { \dynamic "sf" \raise #0.4 \musicglyph #"scripts.sforzato"  }
+sfSforzato = \markup { \whiteout \dynamic "sf" \raise #0.4 \musicglyph #"scripts.sforzato"  }
 crescTxt = \markup \italic \larger "cresc."
-crescTiny = \markup \italic \small \rotate #7.0  "cresc."
+crescTiny = \markup \italic \small \rotate #5.0  "cresc."
 crescTinyB = \markup \italic \small \rotate #4.0  "cresc."
 crescTinyC = \markup \italic \teeny "cresc."
 crescTinyD = \markup \italic \small "cresc."
@@ -188,12 +208,14 @@ semprePiuPSpanner = {
   \override TextSpanner #'(bound-details left stencil-align-dir-y) = #CENTER
   \override TextSpanner.thickness = 2.1
   \override TextSpanner.staff-padding = 0.0
-  \override TextSpanner.extra-offset = #'( 1 . 1.2 )
+  \once \override TextSpanner #'direction = #DOWN
+  \once \override TextSpanner.extra-offset = #'( 0.4 . -1 )
 }
 eRallSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "e  rall. " }
   \override TextSpanner #'(bound-details left-broken text) = ##f
-  \override TextSpanner.extra-offset = #'( 0 . 1.7 )
+  \once \override TextSpanner #'direction = #DOWN
+  \once \override TextSpanner.extra-offset = #'( 0 . -1 )
 }
 sempreCrescSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre cresc." }
@@ -203,7 +225,8 @@ sempreCrescSpanner = {
   \override TextSpanner.dash-fraction = #0.04
   \override TextSpanner.dash-period = #8.0
   \override TextSpanner.outside-staff-priority = ##f
-  \override TextSpanner.staff-padding = 3.4
+  \override TextSpanner.staff-padding = 0
+  \once \override TextSpanner.extra-offset = #'(0 . -2.8)
 }
 semprePiuCrescSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre più cresc.   " }
@@ -236,10 +259,11 @@ pocoRitenSpanner = {
 ppSpanner = {
   \override TextSpanner.staff-padding = 0.2
   \override TextSpanner #'(bound-details left text) = ##f
-  \override TextSpanner #'(bound-details right text) = \markup { \dynamic "pp" }
+  \override TextSpanner #'(bound-details right text) = \markup { " " \dynamic "pp" }
   \override TextSpanner.avoid-slur = #'inside
   \override TextSpanner.outside-staff-priority = ##f
   \override TextSpanner #'(bound-details right stencil-align-dir-y) = #UP
+  \once \override TextSpanner.extra-offset = #'(-1 . 0.4 )
 }
 setDynTxtSpanStyle = {
   \override DynamicTextSpanner.dash-period = #14.0
@@ -331,10 +355,11 @@ smallNotehead = \once \override NoteHead.font-size = #-3
 
 dynLeft = { \once \override DynamicText.self-alignment-X = 2.5 }
 
-shpSlurA = \shape #'((-0.4 . 3) (3 . 2) (0 . 0) (0.5 . 0.5)) PhrasingSlur
-shpSlurB = \shape #'((-0.4 . 0.2) (1.0 . 1.0) (-0.8 . 1.1) (0 . 0)) Slur
-shpSlurC = \shape #'((-0.6 . -0.5) (3 . 3) (0 . 0) (-0.7 . -1.6)) PhrasingSlur
-shpSlurD = \shape #'(( 0.3 . 1.0) (0.5 . 1.5) (0 . 0.5) (0 . 0.3)) Slur
+shpSlurA = \shape #'((-0.3 . -0.4) (0 . 0) (0 . 0) (0 . 0)) Slur
+shpSlurB = { \shape #'((-0.7 . 2.9) (3 . -0.5) (-1 . 0) (0.5 . 0.5)) PhrasingSlur
+             \shape #'((-0.4 . 0.2) (1.0 . 1.0) (-0.8 . 1.1) (0 . 0)) Slur }
+shpSlurC = \shape #'((-0.6 . -0.9) (3 . 2.5) (0 . 0) (-0.7 . -1.6)) PhrasingSlur
+shpSlurD = \shape #'(( 0.3 . 1.0) (0.5 . 2.4) (-0.5 . 1.8) (0.1 . 2)) Slur
 shpSlurE = \shape #'( ((-0.3 . 0.4) (1 . -0.4) (0 . 1) (0 . 1.6)) 
                       ((-0.9 . 1.4) (0 . 1.2) (1 . 1.0) (0.5 . -1.6)) )PhrasingSlur
 shpSlurF = \shape #'(( 0.3 . 0.8) (0.5 . 1.3) (-0.5 . 1.3) (0 . 0.8)) Tie
@@ -357,13 +382,13 @@ shpSlurR = {  \shpSlurM
                          ((-2.3 . 0.3) (1 . 1.8) (-1.5 . -1.3) (-0.6 . -3.2)) ) PhrasingSlur }
 shpSlurS = \shape #'((0 . -0.4) (0 . 0.6) (-1 . 0.6) (-0.4 . -1.2)) PhrasingSlur
 shpSlurT = \shape #'((0.5 . 0.8) (0.5 . 0.8) (1 . 1) (0.6 . 2)) Slur
-shpSlurU = \shape #'( ((0 . -2) (3 . 1.8) (1 . 1.8) (0 . -0.2)) 
+shpSlurU = \shape #'( ((0 . -2) (3 . 1.0) (1 . 1.0) (0 . -0.2)) 
                       ((-2.0 . 4.0) (-1 . 3.7) (0.5 . 2.8) (0.0 . 2.6)) )PhrasingSlur
 shpSlurV = \shape #'((-0.3 . 1.4) (0 . 1.3) (0 . 0.6) (0 . 0)) PhrasingSlur
 shpSlurW = \shape #'((0.2 . 0.6) (0 . 0.8) (0 . 0.5) (0 . 0.3)) Slur
-shpSlurX = \shape #'((-0.2 . -1.9) (1 . -0.5) (-2 . 1) (0 . -0.6)) PhrasingSlur
-shpSlurY = \shape #'((0 . 0.3) (5 . -2) (-5 . -2) (0.6 . 0.6)) PhrasingSlur
-shpSlurZ = \shape #'( ((-0.5 . 0.0) (3 . -1.5) (-5 . -1.2) (0.0 . 0.7))
+shpSlurX = \shape #'((-0.2 . -1.6) (1.5 . -0.9) (-2 . 0) (0 . -1)) PhrasingSlur
+shpSlurY = \shape #'((0 . 0.6) (5 . -1.0) (-5 . -0.7) (0.6 . 0.9)) PhrasingSlur
+shpSlurZ = \shape #'( ((-0.5 . 0.5) (3 . -0.5) (-5 . -0.2) (0.0 . 1.3))
                       ((0 . 0.5) (1 . -0.5) (-1 . -0.5) (0.4 . 0.4)) ) PhrasingSlur
 shpSlurAA = \shape #'( ((-0.9 . 0.7) (0 . 1.3) (-1 . 0.3) (0.0 . -1.5))
                        ((-3.2 . 0.2) (0 . 3.5) (-1.0 . 1) (0.4 . -1.0))
@@ -419,7 +444,7 @@ shpSlurBQ = \shape #'( ((-0.4 . 0.4) (1 . 1) (-1 . 2.5) (0 . 5))
 shpSlurBR = \shape #'( ((0 . 0) (0 . 0) (0 . 0.3) (0 . 0.4))
                        ((0 . -1.6) (0 . -1.9) (0 . -1.5) (0 . -1.1)) ) Slur
 shpSlurBS = \shape #'( ((0 . 0) (0 . 0) (0 . 0) (0 . 0))
-                       ((-1 . 1.0) (0 . 1.6) (0 . 1) (0 . 0)) ) PhrasingSlur
+                       ((-1 . 0.7) (0 . 1.3) (0 . 0.7) (0 . 0)) ) PhrasingSlur
 shpSlurBT = \shape #'((0 . 0) (1.5 . -2) (-1.5 . -3.4) (0 . 0)) PhrasingSlur
 shpSlurBU = \shape #'( ((0 . 0) (0 . 0) (0 . 0) (0 . 0))
                        ((-2 . -0.4) (1 . 0.5) (0 . 0) (-0.2 . -3.2)) ) PhrasingSlur
@@ -435,7 +460,7 @@ shpSlurCB = \shape #'(( 0 . 0.6) (0 . 0.6) (0 . 0.6) (0 . 0.6)) Slur
 shpSlurCC = \shape #'(( 0.3 . -0.8) (0 . -0.4) (0 . 0.2) (0 . 0)) Slur
 shpSlurCD = \shape #'(( 0 . -0.3) (0 . -0.5) (0 . -0.7) (-0.3 . -0.8)) Slur
 shpSlurCE = \shape #'(( 0 . 0) (1 . 0) (-1 . 0.3) (0.4 . -0.2)) PhrasingSlur
-shpSlurCF = \shape #'(( 0 . -0.8) (0 . -0.8) (0 . -0.6) (0 . -0.6)) Slur
+shpSlurCF = \shape #'(( 0 . -1) (0 . -1) (0 . -0.8) (0 . -0.8)) Slur
 shpSlurCG = \shape #'( (( 0.5 . -2.6) (0.3 . -2) (0 . -1.6) (0.4 . -1.3))
                        (( 0.3 . 2.6) (0.3 . 2.4) (0.3 . 2.4) (0.2 . 2)) ) Slur
 shpSlurCH = \shape #'( (( -0.7 . 0.2) (0 . 0) (0 . -1) (0 . -1.1))
@@ -566,21 +591,37 @@ shpSlurGI = \shape #'((-0.4 . 0.8) (0 . 1.4) (0 . 0.6) (0 . 0.3)) Slur
 shpSlurGJ = { \shape #'((-0.4 . 0.2) (-0.2 . 0.2) (0 . 0.2) (0 . 0.2)) Tie
               \shape #'( ((0 . 0.2) (0 . 0.2) (0 . 0.2) (0 . 0.2))
                          ((-1 . 0) (3 . -0.5) (-3 . -1) (-0.9 . 3)) ) PhrasingSlur }
+shpSlurGK = \shape #'((-0.3 . -1) (0 . 0) (0 . 0) (0 . 0)) Slur
+shpSlurGL = \shape #'((0.7 . -0.6) (0 . -0.6) (0 . -0.6) (0 . -0.3)) Slur
+shpSlurGM = \shape #'((0.3 . 0.5) (0.3 . 0.5) (0.3 . 0.5) (0.3 . 0.5)) Slur
+shpSlurGN = \shape #'((-0.4 . -0.2) (0 . -0.5) (0 . -0.5) (0.4 . -0.2)) Slur
+shpSlurGO = \shape #'((-0.4 . -0.4) (0 . -0.3) (0 . -0.5) (0.4 . -0.5)) Slur
+shpSlurGP = \shape #'((0 . -0.9) (0 . -0.6) (0 . -0.1) (-0.3 . -0.4)) PhrasingSlur
+shpSlurGQ = \shape #'((0.5 . -1.6) (1 . -0.2) (-1 . 0.4) (-0.5 . -0.6)) PhrasingSlur
+shpSlurGR = \shape #'((2 . -0.5) (1 . -0.2) (-0.5 . 0.3) (0.5 . 0)) Slur
+shpSlurGS = \shape #'((-1 . 2.5) (1 . 2.3) (-1 . 0.7) (0 . 0)) Slur
+shpSlurGT = \shape #'((0.3 . 0.7) (1 . 0.7) (-1 . 0.7) (0 . 1.2)) Slur
+shpSlurGU = \shape #'( ((0 . 0) (2 . 1) (-2 . 1) (0 . 0.4)) 
+                       ((-0.6 . 3.8) (-0.4 . 3.2) (0 . 2.3) (0.2 . 1.5)) ) PhrasingSlur
+shpSlurGV = \shape #'((0.3 . -1.7) (0.5 . -1.0) (-0.5 . -0.4) (0 . -0.5)) Slur
+shpSlurGW = \shape #'((-1 . 2.5) (1 . 2.3) (-1 . -0.5) (-0.5 . -0.5)) Slur
+shpSlurGY = \shape #'((0.5 . -0.6) (1 . 0.2) (-1 . 1.2) (0.3 . -0.3)) PhrasingSlur
+shpSlurGZ = \shape #'((0 . -1) (0 . -0.7) (-0.5 . -0.2) (0 . -0.1)) Slur
+shpSlurHA = \shape #'((0.3 . 0.8) (0.3 . 0.8) (0.3 . 0.8) (0.3 . 0.8)) Slur
+shpSlurHB = \shape #'((-0.4 . -0.30) (0 . -0.5) (0 . -0.7) (-0.3 . -1.3)) Slur
+shpSlurHC = \shape #'((-0.4 . -1.8) (0 . -1.8) (0 . -1.8) (0 . -1.8)) Slur
 
 posHairpinToBlnF = \once \override Hairpin.to-barline = ##f 
 posHairpinA = {
             \once \override Hairpin.rotation = #'( 1.6 -1 0 )
-            \once \override Hairpin.extra-offset = #'( 0 . 0.4 )
+            \once \override Hairpin.extra-offset = #'( 0 . 9.7 )
             \once \override Hairpin.padding = 0.0
 }
-posHairpinB = \once \override Hairpin.extra-offset = #'( -3.0 . 1 )
-posHairpinC = {
-            \once \override Hairpin.extra-offset = #'( -0.4 . 1 )
-            \once \override Hairpin.padding = 0.0
-}
+posHairpinB = \once \override Hairpin.extra-offset = #'( -3.0 . 0 )
+posHairpinC = \once \override Hairpin.extra-offset = #'( 0 . -1 )
 posHairpinD = {
             \once \override Hairpin.rotation = #'( -1.6 -1 0 )
-            \once \override Hairpin.extra-offset = #'( 0 . -1.0 )
+            \once \override Hairpin.extra-offset = #'( 0 . 8.1 )
             \once \override Hairpin.padding = 0.0
             \once \override Hairpin.height = 0.45
 }
@@ -591,7 +632,7 @@ posHairpinE = {
 posHairpinF = {
             \once \override Hairpin.rotation = #'( 1.0 -1 0 )
             \once \override Hairpin.extra-offset = #'( 0 . -0.6 )
-            \once \override Hairpin.padding = 0.3
+            \once \override Hairpin.padding = 0.0
 }
 posHairpinG = {
             \once \override Hairpin.height = 0.49
@@ -649,25 +690,23 @@ posHairpinPrev = {
 }
 posHairpinQ = \once \override Hairpin.extra-offset = #'( -0.7 . 0 )
 posHairpinR = {
-            \once \override Hairpin.rotation = #'( 8 0 0 )
+            \once \override Hairpin.rotation = #'( 5 0 0 )
             \once \override Hairpin.height = 0.88
             \once \override Hairpin.bound-padding = 0.0
-            \once \override Hairpin.extra-offset = #'( 1.6 . 0.9 )
+            \once \override Hairpin.extra-offset = #'( 23.3 . 1.2 )
 }
 posHairpinS = {
             \once \override Hairpin.rotation = #'( 3 0 0 )
             \once \override Hairpin.height = 0.86
             \once \override Hairpin.bound-padding = 0.0
-            \once \override Hairpin.extra-offset = #'( 0 . 0.1 )
+            \once \override Hairpin.extra-offset = #'(-27 . -1.8)
 }
 posHairpinT ={
-            \once \override Hairpin.outside-staff-priority = ##f
-            \once \override Hairpin.extra-offset = #'( 0 . 2.1 )
+            \once \override Hairpin.height = 0.4
+            \once \override Hairpin.extra-offset = #'( 0 . -0.35 )
 }
 posHairpinU = {
-            \once \override Hairpin.bound-padding = 0.0
-            \once \override Hairpin.padding = 0.0
-            \once \override Hairpin.staff-padding = 0.0
+            \once \override Hairpin.outside-staff-priority = ##f
             \once \override Hairpin.height = 0.5
             \once \override Hairpin.extra-offset = #'( -0.6 . 0 )
 }
@@ -758,6 +797,13 @@ posHairpinAP = {
             \once \override Hairpin.height = 0.8
 }
 posHairpinAQ = \once \override Hairpin.extra-offset = #'( 2.7 . 0 )
+posHairpinAR = \once \override Hairpin.extra-offset = #'( 0 . 9.4 )
+posHairpinAS = \once \override Hairpin.extra-offset = #'( 2 . 1 )
+posHairpinAT = {
+            \once \override Hairpin.extra-offset = #'( 0 . -1 )
+            \once \override Hairpin.height = 0.48
+}
+posHairpinAU = \once \override Hairpin.height = 0.48
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
@@ -771,7 +817,7 @@ posBeamI = \once \override Beam.positions = #'(-7.7 . 0.5)
 posBeamJ = \once \override Beam.positions = #'(-6.5 . -2)
 posBeamK = \once \override Beam.positions = #'(2.8 . 6.4)
 
-posScriptA = \once \override TextScript.extra-offset = #'( 0 . -1.5 )
+posScriptA = \once \override TextScript.extra-offset = #'( 0 . -0.8 )
 posScriptB = \once \override Script.extra-offset = #'( 0.2 . -0.7 ) 
 posScriptC = \once \override TextScript.extra-offset = #'( 0.5 . 0.6 )
 posScriptD = \once \override Script.extra-offset = #'( 0.3 . -0.4 )
@@ -779,10 +825,10 @@ posScriptE = \once \override TextScript.extra-offset = #'( -0.3 . -1.3 )
 posScriptF = \once \override TextScript.extra-offset = #'( 0 . -0.3 )
 posScriptG = \once \override Script.extra-offset = #'( 0 . -0.4 )
 posScriptH = \once \override Script.extra-offset = #'( 0 . 0.1 )
-posScriptI = \once \override TextScript.extra-offset = #'( 1.8 . -0.6 )
+posScriptI = \once \override TextScript.extra-offset = #'( -4.3 . 0.2 )
 posScriptJ = \once \override Script.extra-offset = #'( -0.3 . -1.4 )
 posScriptK = \once \override Script.extra-offset = #'( -0.4 . -0.4 )
-posScriptL = \once \override TextScript.extra-offset = #'( -0.7 . -0.7 )
+posScriptL = \once \override TextScript.extra-offset = #'( -0.7 . -0.5 )
 posScriptM = \once \override DynamicText.extra-offset = #'( 0 . -0.9 )
 posScriptN = {
            \once \override DynamicText.extra-offset = #'( -3.3 . -1.3 )
@@ -797,22 +843,22 @@ posScriptS = \once \override DynamicText.extra-offset = #'( 0.6 . 1 )
 posScriptT = {
           \once \override TextScript.staff-padding = 0.0
           \once \override TextScript.padding = 0.0
-          \once \override TextScript.extra-offset = #'(0.5 . -0.5 )
+          \once \override TextScript.extra-offset = #'(1.1 . -0.4 )
 }
 posScriptU = \once \override DynamicText.extra-offset = #'(0 . -0.7)
 posScriptV = {
           \once \override TextScript.staff-padding = 0.0
           \once \override TextScript.padding = 0.0
-          \once \override TextScript.extra-offset = #'(0.8 . 2.1 )
+          \once \override TextScript.extra-offset = #'(1.6 . -0.6)
 }
 posScriptW = {
           \once \override TextScript.outside-staff-priority = ##f
-          \once \override TextScript.extra-offset = #'(-1.2 . -1.6 )
+          \once \override TextScript.extra-offset = #'(-1.8 . -1.8 )
 }
 posScriptY = \override Script.extra-offset = #'( 0.3 . 0.7 )
 posScriptYrev = \revert Script.extra-offset
 posScriptZ = {
-          \once \override TextScript.extra-offset = #'( -1 . 0.2 )
+          \once \override TextScript.extra-offset = #'( -41 . 0.5 )
           \once \override TextScript.padding = 0.0
 }
 posScriptAA = \override DynamicText.extra-offset = #'( -0.2 . -0.4 )
@@ -893,6 +939,17 @@ posScriptBV = \once \override TupletNumber.extra-offset = #'(0 . 7 )
 posScriptBW = \once \override DynamicText.extra-offset = #'(3.4 . -1.1 )
 posScriptBX = \once \override TupletNumber.extra-offset = #'(1.7 . -11.3)
 posScriptBY = \once \override TupletNumber.extra-offset = #'(1.7 . 9.6 )
+posScriptBZ = {
+          \once \override TextScript.avoid-slur = #'inside
+          \once \override TextScript.outside-staff-priority = ##f
+          \once \override TextScript.extra-offset = #'( 0 . -1.2 ) }
+posScriptCA = \once \override TextScript.extra-offset = #'(-4 . 0.2)
+posScriptCB = \once \override TextScript.extra-offset = #'(22.2 . -9.4)
+posScriptCC = \once \override DynamicText.extra-offset = #'(0.5 . -0.7)
+posScriptCD = \once \override Script.extra-offset = #'(0 . 7.6 )
+posScriptCE = \once \override TextScript.extra-offset = #'(25.2 . 1.7)
+posScriptCF = \once \override Script.extra-offset = #'(0 . 3 )
+posScriptCG = \once \override TupletNumber.extra-offset = #'( 0 . -10.3)
 
 posScrpRevExOff =  \revert Script.extra-offset
 posScrpRevPad = \revert Script.padding
@@ -903,11 +960,12 @@ posPedalC = \override SustainPedal.extra-offset = #'(0 . 0.3 )
 posPedalD = \override SustainPedal.extra-offset = #'(1.2 . 0.9 )
 posPedalE = \override SustainPedal.extra-offset = #'(1.2 . 1.3 )
 posPedalF = \override SustainPedal.extra-offset = #'(0.5 . 0.6 )
-posPedalG = \override SustainPedal.extra-offset = #'(1.7 . 1.5 )
+posPedalG = \override SustainPedal.extra-offset = #'(1.4 . 0.4 )
 posPedalH = \once \override SustainPedal.extra-offset = #'(0.7 . 0)
 posPedalI = \once \override Staff.SustainPedal.extra-offset = #'( 0 . -1.5)
 posPedalJ = \once \override Staff.SustainPedal.extra-offset = #'( 0.8 . 0.4)
 posPedalK = \once \override SustainPedal.extra-offset = #'( 0.3 . 3.2 )
+posPedalL = \once \override SustainPedal.extra-offset = #'( -2.6 . -1 )
 posPedalRev = \revert SustainPedal.extra-offset
 hideNextPedal = \once \omit Voice.SustainPedal
 
