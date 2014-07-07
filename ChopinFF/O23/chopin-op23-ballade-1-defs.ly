@@ -158,6 +158,8 @@ pocoRiten = \markup \italic \larger "poco riten."
 piuAnimato = \markup \italic \larger "più animato"
 tenTxt = \markup { \center-align  \italic "  ten." }
 sharpPrall = \markup \override #'(baseline-skip . 1.7) \center-column { \teeny \musicglyph #"accidentals.sharp" \musicglyph #"scripts.prall" }
+sharpTxt = \markup \musicglyph #"accidentals.sharp"
+naturalTxt = \markup \musicglyph #"accidentals.natural"
 
 ritenSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "ritenuto    " }
@@ -225,14 +227,15 @@ sempreCrescSpanner = {
   \override TextSpanner.dash-fraction = #0.04
   \override TextSpanner.dash-period = #8.0
   \override TextSpanner.outside-staff-priority = ##f
-  \override TextSpanner.staff-padding = 0
+  \override TextSpanner.staff-padding = 0.0
   \once \override TextSpanner.extra-offset = #'(0 . -2.8)
 }
 semprePiuCrescSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "sempre più cresc.   " }
   \override TextSpanner #'(bound-details left-broken text) = ##f
-  \override TextSpanner.padding = 0.0
-  \alterBroken staff-padding #'(4.5 2.7) TextSpanner
+  \once \override TextSpanner.outside-staff-priority = ##f
+  \once \override TextSpanner.padding = 0.0
+  \once \alterBroken extra-offset #'((0 . -3.4) (0 . -2.7)) TextSpanner
 }
 dimPiuRallentSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic \larger "dim. e più rallent.    " }
@@ -246,6 +249,9 @@ dimPiuRallentSpanner = {
 sforzatoSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \concat { \dynamic "sf" \raise #0.4 \musicglyph #"scripts.sforzato" "  " } }
   \override TextSpanner #'(bound-details left-broken text) = ##f
+  \override TextSpanner.dash-period = #14.0
+  \override TextSpanner.dash-fraction = #0.04
+  \override TextSpanner.dash-period = #8.0
   \once \override TextSpanner.extra-offset = #'( -1.9 . 0.7 )
 }
 pocoRitenSpanner = {
@@ -334,6 +340,8 @@ moveNoteQtr = \once \override NoteColumn #'force-hshift = #2.0
 moveNoteCin = \once \override NoteColumn #'force-hshift = #-0.1
 moveNoteSix = \once \override NoteColumn #'force-hshift = #0.3
 moveNoteSep = \once \override NoteColumn #'force-hshift = #1.3
+moveNoteOct = \once \override NoteColumn #'force-hshift = #-3
+moveNoteNov = \once \override NoteColumn #'force-hshift = #0.4
 
 
 shortStemOne = \once \override Stem.length-fraction = #(magstep -4)
@@ -760,7 +768,7 @@ posHairpinAI = {
     \revert Hairpin.extra-offset
     \revert Hairpin.height
     \revert Hairpin.rotation
-    \once \override Hairpin.extra-offset = #'(-7.6 . 13.3)
+    \once \override Hairpin.extra-offset = #'(-7.6 . 14.1)
     \once \override Hairpin.rotation = #'( 3.3 -1 0 )
     \once \override Hairpin.height = 1.1
 }
@@ -804,6 +812,7 @@ posHairpinAT = {
             \once \override Hairpin.height = 0.48
 }
 posHairpinAU = \once \override Hairpin.height = 0.48
+posHairpinAV = \once \override Hairpin.extra-offset = #'( -29.7 . 1.4 )
 
 posBeamA = \once \override Beam.positions = #'(2.3 . 3.7)
 posBeamB = \once \override Beam.positions = #'(2.3 . 2.7)
@@ -879,7 +888,7 @@ posScriptAF = {
           \once \override TextScript.extra-offset = #'(0.4 . -6.3)
 }
 posScriptAG = \once \override Script.padding = 1.0
-posScriptAH = \once \override TextScript.padding = 1.4
+posScriptAH = \once \override TextScript.padding = 2.0
 posScriptAI = \once \override TextScript.extra-offset = #'( -0.7 . -0.9 )
 posScriptAJ = {
          \once \override Arpeggio.right-padding = 0.0
@@ -950,6 +959,8 @@ posScriptCD = \once \override Script.extra-offset = #'(0 . 7.6 )
 posScriptCE = \once \override TextScript.extra-offset = #'(25.2 . 1.7)
 posScriptCF = \once \override Script.extra-offset = #'(0 . 3 )
 posScriptCG = \once \override TupletNumber.extra-offset = #'( 0 . -10.3)
+posScriptCH = \once \override TextScript.extra-offset = #'( -13.1 . 16.7)
+posScriptCI = \once \override TextScript.extra-offset = #'( 0 . -1.4)
 
 posScrpRevExOff =  \revert Script.extra-offset
 posScrpRevPad = \revert Script.padding
@@ -1071,6 +1082,28 @@ unSqueezeNotation = {
   \revert Staff.AccidentalPlacement.right-padding
   \revert Staff.Accidental.stencil
   \revert Staff.NoteHead.stencil
+}
+
+chordMarkupA = \markup {
+  \score {
+     \new Staff \with {
+         \remove "Staff_symbol_engraver"
+         \remove "Clef_engraver"
+         \remove "Key_engraver"
+         \remove "Time_signature_engraver"
+     }
+     {
+        \override Staff.AccidentalPlacement #'right-padding = #-0.05
+        \override Staff.Accidental #'stencil =
+            #(lambda (grob)
+            (ly:stencil-scale (ly:accidental-interface::print grob) 0.92 1))
+        \override Staff.NoteHead #'stencil =
+            #(lambda (grob)
+            (ly:stencil-scale (ly:note-head::print grob) 0.96 1.02))
+        \key g \minor <dis''b'!a'>4
+     }
+     \layout { }
+  }
 }
 
 %{

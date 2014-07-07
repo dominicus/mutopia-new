@@ -205,9 +205,19 @@ upperOne =  \relative c {
   \stemUp \tupletSpan 2. \tupletUp
   <cis cis,>4( <b b,>4. <ais ais,>8) \times 3/4 { 
      \posScriptCG \shpSlurHC \posHairpinAT <b b,>4(_\< <bis bis,> <cis cis,> <gis gis,>)\! }     | %112
-  \tupletDown <b b,>4( a4. gis8 \grace { fis16[ gis] } fis4) eis8-.( fis-. gis-. a-.)            | %113
-  \shpSlurCH <b,gis e d>2.(\( <e cis gis e>2) \shpSlurCG <e cis gis e d>4(                       | %114
-%{115%}
+\tag #'printed {
+  \tupletDown <b b,>4( a4. gis8 \grace { f16[ gis] } \moveNoteOct f4) eis8-.( f-. gis-. a-.)          | %113-print
+}
+\tag #'played {
+  \tupletDown <b b,>4( a4. gis8 \grace { fis16[ gis] } fis4) eis8-.( fis-. gis-. a-.)    | %113-midi
+}
+\tag #'printed {
+  \shpSlurCH  <b,gis ees d>2.(\( <e cis gis ees>2) \shpSlurCG <e cis gis ees d>4(          | %114-print
+}
+\tag #'played {
+  \shpSlurCH  <b gis e d>2.(\( <e cis gis e>2) \shpSlurCG <e cis gis e d>4(              | %114-midi
+}
+
   \stemNeutral \unSqueezeNotation
   <a,cis,a>4)\) b\rest \shpSlurCI <a'cis,a>\( <a'cis,a>2 <gis cis,gis>4                          | %115
   \shpSlurCC <fis cis fis,>2.(<gis dis b>2)<gis dis a>4(                                         | %116
@@ -252,8 +262,8 @@ upperOne =  \relative c {
   \shpSlurCN fis(_\poco g g'd_\aTxt ees b_\poco c g bes aes g_\crescTwo f)                       | %142
   \shpSlurCN fis( g g'd ees b c g bes aes g f)                                                   | %143
 %{144%}
-  \shpSlurCP fis8\(\< g g'd ees b c g bes aes g f\!                                              | %144
-  fes8 ees d des c ces bes a! c bes a aes\)                                                      | %145
+  \shpSlurCP fis8\( g g'd ees b c g bes aes g f                                                  | %144
+  \posHairpinAV fes8\< ees d des c ces bes a! c bes a aes\!\)                                    | %145
   \shpSlurCR \posHairpinY g\<( aes a bes c bes \posScriptAD aes-\crescTinyC bes b c des c\!)     | %146
 %{147%}
   \shpSlurCQ \posHairpinY \alignBeamTre a!\<(bes b c d!c \posScriptAD bes-\crescTinyC c cis d ees d\!) | %147
@@ -578,7 +588,12 @@ upperTwo =  \relative c' {
   \moveNoteTre a1.                                            | %110
   \moveNoteTre gis1.                                          | %111
   fis2. eis2 s4                                               | %112
-  <fis cis>2. <dis b a>4 <dis b a>8<dis b a><dis b a><dis b a>| %113
+\tag #'printed {
+  \moveNoteNov <f cis>2. s4 <d b a>8<d b a><d b a><d b a>   | %113-print
+}
+\tag #'played {
+  <fis cis>2. <dis b a>4 <dis b a>8<dis b a><dis b a><dis b a>| %113-played
+}
   s1.                                                         | %114
   \unSqueezeNotation
   \repeat unfold 6 { s1. | }                                    %115-120
@@ -697,7 +712,12 @@ upperTre = \relative c' {
   s1.                                      | %99
   s1  e4. s8                               | %100
   \repeat unfold 12 { s1. | }                %101-112
-  s4 a2 s2.                                | %113
+\tag #'printed {
+  s4 a2 s2.              | %113-print
+}
+\tag #'played {
+  s4 a2 <dis b a>4 s2                        | %113-midi
+}
   \repeat unfold 80 { s1. | }                %114-193
   s1 \tweak Stem.transparent ##t d,2       | %194
   s1.                                      | %195
@@ -898,7 +918,7 @@ lowerOne = \relative c, {
   <fis fis,>4 <d'fis,>( <a'a,>) <b,,b,> <d'~ fis,>( <a'd,b>)   | %110
   <e,e,>4 <cis'e,>( <gis'gis,>) <a,,a,><cis'~e,>( <gis'cis,a>) | %111
   <d,d,>4 <b'd,>(<fis'fis,>) <cis,cis,> <cis'gis>(<eis b>)     | %112
-  \posScriptCF <fis,,fis,>^> fis'2 <bes,bes,>4 fis'2           | %113
+  \posScriptCF <fis,,fis,>^> fis'2 \posScriptCH <bes,bes,>4_\chordMarkupA fis'2           | %113
   <e,e,>4<gis'b,><b ees,><d gis,><b ees,><gis b,>| %114
   <a,a,>4 <cis'e,> <e a,> <a cis, ><e a,><cis e,>| %115
   \unSqueezeNotation
@@ -1356,7 +1376,7 @@ dynamics = {
   s2 \posHairpinV s1\<                                | %121
   s16 s16\! s8 s1^\moltoCresc s4                      | %122
   s4 \posHairpinV s1\< s8 s8\!                        | %123
-  s1.^\ffz                                            | %124
+  \posScriptCI s1.^\ffz                               | %124
   s4^\dimTxt s4\> s1                                  | %125
   s2.\p \noPadSpanner \setDynTxtSpanStyle s2.\cresc   | %126
   \repeat unfold 3 { s1. | }                            %127-129
@@ -1687,7 +1707,7 @@ pedalTwo = {
 
 %-------Typeset music 
 \score {
-    %\removeWithTag #'played
+    \keepWithTag #'printed
     \new PianoStaff <<
         \new Staff = "upper" \with { \consists "Span_arpeggio_engraver" }
            { \clef treble \global \connectArpeggio \upperStaff }
@@ -1707,12 +1727,13 @@ pedalTwo = {
 
 %-------generate Midi
 \score {
-    %\removeWithTag #'printed
+    \keepWithTag #'played
     \context PianoStaff <<
         \set PianoStaff.midiInstrument = "acoustic grand"
         \new Staff = "upper" { \clef treble \global \upperStaff }
         \new Staff = "lower" { \clef bass \global \lowerStaff }
     >>
     \midi  { }
+%    \layout { }
 }
 %}
