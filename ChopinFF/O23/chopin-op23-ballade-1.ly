@@ -16,10 +16,11 @@
     top-markup-spacing.basic-distance = #3         %-dist. from bottom of top margin to the first markup/title
     markup-system-spacing.basic-distance = #3      %-dist. from header/title to first system
     top-system-spacing.basic-distance = #8         %-dist. from top margin to system in pages with no titles
-    last-bottom-spacing.basic-distance = #4        %-pads music from copyright block
+    last-bottom-spacing.basic-distance = #6        %-pads music from copyright block
     ragged-bottom = ##t
-    ragged-last-bottom = ##t    
+%    ragged-last-bottom = ##t    
     bookTitleMarkup = \myTitles
+    %page-count = 12
 }
 
 \header {
@@ -212,7 +213,7 @@ upperOne =  \relative c {
   \tupletDown <b b,>4( a4. gis8 \grace { fis16[ gis] } fis4) eis8-.( fis-. gis-. a-.)    | %113-midi
 }
 \tag #'printed {
-  \shpSlurCH  <b,gis ees d>2.(\( <e cis gis ees>2) \shpSlurCG <e cis gis ees d>4(          | %114-print
+  \shpSlurCH \posScriptCK <b,gis ees d>2.(\(^\naturalTxt <e cis gis ees>2) \shpSlurCG <e cis gis ees d>4(          | %114-print
 }
 \tag #'played {
   \shpSlurCH  <b gis e d>2.(\( <e cis gis e>2) \shpSlurCG <e cis gis e d>4(              | %114-midi
@@ -713,7 +714,7 @@ upperTre = \relative c' {
   s1  e4. s8                               | %100
   \repeat unfold 12 { s1. | }                %101-112
 \tag #'printed {
-  s4 a2 s2.              | %113-print
+  s4 \posScriptCJ a2_\sharpTxt s2.              | %113-print
 }
 \tag #'played {
   s4 a2 <dis b a>4 s2                        | %113-midi
@@ -729,7 +730,7 @@ upperTre = \relative c' {
   s2. \stemUp g4                           | %216
   \repeat unfold 33 { s1 | }                 %217-249
   \posHairpinAO s1^\<                      | %250
-  s2 s4 s4\!                              | %251
+  s2 s4 s4\!                               | %251
 }
 upperQtr = \relative c' {
   \time 4/4
@@ -917,9 +918,22 @@ lowerOne = \relative c, {
   \squeezeNotation
   <fis fis,>4 <d'fis,>( <a'a,>) <b,,b,> <d'~ fis,>( <a'd,b>)   | %110
   <e,e,>4 <cis'e,>( <gis'gis,>) <a,,a,><cis'~e,>( <gis'cis,a>) | %111
-  <d,d,>4 <b'd,>(<fis'fis,>) <cis,cis,> <cis'gis>(<eis b>)     | %112
-  \posScriptCF <fis,,fis,>^> fis'2 \posScriptCH <bes,bes,>4_\chordMarkupA fis'2           | %113
-  <e,e,>4<gis'b,><b ees,><d gis,><b ees,><gis b,>| %114
+\tag #'printed {
+  <d,d,>4 <b'd,>(<fis'fis,>) <cis,cis,> \posScriptCL <cis'g>(_\sharpTxt <eis b>) | %112-print
+}
+\tag #'played {
+  <d,d,>4 <b'd,>(<fis'fis,>) <cis,cis,> <cis'gis>(<eis b>)                       | %112-midi
+}
+\tag #'printed {
+  \posScriptCF <fis,,fis,>4^> \posScriptCM f'2_\sharpTxt \posScriptCH <bes,bes,>4_\chordMarkupA f'2 | %113-print
+}
+\tag #'played {
+  \posScriptCF <fis,fis,>4^> fis'2 \posScriptCH <bes,bes,>4_\chordMarkupA fis'2                     | %113-midi
+}
+  <e,e,>4
+\tag #'printed { \posScriptCN <gis'bes,>4_\naturalTxt <b ees,><d gis,><b ees,><gis bes,> }
+\tag #'played  {<gis b,>4 <b ees,><d gis,><b ees,><gis b,> }                                         | %114
+
   <a,a,>4 <cis'e,> <e a,> <a cis, ><e a,><cis e,>| %115
   \unSqueezeNotation
   <b,b,>4 <b'fis ><dis a> <fis b, ><dis a><b fis>| %116
@@ -1734,6 +1748,6 @@ pedalTwo = {
         \new Staff = "lower" { \clef bass \global \lowerStaff }
     >>
     \midi  { }
-%    \layout { }
+ %   \layout { }
 }
 %}

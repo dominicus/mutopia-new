@@ -158,8 +158,8 @@ pocoRiten = \markup \italic \larger "poco riten."
 piuAnimato = \markup \italic \larger "più animato"
 tenTxt = \markup { \center-align  \italic "  ten." }
 sharpPrall = \markup \override #'(baseline-skip . 1.7) \center-column { \teeny \musicglyph #"accidentals.sharp" \musicglyph #"scripts.prall" }
-sharpTxt = \markup \musicglyph #"accidentals.sharp"
-naturalTxt = \markup \musicglyph #"accidentals.natural"
+sharpTxt = \markup \fontsize #-1.0 \musicglyph #"accidentals.sharp"
+naturalTxt = \markup \fontsize #-1.0 \musicglyph #"accidentals.natural"
 
 ritenSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup { \italic "ritenuto    " }
@@ -959,8 +959,13 @@ posScriptCD = \once \override Script.extra-offset = #'(0 . 7.6 )
 posScriptCE = \once \override TextScript.extra-offset = #'(25.2 . 1.7)
 posScriptCF = \once \override Script.extra-offset = #'(0 . 3 )
 posScriptCG = \once \override TupletNumber.extra-offset = #'( 0 . -10.3)
-posScriptCH = \once \override TextScript.extra-offset = #'( -13.1 . 16.7)
+posScriptCH = \once \override TextScript.extra-offset = #'( -12.9 . 16.8)
 posScriptCI = \once \override TextScript.extra-offset = #'( 0 . -1.4)
+posScriptCJ = \once \override TextScript.extra-offset = #'( -4.0 . 7.2)
+posScriptCK = \once \override TextScript.extra-offset = #'( -1.05 . -7.5)
+posScriptCL = \once \override TextScript.extra-offset = #'( -2.4 . 5.25)
+posScriptCM = \once \override TextScript.extra-offset = #'( -2.3 . 5.1)
+posScriptCN = \once \override TextScript.extra-offset = #'( -1.5 . 4.8)
 
 posScrpRevExOff =  \revert Script.extra-offset
 posScrpRevPad = \revert Script.padding
