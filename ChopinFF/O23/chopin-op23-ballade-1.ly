@@ -5,7 +5,7 @@
 
 \version "2.18.2"
 
-#(set-default-paper-size "letter")
+%#(set-default-paper-size "letter")
 #(set-global-staff-size 18)
 
 %--------Definitions
@@ -13,14 +13,16 @@
 
 \paper {
     top-margin = 6\mm                              %-minimum top-margin: 8mm
-    top-markup-spacing.basic-distance = #3         %-dist. from bottom of top margin to the first markup/title
-    markup-system-spacing.basic-distance = #3      %-dist. from header/title to first system
-    top-system-spacing.basic-distance = #8         %-dist. from top margin to system in pages with no titles
-    last-bottom-spacing.basic-distance = #6        %-pads music from copyright block
-    ragged-bottom = ##t
+    top-markup-spacing.basic-distance = #6         %-dist. from bottom of top margin to the first markup/title
+    markup-system-spacing.basic-distance = #5      %-dist. from header/title to first system
+    top-system-spacing.basic-distance = #12         %-dist. from top margin to system in pages with no titles
+    last-bottom-spacing.basic-distance = #12        %-pads music from copyright block
+%    ragged-bottom = ##t
 %    ragged-last-bottom = ##t    
     bookTitleMarkup = \myTitles
-    %page-count = 12
+%    min-systems-per-page = 5
+%    max-systems-per-page = 6
+%    page-count = 12
 }
 
 \header {
@@ -277,7 +279,8 @@ upperOne =  \relative c {
   d,8) d' \shpSlurDB g,_( b fis ees' d, d' g, b gis f'                                           | %152
 %{153%}
   \squeezeNotationTwo
-  e,8) e' a, cis ais g' fis, fis' \shpSlurDC b,_( dis bis a'!\)\stopTextSpan                     | %153
+  \tag #'printed { \posScriptCO ees,8)_\naturalTxt } \tag #'played { e8) } 
+     e' a, cis ais g' fis, fis' \shpSlurDC b,_( dis bis a'!\)\stopTextSpan                       | %153
   \squeezeNotation \stemDown \shortStemCin
   <cis a fis cis>4-.)\alignBeamQtr\shpSlurDD bis,8\(cis dis eis \alignBeamCin fis gis a b cis dis| %154
   eis fis gis a fis cis a fis cis a fis cis\)                                                    | %155
@@ -421,35 +424,43 @@ upperOne =  \relative c {
   \stemNeutral cis8[ d ees e f fis] \tupletUp \posScriptBJ
      g[ gis a bes b c!]                                                  | %243
    cis8[ d ees e f fis]  g[ gis a bes b c!]                              | %244
-  cis8[ d ees e f fis] \ottava #1 \setOttavaStyle
+  cis8[ d ees e f fis] \ottava #1 \setOttavaStyle \posOttavaE
      g[ gis a bes b \posScriptBK cis]\)_\fzSforzato }                    | %245
-  %\set subdivideBeams = ##t
-  \scaleDurations 16/13 {
-     \shpSlurGC ees16[\( d
-     f ees d
-     c b d c  bes a g fis] }                                        | %246
-  a16 g f ees d \ottava #0 ees d f! ees d c b d c bes a             | %247
+  \scaleDurations 16/13 { \posBeamM
+     \shpSlurGC ees16[\( \cntBeamRtOne d
+     \cntBeamLfOne f ees \cntBeamRtOne d
+     \cntBeamLfOne c b d \cntBeamRtOne c
+     \cntBeamLfOne bes a g \cntBeamRtOne fis] }                          | %246
+  \bar "!"
+  \posBeamL \cntBeamLfOne a16[ g f ees \cntBeamRtOne d \ottava #0
+  \cntBeamLfOne ees \cntBeamRtOne d
+  \cntBeamLfOne f! ees d c \cntBeamRtOne b
+  \cntBeamLfOne d c bes \cntBeamRtOne a                                  | %247
   \scaleDurations 16/19 {
-     g16 fis a g fis ees d ees d f ees d c b d c bes a g }          | %248
+     \cntBeamLfOne g16 fis a \cntBeamRtOne g
+     \cntBeamLfOne fis  ees d ees \cntBeamRtOne d
+     \cntBeamLfOne f ees d \cntBeamRtOne c
+     \cntBeamLfOne b d c bes a \cntBeamRtOne g }                         | %248
+  \bar "!"
   \scaleDurations 16/20 {
-     fis16 ees d \staffDown c bes a g fis ees d c bes a g fis 
-     ees d c bes a }                                                | %249
-  \hideNotes g1\) \unHideNotes \stemUp \slurUp                      | %250
+     \cntBeamLfOne fis16 ees d \staffDown c bes a g fis ees d c bes 
+     a g fis ees d c bes a] }                                              | %249
+  \hideNotes g1\) \unHideNotes \stemUp \slurUp                             | %250
   \scaleDurations 16/21 { d''16\rest \shpSlurGD a( bes c d e fis g a bes c
-     \staffUp d e fis g a bes c d e \posScriptBL fis_\fzSforzatoHi }| %251
+     \staffUp d e fis g a bes c d e \posScriptBL fis_\fzSforzatoHi }       | %251
   \posScriptBU g8-.) \stemNeutral b,\rest b4\rest
-     \clef bass<bes,g d>4.(-\ritenSm <bes g d>8                     | %252
+     \clef bass<bes,g d>4.(-\ritenSm <bes g d>8                            | %252
   \hideTupletBracket \tupletSpan 2 \tupletDown
   <bes g d>2) \tuplet 6/4 { \posScriptBV d,8\rest-\accel
-     \shpSlurGI d[( g a c bes] }                                    | %253
-  bes8-.) d,\rest d4\rest \shpSlurGF  bes2~\(                       | %254
+     \shpSlurGI d[( g a c bes] }                                           | %253
+  bes8-.) d,\rest d4\rest \shpSlurGF  bes2~\(                              | %254
   \scaleDurations 16/28 { \posBeamJ bes16[ c d e fis g a bes 
      \clef treble c d e fis g a bes c \posHairpinAP d\< e fis g
-     a bes c d e fis g a]}                                          | %255
+     a bes c d e fis g a]}                                                 | %255
   bes8-.\) \posScriptBO b,,\rest^\fzText \posScriptBP b4\rest^\pianoTxt
-     \clef bass <d,bes g d>4.(-\ritenSm <d bes g d>8                | %256
+     \clef bass <d,bes g d>4.(-\ritenSm <d bes g d>8                       | %256
   <d bes g d>2) \clef treble \tupletUp
-     \tuplet 6/4 { \posScriptBR b'8\rest-\accel d,[(g bes ees d]\! } | %257
+     \tuplet 6/4 { \posScriptBR b'8\rest-\accel d,[(g bes ees d]\! }       | %257
   d8-.) b\rest \posScriptBW b4\rest_\fff \tuplet 3/2 { \ottava #1 \setOttavaStyle
      \slurDown \posScriptBX \acciaccatura { \stemUp e''8 } \stemDown <e e,>4-^
      \pocoRitenSpanner \acciaccatura { \stemUp ees8\startTextSpan } \stemDown <ees ees,>4-^
@@ -616,7 +627,7 @@ upperTwo =  \relative c' {
   %\squeezeNotation
   \smallNotehead \moveNoteQtr \hideAccidental fis4 g fis~
      \smallNotehead \moveNoteQtr fis g gis~               | %152
-  \smallNotehead \moveNoteQtr gis4 a_( ais)~ 
+  \smallNotehead \moveNoteTwo gis4 a_( ais)~ 
      \smallNotehead \moveNoteQtr ais b bis                | %153
   %\unSqueezeNotation
   \repeat unfold 12 { s1. | }                               %154-165
@@ -660,6 +671,7 @@ upperTwo =  \relative c' {
      \posHairpinAK <e'cis bes>\< d\rest                   | %205
   s8 s16\! s16_\appassPiuForte s1 s4                      | %206
   s1.                                                     | %207
+  \time 4/4
   \repeat unfold 8 { s1 | }                                 %208-215
   \stemUp s4 \shortStemRev aes'^^ s8 aes4^> g8            | %216
   fis,4^> s4 g' s                                         | %217
@@ -685,12 +697,14 @@ upperTwo =  \relative c' {
   \posScriptBI s1^\sempreFF                               | %240
   \repeat unfold 9 { s1 | }                                 %241-249
   \restDownOne R1                                         | %250
+  \repeat unfold 14 { s1 | }                                %251-264
 }
 
 upperTre = \relative c' {
   \time 4/4 \mergeDifferentlyHeadedOn
   \mergeDifferentlyDottedOn \stemDown
   \repeat unfold 7 { s1 | } \time 6/4        % 1-7
+  \time 6/4
   s1 \tweak Stem.transparent ##t d2-\hideP | % 8
   s1.                                      | % 9
   s1 \tweak Stem.transparent ##t d2        | %10
@@ -726,6 +740,7 @@ upperTre = \relative c' {
   s1.                                      | %197
   s1 \tweak Stem.transparent ##t d2        | %198
   \repeat unfold 9 { s1. | }                 %199-207
+  \time 4/4
   \repeat unfold 8 { s1 | }                  %208-215
   s2. \stemUp g4                           | %216
   \repeat unfold 33 { s1 | }                 %217-249
@@ -766,13 +781,24 @@ upperQtr = \relative c' {
   s1 s8 fis4.                              | %198
   s1.                                      | %199
   s1 cis4. s8                              | %200
+  \repeat unfold 7 { s1. | }                 %201-207
+  \time 4/4
+  \repeat unfold 57 { s1 | }                 %208-264  
 }
 
 upperStaff =  <<
-  { \voiceOne \upperOne } \\ 
-  { \voiceTwo \upperTwo } \\
-  { \voiceThree \upperTre } \\
-  { \voiceFour \upperQtr }
+  { 
+    \voiceOne \upperOne 
+  } \\ 
+  {
+    \voiceTwo \upperTwo 
+  } \\
+  {
+    \voiceThree \upperTre 
+  } \\
+  {
+    \voiceFour \upperQtr 
+  }
 >>
 
 lowerOne = \relative c, {
@@ -1004,7 +1030,7 @@ lowerOne = \relative c, {
   <ees bes g>4) b\rest b\rest b\rest \shpSlurDH <ees'c a>( <d bes aes>\!  | %160
   <ees bes g>4) b,\rest b\rest b\rest \shpSlurDH <ees'c a>( <d bes aes>   | %161
   <ees bes g>4) b,\rest b\rest \noPadScript <a! f ees c>_. b\rest b\rest  | %162
-  \restDownOne R1*6/4 \once \override Staff.Clef.right-padding = -0.3   \clef bass                           | %163
+  \restDownOne R1*6/4 \once \override Staff.Clef.right-padding = -0.3   \clef bass | %163
   \dynLeft \posScriptAJ <ees,aes, ees ces>4-.\arpeggio
      \posScriptAK d,\rest_\fz d\rest d2.\rest                | %164
   \unSqueezeNotation
@@ -1057,6 +1083,7 @@ lowerOne = \relative c, {
      <d g,> <g bes,> <d g,> <bes d,>)                 | %206
   <d,,d,> <c''fis,d>( <d c fis,> <fis c a>
      <d c fis,> <c fis,d>)                            | %207
+  \time 4/4
   <g,g,>4 d'\rest <g'd bes> bes,,_.                   | %208
   <g''d bes> d,-. <g'd bes> g,-.                      | %209
   <g'c,a> a,,_. <g''ees c> a,-.                       | %210
@@ -1099,8 +1126,7 @@ lowerOne = \relative c, {
   <fis cis bes g>2_>\! <e cis bes g>4. \posHairpinAF <e cis bes g>8\<| %244
   <fis cis bes g>2_>\! <e cis bes g>_>                | %245
   <g~c,~a~d,_~>1\arpeggio                             | %246
-  \bar ":"
-  <g c,~a~d,_~>1(                                     | %247
+  \shpSlurHD <g c,~a~d,_~>1(                          | %247
   <fis c a d,>1->)                                    | %248
   \restDownTwo R1                                     | %249
   \posScriptBM \shpSlurGE g,,,1^>_~\( \stemDown       | %250
@@ -1247,14 +1273,21 @@ lowerTwo = \relative c {
   
 }
 breaks = {
+  \time 4/4
   \repeat unfold 3 { s1 | \mNoBreak } s1 | \mBreak        % line 1 ( 1- 4)
   \repeat unfold 3 { s1 | \mNoBreak }
-     \repeat unfold 2 {s1.| \mNoBreak} s1. | \mBreak    % line 2 ( 5-10)
+
+  \time 6/4
+     \repeat unfold 2 { s1.| \mNoBreak} s1. | \mBreak   % line 2 ( 5-10)
+  %{     %}
   \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak    % line 3 (11-15)
+
   \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak    % line 4 (16-20)
+
   \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak    % line 5 (21-25)
+  
   \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak    % line 6 (26-30)
-%{%}
+
   \repeat unfold 2 { s1. | \mNoBreak } s1. | \mBreak    % line 7 (31-33)
     
   \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak    % line 8 (34-37)
@@ -1315,9 +1348,15 @@ breaks = {
 }
 
 lowerStaff = <<
-  { \voiceOne \lowerOne } \\
-  { \voiceTwo \lowerTwo } \\
-  { \breaks }
+  {
+    \voiceOne \lowerOne 
+  } \\
+  {
+    \voiceTwo \lowerTwo 
+  } \\
+  {
+    \breaks 
+  }
 >>
 
 dynamics = {

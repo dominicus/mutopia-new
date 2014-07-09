@@ -587,7 +587,7 @@ shpSlurGA = \shape #'((0 . 0) (8 . -0.3) (-2 . 3) (0.3 . -1)) PhrasingSlur
 shpSlurGB = \shape #'( ((-0.5 . 0) (0.5 . 0.5) (-0.1 . 1.2) (0.3 . 1.3))
                        ((0 . -0.8) (3 . 1) (-3 . 1.3) (0.6 . -2.4)) ) PhrasingSlur
 shpSlurGC = \shape #'( ((0 . 0) (0.5 . 0.5) (-0.1 . 1.2) (0 . 2))
-                       ((-1 . -0.5) (3 . -2) (-6 . 6) (-0.3 . 6))
+                       ((-3 . 2) (3 . -22) (-10 . -8) (-0.3 . 10.7))
                        ((-1 . 7.5) (0 . 6.5) (0 . 5.5) (0 . 4.5)) ) PhrasingSlur
 shpSlurGD = \shape #'((0 . 0) (0 . -1) (0 . 0.3) (0 . -1)) Slur
 shpSlurGE = \shape #'((-0.4 . 0.6) (0 . -0.3) (-2 . 3) (0.5 . 6.4)) PhrasingSlur
@@ -618,6 +618,7 @@ shpSlurGZ = \shape #'((0 . -1) (0 . -0.7) (-0.5 . -0.2) (0 . -0.1)) Slur
 shpSlurHA = \shape #'((0.3 . 0.8) (0.3 . 0.8) (0.3 . 0.8) (0.3 . 0.8)) Slur
 shpSlurHB = \shape #'((-0.4 . -0.30) (0 . -0.5) (0 . -0.7) (-0.3 . -1.3)) Slur
 shpSlurHC = \shape #'((-0.4 . -1.8) (0 . -1.8) (0 . -1.8) (0 . -1.8)) Slur
+shpSlurHD = \shape #'((0.8 . -0.8) (0.8 . -1.1) (-0.8 . -1.1) (-1.6 . -1.4)) Slur
 
 posHairpinToBlnF = \once \override Hairpin.to-barline = ##f 
 posHairpinA = {
@@ -825,6 +826,11 @@ posBeamH = \once \override Beam.positions = #'(-4.6 . -4.6)
 posBeamI = \once \override Beam.positions = #'(-7.7 . 0.5)
 posBeamJ = \once \override Beam.positions = #'(-6.5 . -2)
 posBeamK = \once \override Beam.positions = #'(2.8 . 6.4)
+posBeamL = \once \override Beam.positions = #'(-1 . -6.8)
+posBeamM = \once \override Beam.positions = #'(-0.2 . -2)
+
+cntBeamRtOne = \set stemRightBeamCount = #1
+cntBeamLfOne = \set stemLeftBeamCount = #1
 
 posScriptA = \once \override TextScript.extra-offset = #'( 0 . -0.8 )
 posScriptB = \once \override Script.extra-offset = #'( 0.2 . -0.7 ) 
@@ -966,6 +972,8 @@ posScriptCK = \once \override TextScript.extra-offset = #'( -1.05 . -7.5)
 posScriptCL = \once \override TextScript.extra-offset = #'( -2.4 . 5.25)
 posScriptCM = \once \override TextScript.extra-offset = #'( -2.3 . 5.1)
 posScriptCN = \once \override TextScript.extra-offset = #'( -1.5 . 4.8)
+posScriptCO = \once \override TextScript.extra-offset = #'( -1.0 . 3.3)
+
 
 posScrpRevExOff =  \revert Script.extra-offset
 posScrpRevPad = \revert Script.padding
@@ -1026,6 +1034,7 @@ posOttavaD = {
          \setOttavaStyle
          \once \override Staff.OttavaBracket.staff-padding = 5.7
 }
+posOttavaE = {\alterBroken staff-padding #'( 4.5 3.8 ) Staff.OttavaBracket }
 
 %\once \override Staff.OttavaBracket.staff-padding = 4.5
 
