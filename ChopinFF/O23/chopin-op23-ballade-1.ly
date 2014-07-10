@@ -188,7 +188,7 @@ upperOne =  \relative c {
   <a cis,a>2.)\) <a'cis,a>2\( <gis cis,gis>4              | %107
   <fis cis fis,>2.( <gis dis b>2) <gis dis b>4(           | %108
   <e gis,e>2.)\) <e e,>2-^ <e e,>4-^                      | %109
-  \squeezeNotation
+  %\squeezeNotation
   <e e,>2->(<d d,>4) \times 2/3 { <d d,>8([<e e,><d d,>] }
      <cis cis,><d d,><fis fis,><e e,>)                    | %110
   <d d,>2->(<cis cis,>4) \times 2/3 { <cis cis,>8([<d d,><cis cis,>] }
@@ -199,7 +199,7 @@ upperOne =  \relative c {
   <b b,>4( a4. gis8 \grace { fis16[ gis] } fis4) eis8-.(
      fis-. gis-. a-.)                                     | %113
   <b,gis e d>2.(\( <e cis gis e>2) <e cis gis e d>4(      | %114
-  \stemNeutral \unSqueezeNotation
+  \stemNeutral %\unSqueezeNotation
   <a,cis,a>4)\) b\rest <a'cis,a>\(<a'cis,a>2<gis cis,gis>4| %115
   <fis cis fis,>2.(<gis dis b>2)<gis dis a>4(             | %116
   <e gis,e>2)\) b,4\rest \ottava #1 <e''~e,_~>2<e e,>8.<e e,>16  | %117
@@ -236,23 +236,28 @@ upperOne =  \relative c {
   fis( g g'd ees b c g bes aes g f)                       | %143
   fis8\(\< g g'd ees b c g bes aes g f\!                  | %144
   fes8 ees d des c ces bes a! c bes a aes\)               | %145
-  g\<( aes a bes c bes aes_\crescTiny bes b c des c\!)    | %146
-  a!\<( bes b c d! c bes_\crescTiny c cis d ees d\!)      | %147
-  b8\<\( c cis d ees d c_\crescTiny cis d ees e f\!       | %148
+  g\<( aes a bes c bes aes%_\crescTiny
+     bes b c des c\!)                                     | %146
+  a!\<( bes b c d! c bes%_\crescTiny 
+     c cis d ees d\!)                                     | %147
+  b8\<\( c cis d ees d c%_\crescTiny
+     cis d ees e f\!                                      | %148
   g8->\> f e ees d des c b bes a!bes aes\! \stemUp        | %149
   g4\)\( bes,8 bes'd,_( ces' bes,bes'ees,g e des'         | %150
   c,8 c') f,_( a! e des'  c, c'f,a fis ees'!              | %151
   d,8) d' g,_( b fis ees' d, d' g, b gis f'               | %152
   e,8) e' a, cis ais g' fis, fis' b,_( dis bis a'!\)      | %153
-  \stemDown \squeezeNotation
+  \stemDown %\squeezeNotation
   <cis a fis cis>4-.) bis,8\(\< cis dis eis fis gis a b cis dis\! | %154
   eis fis gis a fis cis a fis cis a fis cis\)             | %155
-  \unSqueezeNotation \stemNeutral
+  %\unSqueezeNotation
+  \stemNeutral
   a8\( fis'\< dis a'a fis'  dis a'a fis'dis a'            | %156
   fis\> a ees!\! a,fis a ees a,\< fis a ees a,            | %157
   <bes'g ees bes>4-.\)\sf a,8(\p\<^\leggiero bes c d ees e g f g f  | %158
-  c'8 bes)( a bes c d ees e g_\crescTiny f g f            | %159
-  \squeezeNotation
+  c'8 bes)( a bes c d ees e g%_\crescTiny
+     f g f                                                          | %159
+  %\squeezeNotation
   c'8 bes) a( bes c d ees e g f g f\!                     | %160
   bes4-.)_\piuF a,!8( bes c d ees e g\< f g f             | %161
   bes4-.) b,,\rest\! b\rest \ottava #1 \stemUp
@@ -261,7 +266,7 @@ upperOne =  \relative c {
   \ottava #0 a8 g f e ees d c bes a g f e                 | %163
   ees des ces bes aes ges \stemUp f ees des
      ces bes \staffDown aes!                              | %164
-  \unSqueezeNotation
+  %\unSqueezeNotation
   ges8 f ees des ces bes aes ges f ees des ces!           | %165
   \hideNotes bes8\) \unHideNotes \staffUp s8 s2 
      <g'''d bes>2-^_\( <g d aes>4(                        | %166
@@ -498,13 +503,13 @@ upperTwo =  \relative c' {
   g4\rest <dis'c a> <dis c a> g,\rest <dis'c a> g,\rest       | %104
   g4\rest<fis'dis c><fis dis c> g,\rest <fis'dis c><fis dis c>| %105
   \repeat unfold 4 { s1. | }                                  | %106-109
-  \squeezeNotation
+  %\squeezeNotation
   \moveNoteTre a1.                                            | %110
   \moveNoteTre gis1.                                          | %111
   fis2. eis2 s4                                               | %112
   <fis cis>2. <dis b a>4 <dis b a>8<dis b a><dis b a><dis b a>| %113
   s1.                                                         | %114
-  \unSqueezeNotation
+  %\unSqueezeNotation
   \repeat unfold 9 { s1. | }                                    %115-123
   s4 \stemUp \hideNotes b''8 ^\( \unHideNotes s8 s1           | %124
   s1 s4 ces,,,\)^(                                            | %125
@@ -664,7 +669,7 @@ upperStaff =  <<
 
 lowerOne = \relative c, {
   \time 4/4
-  \setRestDirDown
+  \setRestDirUp
   c2-\hideF\(_~ c8 ees aes bes                  | % 1
   c8 aes ees' bes' \clef treble  c aes ees' bes'| % 2
   c8 g bes aes  g4 fis8\) b8\rest               | % 3
@@ -785,14 +790,14 @@ lowerOne = \relative c, {
   <a,a,>4 <cis'e,>(<e a,><a cis,><e a,><cis e,>)| %107
   <b,b,>4 <b'fis>(<dis a><fis b,><dis a><b fis>)| %108
   <e,e,>4 <b'e,>(<e gis,><gis b,><e gis,><b e,>)| %109
-  \squeezeNotation
+  %\squeezeNotation
   <fis fis,>4 <d'fis,>( <a'a,>) <b,,b,> <d'~ fis,>( <a'd,b>)   | %110
   <e,e,>4 <cis'e,>( <gis'gis,>) <a,,a,><cis'~e,>( <gis'cis,a>) | %111
   <d,d,>4 <b'd,>(<fis'fis,>) <cis,cis,> <cis'gis>(<eis b>)     | %112
   <fis,,fis,>^> fis'2 <bes,bes,>4 fis'2          | %113
   <e,e,>4<gis'b,><b ees,><d gis,><b ees,><gis b,>| %114
   <a,a,>4 <cis'e,> <e a,> <a cis, ><e a,><cis e,>| %115
-  \unSqueezeNotation
+  %\unSqueezeNotation
   <b,b,>4 <b'fis ><dis a> <fis b, ><dis a><b fis>| %116
   <e,e,>4 <b'e,> <e gis,> <gis b,><e gis,> <b e,>| %117
   <e,e,>4 <ais e> <cis fis,> <e ais,!> <cis fis,> <ais e>| %118
@@ -850,14 +855,14 @@ lowerOne = \relative c, {
      <d bes aes>                                      | %158
   <ees bes g>4) d,\rest d\rest d\rest \clef treble
      <ees''c a>( <d bes aes>                          | %159
-  \squeezeNotation
+ % \squeezeNotation
   <ees bes g>4) b\rest b\rest b\rest <ees'c a>( <d bes aes>  | %160
   <ees bes g>4) b,\rest b\rest b\rest <ees'c a>( <d bes aes> | %161
   <ees bes g>4) b,\rest b\rest <a! f ees c>_. b\rest b\rest  | %162
   \restDownOne R1*6/4   \clef bass                           | %163
   \dynLeft <ees,aes, ees ces>4-.\arpeggio\fz
      d,\rest d\rest d2.\rest                                 | %164
-  \unSqueezeNotation
+  %\unSqueezeNotation
   \stemDown ces,4_> c\rest c\rest c2.\rest            | %165
   \dynLeft bes8\fz( f'bes d bes f bes, f'bes f'bes,f) | %166
   ees8( bes'ees g ees bes ees,bes'ees bes'ees,bes)    | %167
@@ -980,6 +985,7 @@ lowerOne = \relative c, {
 }
 
 lowerTwo = \relative c {
+  \setRestDirDown
   \time 4/4
   \repeat unfold 7 { s1 | }                          % 1-7
   \time 6/4
@@ -1033,9 +1039,9 @@ lowerTwo = \relative c {
   gis2.^>( fis2) f8\rest gis                       | %104
   a2.( gis2 a4)\arpeggio                           | %105
   \repeat unfold 7 { s1. | }                         %106-112
-  \squeezeNotation
+  %\squeezeNotation
   s4 cis,( <fis a,>) s b,( <dis a>)                | %113
-  \unSqueezeNotation
+  %\unSqueezeNotation
   \repeat unfold 24 { s1. | } \stemUp                %114-137
   s4 c'( bes) s <aes d,>2                          | %138
   s4 c( bes) s <aes d,>2                           | %139
@@ -1148,7 +1154,9 @@ breaks = {
 lowerStaff = <<
   { \lowerOne } \\
   { \lowerTwo } \\
-  { \breaks }
+  { 
+ %   \breaks 
+  }
 >>
 
 dynamics = {
@@ -1202,9 +1210,12 @@ dynamics = {
   s1 s2-\semprePP                                     | %96
   s1.                                                 | %97
   s1.                                                 | %98
-  s2.\< s2.-\crescTiny                                | %99
+  s2.\< s2.%-\crescTiny
+                                                      | %99
   s2.\f s8 s8\pp s2                                   | %100
-  s2.\< s2.-\crescTiny                                | %101
+  s2.\< s2.
+  %-\crescTiny
+                                                      | %101
   s4\fz \sempreCrescSpanner s4\startTextSpan s2. s4\< | %102
   s1.\sf                                              | %103
   s1\sf s4 s8. s16\stopTextSpan                       | %104
@@ -1259,9 +1270,11 @@ dynamics = {
   \repeat unfold 2 { s1. | }                            %194-195
   s2. s8 s8-\semprePP s2                              | %196
   \repeat unfold 2 { s1. | }                            %197-198
-  s8\< s4. s4 s2^\crescTiny s4\!                      | %199
+  s8\< s4. s4 s2%^\crescTiny 
+                            s4\!                      | %199
   s2.\f s8 s8\p s2                                    | %200
-  s8\< s4. s4 s2^\crescTiny s4\!                      | %201
+  s8\< s4. s4 s2%^\crescTiny 
+                            s4\!                      | %201
   \sforzatoSpanner
   s8\startTextSpan s8\stopTextSpan s4^\sempreCresc s1 | %202
   s1\startTextSpan s4. s8\stopTextSpan                | %203
@@ -1544,7 +1557,7 @@ pedalTwo = {
       }%}
     } 
 }
-
+%{
 %-------generate Midi
 \score {
     %\removeWithTag #'printed
