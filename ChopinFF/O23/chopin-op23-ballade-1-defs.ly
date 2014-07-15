@@ -33,11 +33,17 @@ hideF = \tweak #'stencil ##f \f
 hideP = \tweak #'stencil ##f \p
 hideMF = \tweak #'stencil ##f \mf
 hidePP = \tweak #'stencil ##f \pp
+hidePPP = \tweak #'stencil ##f \ppp
 
 tempoLargo = \tempo 4 = 65
-tempoMod = \tempo 4 = 85
-tempoModPr = \tempo 4 = 92
-tempoAgitato = \tempo 4 = 90
+tempoMod = \tempo 4 = 88
+tempoModPr = \tempo 4 = 97
+tempoModPrstis =  \tempo 4 = 110
+tempoPresto = \tempo 4 = 120
+tempoAgitato = \tempo 4 = 140
+tempoAgitPresto = \tempo 4 = 160
+tempoAgitPrestis = \tempo 4 = 180
+tempoPrestissimo = \tempo 4= 210
 hideTempo = \set Score.tempoHideNote = ##t
 
 %-----------"Hairpins with added text"
