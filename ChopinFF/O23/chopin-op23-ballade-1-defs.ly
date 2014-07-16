@@ -985,7 +985,6 @@ posScriptCE = \once \override TextScript.extra-offset = #'(25.2 . 1.7)
 posScriptCF = \once \override Script.extra-offset = #'(0 . 3 )
 posScriptCG = \once \override TupletNumber.extra-offset = #'( 0 . -10.3)
 posScriptCH = {
-        %\once \override TextScript.avoid-slur = #'inside
         \once \override TextScript.outside-staff-priority = ##f
         \once \override TextScript.extra-offset = #'( 0 . -10.1)
 }
@@ -1069,8 +1068,6 @@ posOttavaD = {
          \once \override Staff.OttavaBracket.staff-padding = 5.7
 }
 posOttavaE = {\alterBroken staff-padding #'( 4.5 3.8 ) Staff.OttavaBracket }
-
-%\once \override Staff.OttavaBracket.staff-padding = 4.5
 
 ignoreClashOnce = \once \override NoteColumn.ignore-collision = ##t
 ignoreClash = \override NoteColumn.ignore-collision = ##t

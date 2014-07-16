@@ -2,13 +2,14 @@
 % The Mutopia Project
 % LilyPond template for keyboard solo piece
 %%--------------------------------------------------------------------
-% TODO:
-% Replace slur \shape overrides with https://github.com/openlilylib/openlilylib/blob/master/notation-snippets/shaping-bezier-curves/README.md
+% TODO (prioritized):
+% Align 4th beat of bar 113.  Align bass <bes> octave in same  
+%   musical moment as treble chord
 % Add fingering
 % Add ossia to bar 6 with alternate bass chord
 % Add capped-brackets to tuplets
-% Align 4th beat of bar 113.  Bass bes octave chord should shift 
-%   left to line up with treble chord
+% Replace slur \shape overrides with
+%     RE: https://github.com/openlilylib/openlilylib/blob/master/notation-snippets/shaping-bezier-curves/README.md
 % Remove hard-coded breaks to increase horizontal spacing, also
 %   allowing removal of TextScript'ed notations
 % Improve voice assignment (i.e. bar 8 eigths should be 1st voice)
@@ -504,27 +505,25 @@ upperTwo =  \relative c' {
   b4\rest \posScriptG \shpSlurAL g8->( b d c) b4\rest \shpSlurAU c,8->( gis' bes a)                                   | %42
   b4\rest \posScriptG \shpSlurAV ees,8->( b' d c) b4\rest fis,8-> cis' ees d                                          | %43
   \posScriptM bes4-\f g-> s4 bes g-> s4                                                                               | %44
-  s1.                                                         | %45
-  bes'4 g-> s bes \noPadScript g-> s                          | %46
-  \repeat unfold 3 { s1. | }                                  | %47-49
-  \repeat unfold 17 { s1. | }                                 | %50-66
-  s1 s4 \stemDown \ignoreClashOnce c,4_~                      | %67
-  \shpSlurGT c2._( d                                          | %68
-  ees2.) s                                                    | %69
-  \shpSlurGT g2._( a                                          | %70
-  bes2.) s                                                    | %71
-  \repeat unfold 4 { s1. | } \slurDown                          %72-75
-  \shpSlurGT c,!2.( d                                         | %76
-  ees2.) s                                                    | %77
-  \shpSlurGT g2.( a                                           | %78
-  bes2.) s                                                    | %79
-  \repeat unfold 5 { s1. | }                                    %80-84
-  s4 \scaleDurations 2/3 { s8 des,4-> s4. } s4 s8 \posScriptR
-     ces4-> s8                                                | %85
-  \repeat unfold 3 { s1. | }                                    %86-88
-  s4 \scaleDurations 2/3 { s8 des4-> s4. } s4 s8 \posScriptR
-     ces4-> s8                                                | %89
-  \repeat unfold 4 { s1. | }                                    %90-93
+  s1.                                                                                                                 | %45
+  bes'4 g-> s bes \noPadScript g-> s                                                                                  | %46
+  \repeat unfold 3 { s1. | }                                                                                          | %47-49
+  \repeat unfold 17 { s1. | }                                                                                         | %50-66
+  s1 s4 \stemDown \ignoreClashOnce c,4_~                                                                              | %67
+  \shpSlurGT c2._( d                                                                                                  | %68
+  ees2.) s                                                                                                            | %69
+  \shpSlurGT g2._( a                                                                                                  | %70
+  bes2.) s                                                                                                            | %71
+  \repeat unfold 4 { s1. | } \slurDown                                                                                  %72-75
+  \shpSlurGT c,!2.( d                                                                                                 | %76
+  ees2.) s                                                                                                            | %77
+  \shpSlurGT g2.( a                                                                                                   | %78
+  bes2.) s                                                                                                            | %79
+  \repeat unfold 5 { s1. | }                                                                                            %80-84
+  s4 \scaleDurations 2/3 { s8 des,4-> s4. } s4 s8 \posScriptR ces4-> s8                                               | %85
+  \repeat unfold 3 { s1. | }                                                                                            %86-88
+  s4 \scaleDurations 2/3 { s8 des4-> s4. } s4 s8 \posScriptR ces4-> s8                                                | %89
+  \repeat unfold 4 { s1. | }                                                                                            %90-93
   s2. \stemUp s8 \noPadTxtScrp d8-\hidePP_\sottoVoce e^\aTempoMenoMosso gis c b                                       | %94
   c,4\rest-\hidePPP \stemDown \shpSlurI <e c>-.( <e c>-.) e\rest \shpSlurI a-.( a-.)                                  | %95
   e\rest \shpSlurI <a f>-.( <a f>-.) b8\rest \stemUp d, e_\semprePP gis c b \stemDown                                 | %96
@@ -1025,7 +1024,7 @@ lowerOne = \relative c, {
   <fis,fis,>8->( <g g,>) s4 <cis cis,>8->( <d d,>) s4 | %240
   <fis,fis,>8->( <g g,>) s4 <cis cis,>8->( <d d,>) s4 | %241
 \tempoAgitPrestis \hideTempo
-  \stemNeutral <d, d,>2-> d'\rest                     | %242
+  \stemNeutral <d, d,>2-> d'\rest                                    | %242
   d2\rest <e'cis bes!g>4. \posHairpinAF <e cis bes g>8\<             | %243
   <fis cis bes g>2_>\! <e cis bes g>4. \posHairpinAF <e cis bes g>8\<| %244
   <fis cis bes g>2_>\! <e cis bes g>_>                | %245
@@ -1049,7 +1048,7 @@ lowerOne = \relative c, {
      \shpSlurGH d^([_\forteTxt g bes ees d] }                        | %257
   d8-.) d,\rest d4\rest \tuplet 3/2 { \posScriptBY \acciaccatura 
      { \shpSlurHI bes,8} \posScriptCU <bes bes'>4_^ \acciaccatura { \shpSlurHI b8 } <b b'>4_^
-     \acciaccatura { \shpSlurHI c8 } <c c'>4_^ }                                | %258
+     \acciaccatura { \shpSlurHI c8 } <c c'>4_^ }                     | %258
   \hideTupletNumber
   \tuplet 3/2 { \acciaccatura { \shpSlurHI cis8 } <cis cis'>4_^ 
      \acciaccatura { \shpSlurHI d8 } <d d'>4_^ \acciaccatura { \shpSlurHI dis8 } 
@@ -1075,7 +1074,7 @@ lowerTwo = \relative c {
      g''-.)\! s \shpSlurT d,-._( g'-.)             | %22
   s4 \shpSlurT ees,4-._( g'-.) s^\<
      \shpSlurT d,-._( g'-.)\!                      | %23
-  \repeat unfold 11 { s1. | }                      | %24-34
+  \repeat unfold 11 { s1. | }                        %24-34
   \stemUp \slurUp \tieUp
   s4 <bes ees>(^\> <d bes>2 <cis bes>4 <c a>)\!    | %35
   s4 f!( ees) s ees( d)                            | %36
@@ -1121,7 +1120,7 @@ lowerTwo = \relative c {
   gis2.) a2.\rest                                  | %98
   a2.\rest \shpSlurGZ e'(                          | %99
   fis2.)-\hideF a,2.\rest                          | %100
-  a2.\rest \shpSlurCA fis'(            | %101
+  a2.\rest \shpSlurCA fis'(                        | %101
   gis2. fis2) f8\rest gis                          | %102
   gis2.( fis2) f8\rest gis                         | %103
   gis2.( fis2) f8\rest gis                         | %104
@@ -1182,29 +1181,21 @@ breaks = {
   \time 4/4
   \repeat unfold 3 { s1 | \mNoBreak } s1 | \mBreak        % line 1 ( 1- 4)
   \repeat unfold 3 { s1 | \mNoBreak }
-
   \time 6/4
-     \repeat unfold 2 { s1.| \mNoBreak} s1. | \mBreak   % line 2 ( 5-10)
-  %{     %}
-  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak    % line 3 (11-15)
-
-  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak    % line 4 (16-20)
-
-  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak    % line 5 (21-25)
-  
-  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak    % line 6 (26-30)
-
-  \repeat unfold 2 { s1. | \mNoBreak } s1. | \mBreak    % line 7 (31-33)
-    
-  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak    % line 8 (34-37)
-   
-  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak    % line 9 (38-41)
-  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak    % line 10 (42-45)
-  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak    % line 11 (46-49)
-  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak    % line 12 (50-53)
-  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak    % line 13 (54-57)
-  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak    % line 14 (58-61)
-  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak    % line 15 (62-66)
+     \repeat unfold 2 { s1.| \mNoBreak} s1. | \mBreak     % line 2 ( 5-10)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 3 (11-15)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 4 (16-20)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 5 (21-25)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 6 (26-30)
+  \repeat unfold 2 { s1. | \mNoBreak } s1. | \mBreak      % line 7 (31-33)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 8 (34-37)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 9 (38-41)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 10 (42-45)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 11 (46-49)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 12 (50-53)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 13 (54-57)
+  \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 14 (58-61)
+  \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 15 (62-66)
   \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 16 (67-71)
   \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 17 (72-75)
   \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 18 (76-80)
@@ -1238,19 +1229,18 @@ breaks = {
   \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 45 (194-198)
   \repeat unfold 4 { s1. | \mNoBreak } s1. | \mBreak      % line 46 (199-203)
   \repeat unfold 3 { s1. | \mNoBreak } s1. | \mBreak      % line 47 (204-207)
-  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak        % line 48 (208-212)
-  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak        % line 49 (213-217)
-  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak        % line 50 (218-222)
-  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak        % line 51 (223-227)
-  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak        % line 52 (228-232)
-  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak        % line 53 (233-237)
-  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak        % line 54 (238-242)
-  \repeat unfold 3 { s1  | \mNoBreak } s1  | \mBreak        % line 55 (243-246)
-  \repeat unfold 2 { s1  | \mNoBreak } s1  | \mBreak        % line 56 (247-249)
-  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak        % line 57 (250-254)
-  \repeat unfold 2 { s1  | \mNoBreak } s1  | \mBreak        % line 58 (255-257)
-  \repeat unfold 6 { s1  | \mNoBreak } s1                   % line 59 (258-263)
-  %}
+  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak      % line 48 (208-212)
+  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak      % line 49 (213-217)
+  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak      % line 50 (218-222)
+  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak      % line 51 (223-227)
+  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak      % line 52 (228-232)
+  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak      % line 53 (233-237)
+  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak      % line 54 (238-242)
+  \repeat unfold 3 { s1  | \mNoBreak } s1  | \mBreak      % line 55 (243-246)
+  \repeat unfold 2 { s1  | \mNoBreak } s1  | \mBreak      % line 56 (247-249)
+  \repeat unfold 4 { s1  | \mNoBreak } s1  | \mBreak      % line 57 (250-254)
+  \repeat unfold 2 { s1  | \mNoBreak } s1  | \mBreak      % line 58 (255-257)
+  \repeat unfold 6 { s1  | \mNoBreak } s1                 % line 59 (258-263)
 }
 
 lowerStaff = <<
@@ -1319,7 +1309,7 @@ dynamics = {
   s2. s2.                                             | %99
   s2. s8 s8 s2                    \startStaff         | %100
   s2. s2.                                             | %101
-  s4 s4 s2. s4      | %102
+  s4 s4 s2. s4                                        | %102
   s1.                                                 | %103
   s1 s4 s8. s16                                       | %104
   s2. s2.                                             | %105
@@ -1421,7 +1411,7 @@ pedal = {
  s4..\sustainOn s4\sustainOff s16 s4..\sustainOn s4\sustainOff s16 | %37
  \repeat unfold 2 { s1. | }                                          %38-39
  s2\sustainOn s4\sustainOff s4..\sustainOn s4\sustainOff s16       | %40
- s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %41
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff             | %41
  \posPedalB s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %42
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %43
  s1.                                                    | %44
@@ -1501,11 +1491,11 @@ pedal = {
  s1\sustainOn s4 s4\sustainOff                          | %117
  s1\sustainOn s4 s4\sustainOff                          | %118
  \hideNextPedal s2\sustainOn s8. s16\sustainOff s2.     | %119
- s16.. s64\sustainOn s8 s2. s8. \posPedalH s16\sustainOff s4          | %120
- s1.                                                    | %121
+ s16.. s64\sustainOn s8 s2. s8. \posPedalH s16\sustainOff s4                   | %120
+ s1.                                                                           | %121
  s16.. s64\sustainOn s8 s4 s4\sustainOff s16. s32\sustainOn s4. s4\sustainOff  | %122
- s16.. s64\sustainOn s4. s4\sustainOff s2.               | %123
- \grace { s8\sustainOn s16 } s1.                            | %124
+ s16.. s64\sustainOn s4. s4\sustainOff s2.              | %123
+ \grace { s8\sustainOn s16 } s1.                        | %124
  s1 s4. s8\sustainOff                                   | %125
  \repeat unfold 4 { s1. | }                               %126-129
  s16.. \noPadPedal s64\sustainOn s4. s1                 | %130
@@ -1513,40 +1503,38 @@ pedal = {
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %138
  s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %139
  s2\sustainOn s4\sustainOff \noPadPedal s2\sustainOn s4\sustainOff  | %140
- s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %141
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff              | %141
  s2\sustainOn s4\sustainOff \noPadPedal s2\sustainOn s4\sustainOff  | %142
  s2\sustainOn s4\sustainOff \noPadPedal s2\sustainOn s4\sustainOff  | %143
- s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff  | %144
- s2\sustainOn s4 s32 s8..\sustainOff s2                 | %145
- s4.\sustainOn s8\sustainOff s4 s\sustainOn s\sustainOff s| %146
- s4.\sustainOn s8\sustainOff s4 s\sustainOn s\sustainOff s| %147
- s4.\sustainOn s8\sustainOff s4 s4..\sustainOn s16\sustainOff s4  | %148
- s2. s4..\sustainOn s16\sustainOff s4                   | %149
- s4.\sustainOn s8\sustainOff s1                         | %150
- \repeat unfold 3 { s1. | }                               %151-153
- s16.. s64\sustainOn \posHairpinAA s8\< s2. s4 s8\! s16 s16        | %154
- s1 s4 s32 s16.\sustainOff s8                                      | %155
- \posPedalB s16. s32\sustainOn s8 s4 s2 s4 s32 s16.\sustainOff s8  | %156
- s16.. s64\sustainOn s8 s4 s2 s4 s16 s16\sustainOff s8 \posPedalRev| %157
+ s2\sustainOn s4\sustainOff s2\sustainOn s4\sustainOff              | %144
+ s2\sustainOn s4 s32 s8..\sustainOff s2                             | %145
+ s4.\sustainOn s8\sustainOff s4 s\sustainOn s\sustainOff s          | %146
+ s4.\sustainOn s8\sustainOff s4 s\sustainOn s\sustainOff s          | %147
+ s4.\sustainOn s8\sustainOff s4 s4..\sustainOn s16\sustainOff s4    | %148
+ s2. s4..\sustainOn s16\sustainOff s4                               | %149
+ s4.\sustainOn s8\sustainOff s1                                     | %150
+ \repeat unfold 3 { s1. | }                                           %151-153
+ s16.. s64\sustainOn \posHairpinAA s8\< s2. s4 s8\! s16 s16         | %154
+ s1 s4 s32 s16.\sustainOff s8                                       | %155
+ \posPedalB s16. s32\sustainOn s8 s4 s2 s4 s32 s16.\sustainOff s8   | %156
+ s16.. s64\sustainOn s8 s4 s2 s4 s16 s16\sustainOff s8 \posPedalRev | %157
  \repeat unfold 4 { s1. | }                               %159-161
- s2. s16.. \noPadPedal s64\sustainOn s8 s2                          | %162
+ s2. s16.. \noPadPedal s64\sustainOn s8 s2              | %162
  s2 s8 s4.\sustainOff s2                                | %163
  s16. s32\sustainOn s4 s2 s4.\sustainOff  s4            | %164
  \repeat unfold 3 { s1. | }                               %165-167
- s2\sustainOn s8 s8\sustainOff s16 s4..\sustainOn s8. s16\sustainOff | %168
- s2.\sustainOn s2 s8. s16\sustainOff                    | %169
- s16 s4..\sustainOn s8. s16\sustainOff s2\sustainOn s8. s16\sustainOff | %170
+ s2\sustainOn s8 s8\sustainOff s16 s4..\sustainOn s8. s16\sustainOff         | %168
+ s2.\sustainOn s2 s8. s16\sustainOff                                         | %169
+ s16 s4..\sustainOn s8. s16\sustainOff s2\sustainOn s8. s16\sustainOff       | %170
  s16 s4..\sustainOn s8. s16\sustainOff s16 s4..\sustainOn s8. s16\sustainOff | %171
  s16 s4..\sustainOn s8. s16\sustainOff s16 s4..\sustainOn s8. s16\sustainOff | %172
  s2\sustainOn s8 s8.\sustainOff s16\sustainOn s2 s16 s16\sustainOff | %173
  s2\sustainOn s8 s8.\sustainOff s16\sustainOn s2 s16 s16\sustainOff | %174
  \repeat unfold 2 { s1. | }                                           %175-176
- s1.
- %s2. s4\sustainOn s4.. s16\sustainOff                | %177
+ s1.                                                                | %177
  s16 s2.\sustainOn s8. s4.. s16\sustainOff                          | %178
- s16 s4..\sustainOn s8 s4\sustainOff s2\sustainOn s8\sustainOff| %179
- s1.
- %s16 s8.\sustainOn s2. s8. s8.\sustainOff s8                        | %180
+ s16 s4..\sustainOn s8 s4\sustainOff s2\sustainOn s8\sustainOff     | %179
+ s1.                                                                | %180
  s1\sustainOn s4. s8\sustainOff                                     | %181
  s1\sustainOn s4. s8\sustainOff                                     | %182
  s16 s4..\sustainOn s8 s4\sustainOff s2\sustainOn s16 s16\sustainOff| %183
@@ -1578,7 +1566,7 @@ pedal = {
  s4.\sustainOn s16 s16\sustainOff s2                                     | %210
  s1                                                                      | %211
  s2.\sustainOn s8. s16\sustainOff                                        | %212
- s4.\sustainOn s8\sustainOff s16 s16\sustainOn s4 s8\sustainOff                 | %213
+ s4.\sustainOn s8\sustainOff s16 s16\sustainOn s4 s8\sustainOff          | %213
  s2\sustainOn s2\sustainOff                                              | %214
  s1                                                                      | %215
  s4 s2\sustainOn s8. s16\sustainOff                                      | %216
@@ -1588,8 +1576,8 @@ pedal = {
  s4\sustainOn s16 s8.\sustainOff s4.\sustainOn s8\sustainOff             | %220
  s1                                                                      | %221
  s16 s8.\sustainOn s8 s8\sustainOff s2                                   | %222
- s2\sustainOn s2\sustainOff                             | %223
- s4 s2\sustainOn s8 s8\sustainOff                       | %224
+ s2\sustainOn s2\sustainOff                                          | %223
+ s4 s2\sustainOn s8 s8\sustainOff                                    | %224
  s4\sustainOn s16 s8.\sustainOff s4\sustainOn s8. s16\sustainOff     | %225
  s4..\sustainOn s16\sustainOff s2                                    | %226
  s16 s4\sustainOn s16 s8\sustainOff s16 s4.\sustainOn s16\sustainOff | %227
@@ -1636,11 +1624,11 @@ pedalTwo = {
  s1\sustainOn s4 s4\sustainOff \posPedalRev             | %109
  \repeat unfold 3 { s1. | }                               %110-112
  s16 s8.\sustainOn s4 s8 s8\sustainOff s2\sustainOn s16 s8.\sustainOff  | %113
- s16.. s64\sustainOn s8 s2. s4. s16\sustainOff s16      | %114
- \repeat unfold 4 { s1. | }                               %115-118
- s16. s32\sustainOn s4. s8. \hideNextPedal s16\sustainOff s2.     | %119
- s1 s4.... \posPedalH s64\sustainOn                               | %120
- s2 s8. s16\sustainOff s2.                                        | %121
+ s16.. s64\sustainOn s8 s2. s4. s16\sustainOff s16                      | %114
+ \repeat unfold 4 { s1. | }                                               %115-118
+ s16. s32\sustainOn s4. s8. \hideNextPedal s16\sustainOff s2.           | %119
+ s1 s4.... \posPedalH s64\sustainOn                                     | %120
+ s2 s8. s16\sustainOff s2.                                              | %121
  s1.                                                    | %122
  s2. s16. s32\sustainOn s4. s4\sustainOff               | %123
  \repeat unfold 42 { s1. | }                              %124-165
@@ -1656,12 +1644,11 @@ pedalTwo = {
  s1\sustainOn s4. s8\sustainOff                                     | %206
  s2.\sustainOn s8. s16\sustainOff s2                                | %207
  s2.\sustainOn s8 \posPedalK s8\sustainOff                          | %208
- \repeat unfold 19 { s1 | }                               %209-227
+ \repeat unfold 19 { s1 | }                                           %209-227
  s4\sustainOn s16 s8.\sustainOff s4..\sustainOn s16\sustainOff      | %228
  s16 s8.\sustainOn s16 s8.\sustainOff s4..\sustainOn s16\sustainOff | %229
  s16 s8.\sustainOn s4 s32 s8..\sustainOff s4                        | %230
  \repeat unfold 2 { s1 | }                                            %231-232
- 
 }
 
 %-------Typeset music 
