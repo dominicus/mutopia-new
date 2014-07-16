@@ -1112,12 +1112,6 @@ squeezeNotation = {
 }
 squeezeNotationTwo = {
   \override Staff.AccidentalPlacement #'right-padding = #-0.05
-%  \override Staff.Accidental #'stencil =
-%  #(lambda (grob)
-%     (ly:stencil-scale (ly:accidental-interface::print grob) 0.92 1))
-%  \override Staff.NoteHead #'stencil =
-%  #(lambda (grob)
-%     (ly:stencil-scale (ly:note-head::print grob) 0.96 1.02))
 }
 squeezeNotationTre = {
   \override Staff.AccidentalPlacement #'right-padding = #-0.15
