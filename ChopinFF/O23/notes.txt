@@ -1,0 +1,5 @@
+layout options
+polar shapes
+ledger lines: reduce length-fraction, minimum-length-fraction to 0.15 or even 0.1
+https://github.com/openlilylib/openlilylib/tree/master/notation-snippets/shaping-bezier-curves
+fried library to separate staves...separate override vertical axis group staff spacing
