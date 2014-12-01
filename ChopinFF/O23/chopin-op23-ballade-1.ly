@@ -3,8 +3,6 @@
 % LilyPond template for keyboard solo piece
 %%--------------------------------------------------------------------
 % TODO (prioritized):
-% Align 4th beat of bar 113.  Align bass <bes> octave in same  
-%   musical moment as treble chord
 % Add fingering
 % Add ossia to bar 6 with alternate bass chord
 % Add capped-brackets to tuplets
@@ -19,7 +17,7 @@
 \version "2.18.2"
 %#(set-default-paper-size "letter")
 #(set-global-staff-size 17.8)
-\pointAndClickOff
+%\pointAndClickOff
 
 %--------Definitions
 \include "chopin-op23-ballade-1-defs.ly"
@@ -51,9 +49,9 @@
     mutopiacomposer = "ChopinFF"
     mutopiainstrument = "Piano"
 
-    footer = "Mutopia-2001/01/01-0"
-    copyright = \markup { \override #'(baseline-skip . 0 ) \right-column { \sans \bold \with-url #"http://www.MutopiaProject.org" { \abs-fontsize #9 "Mutopia " \concat { \abs-fontsize #12 \with-color #white \char ##x01C0 \abs-fontsize #9 "Project " } } } \override #'(baseline-skip . 0 ) \center-column { \abs-fontsize #12 \with-color #grey \bold { \char ##x01C0 \char ##x01C0 } } \override #'(baseline-skip . 0 ) \column { \abs-fontsize #8 \sans \concat { " Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " \char ##x00A9 " " 2014 " by " \maintainer " " \char ##x2014 " " \footer } \concat { \concat { \abs-fontsize #8 \sans { " " \with-url #"http://creativecommons.org/licenses/by-sa/3.0/" "Creative Commons Attribution ShareAlike 4.0 (Unported) License " \char ##x2014 " free to distribute, modify, and perform" } } \abs-fontsize #13 \with-color #white \char ##x01C0 } } }
-    tagline = ##f
+ footer = "Mutopia-2014/07/15-1"
+ copyright =  \markup { \override #'(baseline-skip . 0 ) \right-column { \sans \bold \with-url #"http://www.MutopiaProject.org" { \abs-fontsize #9  "Mutopia " \concat { \abs-fontsize #12 \with-color #white \char ##x01C0 \abs-fontsize #9 "Project " } } } \override #'(baseline-skip . 0 ) \center-column { \abs-fontsize #12 \with-color #grey \bold { \char ##x01C0 \char ##x01C0 } } \override #'(baseline-skip . 0 ) \column { \abs-fontsize #8 \sans \concat { " Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " \char ##x00A9 " " 2014 " by " \maintainer " " \char ##x2014 " " \footer } \concat { \concat { \abs-fontsize #8 \sans{ " " \with-url #"http://creativecommons.org/licenses/by-sa/4.0/" "Creative Commons Attribution ShareAlike 4.0 International License " \char ##x2014 " free to distribute, modify, and perform" } } \abs-fontsize #13 \with-color #white \char ##x01C0 } } }
+ tagline = ##f
 }
 
 %------------Music
@@ -865,7 +863,7 @@ lowerOne = \relative c, {
   <d,d,>4 <b'd,>(<fis'fis,>) <cis,cis,> <cis'gis>(<eis b>)                                 | %112-midi
 }
 \tag #'printed {
-  \posScriptCF <fis,,fis,>4^> \posScriptCM f'2_\sharpTxt <bes,bes,>4 f'2                   | %113-print
+  \posScriptCF <fis,,fis,>4^> \posScriptCM f'2*127/128_\sharpTxt <bes,bes,>4*65/64 f'2         | %113-print
 }
 \tag #'played {
   \posScriptCF <fis,fis,>4^> fis'2 \posScriptCH <bes,bes,>4_\chordMarkupA fis'2            | %113-midi
@@ -1623,7 +1621,7 @@ pedalTwo = {
  s1\sustainOn s4 s4\sustainOff                          | %108
  s1\sustainOn s4 s4\sustainOff \posPedalRev             | %109
  \repeat unfold 3 { s1. | }                               %110-112
- s16 s8.\sustainOn s4 s8 s8\sustainOff s2\sustainOn s16 s8.\sustainOff  | %113
+ s16 s8.\sustainOn s4 s8 s8\sustainOff \posPedalN s2\sustainOn s16 s8.\sustainOff  | %113
  s16.. s64\sustainOn s8 s2. s4. s16\sustainOff s16                      | %114
  \repeat unfold 4 { s1. | }                                               %115-118
  s16. s32\sustainOn s4. s8. \hideNextPedal s16\sustainOff s2.           | %119
