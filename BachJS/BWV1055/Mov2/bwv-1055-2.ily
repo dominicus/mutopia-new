@@ -198,27 +198,17 @@ continuo = \relative c, {
   | fis,4. r4. r2.
   | R1*12/8
   %5
-  | R1*12/8
-  | R1*12/8
+  \repeat unfold 2 { | R1*12/8 }
   | cis'4.^\scrForte^\scrTutti-\hideF r8 r cis8 d4. r8 r dis8
   | e4. r8 r eis8 fis4 d!8 b4 cis8
   | fis,4. r4. r2.
   %10
-  | R1*12/8
-  | R1*12/8
-  | R1*12/8
-  | R1*12/8
+  \repeat unfold 4 { | R1*12/8 }
   | r4. r8 r gis'8^\scrPianoPar^\scrTutti-\hideP cis,4 gis8 cis,4 r8
   %15
-  | R1*12/8
-  | R1*12/8
-  | R1*12/8
-  | R1*12/8
-  | R1*12/8
+  \repeat unfold 5 { | R1*12/8 }
   %20
-  | R1*12/8
-  | R1*12/8
-  | R1*12/8
+  \repeat unfold 3 { | R1*12/8 }
   | b'4.^\scrTutti_\scrForte-\hideF r8 r b a4. r8 r a^\scrPianoPar-\hideP
   | gis4. r8 r gis cis4. r8 r cis
   %25
@@ -246,30 +236,19 @@ figuredContinuo = \figuremode {
   \set figuredBassAlterationDirection = #RIGHT
   | s2 s8 <6>8 <7->8 <6>2 <6>8
   | <7>8 <6>2 <6>8 <7 _+>4 <5 3>8 <6 5>4 \bigAccidental <_+>8
-  | s1.
-  | s1.
+  \repeat unfold 2 { | s1. }
   %5
-  | s1.
-  | s1.
+  \repeat unfold 2 { | s1. }
   | \bigAccidental <_+>2 s8 \bigAccidental <_+> <7>2 s8 <6 5>
   | \bigAccidental <_+>2 s8 <6 5> <9 4>4 <5 3>8 <6 5>4 \bigAccidental <_+>8
   | s1.
   %10
-  | s1.
-  | s1.
-  | s1.
-  | s1.
+  \repeat unfold 4 { | s1. }
   | s2 s8 \bigAccidental <_+>8 s4 <6 4>2
   %15
-  | s1.
-  | s1.
-  | s1.
-  | s1.
-  | s1.
+  \repeat unfold 5 { | s1. }
   %20
-  | s1.
-  | s1.
-  | s1.
+  \repeat unfold 3 { | s1. }
   | s2 s8 s8 <4 2>4 s2
   | \bassFigureExtendersOn <6 5->2 s8 <11 11>16 <11 11>  <7 _+>4 s4 s16 <11 11>16 <11 11>8
   %25
@@ -401,47 +380,26 @@ figuredKeyb = \figuremode {
   \set figuredBassAlterationDirection = #RIGHT
   | s2 s8 <6>8 <7->8 <6>2 <6>8
   | <7>8 <6>2 <6>8 <7 _+>4 <[5 3]>8 <6 5>4 \bigAccidental <_+>8
-  | s1.
-  | s1.
+  \repeat unfold 2 { | s1. }
   %5
-  | s1.
-  | s1.
+  \repeat unfold 2 { | s1. }
   | s2 s8 \bigAccidental <_+> <7>2 s4
   | <8>8 <7>4. s8 <6 5> <9 4>4 <5 3>8 <6 5>4 s8
   | s1.
   %10
-  | s1.
-  | s1.
-  | s1.
-  | s1.
-  | s1.
+  \repeat unfold 5 { | s1. }
   %15
-  | s1.
-  | s1.
-  | s1.
-  | s1.
-  | s1.
+  \repeat unfold 5 { | s1. }
   %20
-  | s1.
-  | s1.
-  | s1.
+  \repeat unfold 3 { | s1. }
   | s2 s8 s8 <4 2>4 s2
   | s1.
   %25
-  | s1.
-  | s1.
-  | s1.
-  | s1.
-  | s1.
+  \repeat unfold 5 { | s1. }
   %30
-  | s1.
-  | s1.
-  | s1.
-  | s1.
-  | s1.
+  \repeat unfold 5 { | s1. }
   %35
-  | s1.
-  | s1.
+  \repeat unfold 2 { | s1. }
   | s2 s8 <6> <7-> <6> s4. <6>8
   | <7>8 <6> s4. <6>8 <7 _+>4 <5 3>8 <6 5>4 \bigAccidental <_+>8
   | s1.
@@ -452,8 +410,6 @@ figuredKeyb = \figuremode {
   \keepWithTag #'printed
   \new StaffGroup
     <<
-        %-Midi instrument values at 
-        % http://lilypond.org/doc/v2.18/Documentation/snippets/midi#midi-demo-midiinstruments
         \new GrandStaff = "GrandStaff_violins"
         <<
           \new Staff = "Staff_violinI"  { \set Staff.instrumentName = #"Violin I"
@@ -473,8 +429,7 @@ figuredKeyb = \figuremode {
         \new FiguredBass {
                   %arbitrary value to render extender lines that start without a figure
                   \set FiguredBass.implicitBassFigures = #'(11)
-                  \figuredContinuo
-        }
+                  \figuredContinuo }
         \new PianoStaff = "StaffGroup_keyb"
         <<
           \set PianoStaff.instrumentName = #"Cembalo"
@@ -486,13 +441,11 @@ figuredKeyb = \figuremode {
         \new FiguredBass {
                   %arbitrary value to render extender lines that start without a figure
                   \set FiguredBass.implicitBassFigures = #'(11)
-                  \figuredKeyb
-        }
+                  \figuredKeyb }
     >>
     \layout{ 
         \context { \FiguredBass    
-        \override BassFigure #'font-size = # -1
-        }
+        \override BassFigure #'font-size = # -1 }
     }
 }
 
@@ -538,4 +491,4 @@ figuredKeyb = \figuremode {
       }
     >>
     \midi { \tempo 4 = 40 }
-} %}
+}
