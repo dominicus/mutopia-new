@@ -15,10 +15,10 @@
 }
 
 \header {
-    title = "Keyboard Concerto No.4 in A Major"
+    title = "Keyboard Concerto No. 4 in A Major"
     composer = "Johann Sebastian Bach (1685-1750)"
     opus = "BWV 1055"
-    piece = "Larghetto"
+    piece = \markup \bold \larger \concat { \hspace #12 "Larghetto." }
     date = "1738"
     style = "Baroque"
     source = "Bach-Gesellschaft Edition 1869 Band 17"
@@ -28,17 +28,17 @@
     license = "Creative Commons Attribution-ShareAlike 4.0"
 
     mutopiatitle = "Keyboard Concerto No. 4 in A Major"
-    mutopiaopus = "BWV1055.2"
+    mutopiaopus = "BWV 1055.2"
     mutopiacomposer = "BachJS"
     mutopiainstrument = "Piano,Clavichord,Harpsichord,Violin,Viola,Cello"
 
-    footer = "Mutopia-2001/01/01-0"
+    footer = "Mutopia-2001/01/01-2"
     copyright = \markup { \override #'(baseline-skip . 0 ) \right-column { \sans \bold \with-url #"http://www.MutopiaProject.org" { \abs-fontsize #9 "Mutopia " \concat { \abs-fontsize #12 \with-color #white \char ##x01C0 \abs-fontsize #9 "Project " } } } \override #'(baseline-skip . 0 ) \center-column { \abs-fontsize #12 \with-color #grey \bold { \char ##x01C0 \char ##x01C0 } } \override #'(baseline-skip . 0 ) \column { \abs-fontsize #8 \sans \concat { " Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " \char ##x00A9 " " 2014 " by " \maintainer " " \char ##x2014 " " \footer } \concat { \concat { \abs-fontsize #8 \sans { " " \with-url #"http://creativecommons.org/licenses/by-sa/3.0/" "Creative Commons Attribution ShareAlike 3.0 (Unported) License " \char ##x2014 " free to distribute, modify, and perform" } } \abs-fontsize #13 \with-color #white \char ##x01C0 } } }
     tagline = ##f
 }
 
 %--------Definitions
-\include "bwv-1055-defs.ily"
+\include "../common/bwv-1055-definitions.ily"
 
 global = {
   \key a \major
@@ -291,7 +291,7 @@ upperKeyb =   \relative c'' {
            \tag #'played { fis64 eis fis eis fis eis fis eis fis eis fis eis }
            \tag #'printed { \appoggiatura fis8 eis8.\trill }
            dis!32 eis
-  | fis16 cis( fis gis a) gis b( a gis fis eis fis) \tag #'played { fis8 eis4 ~ } \tag #'printed { \appoggiatura fis8 eis4.~ } eis8. cis16 \appoggiatura d64 cis32 bis cis16
+  | fis16 cis( fis gis a) gis b( a gis fis eis fis) \tag #'played { fis8 eis4 ~ } \tag #'printed { \appoggiatura fis8 eis4.~ } eis8. cis16 \appoggiatura d8 cis32 bis cis16
   | a'16( gis fis eis fis a dis, e fis bis, cis dis) a(_[ gis a fis gis) cis] bis( e dis! fis e dis)
   | gis16 cis,( bis cis fis dis) e( cis e dis cis bis!) \tag #'played { bis16 cis16~cis4~ } \tag #'printed { \appoggiatura bis8 cis4.~ } cis16 gis( a b cis d!)
   %15
@@ -413,18 +413,14 @@ figuredKeyb = \figuremode {
         \new GrandStaff = "GrandStaff_violins"
         <<
           \new Staff = "Staff_violinI"  { \set Staff.instrumentName = #"Violin I"
-                                          \set Staff.midiInstrument = "violin"
                                           \clef treble \global \violinI }
           \new Staff = "Staff_violinII" { \set Staff.instrumentName = #"Violin II"
-                                          \set Staff.midiInstrument = "violin"
                                           \clef treble \global \violinII }
         >>
         \new Staff = "Staff_viola" { \set Staff.instrumentName = #"Viola"
-                                     \set Staff.midiInstrument = "viola"
                                      \clef alto \global \viola }
         \new Staff = "Staff_continuo"
                                     { \set Staff.instrumentName = #"Continuo"
-                                     \set Staff.midiInstrument = "contrabass"
                                      \clef bass \global \continuo }
         \new FiguredBass {
                   %arbitrary value to render extender lines that start without a figure
@@ -433,10 +429,8 @@ figuredKeyb = \figuremode {
         \new PianoStaff = "StaffGroup_keyb"
         <<
           \set PianoStaff.instrumentName = #"Cembalo"
-          \new Staff = "upper" { \set Staff.midiInstrument = "acoustic grand"
-                                 \clef treble \global \upperKeyb }
-          \new Staff = "lower" { \set Staff.midiInstrument = "acoustic grand"
-                                 \clef bass \global \lowerKeyb }
+          \new Staff = "upper" { \clef treble \global \upperKeyb }
+          \new Staff = "lower" { \clef bass \global \lowerKeyb }
         >>
         \new FiguredBass {
                   %arbitrary value to render extender lines that start without a figure
