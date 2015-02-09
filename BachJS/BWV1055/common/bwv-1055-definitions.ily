@@ -25,6 +25,9 @@ scrTutti = \markup \tiny \bold "Tutti"
 scrTuttiCtr = \markup { \center-align \tiny \bold \whiteout "Tutti" }
 scrTuttiCtrPar = \markup { \center-align \tiny \bold \whiteout "(Tutti)" }
 scrPiano = \markup { \small \concat { \dynamic p \italic \bold "iano" } }
+scrPianoSpc = \markup { \small \concat { \hspace #1 \dynamic p \italic \bold "iano" } }
+scrPianoLeft = \markup { \center-align \small \concat { \hspace #3.7 \dynamic p \italic \bold "iano" } }
+scrForteParLeft = \markup { \center-align \small \concat { \hspace #1.7 \italic "(" \dynamic f \italic \bold "orte)" } }
 scrPianoWhite = \markup { \small \whiteout \concat { \dynamic p \italic \bold "iano" } }
 scrPianoPar = \markup { \small \concat { \italic \bold "(" \dynamic p \italic \bold "iano)" } }
 scrForte = \markup { \small \concat { \dynamic f \italic \bold "orte" } }
@@ -32,6 +35,7 @@ scrForteLeft = \markup { \center-align \small \concat { \hspace #2 \dynamic f \i
 scrFortePar = \markup { \small \concat { \italic \bold "(" \dynamic f \italic \bold "orte)" } }
 scrForteParCtr = \markup { \center-align \small \concat { \italic \bold "(" \dynamic f \italic \bold "orte)" } }
 scrSolo = \markup \small \bold "Solo"
+scrTastoSolo = \markup \small \bold "Tasto Solo"
 scrSpiccato = \markup { \center-align \concat { \hspace #4  \small \bold "spiccato" } }
 scrSpiccatoLeft = \markup \small \bold "spiccato"
 scrSoloPiano = \markup { \override #'(baseline-skip . 0) \center-align \center-column \small \whiteout { \bold "  Solo  " \concat { \dynamic p \italic \bold "iano" } } }
@@ -55,9 +59,25 @@ nachschlag = {
 }
 
 setUpPrallSpanner = {
-  \override TrillSpanner.bound-details.left.text = \markup{ \raise #0.9 \halign #-1.1 \smaller \musicglyph #"scripts.upprall" }
+  \override TrillSpanner.bound-details.left.text = \markup {
+      \halign #-1.1 \concat { 
+        \raise #1.0 
+        \smaller 
+        \musicglyph #"scripts.upprall" 
+        \hspace #-.6
+      }
+  }
+  \override TrillSpanner.bound-details.right.padding = #'3.0
   \override TrillSpanner.bound-details.left.padding = #'0
-  \override TrillSpanner.to-barline = ##t }
+  \override TrillSpanner.to-barline = ##t
+}
+
+setTrillSpanner = {
+  \override TrillSpanner.bound-details.left.text = \markup{ \musicglyph #"scripts.trill" }
+  \override TrillSpanner.bound-details.right.padding = #'5.0
+  \override TrillSpanner.bound-details.left.padding = #'1.0
+  \override TrillSpanner.to-barline = ##t
+}
 
 bigAccidental = \once \override FiguredBass.BassFigure #'font-size = #'2
 
@@ -86,10 +106,24 @@ posTextScriptB = \once \override TextScript.extra-offset = #'(0 . -6.6)
 posTextScriptC = \once \override TextScript.extra-offset = #'(0 . -0.3)
 posTextScriptD = \once \override TextScript.extra-offset = #'(1.4 . 0)
 posTextScriptE = \once \override TextScript.extra-offset = #'(-2.0 . -0.3)
+posTextScriptF = \once \override TextScript.extra-offset = #'(3.9 . -0.5)
 
 alignBeamOne = \once \override Beam.positions = #'(0.1 . -0.1)
 alignBeamTwo = \once \override Beam.positions = #'(-2.7 . -3.7)
 alignBeamTre = \once \override Beam.positions = #'(1.9 . 1.9)
+alignBeamQtr = \once \override Beam.positions = #'(3.4 . 3.4)
+alignBeamCin = \once \override Beam.positions = #'(1.9 . 2.3)
+alignBeamSix = \once \override Beam.positions = #'(2.9 . 2.9)
+alignBeamSep = \once \override Beam.positions = #'(-3.1 . -1.8)
+
+shapeSlurA = \shape #'((0 . 0.6) (0 . 0.6) (0 . 0.6) (0 . 0.6)) Slur
+shapeSlurB = \shape #'((0 . 0) (1 . 0.6) (-1 . 0.6) (-0.5 . 0)) Tie
+shapeSlurC = \shape #'((0 . 0) (1 . -0.6) (-1 . -0.6) (-0.5 . 0)) Tie
+shapeSlurD = \shape #'((0 . 0) (1 . 0.6) (-1 . 0.6) (0 . 0)) Tie
+shapeSlurE = \shape #'((0 . 0) (1 . -0.6) (-1 . -0.6) (0 . 0)) Tie
+shapeSlurF = \shape #'((0 . 0) (1 . -0.6) (-1 . -0.6) (0 . 0)) Slur
+shapeSlurG = \shape #'((0 . 0) (1 . 0.6) (-1 . 0.6) (0 . 0)) Slur
+shapeSlurH = \shape #'((0 . 0) (1 . 0.3) (-1 . 0.3) (0 . 0)) Tie
 
 scriptAboveSlur = \once \override Script.avoid-slur = #'outside
 
