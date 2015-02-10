@@ -249,7 +249,7 @@ figuredContinuo = \figuremode {
   \repeat unfold 5 { | s1. }
   %20
   \repeat unfold 3 { | s1. }
-  | s2 s8 s8 <4 2>4 s2
+  | s2 s8 s8 <4\+ 2>4 s2
   | \bassFigureExtendersOn <6 5->2 s8 <11 11>16 <11 11>  <7 _+>4 s4 s16 <11 11>16 <11 11>8
   %25
   | <5 3>1.
@@ -372,7 +372,8 @@ lowerKeyb = \relative c, {
   | dis4. r8 r d cis4 d8 b4 cis8
   | fis,4. r8 r fis' eis4 r8 r r e
   | dis4 r8 r r d cis4 d8 b4  cis8
-  | \tag #'played { fis2. r } \tag #'printed { fis,4. r r2. } |
+  | \tag #'played { fis2. r } \tag #'printed { fis,4. r r2. }
+  | \bar "|."
 }
 
 figuredKeyb = \figuremode {
@@ -392,7 +393,7 @@ figuredKeyb = \figuremode {
   \repeat unfold 5 { | s1. }
   %20
   \repeat unfold 3 { | s1. }
-  | s2 s8 s8 <4 2>4 s2
+  | s2 s8 s8 <4\+ 2>4 s2
   | s1.
   %25
   \repeat unfold 5 { | s1. }
