@@ -148,3 +148,33 @@
   }
   \include "hanon-layout.ily"
 }
+
+%----------------------------Exercise 14
+\include "hanon14.ily"
+\bookpart {
+  \header { 
+    opus = \markup \huge \bold "Nº 14."
+    copyright = ##f
+  }
+  \include "hanon-layout.ily"
+}
+
+%----------------------------Exercise 15
+\include "hanon15.ily"
+\bookpart {
+  \header { 
+    opus = \markup \huge \bold "Nº 15."
+    copyright = ##f
+  }
+  \include "hanon-layout.ily"
+}
+
+%----------------------------Exercise 16
+\include "hanon16.ily"
+\bookpart {
+  \header { 
+    opus = \markup \huge \bold "Nº 16."
+    copyright = ##f
+  }
+  \include "hanon-layout.ily"
+}
