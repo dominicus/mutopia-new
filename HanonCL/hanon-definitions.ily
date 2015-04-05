@@ -61,7 +61,7 @@ metMark = \markup { \normal-text \concat { "(" \hspace #0.2 "M." \hspace #.5 "M.
 staffUp = \change Staff = "upper"
 staffDown = \change Staff = "lower"
 
-beamLessSlant = \once \override Beam.damping = #10
+beamLessSlant = \once \override Beam.damping = #4
 
 subdivideBeams = {
   \set subdivideBeams = ##t

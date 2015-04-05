@@ -72,23 +72,79 @@
 %----------------------------Exercise 2
 \include "hanon02.ily"
 \bookpart {
-  
   \header {
     opus = \markup \huge \bold "Nº 2."
     copyright = ##f
   }
   \include "hanon-layout.ily"
-  
 }
 
 %----------------------------Exercise 3
 \include "hanon03.ily"
 \bookpart {
-  
   \header { 
     opus = \markup \huge \bold "Nº 3."
     copyright = ##f
   }
   \include "hanon-layout.ily"
-  
+}
+
+%----------------------------Exercise 4
+\include "hanon04.ily"
+\bookpart {
+  \header { 
+    opus = \markup \huge \bold "Nº 4."
+    copyright = ##f
+  }
+  \include "hanon-layout.ily"
+}
+
+%----------------------------Exercise 7
+\include "hanon07.ily"
+\bookpart {
+  \header { 
+    opus = \markup \huge \bold "Nº 7."
+    copyright = ##f
+  }
+  \include "hanon-layout.ily"
+}
+
+%----------------------------Exercise 8
+\include "hanon08.ily"
+\bookpart {
+  \header { 
+    opus = \markup \huge \bold "Nº 8."
+    copyright = ##f
+  }
+  \include "hanon-layout.ily"
+}
+
+%----------------------------Exercise 9
+\include "hanon09.ily"
+\bookpart {
+  \header { 
+    opus = \markup \huge \bold "Nº 9."
+    copyright = ##f
+  }
+  \include "hanon-layout.ily"
+}
+
+%----------------------------Exercise 11
+\include "hanon11.ily"
+\bookpart {
+  \header { 
+    opus = \markup \huge \bold "Nº 11."
+    copyright = ##f
+  }
+  \include "hanon-layout.ily"
+}
+
+%----------------------------Exercise 13
+\include "hanon13.ily"
+\bookpart {
+  \header { 
+    opus = \markup \huge \bold "Nº 13."
+    copyright = ##f
+  }
+  \include "hanon-layout.ily"
 }
