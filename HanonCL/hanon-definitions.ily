@@ -61,6 +61,10 @@ metMark = \markup { \normal-text \concat { "(" \hspace #0.2 "M." \hspace #.5 "M.
 staffUp = \change Staff = "upper"
 staffDown = \change Staff = "lower"
 
+fingerUp = \override Fingering.direction = #UP
+fingerDown = \override Fingering.direction = #DOWN
+fingerNoPad = \temporary \override Fingering.staff-padding = #'()
+
 beamLessSlant = \once \override Beam.damping = #4
 
 subdivideBeams = {
