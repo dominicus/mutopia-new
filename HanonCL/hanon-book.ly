@@ -109,6 +109,16 @@
   \include "hanon-layout.ily"
 }
 
+%----------------------------Exercise 6
+\include "hanon06.ily"
+\bookpart {
+  \header { 
+    opus = \markup \huge \bold "Nº 6."
+    copyright = ##f
+  }
+  \include "hanon-layout.ily"
+}
+
 %----------------------------Exercise 7
 \include "hanon07.ily"
 \bookpart {
