@@ -248,3 +248,13 @@
   }
   \include "hanon-layout.ily"
 }
+
+%----------------------------Exercise 20
+\include "hanon20.ily"
+\bookpart {
+  \header { 
+    opus = \markup \huge \bold "Nº 20."
+    copyright = ##f
+  }
+  \include "hanon-layout.ily"
+}
