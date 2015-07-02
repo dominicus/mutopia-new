@@ -84,4 +84,11 @@ globalB = {
   \clef bass
 }
 
-
+posScriptA = {
+  \once \override TextScript.rotation = #'(15 0 0)
+  \once \override TextScript.extra-offset = #'( 0 . 8.6 )
+}
+posScriptB = {
+  \once \override TextScript.rotation = #'(-15 0 0)
+  \once \override TextScript.extra-offset = #'( 0.4 . -1.0 )
+}
