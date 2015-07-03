@@ -64,7 +64,7 @@ RH = \relative e {
   \stemDown \fingerUp g-1 a g b e d c b 
   a-1 b a c f e d c 
   b-1 c b d g f e d 
-  \bar "||"
+  \bar "||" \mark \markup{ \smaller "(1)"}
   g-5 f-4 g-5 d-2 b-1 c d e 
   f-5 e-4 f-5 c-2 a-1 b c d 
   e-5 d e b g a b c 

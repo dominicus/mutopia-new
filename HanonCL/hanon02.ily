@@ -11,7 +11,7 @@ RH = \relative e {
 \repeat volta 2 {
   \subdivideBeams
   \staffDown \stemUp \fingerNoPad
-  c16-1 e-2 a-5 g-4 f-3 g-4 f-3 e-2 
+  c16-1^"(1)" e-2 a-5 g-4 f-3 g-4 f-3 e-2 
   d-1 f-2 b-5 a g a g f 
   e-1 g-2 c-5 b a b a g 
   f-1 a-2 d c b c b a 
@@ -24,7 +24,8 @@ RH = \relative e {
   f-1 a-2 d c b c b a 
   \stemNeutral \fingerUp g-1 b-2 e d c d c b 
   a-1 c-2 f e d e d c 
-  b-1 d-2 g f e f e d 
+  b-1 d-2 g f e f e d
+  \mark \markup{ \smaller "(1)"}
   \bar "||"
   g-5 d-2 b-1 c-2 d-3 c-2 d-3 e-4 
   f-5 c-2 a-1 b c b c d 

@@ -42,7 +42,7 @@ LH = {
 RH = {
   \repeat volta 2 {
   \subdivideBeams
-  \staffDown \stemUp c  16-1 a -5 g -4 f -3 e -2 f -3 e -2 f -3
+  \staffDown \stemUp c  16-1 a -5 g -4 f^"(1)" -3 e -2 f -3 e -2 f -3
    d -1 b -5 a -4 g -3 f -2 g -3 f -2 g -3
    e -1 c' -5 b  a  g  a  g  a 
    f -1 d' -5 c'  b  a  b  a  b 
@@ -56,7 +56,7 @@ RH = {
   \stemDown \fingerUp \fingerNoPad < g' ^1 > e'' -5 d''  c''  b'  c''  b'  c'' 
   < a' ^1> f'' -5 e''  d''  c''  d''  c''  d'' 
   < b' ^1> g'' -5 f''  e''  d''  e''  d''  e'' 
-  \bar "||"  < g'' ^5> < b' ^1> c''  d''  e''  d''  e''  d'' 
+  \bar "||"  < g'' ^5> < b' ^1> c''  d''  e''^"(2)"  d''  e''  d'' 
    f'' -5 a' -1 b'  c''  d''  c''  d''  c'' 
    e'' -5 g' -1 a'  b'  c''  b'  c''  b' 
   \stemUp \fingerDown d'' -5 f' -1 g'  a'  b'  a'  b'  a' 
