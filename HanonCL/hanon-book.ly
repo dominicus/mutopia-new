@@ -73,33 +73,57 @@
     \paragraph {
       As soon as Ex.1 is mastered, go on to Ex. 2 without stopping on the final note.
     }
-    \paragraph {
-      (3-4) When this exercise is mastered, recommence the preceding one, and play both 
-      together four times without interruption; the fingers will gain considerably by practising 
-      these exercises, and those following, in this way.
-    }
   }
   
 }
-
-%{
 
 %----------------------------Exercise 2
 \include "hanon02.ily"
 \bookpart {
   \header {
-    opus = \markup \huge \bold "Nº 2."
     copyright = ##f
   }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 2."}
+            }
+  }
+  \markuplist{
+     \paragraph {
+    (3-4) When this exercise is mastered, recommence the preceding one, and play both 
+    together four times without interruption; the fingers will gain considerably by practising 
+    these exercises, and those following, in this way.
+     }
+  }
   \include "hanon-layout.ily"
+  \markuplist{
+     \paragraph {
+    (1) The fourth and fifth fingers being naturally weak, it should be observed that this exercise,
+    and those following it up to Nº 31, are intended to render them as strong and agile as their
+    second and third.
+     }
+  }
 }
 
 %----------------------------Exercise 3
 \include "hanon03.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 3."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 3."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        (2-3-4) Before beginning to practise Nº 3, play through the preceding exercises once
+        or twice without stopping.  When Nº 3 is mastered, practise Nº 4, and then Nº 5, and
+        as soon as they are thoroughly learned play through all three at least four times
+        without interruption, not stopping until the last note on page 6.  The entire work
+        should be practised in this manner.  Therefore, when playing the numbers in 
+        the First Part, stop only on the last note on pp. 3, 6, 9, 12, 15, 18, and 21.
+     }
   }
   \include "hanon-layout.ily"
 }
@@ -108,20 +132,37 @@
 \include "hanon04.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 4."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 4."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        (3-4-5) (1) Special exercise for the 3rd, 4th and 5th fingers of the hand.
+     }
   }
   \include "hanon-layout.ily"
 }
-
-
 
 %----------------------------Exercise 5
 \include "hanon05.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 5."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 5."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        (1-2-3-4-5) We repeat, that the fingers should be lifted high, and with precision, 
+        until this entire volume is mastered.
+     }
   }
   \include "hanon-layout.ily"
 }
@@ -130,8 +171,18 @@
 \include "hanon06.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 6."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 6."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        (5) To obtain the good results which we promise those who study this work, it is 
+        indispensable to play daily, at least once, the exercises already learned.
+     }
   }
   \include "hanon-layout.ily"
 }
@@ -140,8 +191,17 @@
 \include "hanon07.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 7."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 7."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        (3-4-5) Exercise of the greatest importance for the 3rd, 4th and 5th fingers.
+     }
   }
   \include "hanon-layout.ily"
 }
@@ -150,8 +210,17 @@
 \include "hanon08.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 8."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 8."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        (1-2-3-4-5) Very important exercise for all five fingers.
+     }
   }
   \include "hanon-layout.ily"
 }
@@ -160,8 +229,17 @@
 \include "hanon09.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 9."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 9."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        Extension of the 4th and 5th, and general finger-exercise.
+     }
   }
   \include "hanon-layout.ily"
 }
@@ -170,8 +248,18 @@
 \include "hanon10.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 10."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 10."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        (3-4) Preparation for the trill, for the 3rd and 4th fingers of the left 
+        hand in ascending (1); and for the 3rd and 4th of the right, descending (2).
+     }
   }
   \include "hanon-layout.ily"
 }
@@ -180,8 +268,17 @@
 \include "hanon11.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 11."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 11."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        (3-4-5) Another preparation for the trill, for the 4th and 5th fingers.
+     }
   }
   \include "hanon-layout.ily"
 }
@@ -190,20 +287,34 @@
 \include "hanon12.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 12."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 12."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        Extension of 1-5, and exercise for 3-4-5.
+     }
   }
   \include "hanon-layout.ily"
 }
-
-%}
 
 %----------------------------Exercise 13
 \include "hanon13.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 13."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 13."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph { (3-4-5) }
   }
   \include "hanon-layout.ily"
 }
@@ -212,8 +323,17 @@
 \include "hanon14.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 14."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 14."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        (3-4) Another preparation for the trill, for the 3rd and 4th fingers.
+     }
   }
   \include "hanon-layout.ily"
 }
@@ -222,8 +342,17 @@
 \include "hanon15.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 15."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 15."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        Extension of 1-2, and exercise for all 5 fingers.
+     }
   }
   \include "hanon-layout.ily"
 }
@@ -232,20 +361,36 @@
 \include "hanon16.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 16."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 16."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        Extension of 3-5, and exercise for 3-4-5.
+     }
   }
   \include "hanon-layout.ily"
 }
-
-%{
 
 %----------------------------Exercise 17
 \include "hanon17.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 17."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 17."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        Extension of 1-2, 2-4, 4-5, and exercise for 3-4-5.
+     }
   }
   \include "hanon-layout.ily"
 }
@@ -254,8 +399,17 @@
 \include "hanon18.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 18."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 18."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        (1-2-3-4-5)
+     }
   }
   \include "hanon-layout.ily"
 }
@@ -264,8 +418,17 @@
 \include "hanon19.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 19."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 19."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        (1-2-3-4-5)
+     }
   }
   \include "hanon-layout.ily"
 }
@@ -274,10 +437,17 @@
 \include "hanon20.ily"
 \bookpart {
   \header { 
-    opus = \markup \huge \bold "Nº 20."
     copyright = ##f
+  }
+  \markup { \large \center-column {
+            \fill-line { \bold "Nº 20."}
+            \null
+            }
+  }
+  \markuplist{
+     \paragraph {
+        Extension of 2-4, 4-5, and exercise for 2-3-4.
+     }
   }
   \include "hanon-layout.ily"
 }
-
-%}
