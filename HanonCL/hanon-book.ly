@@ -82,7 +82,7 @@
   
 }
 
-
+%{
 
 %----------------------------Exercise 2
 \include "hanon02.ily"
@@ -93,8 +93,6 @@
   }
   \include "hanon-layout.ily"
 }
-
-%}
 
 %----------------------------Exercise 3
 \include "hanon03.ily"
@@ -168,8 +166,6 @@
   \include "hanon-layout.ily"
 }
 
-
-
 %----------------------------Exercise 10
 \include "hanon10.ily"
 \bookpart {
@@ -199,6 +195,8 @@
   }
   \include "hanon-layout.ily"
 }
+
+%}
 
 %----------------------------Exercise 13
 \include "hanon13.ily"
@@ -239,6 +237,8 @@
   }
   \include "hanon-layout.ily"
 }
+
+%{
 
 %----------------------------Exercise 17
 \include "hanon17.ily"
