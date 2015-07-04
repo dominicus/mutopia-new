@@ -49,9 +49,9 @@ RH = {
    f -1 g -2 b -4 a  c' -5 b  g  a 
    g -1 a  c'  b  d' -5 c'  a  b 
    a -1 b  d'  c'  e' -5 d'  b  c' 
-  \beamLessSlant b -1 c' \staffUp e'  d'  f'  e'  c'  d' 
+  \beamLessSlant b -1 c' \staffUp e'  d'  f' -5 e'  c'  d' 
   \fingerDown c' -1 d'  f'  e'  g' -5 f'  d'  e' 
-   d' -1 e'  g'  f'  a' -5 g'  e'  f' 
+  \fingerNoPad d' -1 e'  g'  f'  a' -5 g'  e'  f' 
    e' -1 f'  a'  g'  b' -5 a'  f'  g' 
    f' -1 g'  b'  a'  c'' -5 b'  g'  a' 
   \stemDown \fingerUp \fingerNoPad < g' ^1 > a'  c''  b'  d'' -5 c''  a'  b' 
@@ -70,7 +70,7 @@ RH = {
    d' -5 c'  a  b  g  a  c' -4 b -3
    c' -5 b  g  a  f  g  b -4 a -3
    b -5 a  f  g  e  f  a -4 g -3
-   a -5 g  e  f  d -1  e -3 g -5 f -4
+   a -5 g  e  f  d -1 e -3 g -5 f -4
   }
   \undo \fingerNoPad c2-1
   \bar "|."

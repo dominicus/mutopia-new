@@ -30,7 +30,7 @@ LH = \relative e, {
   f-1 c-3 a-5 b a b c b
   e-1 b-3 g-5 a g a b a 
   d-1 a-3 f-5 g f g a g 
-  c-1 g-3 e f e f g f 
+  c-1 g-3 e-5 f e f g f 
   b-1 f-3 d e d e f e 
   a-1 e-3 c d c d e d 
   \fingerDown g-1 d-3 b c b c d c 

@@ -39,8 +39,7 @@ LH = \relative e, {
   d-1 b-2 a b g a f g 
   c-1 a-2 g a f g e f 
   b-1 g-2 f g e f d e 
-  a-1 f-2 e f d e c d 
-  g-1 e-2 d e c d b c 
+  a-1 f-2 e f d e d e 
   }
   c2
   \bar "|."
@@ -78,8 +77,7 @@ RH = \relative e {
   \fingerUp d-5 b-4 a b g a f g 
   c-5 a-4 g a f g e f 
   b-5 g-4 f g e f d e 
-  a-5 f-4 e f d e c d 
-  g-5 e-4 d e c d b c 
+  a-5 f-4 e f d e d e 
   }
   c2
   \bar "|."

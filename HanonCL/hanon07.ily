@@ -18,10 +18,10 @@ LH = \relative e, {
   g-5 b a c b d c-3 b 
   a-5 c b d c e d-3 c 
   b-5 d c e d f e-3 d 
-  \fingerUp c-5 e d f e g f-3 e 
-  d-5 f e g f a g-3 f 
-  e-5 g f a g b a-3 g-4 
-  f-5 a g b a c b-3 a-4 
+  \fingerUp c-5 e d f e g f-3 e-4
+  d-5 f e g f a g-3 f-4
+  e-5 g f a g b a-3 g
+  f-5 a g b a c b-3 a
   g-5 b a c b d c-3 b 
   a-5 c b d c e d-3 c 
   b-5 d c e d f e-3 d 
@@ -39,8 +39,7 @@ LH = \relative e, {
   d-1 b c a b g a b 
   c-1 a b g a f g a 
   b-1 g a f g e f g 
-  a-1 f g e f d e f 
-  g-1 e f d e c d-3 e 
+  a-1 f g e f d e-3 f
   }
   c2
   \bar "|."
@@ -58,7 +57,7 @@ RH = \relative e {
   a-1 c b d c e d-4 c 
   \beamLessSlant b-1 \staffUp d c e d f e-4 d 
   \fingerDown c-1 e d f e g f-4 e-3 
-  d-1 f e g f a g-4 f 
+  d-1 f e g f a g-4 f-3 
   e-1 g f a g b a-4 g 
   f-1 a g b a c b-4 a 
   \stemDown \fingerUp g-1 b a c b d c-4 b 
@@ -78,8 +77,7 @@ RH = \relative e {
   d-5 b c a b g a-3 b 
   c-5 a b g a f g-3 a 
   b-5 g a f g e f-3 g 
-  a-5 f g e f d e-3 f 
-  g-5 e f d e c d-3 e 
+  a-5 f g e f d e-3 f
   }
   c2
   \bar "|."

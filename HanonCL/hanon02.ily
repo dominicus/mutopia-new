@@ -40,8 +40,7 @@ RH = \relative e {
   d-5 a-2 f g a g a b 
   c-5 g-2 e f g f g a 
   b-5 f-2 d e f e f g 
-  a-5 e-2 c d e d e f 
-  g-5 d-2 b c d c d e 
+  a-5 e-2 c d e d e f
   }
   c2
   \bar "|."
@@ -79,8 +78,7 @@ LH = \relative e, {
   d-1 a-3 f g a g a b 
   c-1 g-3 e f g f g a 
   b-1 f-3 d e f e f g 
-  a-1 e-3 c d e d e f 
-  g-1 d-3 b c d c d e 
+  a-1 e-3 c d e d e f
   }
   c2
   \bar "|."

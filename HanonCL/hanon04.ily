@@ -11,7 +11,7 @@ LH = \relative e, {
 \repeat volta 2 {
   \subdivideBeams
   \stemDown \fingerDown \fingerNoPad
-  c16-5 d-4 c-5 e-3 a-1 g f e 
+  \posScriptC c16-5_"(1)" d-4 c-5 e-3 a-1 g f e 
   d-5 e-4 d-5 f-3 b-1 a g f 
   e-5 f e g c b a g 
   f-5 g f a d c b a 
@@ -39,8 +39,7 @@ LH = \relative e, {
   d-1 c d a f g a b 
   c-1 b c g e f g a 
   b-1 a b f d e f g 
-  a-1 g a e c d e f 
-  g-1 f g d b c d e 
+  a-1 g a e c d e f
   }
   c2
   \bar "|."
@@ -78,8 +77,7 @@ RH = \relative e {
   d-5 c d a f g a b 
   c-5 b c g e f g a 
   b-5 a b f d e f g 
-  a-5 g a e c d e f 
-  g-5 f g d b c d e 
+  a-5 g a e c d e f
   }
   c2
   \bar "|."

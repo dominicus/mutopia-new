@@ -6,19 +6,19 @@ LH = {
 \repeat volta 2 {
   \subdivideBeams
   \stemDown \fingerDown \fingerNoPad g, 16 -1 c, -5 e, -3 d, -4 c, -5 d, -4 e, -3 c, -5
-   a, -1 d, -5 f, -3 e, -4 d, -5 e,  f,  d, 
-   b, -1 e, -5 g, -3 f,  e,  f,  g,  e, 
-   c -1 f, -5 a, -3 g,  f,  g,  a,  f, 
-   d -1 g, -5 b, -3 a,  g,  a,  b,  g, 
-   e -1 a, -5 c  b,  a,  b,  c  a, 
-  \fingerUp f -1 b, -5 d  c  b,  c  d  b, 
-   g -1 c -5 e  d  c  d  e  c 
-   a -1 d -5 f  e  d  e  f  d 
-   b -1 e -5 g  f  e  f  g  e 
-   c' -1 f -5 a  g  f  g  a  f 
-   d' -1 g -5 b  a  g  a  b  g 
-   e' -1 a -5 c'  b  a  b  c'  a 
-   f' -1 b -5 d'  c'  b  c'  d'  e' 
+   b, -1 d, -5 f, -3 e, -4 d, -5 e,  f,  d, 
+   c -1 e, -5 g, -3 f,  e,  f,  g,  e, 
+   d -1 f, -5 a, -3 g,  f,  g,  a,  f, 
+   e -1 g, -5 b, -3 a,  g,  a,  b,  g, 
+   f -1 a, -5 c  b,  a,  b,  c  a, 
+  \fingerUp g -1 b, -5 d  c  b,  c  d  b, 
+   a -1 c -5 e  d  c  d  e  c 
+   b -1 d -5 f  e  d  e  f  d 
+   c' -1 e -5 g  f  e  f  g  e 
+   d' -1 f -5 a  g  f  g  a  f 
+   e' -1 g -5 b  a  g  a  b  g 
+   f' -1 a -5 c'  b  a  b  c'  a 
+   g' -1 b -5 d'  c'  b  c'  d'  e' 
   \bar "||" b -5 g' -1 e' -3 f' -2 g' -1 f' -2 e' -3 g' -1
    a -5 f' -1 d' -3 e'  f'  e'  d'  f' 
    g -5 e' -1 c' -3 d'  e'  d'  c'  e' 

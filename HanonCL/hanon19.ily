@@ -44,7 +44,7 @@ RH = {
   \repeat volta 2 {
   \subdivideBeams
   \staffDown \stemUp c  16-1 a -5 f -3 g -4 a -5 f -3 e -2 g -4
-   d -1 b -5 g -3 a  b -5 g  f  a 
+   d -1 b -5 g -3 a -4 b -5 g -3 f -2 a -4
    e -1 c' -5 a -3 b  c'  a  g  b 
    f -1 d' -5 b -3 c'  d'  b  a  c' 
   \beamLessSlant \fingerNoPad g -1 \staffUp e' -5 c' -3 d'  e'  c'  b  d' 
@@ -70,7 +70,7 @@ RH = {
    d' -5 f  a  g  f  a  b -4 g -2
    c' -5 e  g  f  e  g  a -4 f -2
    b -5 d  f  e  d  f  g -4 e -2
-   a -5 c  e  d  c -1 e -3 f -5 d -4
+   a -5 c  e  d  c  e  f -4 d -2
 }
   c2
   \bar "|."

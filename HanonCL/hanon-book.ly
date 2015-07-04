@@ -1,7 +1,7 @@
 \version "2.18.2"
 
 #(set-global-staff-size 17)
-#(set-default-paper-size "letter")
+%#(set-default-paper-size "letter")
 
 \header {
   mutopiatitle = "The Virtuoso Pianist (Part I)"
@@ -69,7 +69,7 @@
       this is the meaning of the double mark at the head of each exercise.
     }
     \paragraph {
-      Lift the fingures high and with precision, 
+      Lift the fingers high and with precision, 
       playing each note very distinctly.
     }
   }
@@ -122,7 +122,7 @@
   \markuplist{
      \paragraph {
     (1) The fourth and fifth fingers being naturally weak, it should be observed that this exercise,
-    and those following it up to Nº 31, are intended to render them as strong and agile as their
+    and those following it up to Nº 31, are intended to render them as strong and agile as the
     second and third.
      }
   }
@@ -165,7 +165,8 @@
   }
   \markuplist{
      \paragraph {
-        (3-4-5) (1) Special exercise for the 3rd, 4th and 5th fingers of the hand.
+        \hspace #4 
+        "(3-4-5) (1) Special exercise for the 3rd, 4th and 5th fingers of the hand."
      }
   }
   \include "hanon-layout.ily"
@@ -184,8 +185,9 @@
   }
   \markuplist{
      \paragraph {
-        (1-2-3-4-5) We repeat, that the fingers should be lifted high, and with precision, 
-        until this entire volume is mastered.
+        \hspace #4 
+        "(1-2-3-4-5)  We repeat, that the fingers should be lifted high, and with precision,"
+        "until this entire volume is mastered."
      }
   }
   \include "hanon-layout.ily"
@@ -224,7 +226,8 @@
   }
   \markuplist{
      \paragraph {
-        (3-4-5) Exercise of the greatest importance for the 3rd, 4th and 5th fingers.
+        \hspace #4 
+        "(3-4-5) Exercise of the greatest importance for the 3rd, 4th and 5th fingers."
      }
   }
   \include "hanon-layout.ily"
@@ -243,7 +246,8 @@
   }
   \markuplist{
      \paragraph {
-        (1-2-3-4-5) Very important exercise for all five fingers.
+        \hspace #4 
+        "(1-2-3-4-5) Very important exercise for all five fingers."
      }
   }
   \include "hanon-layout.ily"
@@ -262,7 +266,8 @@
   }
   \markuplist{
      \paragraph {
-        Extension of the 4th and 5th, and general finger-exercise.
+        \hspace #4 
+        "Extension of the 4th and 5th, and general finger-exercise."
      }
   }
   \include "hanon-layout.ily"
@@ -301,7 +306,8 @@
   }
   \markuplist{
      \paragraph {
-        (3-4-5) Another preparation for the trill, for the 4th and 5th fingers.
+        \hspace #4 
+        "(3-4-5) Another preparation for the trill, for the 4th and 5th fingers."
      }
   }
   \include "hanon-layout.ily"
@@ -320,7 +326,8 @@
   }
   \markuplist{
      \paragraph {
-        Extension of 1-5, and exercise for 3-4-5.
+        \hspace #4 
+        "Extension of 1-5, and exercise for 3-4-5."
      }
   }
   \include "hanon-layout.ily"
@@ -338,7 +345,7 @@
             }
   }
   \markuplist{
-     \paragraph { (3-4-5) }
+     \paragraph { \hspace #12 "(3-4-5)" }
   }
   \include "hanon-layout.ily"
 }
@@ -356,7 +363,8 @@
   }
   \markuplist{
      \paragraph {
-        (3-4) Another preparation for the trill, for the 3rd and 4th fingers.
+        \hspace #4 
+        "(3-4) Another preparation for the trill, for the 3rd and 4th fingers."
      }
   }
   \include "hanon-layout.ily"
@@ -375,7 +383,8 @@
   }
   \markuplist{
      \paragraph {
-        Extension of 1-2, and exercise for all 5 fingers.
+        \hspace #4 
+        "Extension of 1-2, and exercise for all 5 fingers."
      }
   }
   \include "hanon-layout.ily"
@@ -394,7 +403,8 @@
   }
   \markuplist{
      \paragraph {
-        Extension of 3-5, and exercise for 3-4-5.
+        \hspace #4 
+        "Extension of 3-5, and exercise for 3-4-5."
      }
   }
   \include "hanon-layout.ily"
@@ -413,7 +423,8 @@
   }
   \markuplist{
      \paragraph {
-        Extension of 1-2, 2-4, 4-5, and exercise for 3-4-5.
+       \hspace #4 
+       " Extension of 1-2, 2-4, 4-5, and exercise for 3-4-5."
      }
   }
   \include "hanon-layout.ily"
@@ -431,9 +442,7 @@
             }
   }
   \markuplist{
-     \paragraph {
-        (1-2-3-4-5)
-     }
+     \paragraph { \hspace #13 "(1-2-3-4-5)" }
   }
   \include "hanon-layout.ily"
 }
@@ -450,9 +459,7 @@
             }
   }
   \markuplist{
-     \paragraph {
-        (1-2-3-4-5)
-     }
+     \paragraph { \hspace #13 "(1-2-3-4-5)" }
   }
   \include "hanon-layout.ily"
 }

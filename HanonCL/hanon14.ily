@@ -62,7 +62,7 @@ RH = \relative e {
   f-1 g b a b a c-5 b-4 
   \stemDown \fingerUp g-1 a c b c b d-5 c-4
   a-1 b d c d c e-5 d-4 
-  b-1 c e d e d f-5 e-4 
+  b-1 c e d e d f-5 e-3
   \bar "||"
   g-5 f-4 d-2 e-3 d-2 e-3 c-1 d-3 
   f-5 e-4 c-2 d c d b-1 c-3 
