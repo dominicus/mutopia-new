@@ -1,6 +1,7 @@
-\version "2.18.0"
+\version "2.18.2"
 
 #(set-global-staff-size 17)
+#(set-default-paper-size "letter")
 
 \header {
   mutopiatitle = "The Virtuoso Pianist (Part I)"
@@ -11,25 +12,49 @@
   source = "Schirmer, 1900"
   license = "Creative Commons Attribution-ShareAlike 4.0"
   maintainer = "Steve Taylor and Javier Ruiz-Alma"
+  maintainerEmail = "javier (at) ruiz-alma.com"
   footer = "Mutopia-2015/03/27-0"
   copyright =  \markup { \override #'(baseline-skip . 0 ) \right-column { \sans \bold \with-url #"http://www.MutopiaProject.org" { \abs-fontsize #9  "Mutopia " \concat { \abs-fontsize #12 \with-color #white \char ##x01C0 \abs-fontsize #9 "Project " } } } \override #'(baseline-skip . 0 ) \center-column { \abs-fontsize #11.9 \with-color #grey \bold { \char ##x01C0 \char ##x01C0 } } \override #'(baseline-skip . 0 ) \column { \abs-fontsize #8 \sans \concat { " Typeset using " \with-url #"http://www.lilypond.org" "LilyPond " \char ##x00A9 " " 2015 " by " \maintainer " " \char ##x2014 " " \footer } \concat { \concat { \abs-fontsize #8 \sans{ " " \with-url #"http://creativecommons.org/licenses/by-sa/4.0/" "Creative Commons Attribution ShareAlike 4.0 International License " \char ##x2014 " free to distribute, modify, and perform" } } \abs-fontsize #13 \with-color #white \char ##x01C0 } } }
   tagline = ##f
 }
 
 \paper {
-  
+  top-margin = 8\mm
+  system-system-spacing.basic-distance = 13
+  top-markup-spacing.basic-distance = 6
 }
 
 \include "hanon-definitions.ily"
 
+%----------------------------Cover Page
+\bookpart {
+\markup { \fill-line { \center-column {
+	\null \null \null \null
+	\null \null \null \null
+	\null \null \null \null
+	\null \null \null \null
+	\null \null \null \null
+	\null \null \null \null
+	%\null \null \null \null
+	\line {\abs-fontsize #18 "C. L. HANON"}
+	\null \null \null \null
+	\line {\abs-fontsize #28 "The Virtuoso-Pianist"}
+	\null \null \null
+	\line {\abs-fontsize #20 "Part I"}
+	\null \null \null \null
+	\fill-line { \abs-fontsize #13 "Preparatory exercises for the Acquirement of Agility, Independence," }
+	\null
+        \fill-line { \abs-fontsize #13 "Strength and Perfect Evenness in the Fingers."}
+	} } }
+}
 %----------------------------Exercise 1
 \include "hanon01.ily"
 \bookpart {
+  \paper { system-system-spacing.basic-distance = 12 }
   \markup { \large \center-column {
             \null
-            \fill-line { "Preparatory exercises for the Acquirement of Agility, Independence," }
-            \fill-line {"Strength and Perfect Evenness in the Fingers."}
             \fill-line { \bold "Nº 1."}
+            \null
             }
   }
   \markuplist {
@@ -50,10 +75,8 @@
   }
 
   \header {
-    title = "The Virtuoso Pianist"
     opus =  \markup \larger \caps "C. L. Hanon."
-    subtitle = "Part I."
-    composer = ""
+    copyright = ##f
   }
   \include "hanon-layout.ily"
 
