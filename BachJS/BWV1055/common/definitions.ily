@@ -41,6 +41,7 @@ scrPianoLeft = \markup { \center-align \small \concat { \hspace #3.7 \dynamic p 
 scrForteParLeft = \markup { \center-align \small \concat { \hspace #1.7 \italic "(" \dynamic f \italic \bold "orte)" } }
 scrPianoWhite = \markup { \small \whiteout \concat { \dynamic p \italic \bold "iano" } }
 scrPianoPar = \markup { \small \concat { \italic \bold "(" \dynamic p \italic \bold "iano)" } }
+scrPianoParWhite = \markup { \small \whiteout \concat { \italic \bold "(" \dynamic p \italic \bold "iano)" } }
 scrForte = \markup { \small \concat { \dynamic f \italic \bold "orte" } }
 scrForteLeft = \markup { \center-align \small \concat { \hspace #2 \dynamic f \italic \bold "orte" } }
 scrFortePar = \markup { \small \concat { \italic \bold "(" \dynamic f \italic \bold "orte)" } }
