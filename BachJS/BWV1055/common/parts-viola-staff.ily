@@ -5,7 +5,6 @@
   * typeset by Javier Ruiz-Alma                                         *
   *                                                                     *
   *                                                                     *
-  *                                                                     *
   * Parts staff for violins and viola                                   *
   *                                                                     *
   *                                                                     *
@@ -15,7 +14,7 @@
   ***********************************************************************
 %}
 
-\include "common/version.ily"
+\include "version.ily"
 
 
 %-------Typeset music

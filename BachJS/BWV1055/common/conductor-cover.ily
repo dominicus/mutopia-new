@@ -18,8 +18,8 @@
   ***********************************************************************
 %}
 
-\include "common/version.ily"
-\include "common/variables.ily"
+\include "version.ily"
+\include "variables.ily"
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                        %%
@@ -37,11 +37,9 @@ FromPublisher = \thisSource
 InfoCollection = \thisOpus
 DateCollection = \thisDateOfPublication
 SubTitle = \thisOrchester
-Genre = "Conductor's Score"
+Genre = \combinedPublicationName
 catalogIdentification = \thisCatalogIdentification
-DateEdition = \thisDateEdition
 Tonality = \thisTonality
-Duration = \thisDuration
 
 Toc = "Table of Contents"
 
@@ -76,9 +74,6 @@ Instrument = "Orchestra"
 #(define-markup-command (cover_genre_settings layout props name) (string?)
    (interpret-markup layout props (markup #:abs-fontsize 28 name)))
 
-%	Duration
-#(define-markup-command (cover_duration layout props name) (string?)
-   (interpret-markup layout props (markup #:abs-fontsize 12 name)))
 
 %%%	Table of Contents functions
 
@@ -115,7 +110,6 @@ coverTitle = \markup \cover_title_settings #Title
 coverSubtitle = \markup \cover_subtitle_settings #SubTitle
 coverComposer = \markup \cover_composer_settings #Composer
 coverDates = \markup \cover_datesComposer_settings #Dates
-coverDuration = \markup \cover_duration #Duration
 coverVolutesUp = \markup {\epsfile #X #80 #"./common/scroll-one-top.eps"}
 coverVolutesDown = \markup {\epsfile #X #80 #"./common/scroll-one-btm.eps"}
 coverGenre = \markup \cover_genre_settings #Genre
@@ -161,7 +155,6 @@ PageToc = \markup {
       \fill-line {\lower #27  \TocComposer}
       \fill-line {\lower #7 \TocTitle}
       \fill-line {\lower #6 \TocTonality}
-      %\fill-line {\lower #12 \coverinfoCollection}
       \fill-line {\lower #22 \TocLine}
       \fill-line {\lower #6 \override #'(thickness . 3) \draw-line #'(70 . 0)}
       \fill-line { \null }

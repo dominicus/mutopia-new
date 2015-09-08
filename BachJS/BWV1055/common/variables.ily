@@ -27,12 +27,8 @@ thisDates = "1685-1750"
 thisDateOfPublication = "1854"
 thisDateOfComposition = "1738"
 thisSource = "Bach-Gesellschaft Ausgabe; Breitkopf and Härtel, 1869"
-thisBigTitle = "Bach - Keyboard Concerto No. 4 in A major"
-thisTypesetting = " "
-thisLocation = " "
-thisDateEdition = " " % # ( strftime "%d-%m-%Y" ( localtime ( current-time ) ) )
+thisBigTitle = "Bach - Keyboard Concerto Nº 4 in A major"
 thisCatalogIdentification = ""
-thisDuration = ""
 thisRevision = "ver. A"   % Version
 
 combinedPublicationName = "Conductor's Score"

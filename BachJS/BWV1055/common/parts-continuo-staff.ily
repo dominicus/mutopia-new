@@ -1,5 +1,17 @@
-\include "common/version.ily"
+%{
+  ***********************************************************************
+  * Bach - Keyboard Concerto No.4 in A major                            *
+  *                                                                     *
+  * typeset by Javier Ruiz-Alma                                         *
+  *                                                                     *
+  * score block for Continuo part printout                              *
+  *                                                                     *
+  * Do not compile                                                      *
+  *                                                                     *
+  ***********************************************************************
+%}
 
+\include "version.ily"
 
 %-------Typeset music
 \score {
@@ -13,8 +25,5 @@
                 \set FiguredBass.implicitBassFigures = #'(11)
                 \figuredContinuo }
     >>
-    \layout{ 
-      %  \context { \FiguredBass    
-      %  \override BassFigure #'font-size = # -1 }
-    }
+    \layout{ }
 }

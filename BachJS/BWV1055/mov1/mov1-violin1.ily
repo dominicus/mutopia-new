@@ -85,7 +85,7 @@ violinI = \relative c'' {
   | a2~ a8 a, d4 ~
   | d8 e,16 d e8 cis' ~ cis fis,16 e fis8 b ~
   | b8 gis16 fis gis8 b e,[ a cis,fis]
-  | b,-\scrPianoPar-\hideP b'16 cis e8 r r gis,16 a \once \stemUp b8 r
+  | b,-\scrPianoPar-\hideP b'16 cis d8 r r gis,16 a \once \stemUp b8 r
   | r8 gis'16 a b8 r r a,16 b cis8 r
   %75
   | r8 fis,16 gis a8 r r fis'16 gis a8 r

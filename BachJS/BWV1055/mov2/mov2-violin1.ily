@@ -6,7 +6,7 @@ violinI = \relative c'' {
   | fis4_\scrPiano-\hideP cis8 fis,4 a'8 gis4 cis,8 eis,4 b''8
   | a4 cis,8 fis,4 cis'8 d4 fis,8 gis4 b8
   %5
-  | cis4 eis,8 fis4 a8 b4 dis,8eis4 gis8
+  | cis4 eis,8 fis4 a8 b4 dis,8 eis!4 gis8
   | a4 fis8 cis'4. ~ cis4 fis,8 fis'4 b,8
   | cis4 gis8_\scrForte-\hideF cis4 eis8 fis4 cis8 dis,4 a''8
   | gis4 d!8 eis,4 b''8 b8. gis16 a8 d8. cis16 b8

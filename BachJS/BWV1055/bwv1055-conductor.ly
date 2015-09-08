@@ -15,7 +15,7 @@
   ***********************************************************************
 %}
 
- #(set-default-paper-size "letter")
+% #(set-default-paper-size "letter")
 #(ly:set-option 'relative-includes #t)
 
 \include "common/version.ily"

@@ -12,7 +12,7 @@
   ***********************************************************************
 %}
 
-\include "common/version.ily"
+\include "version.ily"
 
 % Overall size = influences the arrangement of covers and text-based pages
 

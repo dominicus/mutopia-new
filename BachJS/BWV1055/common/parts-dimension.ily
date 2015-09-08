@@ -14,8 +14,8 @@
 
 \include "version.ily"
 
-% Dimension globale = influence la disposition des couvertures et pages textuelles
 % Global dimension = influences the arrangement of cover pages and text
+% Dimension globale = influence la disposition des couvertures et pages textuelles
 
 #(set-global-staff-size 19)
 

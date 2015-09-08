@@ -27,7 +27,7 @@
   mutopiatitle = "Keyboard Concerto Nº 4"
   mutopiaopus = "BWV 1055"
   mutopiacomposer = "BachJS"
-  mutopiainstrument = "Orchestra,Violin,Viola,'Cello,Continuo,Harpsichord,Clavichord,Piano"
+  mutopiainstrument = "Orchestra: Violins, Viola,'Cello, Continuo, Harpsichord, Clavichord, Piano"
   
  footer = "Mutopia-2015/07/10-1"
  

@@ -5,6 +5,8 @@
   * typeset by Javier Ruiz-Alma                                         *
   *                                                                     *
   *                                                                     *
+  * Paper dimensions and parameters, to be included in the              *
+  * file for the Conductor's score                                      *
   *                                                                     *
   * Dimension et paramètres papiers, a inclure dans le fichier          *
   * de la partition directrice                                          *
@@ -14,7 +16,7 @@
   ***********************************************************************
 %}
 
-\include "common/version.ily"
+\include "version.ily"
 
 \paper {
   two-sided = ##t          % enable the variable for two-sided printing / Fr: active les variables pour impression recto-verso
@@ -75,18 +77,16 @@
     }
   }
 
-  first-page-number = -1	% Tient compte des 2 faces de la couverture
-  print-page-number = ##f	% évite la numérotation des premières pages
+  first-page-number = -1	% Takes into account 2 cover pages (Fr: Tient compte des 2 faces de la couverture)
+  print-page-number = ##f	% avoids numbering of first pages (Fr: évite la numérotation des premières pages)
 
-  %% Toutes les marges sont prises par défaut
+  %% Default horizontal dimensions (Fr: Dimensions horizontales par défaut)
+  indent = 20\mm		% left indent for first system (Fr: retrait à gauche du premier système (par défaut largeur de la page/14))
+  short-indent = 11\mm		% left indent for rest of systems - change according to printer (Fr: retrait à gauche de tous les systèmes - modifier en fonction de l'imprimante)
+  % for the correct printing of instrument names (Fr: pour l'impression correcte des noms d'instrument)
+  horizontal-shift = 0.0	% right indent for all systems (Fr: retrait à droite de tous les systèmes)
 
-  %% Dimensions horizontales par défaut
-  indent = 20\mm		% retrait à gauche du premier système (par défaut largeur de la page/14)
-  short-indent = 11\mm		% retrait à gauche de tous les systèmes - modifier en fonction de l'imprimante
-  % pour l'impression correcte des noms d'instrument
-  horizontal-shift = 0.0	% retrait à droite de tous les systèmes
-
-  %% Dimensions verticales
+  %% Vertical dimensions (Fr: Dimensions verticales)
 
   % détermine l’espacement entre deux systèmes d’un même mouvement.
   system-system-spacing = #'((basic-distance . 13) (minimum-distance . 8) (padding . 1) (stretchability . 40))

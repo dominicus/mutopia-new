@@ -5,7 +5,6 @@
   * typeset by Javier Ruiz-Alma                                         *
   *                                                                     *
   *                                                                     *
-  *                                                                     *
   * Parts staff for violins and viola                                   *
   *                                                                     *
   *                                                                     *
@@ -15,13 +14,12 @@
   ***********************************************************************
 %}
 
-\include "common/version.ily"
+\include "version.ily"
 
 
 %-------Typeset music
 \score {
   \keepWithTag #'printed
-%  \keepWithTag #'parts
         <<
           \new Staff = "Staff_violinI"  { \set Staff.instrumentName = #"Violin I"
                                           \clef treble \global \condenseRests \violinI }

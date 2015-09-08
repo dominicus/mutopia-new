@@ -5,7 +5,6 @@
   * typeset by Javier Ruiz-Alma                                         *
   *                                                                     *
   *                                                                     *
-  *                                                                     *
   * Parts: titles definition                                            *
   *                                                                     *
   *                                                                     *

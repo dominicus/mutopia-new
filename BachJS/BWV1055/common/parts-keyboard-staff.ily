@@ -1,5 +1,17 @@
-\include "common/version.ily"
+%{
+  ***********************************************************************
+  * Bach - Keyboard Concerto No.4 in A major                            *
+  *                                                                     *
+  * typeset by Javier Ruiz-Alma                                         *
+  *                                                                     *
+  * score block for Keyboard part printout                              *
+  *                                                                     *
+  * Do not compile                                                      *
+  *                                                                     *
+  ***********************************************************************
+%}
 
+\include "version.ily"
 
 %-------Typeset music
 \score {
