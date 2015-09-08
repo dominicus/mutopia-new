@@ -38,7 +38,7 @@
 }
 
 %--------Definitions
-\include "../common/bwv-1055-definitions.ily"
+\include "../common/definitions.ily"
 
 global = {
   \key a \major

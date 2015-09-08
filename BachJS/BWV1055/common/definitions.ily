@@ -1,4 +1,15 @@
-\version "2.18.2"
+%{
+  ***********************************************************************
+  * Bach - Keyboard Concerto No.4 in A major                            *
+  *                                                                     *
+  * typeset by Javier Ruiz-Alma                                         *
+  *                                                                     *
+  * Common declarations file, to be included in all other files         *
+  *                                                                     *
+  * Do not compile                                                      *
+  *                                                                     *
+  ***********************************************************************
+%}
 
 staffUp = \change Staff = "upper"
 staffDown = \change Staff = "lower"
@@ -30,6 +41,7 @@ scrPianoLeft = \markup { \center-align \small \concat { \hspace #3.7 \dynamic p 
 scrForteParLeft = \markup { \center-align \small \concat { \hspace #1.7 \italic "(" \dynamic f \italic \bold "orte)" } }
 scrPianoWhite = \markup { \small \whiteout \concat { \dynamic p \italic \bold "iano" } }
 scrPianoPar = \markup { \small \concat { \italic \bold "(" \dynamic p \italic \bold "iano)" } }
+scrPianoParWhite = \markup { \small \whiteout \concat { \italic \bold "(" \dynamic p \italic \bold "iano)" } }
 scrForte = \markup { \small \concat { \dynamic f \italic \bold "orte" } }
 scrForteLeft = \markup { \center-align \small \concat { \hspace #2 \dynamic f \italic \bold "orte" } }
 scrFortePar = \markup { \small \concat { \italic \bold "(" \dynamic f \italic \bold "orte)" } }
@@ -121,7 +133,7 @@ shapeSlurB = \shape #'((0 . 0) (1 . 0.6) (-1 . 0.6) (-0.5 . 0)) Tie
 shapeSlurC = \shape #'((0 . 0) (1 . -0.6) (-1 . -0.6) (-0.5 . 0)) Tie
 shapeSlurD = \shape #'((0 . 0) (1 . 0.6) (-1 . 0.6) (0 . 0)) Tie
 shapeSlurE = \shape #'((0 . 0) (1 . -0.6) (-1 . -0.6) (0 . 0)) Tie
-shapeSlurF = \shape #'((0 . 0) (1 . -0.6) (-1 . -0.6) (0 . 0)) Slur
+shapeSlurF = \shape #'((0 . 0) (0 . -0.6) (0 . -0.6) (0 . 0)) Slur
 shapeSlurG = \shape #'((0 . 0) (1 . 0.6) (-1 . 0.6) (0 . 0)) Slur
 shapeSlurH = \shape #'((0 . 0) (1 . 0.3) (-1 . 0.3) (0 . 0)) Tie
 
@@ -137,3 +149,5 @@ longerStem = \once \override Stem #'length-fraction = #(magstep 2)
 hideAccidental = \once \override Voice.Accidental.stencil = ##f
 
 hideTupletBracket = \override TupletBracket.bracket-visibility = ##f
+
+condenseRests = \set Score.skipBars = ##t
