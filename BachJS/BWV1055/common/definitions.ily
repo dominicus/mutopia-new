@@ -133,7 +133,7 @@ shapeSlurB = \shape #'((0 . 0) (1 . 0.6) (-1 . 0.6) (-0.5 . 0)) Tie
 shapeSlurC = \shape #'((0 . 0) (1 . -0.6) (-1 . -0.6) (-0.5 . 0)) Tie
 shapeSlurD = \shape #'((0 . 0) (1 . 0.6) (-1 . 0.6) (0 . 0)) Tie
 shapeSlurE = \shape #'((0 . 0) (1 . -0.6) (-1 . -0.6) (0 . 0)) Tie
-shapeSlurF = \shape #'((0 . 0) (1 . -0.6) (-1 . -0.6) (0 . 0)) Slur
+shapeSlurF = \shape #'((0 . 0) (0 . -0.6) (0 . -0.6) (0 . 0)) Slur
 shapeSlurG = \shape #'((0 . 0) (1 . 0.6) (-1 . 0.6) (0 . 0)) Slur
 shapeSlurH = \shape #'((0 . 0) (1 . 0.3) (-1 . 0.3) (0 . 0)) Tie
 
