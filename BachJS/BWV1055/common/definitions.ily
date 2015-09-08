@@ -149,3 +149,5 @@ longerStem = \once \override Stem #'length-fraction = #(magstep 2)
 hideAccidental = \once \override Voice.Accidental.stencil = ##f
 
 hideTupletBracket = \override TupletBracket.bracket-visibility = ##f
+
+condenseRests = \set Score.skipBars = ##t

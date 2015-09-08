@@ -3,8 +3,8 @@
   * Bach - Keyboard Concerto No.4 in A major                            *
   *                                                                     *
   * typeset by Javier Ruiz-Alma                                         *
-  * 01-Nov-2014 - 09-Feb-2015                                           *
-  * Ver 0.0 :                                                           *
+  * 01-Nov-2014 - 05-Sep-2015                                           *
+  *                                                                     *
   *                                                                     *
   * Variables, to be included at the top of all files                   *
   *                                                                     *
@@ -28,9 +28,15 @@ thisDateOfPublication = "1854"
 thisDateOfComposition = "1738"
 thisSource = "Bach-Gesellschaft Ausgabe; Breitkopf and Härtel, 1869"
 thisBigTitle = "Bach - Keyboard Concerto No. 4 in A major"
-thisTypesetting = "Typeset with LilyPond for the Mutopia Project"
-thisLocation = ""
-thisDateEdition = # ( strftime "%d-%m-%Y" ( localtime ( current-time ) ) )
+thisTypesetting = " "
+thisLocation = " "
+thisDateEdition = " " % # ( strftime "%d-%m-%Y" ( localtime ( current-time ) ) )
 thisCatalogIdentification = ""
-thisDuration = "Approx. duration : 16 min."
-thisRevision = "A"   % Version
+thisDuration = ""
+thisRevision = "ver. A"   % Version
+
+combinedPublicationName = "Conductor's Score"
+
+tempoMovI = "Allegro"
+tempoMovII = "Larghetto"
+tempoMovIII = "Allegro ma non tanto"

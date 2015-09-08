@@ -1,4 +1,4 @@
-\include "common/version.ily"
+
 
 %-------Generate midi
 \score {

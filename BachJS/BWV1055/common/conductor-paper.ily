@@ -21,7 +21,7 @@
   inner-margin = 16\mm     % Fr: marge intérieure
   outer-margin = 9\mm      % Fr: marge extérieure
   top-margin = 12.6\mm     % Fr: marge supérieure
-  bottom-margin = 12.6\mm  % Fr: marge inférieure
+  bottom-margin = 8\mm  % Fr: marge inférieure
 
   oddHeaderMarkup = \markup {
     \abs-fontsize #10 {
@@ -29,7 +29,7 @@
         %% force the header to take some space, otherwise the
         %% page layout becomes a complete mess.
         " "
-        \on-the-fly #not-first-page \fromproperty #'header:instrument
+%        \on-the-fly #not-first-page \fromproperty #'header:instrument
         \on-the-fly #print-page-number-check-first \fromproperty #'page:page-number-string
  }}}
  
@@ -37,9 +37,43 @@
     \abs-fontsize #10 {
       \bold \huge \fill-line {
         \on-the-fly #print-page-number-check-first \fromproperty #'page:page-number-string
-        \on-the-fly #not-first-page \fromproperty #'header:instrument
+%        \on-the-fly #not-first-page \fromproperty #'header:instrument
         " "
  }}}
+ 
+ reference = \markup {
+    \fill-line {
+      \concat {
+        \abs-fontsize #8 {
+          \combinedPublicationName \hspace #0.4 \char ##x2014 \hspace #0.4 \thisRevision
+        }
+      }
+    }
+  }
+ 
+   evenFooterMarkup = \markup {  \override #'( baseline-skip . 0.5 )
+    \column { 
+      \fill-line {
+        %% Copyright header field only on first page.
+        \on-the-fly #part-first-page \fromproperty #'header:copyright % \firstCopyRight
+      }
+      %% Added footer for all pages except first
+      \fill-line { \on-the-fly #not-part-first-page { \thisBigTitle } }
+      \fill-line { \on-the-fly #not-part-first-page { \reference } }
+    }
+  }
+
+  oddFooterMarkup = \markup { \override #'( baseline-skip . 0.5 )
+    \column { 
+      \fill-line {
+        %% Copyright header field only on first page.
+        \on-the-fly #part-first-page \fromproperty #'header:copyright % \firstCopyRight
+      }
+      %% Added footer for all pages except first
+      \fill-line { \on-the-fly #not-part-first-page { \thisBigTitle } }
+      \fill-line { \on-the-fly #not-part-first-page { \reference } }
+    }
+  }
 
   first-page-number = -1	% Tient compte des 2 faces de la couverture
   print-page-number = ##f	% évite la numérotation des premières pages
@@ -81,12 +115,11 @@
   top-markup-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 1))
 
   % détermine la distance entre le dernier système ou le dernier markup de haut niveau, et le bas de la surface imprimable.
-  last-bottom-spacing = #'((basic-distance . 1) (minimum-distance . 0) (padding . 1) (stretchability . 8))
+  last-bottom-spacing = #'((basic-distance . 1) (minimum-distance . 0) (padding . 1.5) (stretchability . 8))
     % 30 par défaut
 
   ragged-bottom = ##f		% empêche la justification verticale des pages sauf la dernière si mis à ##t (défaut ##f)
   ragged-last = ##f		% empêche la justification du dernier système si mis à ##t (défaut ##f)
   ragged-last-bottom = ##f	% force la justification verticale de la dernière page si mis à ##f (défaut ##t)
   ragged-right = ##f		% empêche la justification à droite de la ligne si mis à ##t (défaut ##f)
-  %max-systems-per-page = 1	% Systèmes par page
 }
