@@ -47,7 +47,9 @@
     \fill-line {
       \concat {
         \abs-fontsize #8 {
-          \combinedPublicationName \hspace #0.4 \char ##x2014 \hspace #0.4 \thisRevision
+          \thisBigTitle \hspace #0.4 \char ##x2014 \hspace #0.4 
+          \combinedPublicationName \hspace #0.4 \char ##x2014 \hspace #0.4
+          \thisRevision
         }
       }
     }
@@ -57,10 +59,9 @@
     \column { 
       \fill-line {
         %% Copyright header field only on first page.
-        \on-the-fly #part-first-page \fromproperty #'header:copyright % \firstCopyRight
+        \on-the-fly #part-first-page \fromproperty #'header:copyright
       }
       %% Added footer for all pages except first
-      \fill-line { \on-the-fly #not-part-first-page { \thisBigTitle } }
       \fill-line { \on-the-fly #not-part-first-page { \reference } }
     }
   }
@@ -69,10 +70,9 @@
     \column { 
       \fill-line {
         %% Copyright header field only on first page.
-        \on-the-fly #part-first-page \fromproperty #'header:copyright % \firstCopyRight
+        \on-the-fly #part-first-page \fromproperty #'header:copyright
       }
       %% Added footer for all pages except first
-      \fill-line { \on-the-fly #not-part-first-page { \thisBigTitle } }
       \fill-line { \on-the-fly #not-part-first-page { \reference } }
     }
   }
