@@ -35,14 +35,14 @@ PartShort = "Continuo"
   \bookpart {
     \header { piece = \markup {
                          \fontsize #2 \raise #1 {
-                           \hspace #20 \thisTempoMovI   %--------------- ../common/variables.ily
+                           \hspace #20 \thisTempoMovI   %--------------- /common/variables.ily
                          }
               }
     }
     \markup { \fill-line {
                    \fontsize #3 \lower#7 \bold \concat {
                      \char ##x2014 \hspace #2
-                     \thisIdentifierMovI       %------------------------ ../common/variables.ily
+                     \thisIdentifierMovI       %------------------------ /common/variables.ily
                      \hspace #2 \char ##x2014
                    }
               }

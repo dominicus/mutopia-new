@@ -19,18 +19,18 @@
 
 \include "mov1/music.ily"
 \book {
-  \bookOutputName \thisFilenameMovI      %-------- ../common/variables.ily
+  \bookOutputName \thisFilenameMovI      %-------- /common/variables.ily
   \include "mov1/midi.ily"
 }
 
 \include "mov2/music.ily"
 \book {
-  \bookOutputName \thisFilenameMovII     %-------- ../common/variables.ily
+  \bookOutputName \thisFilenameMovII     %-------- /common/variables.ily
   \include "mov2/midi.ily"
 }
 
 \include "mov3/music.ily"
 \book {
-  \bookOutputName \thisFilenameMovIII    %-------- ../common/variables.ily
+  \bookOutputName \thisFilenameMovIII    %-------- /common/variables.ily
   \include "mov3/midi.ily"
 }

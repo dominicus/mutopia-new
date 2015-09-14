@@ -28,7 +28,7 @@
 \include "common/conductor-cover.ily"
 %---------------- Cover
   \bookpart {
-    \CoverA          %-------------------------------------------- ../common/conductor-cover.ily
+    \CoverA          %-------------------------------------------- /common/conductor-cover.ily
   }
 %---------------- Table of Contents
   \bookpart {
@@ -37,7 +37,7 @@
       print-page-number = ##f
       two-sided = ##f
     }
-    \PageToc         %-------------------------------------------- ../common/conductor-cover.ily
+    \PageToc         %-------------------------------------------- /common/conductor-cover.ily
   }
 
 %---------------MOVEMENTS 
@@ -46,7 +46,7 @@
   \bookpart {
     \include "mov1/titles.ily"
     \paper { print-page-number = ##t }
-    \label #'MvmtI    %-------------------------------------------- dependency to ../common/conductor-cover.ily
+    \label #'MvmtI    %-------------------------------------------- dependency to /common/conductor-cover.ily
     \include "common/conductor-staff.ily"
   }
 %---------------Second Mov: Larghetto
@@ -54,7 +54,7 @@
   \bookpart {
     \include "mov2/titles.ily"
     \paper { print-page-number = ##t }
-    \label #'MvmtII   %-------------------------------------------- dependency to ../common/conductor-cover.ily
+    \label #'MvmtII   %-------------------------------------------- dependency to /common/conductor-cover.ily
     \include "common/conductor-staff.ily"
   }
 %--------------Third Mov: Allegro ma non tanto
@@ -62,6 +62,6 @@
   \bookpart {
     \include "mov3/titles.ily"
     \paper { print-page-number = ##t }
-    \label #'MvmtIII  %-------------------------------------------- dependency to ../common/conductor-cover.ily
+    \label #'MvmtIII  %-------------------------------------------- dependency to /common/conductor-cover.ily
     \include "common/conductor-staff.ily"
   }
