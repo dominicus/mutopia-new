@@ -1,5 +1,5 @@
 
-viola = \relative c' {
+\relative c' {
   | r8 e8-\scrSpiccato a cis e, a cis, e
   | r8 e_[ b gis] gis' b d e,
   | a8 e cis a a' r8 r4

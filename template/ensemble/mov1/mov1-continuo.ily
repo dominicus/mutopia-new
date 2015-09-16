@@ -1,6 +1,5 @@
 
-
-continuo = \relative c {
+\relative c {
   | a8-\scrSpiccato a' r4 r2
   | gis,8_[ gis'] r4 r2
   | r8 a16[ gis] a8 fis dis fis dis b

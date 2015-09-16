@@ -12,6 +12,7 @@
 %}
 
 \include "version.ily"
+\include "titles.ily"
 
 \score {
   \keepWithTag #'printed      %------------------------------ [manual entry]

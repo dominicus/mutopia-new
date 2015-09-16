@@ -1,9 +1,7 @@
 %{
   ***********************************************************************
-  * Bach - Keyboard Concerto No.4 in A major                            *
-  *                                                                     *
-  * typeset by Javier Ruiz-Alma                                         *
-  *                                                                     *
+  * Composer - Work in Tonality                                         *
+  * typeset by                                                          *
   *                                                                     *
   *                                                                     *
   * Notes for Mov2                                                      *
@@ -20,8 +18,8 @@ global = {
   \time 12/8
 }
 
-\include "mov2-violin1.ily"
-\include "mov2-violin2.ily"
-\include "mov2-viola.ily"
-\include "mov2-continuo.ily"
+violinI   = \include "mov2-violin1.ily"
+violinII  = \include "mov2-violin2.ily"
+viola     = \include "mov2-viola.ily"
+continuo  = \include "mov2-continuo.ily"
 \include "mov2-keyboard.ily"

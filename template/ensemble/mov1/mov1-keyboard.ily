@@ -1,5 +1,5 @@
 
-upperKeyb =   \relative c'' {
+upperKeyb = \relative c'' {
   \setBeatStructureQuarter
   | r16 e a gis a e cis a e'_[ cis a e] cis'a e cis
   | r16 d' b'a b gis d b gis'd b gis d'_[ b gis e]

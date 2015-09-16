@@ -1,6 +1,5 @@
 
-
-violinI = \relative c'' {
+\relative c'' {
   | fis4-\hideF cis8 fis,4 a'8 gis4 cis,8 e,4 gis'8
   | fis4 b,8 d,4 fis'8 eis4 fis8 fis4 eis8
   | fis4_\scrPiano-\hideP cis8 fis,4 a'8 gis4 cis,8 eis,4 b''8

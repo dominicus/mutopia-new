@@ -1,45 +1,58 @@
+%{
+  ***********************************************************************
+  * Composer - Work in Tonality                                         *
+  * typeset by                                                          *
+  *                                                                     *
+  * MIDI settings for this movement                                     *
+  *                                                                     *
+  * Do not compile                                                      *
+  *                                                                     *
+  ***********************************************************************
+%}
 
+\include "../common/version.ily"
 
-%-------Generate midi
 \score {
-     \keepWithTag #'played
+     \keepWithTag #'played                         %------------------------------- [manual entry]
       <<
-      \new Staff = "Staff_violinI"  {
-              \set Staff.midiInstrument = "violin"
-              \set Staff.midiMinimumVolume = #0.30
-              \set Staff.midiMaximumVolume = #0.70
-              \clef treble \global \violinI
+      \new Staff {
+              \set Staff.midiInstrument = "violin" %------------------------------- [manual entry]
+              \set Staff.midiMinimumVolume = #0.30 %------------------------------- [manual entry]
+              \set Staff.midiMaximumVolume = #0.70 %------------------------------- [manual entry]
+              \global \violinI                     %------------------------------- mov_/music.ily
       }
-      \new Staff = "Staff_violinII" {
-              \set Staff.midiInstrument = "violin"
-              \set Staff.midiMinimumVolume = #0.25
-              \set Staff.midiMaximumVolume = #0.50
-              \clef treble \global \violinII
+      \new Staff {
+              \set Staff.midiInstrument = "violin" %------------------------------- [manual entry]
+              \set Staff.midiMinimumVolume = #0.25 %------------------------------- [manual entry]
+              \set Staff.midiMaximumVolume = #0.50 %------------------------------- [manual entry]
+              \global \violinII                    %------------------------------- mov_/music.ily
       }
-      \new Staff = "Staff_viola" {
-              \set Staff.midiInstrument = "viola"
-              \set Staff.midiMinimumVolume = #0.25
-              \set Staff.midiMaximumVolume = #0.50
-              \clef alto \global \viola
+      \new Staff {
+              \set Staff.midiInstrument = "viola"  %------------------------------- [manual entry]
+              \set Staff.midiMinimumVolume = #0.25 %------------------------------- [manual entry]
+              \set Staff.midiMaximumVolume = #0.50 %------------------------------- [manual entry]
+              \global \viola                       %------------------------------- mov_/music.ily
       }
-      \new Staff = "Staff_continuo" { 
-              \set Staff.midiInstrument = "cello"
-              \clef bass \global \continuo
-              \set Staff.midiMinimumVolume = #0.3
-              \set Staff.midiMaximumVolume = #0.6
+      \new Staff { 
+              \set Staff.midiInstrument = "cello"  %------------------------------- [manual entry]
+              \set Staff.midiMinimumVolume = #0.3  %------------------------------- [manual entry]
+              \set Staff.midiMaximumVolume = #0.6  %------------------------------- [manual entry]
+              \global \continuo                    %------------------------------- mov_/music.ily
       }
-      \new Staff = "upper" {
-              \set Staff.midiInstrument = "acoustic grand"
-              \set Staff.midiMinimumVolume = #0.5
-              \set Staff.midiMaximumVolume = #0.95
-              \clef treble \global \upperKeyb
+      \new Staff = "upper" {  %-----------------------------  dependency with \staffUp  in /common/definitions.ily
+              \set Staff.midiInstrument = "acoustic grand" %----------------------- [manual entry]
+              \set Staff.midiMinimumVolume = #0.5  %------------------------------- [manual entry]
+              \set Staff.midiMaximumVolume = #0.95 %------------------------------- [manual entry]
+              \global \upperKeyb                   %------------------------------- mov_/music.ily
       }
-      \new Staff = "lower" {
-              \set Staff.midiInstrument = "acoustic grand"
-              \clef bass \global \lowerKeyb
-              \set Staff.midiMinimumVolume = #0.5
-              \set Staff.midiMaximumVolume = #0.95
+      \new Staff = "lower" {  %-----------------------------  dependency with \staffDown in /common/definitions.ily
+              \set Staff.midiInstrument = "acoustic grand" %----------------------- [manual entry]
+              \set Staff.midiMinimumVolume = #0.5  %------------------------------- [manual entry]
+              \set Staff.midiMaximumVolume = #0.95 %------------------------------- [manual entry]
+              \global \lowerKeyb                   %------------------------------- mov_/music.ily
       }
     >>
-    \midi { \tempo 4 = 106 }
+    \midi {
+      \tempo 4 = 106                               %------------------------------- [manual entry]
+    }
 }

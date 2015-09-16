@@ -1,5 +1,5 @@
 
-violinI = \relative c'' {
+\relative c'' {
     \partial 8 e8
   | a8. gis32 fis e d cis b
   | cis8~ cis32 b cis d cis b a gis

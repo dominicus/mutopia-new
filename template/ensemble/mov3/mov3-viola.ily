@@ -1,5 +1,5 @@
 
-viola = \relative c'' {
+\relative c'' {
     \partial 8 a8
   | e8( e e)
   | e8( e e)

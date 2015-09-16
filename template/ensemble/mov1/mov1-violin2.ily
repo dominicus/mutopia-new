@@ -1,5 +1,5 @@
 
-violinII = \relative c'' {
+\relative c'' {
   | r8 a16[-\scrSpiccato b] cis8 e a, cis e, a
   | r8 gis16[ a] b8 d b d gis, b
   | a8[ cis16 b] cis8 dis16 e fis8 r8 r4

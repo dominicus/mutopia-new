@@ -1,5 +1,5 @@
 
-continuo = \relative c {
+\relative c {
     \partial 8 a8^\scrTutti
   | a'8( a gis)
   | a8( a e)

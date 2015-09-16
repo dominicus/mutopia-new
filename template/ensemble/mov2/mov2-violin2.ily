@@ -1,5 +1,5 @@
 
-violinII = \relative c'' {
+\relative c'' {
   | cis4.-\hideMF r8 r d8 d( cis) r r r cis
   | cis8( b) r r r b b8. cis16 a8 \appoggiatura a16 gis8. a16 b8
   | a4_\scrPiano-\hideP r8 r r fis'8 eis4 r8 r r eis
