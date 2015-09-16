@@ -3,7 +3,7 @@
   * Composer - Work in Tonality                                         *
   * typeset by                                                          *
   *                                                                     *
-  * score block for conductor's printout                                *
+  * movement printout for conductor's score                             *
   *                                                                     *
   * Do not compile                                                      *
   *                                                                     *
@@ -12,6 +12,8 @@
 
 \include "version.ily"
 
+\include "titles.ily"
+\thisTocLabel
 \score {
   \keepWithTag #'printed        %------------------------------- [manual entry]
   \new StaffGroup

@@ -1,5 +1,5 @@
 
-continuo = \relative c, {
+\relative c, {
   | fis4.^\scrTutti-\hideMF r8 r fis' eis4. r8 r e8
   | dis4. r8 r d8 cis4 d8 b4 cis8
   | fis,4. r4. r2.

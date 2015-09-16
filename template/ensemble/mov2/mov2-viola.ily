@@ -1,5 +1,5 @@
 
-viola = \relative c'' {
+\relative c'' {
   | a4.-\hideMF r8 r fis8 gis4 r8 r r gis
   | a8( fis) r r r b8 gis4 fis8 d4 cis8
   | cis4_\scrPiano-\hideP r8 r r cis'8 cis4 r8 r r cis

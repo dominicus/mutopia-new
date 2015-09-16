@@ -1,5 +1,5 @@
 
-violinI = \relative c'' {
+\relative c'' {
   \setBeatStructureQuarter
   | r8 cis16[-\scrSpiccato d] e8 a cis,[ e a, cis]
   | r8 b16[ cis] d8 b' d,[ gis b, d]
