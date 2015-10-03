@@ -1,8 +1,5 @@
 %{
   ***********************************************************************
-  * Composer - Work in Tonality                                         *
-  * typeset by                                                          *
-  *                                                                     *
   *                                                                     *
   * score block for single-staff instruments                            *
   *                                                                     *
@@ -12,7 +9,7 @@
 %}
 
 \include "version.ily"
-\include "titles.ily"
+\include "styles.ily"
 
 \score {
   \keepWithTag #'printed        %------------------------------- [manual entry]

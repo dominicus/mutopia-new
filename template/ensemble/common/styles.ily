@@ -1,26 +1,33 @@
 %{
   ***********************************************************************
-  * Composer - Work in Tonality                                         *
-  * typeset by                                                          *
   *                                                                     *
-  *                                                                     *
-  * Spacing and paper parameters.  To be included printing files        *
-  *                                                                     *
-  * Dimension et paramètres papiers, a inclure dans tous les fichiers   *
-  * d'impression                                                        *
+  * Spacing, paper, and titles parameters.                              *
   *                                                                     *
   * Do not compile                                                      *
   *                                                                     *
   ***********************************************************************
 %}
 
-% The variables \thisInstrName and \Part MUST be defined ahead of the insertion of this file
-% These will be used for definition of HeaderMarkup and FooterMarkup
+% The variables \thisInstrName,\thisPart, \thisIdentifier, and \thisTempo
+% MUST be defined ahead of the insertion of this file.
 
 \include "version.ily"
 
+\header {
+  title = \markup { \abs-fontsize #20 \concat { \thisWork \hspace #1.5 \thisTonality } }
+  subtitle = \markup { \center-column { \abs-fontsize #18 \lower #2
+                       \concat { \char ##x2014 \hspace #2
+                                 \thisIdentifier         %-------------------- to be defined ahead of file insertion
+                                 \hspace #2 \char ##x2014
+  } } }
+  composer = \markup \center-column {\abs-fontsize #12 \thisComposer}
+  opus = \markup \center-column {\abs-fontsize #12 \lower #0 \thisOpus}
+  piece = \markup { \abs-fontsize #14 \raise #1 { \hspace #20
+                                             \thisTempo  %-------------------- to be defined ahead of file insertion
+  } }
+}
+
 \paper {
-  
   inner-margin = 12\mm             % marge intérieure
   outer-margin = 9\mm              % marge extérieure
   top-margin = 12.6\mm             % marge supérieure
@@ -69,7 +76,7 @@
   
   %----------------------------------Header Settings
   thisPart = \markup { \center-column { \fontsize #3 \bold
-                       \Part                   %---------------- defined ahead of file insertion
+                       \Part                   %---------------- to be defined ahead of file insertion
              } }
 
   oddHeaderMarkup = \markup {
@@ -78,7 +85,7 @@
         { \abs-fontsize #10 \on-the-fly #print-page-number-check-first
           \fromproperty #'page:page-number-string }
         { \center-column {
-            \lower #1 \fontsize #-1 \thisPart } %---------------- defined earlier this file
+            \lower #1 \fontsize #-1 \thisPart } %---------------- to be defined earlier this file
         }
         { " " }
    } } }
@@ -100,7 +107,7 @@
                      \thisBigTitle              %---------------- /common/variables.ily
                      \hspace #0.4 \char ##x2014 \hspace #0.4 
                      \thisInstrName             %---------------- defined ahead of file insertion
-               } } }
+  } } }
                
   evenFooterMarkup = \markup {  \override #'( baseline-skip . 0.5 )
     \column { 
@@ -112,7 +119,7 @@
       \fill-line { \on-the-fly #not-part-first-page {
                                                      \referenceFooter  %--- defined earlier this file
                                                     }
-   } } }
+  } } }
 
   oddFooterMarkup = \markup { \override #'( baseline-skip . 0.5 )
     \column { 
@@ -121,6 +128,8 @@
         \on-the-fly #part-first-page \fromproperty #'header:copyright
       }
       %% Added footer for all pages except first
-      \fill-line { \on-the-fly #not-part-first-page { \referenceFooter } }
+      \fill-line { \on-the-fly #not-part-first-page { \referenceFooter }
   } } }
+  
+}   %--end \paper definition
   

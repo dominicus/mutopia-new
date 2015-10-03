@@ -1,12 +1,9 @@
 %{
   ***********************************************************************
-  * Composer - Work in Tonality                                         *
-  * typeset by                                                          *
   *                                                                     *
   * Variables, to be included at the top of all files                   *
   * Variables, à inclure en tête de tous les fichiers                   *
   *                                                                     *
-  * SETUP:                                                                     *
   *                                                                     *
   * Do not compile                                                      *
   *                                                                     *
@@ -26,10 +23,8 @@ thisDates = "1685-1750"
 thisDateOfPublication = "1854"
 thisSource = "Bach-Gesellschaft Ausgabe; Breitkopf and Härtel, 1869"
 thisBigTitle = "Bach - Keyboard Concerto Nº 4 in A major"
-thisRevision = "ver. A"
 
 combinedPublicationName = "Conductor's Score"
-thisConductorFilename = "bwv1055-conductor"
 
 %%----------------Movement-specific variables
 thisTempoMovI = "Allegro"
@@ -54,4 +49,14 @@ thisInstrNameII = "Violin II"
 thisInstrNameIII = "Viola"
 thisInstrNameIV = "Continuo"
 thisInstrNameV = "Keyboard"
+
+   %------------------set clefs for single-staff parts
+thisClefInstrI = \clef treble
+thisClefInstrII = \clef treble
+thisClefInstrIII = \clef alto
+thisClefInstrIV = \clef bass
+thisClefInstrVu = \clef treble
+thisClefInstrVd = \clef bass
+
+
 

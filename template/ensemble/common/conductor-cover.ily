@@ -1,7 +1,5 @@
 %{
   ***********************************************************************
-  * Composer - Work in Tonality                                         *
-  * typeset by                                                          *
   *                                                                     *
   * Generation of Cover Page to be inserted at the top of the           *
   * Conductor's edition                                                 * 
@@ -27,6 +25,12 @@
 %%      Cover and TOC pages               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\paper {
+  first-page-number = -1    %----------------------- Takes into account 2 cover pages
+  left-margin = 12\mm
+  top-margin = 12.6\mm
+  bottom-margin = 8\mm
+}
 
 %% - Formatting of titles for Cover page and TOC
 %% - all variables in this section are defined in /common/variables.ily

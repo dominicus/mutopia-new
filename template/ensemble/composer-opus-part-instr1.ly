@@ -24,9 +24,7 @@
 %--------Part-specific settings
 thisInstrName = \thisInstrNameI  %----------- /common/variables.ily
 Part = \thisInstrName            %------------[fixed for parts]
-thisClef = \clef treble          %----------- [manual entry]
-
-\include "common/paper.ily"
+thisClef = \thisClefInstrI       %----------- [manual entry]
 
 %---------------MOVEMENTS 
 %---------------First Mov: Allegro

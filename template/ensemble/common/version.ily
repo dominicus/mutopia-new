@@ -1,9 +1,5 @@
 %{
   ***********************************************************************
-  * Bach - Keyboard Concerto No.4 in A major                            *
-  *                                                                     *
-  * typeset by Javier Ruiz-Alma                                         *
-  *                                                                     *
   *                                                                     *
   * Version number; to be included at the top of all files              *
   *                                                                     *
@@ -13,3 +9,4 @@
 %}
 
 \version "2.18.2"
+

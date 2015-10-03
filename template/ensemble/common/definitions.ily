@@ -4,16 +4,21 @@
   * typeset by                                                          *
   *                                                                     *
   *                                                                     *
-  * Common declarations file, to be included in all other files         *
+  * Common definitions file, to be included in all other files          *
   *                                                                     *
   * Do not compile                                                      *
   *                                                                     *
   ***********************************************************************
 %}
 
+%----Definitions with template dependencies
 staffUp = \change Staff = "upper"
 staffDown = \change Staff = "lower"
+condenseRests = \set Score.skipBars = ##t
+%-----------------------------------------
 
+
+%----Sample definitions
 hideF = \tweak #'stencil ##f \f
 hideFF = \tweak #'stencil ##f \ff
 hideMF = \tweak #'stencil ##f \mf
@@ -22,6 +27,8 @@ hideP = \tweak #'stencil ##f \p
 hidePP = \tweak #'stencil ##f \pp
 hidePPP = \tweak #'stencil ##f \ppp
 hidePPPP = \tweak #'stencil ##f \pppp
+
+omitDynamic = \once\omit DynamicText
 
 scrCourtMordent = \markup { \center-align \concat { \hspace #0.6 "(" \hspace #0.2 \raise #0.6 \small \musicglyph #"scripts.mordent" \hspace #0.2 ")" } }
 scrCourtMordStem = \markup { \center-align \concat { \hspace #0.6 "(" \hspace #0.2 \raise #0.6 \small \musicglyph #"scripts.mordent" \hspace #0.2 ")" } }
@@ -147,5 +154,3 @@ longerStem = \once \override Stem #'length-fraction = #(magstep 2)
 hideAccidental = \once \override Voice.Accidental.stencil = ##f
 
 hideTupletBracket = \override TupletBracket.bracket-visibility = ##f
-
-condenseRests = \set Score.skipBars = ##t

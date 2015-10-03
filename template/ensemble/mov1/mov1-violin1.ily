@@ -20,7 +20,7 @@
   %15
   | b16 a b cis b( cis a) b cis b cis d cis( d b) cis
   | d16 cis d e d cis b a e'8_[ a,e gis]
-  | a8[ e-\scrPiano-\hideP a gis] a16( b cis d e8) d
+  | a8[ \omitDynamic e\p-\scrPiano a gis] a16( b cis d e8) d
   | cis8 r8 r4 r8 b[ e dis]
   | e16( fis gis a b8) a gis r8 r4
   %20

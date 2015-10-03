@@ -1,8 +1,5 @@
 %{
   ***********************************************************************
-  * Composer - Work in Tonality                                         *
-  * typeset by                                                          *
-  *                                                                     *
   *                                                                     *
   * General dimensions, conductor's score                               *
   *                                                                     *

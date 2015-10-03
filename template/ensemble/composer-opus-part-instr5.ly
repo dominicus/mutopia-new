@@ -22,16 +22,14 @@
 \include "common/parts-dimension.ily"
 
 %--------Part-specific settings
-thisInstrName = \thisInstrNameV    %----------- /common/variables.ily
-Part = \thisInstrName              %------------[fixed for parts]
-
-\include "common/paper.ily"
+thisInstrName = \thisInstrNameV     %----------- /common/variables.ily
+Part = \thisInstrName               %------------[fixed for parts]
 
 %---------------MOVEMENTS 
 %------- -------First Mov: Allegro
 \include "mov1/music.ily"
-thisTempo = \thisTempoMovI  %----------------- /common/variables.ily
-thisIdentifier = \thisIdentifierMovI %-------- /common/variables.ily
+thisTempo = \thisTempoMovI   %----------------- /common/variables.ily
+thisIdentifier = \thisIdentifierMovI  %-------- /common/variables.ily
 \bookpart { \include "common/parts-staff-keyboard.ily" }
 %---------------Second Mov: Larghetto
 \include "mov2/music.ily"
@@ -43,3 +41,4 @@ thisIdentifier = \thisIdentifierMovII %-------- /common/variables.ily
 thisTempo = \thisTempoMovIII  %----------------- /common/variables.ily
 thisIdentifier = \thisIdentifierMovIII %-------- /common/variables.ily
 \bookpart { \include "common/parts-staff-keyboard.ily" }
+

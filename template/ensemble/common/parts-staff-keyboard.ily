@@ -1,8 +1,5 @@
 %{
   ***********************************************************************
-  * Composer - Work in Tonality                                         *
-  * typeset by                                                          *
-  *                                                                     *
   *                                                                     *
   * score block for Keyboard part printout                              *
   *                                                                     *
@@ -12,22 +9,22 @@
 %}
 
 \include "version.ily"
-\include "titles.ily"
+\include "styles.ily"
 
 \score {
   \keepWithTag #'printed      %------------------------------ [manual entry]
  <<
     \new PianoStaff
     <<
-      \set PianoStaff.instrumentName = \thisInstrNameV  %-- ../common/variables.ily
+      \set PianoStaff.instrumentName = \thisInstrNameV  %--   /common/variables.ily
       \new Staff = "upper" {  %-----------------------------  dependency with \staffUp in ../common/definitions.ily
-        \clef treble          %------------------------------ [manual entry]
-        \condenseRests        %---------------------------- ../common/definitions.ily
-        \global               %---------------------------- ../mov_/music.ily
-        \upperKeyb            %---------------------------- ../mov_/music.ily [manually set instrument]
+        \clefInstrVu          %-----------------------------  /common/variables.ily
+        \condenseRests        %----------------------------   /common/definitions.ily
+        \global               %----------------------------   /mov_/music.ily
+        \upperKeyb            %----------------------------   /mov_/music.ily [manually set instrument]
       }
       \new Staff = "lower" {  %-----------------------------  dependency with \staffDown in ../common/definitions.ily
-        \clef bass
+        \clefInstrVd
         \condenseRests
         \global
         \lowerKeyb
