@@ -18,13 +18,13 @@
     <<
       \set PianoStaff.instrumentName = \thisInstrNameV  %--   /common/variables.ily
       \new Staff = "upper" {  %-----------------------------  dependency with \staffUp in ../common/definitions.ily
-        \clefInstrVu          %-----------------------------  /common/variables.ily
+        \thisClefInstrVu      %-----------------------------  /common/variables.ily
         \condenseRests        %----------------------------   /common/definitions.ily
         \global               %----------------------------   /mov_/music.ily
         \upperKeyb            %----------------------------   /mov_/music.ily [manually set instrument]
       }
       \new Staff = "lower" {  %-----------------------------  dependency with \staffDown in ../common/definitions.ily
-        \clefInstrVd
+        \thisClefInstrVd
         \condenseRests
         \global
         \lowerKeyb
