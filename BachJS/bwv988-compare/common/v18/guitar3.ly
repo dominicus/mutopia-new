@@ -23,7 +23,7 @@
     ais4 gis8 ais b a g fis
     g4 e a a
     d, a' d2
-  }       
+ }       
 
  \repeat volta 1 {
     r4 d8 e fis4 d

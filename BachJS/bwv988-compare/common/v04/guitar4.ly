@@ -12,15 +12,15 @@
  \break
     d4. | % 7
     r8 b8 [ d ] | %8
-    g,8 g'4 ~ | % 9
-    g8 fis4 ~ | % 10
+    g,8 \TInb g'4 ~ | % 9
+    g8 \TDn fis4 ~ | % 10
     fis8 [ e g ] | % 11
     cis,8 [ a' cis ] | % 12
  \break
     fis,4. | % 13
     g8 g,4 ~ | % 14
     g8 [ fis8 a8 ]
-    }
+ }
     \alternative {
 	 { d,8. [ d'16 e fis ] | } % 16
 	 { d,8. [ a''16  b cis ] | } % 16
@@ -50,5 +50,5 @@
     \alternative {
 	 { g,8. a'16 b c | } % 32
 	 { g,4 r8 \bar "|." | } % 32
-    }
+ }
 }

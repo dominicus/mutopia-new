@@ -23,13 +23,13 @@
  \break
     gis8 [ gis, ] r8 | % 14
     a'8 [ a, ] r8 | % 15
-  }
+ }
   
     \alternative {
-	    { d,8 [ d'16 c b a ] | % 16
-	    g fis g a b g } % 17
-	    { d8 g b | % 16
-	    d16 cis d e fis d } %17 
+	{ d,8 [ d'16 c b a ] | % 16
+	g fis g a b g } % 17
+	{ d8 g b | % 16
+	d16 cis d e fis d } %17 
     }
 
 \pageBreak
@@ -52,12 +52,12 @@
  \break
     cis8 [ cis'8 cis,8 ] | % 30
     d8 [ d'8 d,8 ]
-   }
+ }
 
     \alternative {
-	    {g,8 [ g'16 fis e g ] | % 32
-	    fis16 [ e d e fis d ]} % 33
-	    { g,8 d' g \bar "|."}
- }
+	{g,8 [ g'16 fis e g ] | % 32
+	fis16 [ e d e fis d ]} % 33
+	{ g,8 d' g \bar "|."}
+    }
 }
 

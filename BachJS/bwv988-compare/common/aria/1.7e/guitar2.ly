@@ -28,7 +28,7 @@
 	{  f'4\rest f4\rest \stemUp e4 | s2. } \\
 	{ s4 \stemDown b2 | \stemUp a4 s2 } \\
 	{ \stemDown
-	  \once \override Tie #'control-points = #'((1.5 . -1.5) (6 . -5.5) (16 . -5.5) (22.3 . -1.8))
+	  \once \override Tie #'control-points = #'((1.5 . -1.5) (6 . -5.5) (16 . -5.5) (22.0 . -2.8))
 	g2._~ | g4 fis8\prallprall e8 fis8 b,8 } 
     >>
 
@@ -48,7 +48,7 @@
 	{ \stemDown fis2. | g2. }
     >>
     << %15-16
-	{ fis'4 e8. fis16 g4-~ | g4 fis2 } \\
+	{ fis'4 e8. fis16 \Tla g4-~ | g4 fis2 } \\
 	{ a,2. | d4~ d8 a8 d4 } \\
 	{ s2. | s2. }
     >>

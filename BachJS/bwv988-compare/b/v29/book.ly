@@ -16,8 +16,8 @@ global = {
 	print-first-page-number = ##t
 	system-system-spacing =
 	    #'((basic-distance . 25)
-	       (minimum-distance . 14)
-	       (padding . 2)
+	       (minimum-distance . 20)
+	       (padding . 4)
 	       (stretchability . 12))
     }
 
@@ -39,9 +39,9 @@ global = {
     \score {
 	\new StaffGroup \with {
 	    \override StaffGrouper #'staff-staff-spacing =
-		#'((basic-distance . 12)
-                   (minimum-distance . 8)
-                   (padding . 4))
+		#'((basic-distance . 14)
+                   (minimum-distance . 10)
+                   (padding . 0))
             }
 	<<
 	    \new Staff << \new Voice { \spacing } \new Voice { \global \guitarone } >>

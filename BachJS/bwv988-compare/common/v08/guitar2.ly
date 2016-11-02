@@ -19,11 +19,11 @@
     b16 [ d  g, a ] b [ g e fis ] g [ e b d] | % 14
     cis16 [ e a, b ] cis [a e fis ] g [ e cis' e, ] | % 15
     fis16 [a d, e ] fis [ d fis a ] d4 | % 16
-    }
+ }
 
 \pageBreak
  
-    \repeat volta 2 {
+ \repeat volta 2 {
     d8 [ a fis d ] r16 c''16 [ b a ] | % 17
     g8 [ d b g ] r16 f'16 [ e d ] | % 18
     c16 [ e a g ] fis [ a c b ] a [ c dis cis ] | % 19
@@ -41,6 +41,6 @@
     d,8 [ fis a c ] r16 c16 [ d fis, ] | % 31
     g16 [ b d fis ] g [ fis32 e32 d32 c32 b32 a32 ] g4 | % 32
   }
- }
+}
 
 

@@ -6,13 +6,13 @@
     %1-5
     g16 fis16 g8^~ g16 d16 e16 fis16 g16 a16 b16 cis16
     d16 cis16 d8^~ d16 a16 b16 cis16 d16 e16 fis16 d16
-    g16 fis16 g8^~ g16 fis16 e16 d16 cis16 e16 a,16 g16
+    g16 fis16 \TInh g8^~ g16 fis16 e16 d16 cis16 e16 a,16 g16
     fis16 e16 d16 cis16 d16 fis16 a,16  g16 fis16 a16 d,8
     r8 d''16[ c16 d8 g,8 b,8 d'8]
 
     %6-10
     r8 e16[ d16 e8 a,8 c,8 e'8]
-    r8 fis16[ e16 fis8 d8 a'8 c,8^~] 
+    r8 fis16[ e16 fis8 d8 a'8 \TInh c,8^~] 
     c8 b8 r16 g16 b16 d16 g16 d16 g16 a16
     b16 g16 d16 b16 g16 b16 d16 g16 b16 g16 fis16 e16
     a16 e16 cis16 a16 fis16 a16 cis16 e16 a16 fis16 e16 d16

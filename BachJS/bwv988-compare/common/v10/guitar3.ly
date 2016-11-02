@@ -12,7 +12,7 @@
     a4 d d, c' | % 7
     b4 ^\prall a8 [ b ] g [ b a c ] | % 8
     b8 [ a ] b4 \TUpo e2 ~ | % 9
-    e4 a, d2 ~ | % 10
+    e4 a, \TInb d2 ~ | % 10
     d4 b \TUp e2 ~ | % 11
     e4 d cis e | % 12
     a,8 [ b a g ] fis2 | % 13

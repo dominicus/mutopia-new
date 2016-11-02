@@ -20,11 +20,12 @@
     f4 r8 fis [ fis g ] | % 13
     g4 r8 gis [ gis a ] | % 14
     a4 r8 a [ cis a ] | % 15
-  }       
-\alternative { 
+ }       
+    \alternative { 
 	{ d4. c'8 [ bes a ] | } % 16
 	{ d,4. a8 d,4 | } % 16
-  }
+    }
+
  \repeat volta 2 {
     d'4 r8 c [ c bes ] | % 17
     bes8 [ g16 a ] bes8 [ b b c ] | % 18
@@ -43,8 +44,9 @@
     cis16 [ e d8 ] r8 d8 [ d d ] | % 31
  \noBreak
  }
-\alternative {
-	{ \grace s16 g4 ~ g8 [ d ] g,16 [ a bes c ] \noBreak |} % 32
-	{ g'4 ~ g16 [ fis g d ] g,4 \bar "|." |} % 32
+
+    \alternative {
+	{ \grace s16 \TInb g4 ~ g8 [ d ] g,16 [ a bes c ] \noBreak |} % 32
+	{ \TInb g'4 ~ g16 [ fis g d ] g,4 \bar "|." |} % 32
    }
 }

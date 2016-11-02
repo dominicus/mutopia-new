@@ -28,7 +28,7 @@
     g'8 [ fis16 e d c ] b [ c d c b g' ] |
     a,8 r8 r8 fis'8 r8 r8 |
     b16 [ c b a g fis ] g [ a g fis e d ] |
-    c8 [ d8 ^\turn e8 ] a,4. ~ |
+    c8 [ d8 ^\turn e8 ] \TDns a,4. ~ |
     a16 [ g a c b a ] b [ e b g e g ] |
     cis,16 [ dis e g fis e ] fis8 [ fis8. ^\prallprall e32 fis32] |
     g16 [ a b a g8 ] gis4. ^\turn ~|
@@ -36,7 +36,7 @@
     d16 [ fis g a b c ] d [ c b c d8 ] |
     g,8 r8 r8 e'8 r8 r8  |
     a,8 [ b16 c d e ] fis [ g fis e fis d ] |
-    b'16 [ a g fis e d ] c4. ~ |
+    b'16 [ a g fis e d ] \TDnb c4. ~ |
     c16 [ b c d e fis ] g [ d b g a b ] |
     e,16 [ fis g a b g ] a [ c fis8 ] r8 |
     r8 d8 [ c8 ] b8 [ c16 b a g ] 

@@ -24,13 +24,13 @@
  \repeat volta 1 {
     R1*9/8 | % 17
     R1*9/8 | % 18
-    a'2.  ~ ^\downprall a4. ~ | % 19
-    a8  [ g fis ] g [ b a ] b4 dis,8 | % 20
+    a'2. ~ ^\downprall a4. ~ | % 19
+    a8 [ g fis ] g [ b a ] b4 dis,8 | % 20
     e8 [ g16 fis e d ] c8 [ e16 d c b ] a8 [ c16 b a g ] | % 21
     fis4 e'8  dis  [e \turn  fis ] b,4. ~ | % 22
-    b8 [ dis e ] ~ e16 [ d c b c8 ] ~  c16 [ b a g a8 ~ ] | % 23
-    a8 [ fis g  ] b4. \mordent ~ b8  [ c d ] | % 24
-    e8 [ gis, b ] a4. ~  a8  [ b c ] | % 25
+    b8 [ dis \TInk e ] ~ e16 [ d c b \TInk c8 ] ~  c16 [ b a g \TInk a8 ~ ] | % 23
+    a8 [ fis g  ] \TIng b4. \mordent ~ b8  [ c d ] | % 24
+    e8 [ gis, b ] a4. ~ a8 [ b c ] | % 25
     d8 [ fis, a ] d,4 fis8 b4. ~ | % 26
     b4 dis,8 e [ fis g ] fis [ g a ] | % 27
     d,4. d4. \TDnm d4. ~ | % 28

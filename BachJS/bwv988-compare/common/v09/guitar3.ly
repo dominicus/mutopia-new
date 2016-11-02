@@ -30,6 +30,6 @@
 \break
     b16 [ g16 a16 b16 ] c16 [ d16 e16 fis16 ] g16 [ a16 b16 a16 ] g16 [ fis16 e16 d16 ] |
     c16 [ b  c a ] d8 [ d,8 ] g8 [ b16 d16 ] g4  |
-  }
+ }
 }
 

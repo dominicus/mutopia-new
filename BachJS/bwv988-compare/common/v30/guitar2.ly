@@ -11,7 +11,7 @@
     g4 g a a | % 5
     g8 [ a g fis ] e [ d ] << { a'8 b16 cis } \\ { cis,8 b8\rest } >> | %6
     d'8 [ e fis d ] b [ d g fis ] | % 7
-    e8. d16 ~ d  cis a8~ a [ g ] fis % 8
+    e8. d16 ~ d  cis \TInh a8 ~ a [ g ] fis % 8
  }
   
  \repeat volta 2 {

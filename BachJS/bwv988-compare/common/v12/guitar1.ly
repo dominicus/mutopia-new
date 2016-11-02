@@ -13,7 +13,7 @@
     g4 r4 r4 | % 8
     r16 fis16 [ g a ] b [ cis d fis ] e [ d cis b ] | % 9
     a16 [ g fis e ] d8 r8 r4 | % 10
-    r8 cis'8 ~ cis16 [ b a b ] cis [ d e fis ] | % 11
+    r8 \TInh cis'8 ~ cis16 [ b a b ] cis [ d e fis ] | % 11
     g8 [ g,16 fis ] g4 ~ g16 [ b a g ] | % 12
     fis16 [ e fis g ] fis [ a g fis ] \TUpo e4 ~ | % 13
     e8 [ d' cis b ] a [ fis' ] | % 14
@@ -25,7 +25,7 @@
  \repeat volta 2 {
     R1*3/4 | % 17
     r8 g,16 [ fis ] g8 [ a16 b ] c [ b a g ] | % 18
-    g'4 ~ g16 [ fis a g ] fis [ g e8 ] | % 19
+    \TInb g'4 ~ g16 [ fis a g ] fis [ g e8 ] | % 19
     \grace e16 fis8 ~ [ fis32 eis32 fis g ] fis8 [ a, ] r8 fis'8 | % 20
     g16 [ fis g a ] g [ fis e d ] c [ b a g ] | % 21
     fis2. ~ | % 22
@@ -37,7 +37,7 @@
     a2. ~ | % 28
     a8 [ d,  e  fis ] g16 [ b a c ] | % 29
     b8 [ a b c ] d8. ^\mordent [ e16 ] | % 30
-    d4 ~ d16 [ b c d ] e [ fis g a ] | % 31
+    \TUpb d4 ~ d16 [ b c d ] e [ fis g a ] | % 31
     b16 [ g d b ] g8 r8 r4  | % 32
  }
 }

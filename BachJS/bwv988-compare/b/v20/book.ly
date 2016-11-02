@@ -40,9 +40,9 @@ global = {
     \score {
 	\new StaffGroup \with {
 	    \override StaffGrouper #'staff-staff-spacing =
-		#'((basic-distance . 12)
-                   (minimum-distance . 8)
-                   (padding . 4))
+		#'((basic-distance . 14)
+                   (minimum-distance . 10)
+                   (padding . 0))
             }
 	<<
 	    \new Staff << \new Voice { \spacing } \new Voice { \global \guitarone } >>

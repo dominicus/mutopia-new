@@ -8,14 +8,14 @@
     g,16 [ c b a ] g [ fis e d ] cis8 r8 | % 3
     r8 d16 [ e ] fis [ g a b ] c [ d e d ] | % 4
     d8 [ e16 fis ] g8 r8 r4 | % 5
-    r16 g,8. ~ g16 [ b c d ] e [ fis g e ] | % 6
+    r16 \TInb g,8. ~ g16 [ b c d ] e [ fis g e ] | % 6
     fis16 [ d a g ] fis8 c'4  c8 ~ | % 7
     c16 [ b e d ] c [ d e fis, ] g [ a b c ] | % 8
     d4 r4 r4 | % 9
     r16 e16 [ d cis ] b [ a g e ] fis [ g a b ] | % 10
     cis16 [ d e fis ] g8 r8 r4 | % 11
     r8 \TDnd a,8 ~ a16 [ b cis b ] a [ g fis e ] | % 12
-    d8 [ d'16 e ] \TUpc d4 ~ d16 [ b cis d ] | % 13
+    d8 [ d'16 e ] \TInb d4 ~ d16 [ b cis d ] | % 13
     e16 [ fis e d ] e [ cis d e ] fis4 ~ | % 14
     fis8 [ g, a b ] cis [ e, ] | % 15
     d'4. e8 fis16 [ cis d8 ] % 16
@@ -35,7 +35,7 @@
     c2. ~  | % 27
     c8 [ g' ] fis [ e ] d16 [ b c a ] | % 28
     b8 [ c b a ] g8. ^\prallprall [ fis16 ] | % 29
-    g4 ~ g16 [ b a g ] fis [ e d c ] | % 30
+    \TInb g4 ~ g16 [ b a g ] fis [ e d c ] | % 30
     b16 [ d g b ] d8 [ \TDno g, ~ ] g16 [ a fis8 ] | % 31
     g4 r4 r4 | % 32
  } 

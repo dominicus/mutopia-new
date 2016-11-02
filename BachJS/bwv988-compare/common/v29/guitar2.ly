@@ -1,8 +1,9 @@
 \version "2.18.0"
 
-bassOne  = \relative c' {
+ bassOne  = \relative c' {
  \set Staff.instrumentName = "Gtr2 "
-    \repeat volta 1 {
+
+ \repeat volta 1 {
     r8 r16 d c d c d c d c d | % 1 
     r8 r16 a' g a g a g a g a | % 2
     r8 r16  e' d e cis e d e cis e | % 3 
@@ -13,29 +14,29 @@ bassOne  = \relative c' {
     r16 g,16 [ d16 b16 ] g16. [ g'32 fis16. d'32 ] \stemDown g,16. [ e'32 a,16. fis'32 ] | % 8
     \times 2/3 { b,16 [ d16 g16 ] }
     \scaleDurations #'(2 . 3) {
-    fis16 [ c a ]
-    b16 [ d g ] a [ fis c ]
-    d16 [ g b ] cis [ a e ] | % 9
-    fis16 [ a d ] cis [ g e ]
-    fis16 [ a d ] e [ cis g ]
-    a16 [ d fis ] d [ b a ] | % 10
-    g16 [ b16 c16 ]  b16 [ g16 fis16 ]
-    e16 [ g16 a16 ]  g16 [ e16 d16 ]
-    cis16 [ d16 fis16 ] e16 [ cis16 b16 ] | % 11
-    a16 [ cis16 fis16 ] e16 [ cis16 b16 ]
-    a16 [ c16 d16 ] cis16 [ a16 g16 ]
-    fis16 [ a16 b16 ] a16 [ fis16 e16 ] | % 12
-    \stemUp
-    d16 [ fis16 b16 ] a16 [ fis16 e16 ]
-    d16 [ fis16 g16 ] fis16 [ d16 c16 ]
-    b16 [ d16 e16 ] d16 [ b16 a16 ] | % 13
-    g16 [ b16 e16 ] d16 [ b16 a16 ]
-    g16 [ b16 c16 ] b16 [ g16 fis16 ]
-    e16 [ g16 a16 ] g16 [ e16 d16 ] | % 14
-   }
+	fis16 [ c a ]
+	b16 [ d g ] a [ fis c ]
+	d16 [ g b ] cis [ a e ] | % 9
+	fis16 [ a d ] cis [ g e ]
+	fis16 [ a d ] e [ cis g ]
+	a16 [ d fis ] d [ b a ] | % 10
+	g16 [ b16 c16 ]  b16 [ g16 fis16 ]
+	e16 [ g16 a16 ]  g16 [ e16 d16 ]
+	cis16 [ d16 fis16 ] e16 [ cis16 b16 ] | % 11
+	a16 [ cis16 fis16 ] e16 [ cis16 b16 ]
+	a16 [ c16 d16 ] cis16 [ a16 g16 ]
+	fis16 [ a16 b16 ] a16 [ fis16 e16 ] | % 12
+	\stemUp
+	d16 [ fis16 b16 ] a16 [ fis16 e16 ]
+	d16 [ fis16 g16 ] fis16 [ d16 c16 ]
+	b16 [ d16 e16 ] d16 [ b16 a16 ] | % 13
+	g16 [ b16 e16 ] d16 [ b16 a16 ]
+	g16 [ b16 c16 ] b16 [ g16 fis16 ]
+	e16 [ g16 a16 ] g16 [ e16 d16 ] | % 14
+    }
     e8 [ cis'8 ] d8 [ fis,8 ] g8 [ a8 ] | % 15
     r8 r16 a' g a g a r4 | % 16
- }
+}
 
  \repeat volta 1 {
     R1*3/4 | %17
@@ -50,27 +51,28 @@ bassOne  = \relative c' {
     b8 [ a'8 ] g8 [ fis8 ] g8 [ b,8 ] | % 26
     \times 2/3 { a16 [ a'16 f'16 ] }
     \scaleDurations #'(2 . 3) {
-    e16 [ c16 b16 ]
-    a16 [ c16 d16 ] c16 [ a16 g16 ]
-    fis16 [ a16 b16 ] a16 [ fis16 e16 ] | % 27
-    d16 [ d'16 b'16 ] a16 [ fis16 e16 ]
-    d16 [ fis16 g16 ] fis16 [ d16 c16 ]
-    b16 [ d16 e16 ] d16 [ b16 a16 ] | % 28
-    \stemDown
-    g16 [ g'16 e'16 ] d16 [ a16 a16 ]
-    g16 [ b16 c16 ] b16 [ g16 f16 ]
-    e16 [ g16 a16 ] g16 [ e16 d16 ] | % 29
-    c16 [ c'16 a'16 ] g16 [ e16 d16 ]
-    c16 [ e16 f16 ] e16 [ c16 b16 ]
-    a16 [ c16 d16 ] c16 [ a16 g16 ] | % 30
-  }
+	e16 [ c16 b16 ]
+	a16 [ c16 d16 ] c16 [ a16 g16 ]
+	fis16 [ a16 b16 ] a16 [ fis16 e16 ] | % 27
+	d16 [ d'16 b'16 ] a16 [ fis16 e16 ]
+	d16 [ fis16 g16 ] fis16 [ d16 c16 ]
+	b16 [ d16 e16 ] d16 [ b16 a16 ] | % 28
+	\stemDown
+	g16 [ g'16 e'16 ] d16 [ a16 a16 ]
+	g16 [ b16 c16 ] b16 [ g16 f16 ]
+	e16 [ g16 a16 ] g16 [ e16 d16 ] | % 29
+	c16 [ c'16 a'16 ] g16 [ e16 d16 ]
+	c16 [ e16 f16 ] e16 [ c16 b16 ]
+	a16 [ c16 d16 ] c16 [ a16 g16 ] | % 30
+    }
     fis8 [ a,8 ] b8 [ c8 ] d8 [ d,8 ] | % 31
     r8 r16 d'' c d c d r4  | % 32
  }
 }
 
 bassTwo = \relative a {
-    \repeat volta 1 {
+
+ \repeat volta 1 {
     g8 g, r4 r4 |
     fis'8 fis,8 r4 r4 |
     e'8 [ e,8 ] r4 r4 | %3
@@ -89,7 +91,7 @@ bassTwo = \relative a {
     d,,8 [ d' ] r4 d,4 | %16
  } 
  
-    \repeat volta 1 {
+ \repeat volta 1 {
     s1*3/4 | % 17
     s1*3/4 | % 18
     s1*3/4 | % 19

@@ -9,7 +9,7 @@
     b16 [ g a8 ] r8 | % 4
     R1*3/8 | % 5
     r8 c,8 [ e ] | % 6
-    a,8 d4 ~ | % 7
+    a,8 \TInb d4 ~ | % 7
     d8 [ g8 ] r8 | % 8
     R1*3/8 | % 9
     R1*3/8 | % 10
@@ -22,7 +22,7 @@
     \alternative {
 	 {g16 [ e fis8 ] r8 | } % 16
 	 {g16\repeatTie [ e fis8 ] r8 | } % 16
-    }
+ }
   
  \repeat volta 2 {
     R1*3/8 | % 17
@@ -36,11 +36,11 @@
     r8 a8 [ c ] | % 25
     fis,8 [ g b ] | % 26
     e,8 a4 ~ | % 27
-    a8 [ fis a ~ ] | % 28
+    a8 [ fis \TInb a ~ ] | % 28
     a8 [ g b ] | % 29
     e,4. | % 30
-    a,8 [ d  c ~ ] | % 31  
-    }
+    a,8 [ d  \TUp c ~ ] | % 31  
+ }
     \alternative {
 	 {  c16 [ a b8 ] r8 | }% 32 
 	 {  c16\repeatTie [ a b8 ] r8 | }% 32 

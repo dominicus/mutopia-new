@@ -38,14 +38,18 @@ global = {
     \tocItem \markup { Variation 22 }
 
     \score {
-	\new StaffGroup {
+	\new StaffGroup \with {
+	    \override StaffGrouper #'staff-staff-spacing =
+		#'((basic-distance . 12)
+                   (minimum-distance . 8)
+                   (padding . 0))
+            }
 	<<
 	    \new Staff << \global \guitarone >>
 	    \new Staff << \global \guitartwo >>
 	    \new Staff << \global \guitarthree >>
 	    \new Staff << \global \guitarfour >>
 	>>
-	}
 
 	\layout { }
     }

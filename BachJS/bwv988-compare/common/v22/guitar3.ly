@@ -8,11 +8,11 @@
     d4 cis8 [ b8 ] cis4 e4 | % 3
     a,1 ~ | % 4
     a4 g8 [ fis8 ] \TInb g2 ~ | % 5
-    g4 e4 a2 ~ | % 6
+    g4 e4 \TInb a2 ~ | % 6
     a4 a8 [ g8 ] a4 fis4 | % 7
     d'2 r2 | % 8
     r2 \TUpo e2 ~ | % 9
-    e4 d8 [ cis8 ] d2 ~ | % 10
+    e4 d8 [ cis8 ] \TInb d2 ~ | % 10
     d4 cis8 [ b8 ] cis4 e4 | % 11
     a,1 | % 12
     r2 a2 ~ | % 13

@@ -47,7 +47,7 @@
     }
     \repeat volta 2 {
         a4\mordent \TDn a4_~\downprall a16[ a32( b32 c32 d32 e16)]
-        \appoggiatura e16 d8 \appoggiatura c16 b8 \appoggiatura a8 g4. g'8
+        \appoggiatura e16 d8 \appoggiatura c16 b8 \SUpe \appoggiatura a8 g4. g'8
         \appoggiatura fis16 e8. fis32 dis32 \appoggiatura dis8 e4.\mordent a32 b32 a32 g32
         a8. fis16 \SUpa \appoggiatura e16 dis4. b8
 
@@ -75,7 +75,7 @@
         %31-32
         a'16 c,16 b16 a16 b16 c16 d16 g,16 b16 a16 g16 fis16
 	<<
-        { < g\harmonic >4^~ < g\harmonic >16 < d\harmonic >16 < g\harmonic >16 fis16 \slurDown \appoggiatura fis8 \slurDown g4 } \\
+        { \TInb < g\harmonic >4^~ < g\harmonic >16 < d\harmonic >16 < g\harmonic >16 fis16 \slurDown \appoggiatura fis8 \slurDown g4 } \\
         { c,16\rest c16 b16 a16 b2 } 
 	>>
    }

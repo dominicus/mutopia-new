@@ -52,7 +52,7 @@
     \set Staff.timeSignatureFraction = #'(3 . 4)
     e8 r8 r8 r16 g''16 \grace g8 fis8. [ e16 ] | % 25
     \grace e8 d4 ~ d8. [ f16 ] \grace f8 e8. [ d16 ] | % 26    
-    \grace d8 c2 ~ c8. [ c16 ] | % 27
+    \grace d8 \TIne c2 ~ c8. [ c16 ] | % 27
     c8 r8 r4 fis,8 r8 | %28
     g8 r8 r4 b8 r8 | %29
     c8 r8 r4 r4 | %30

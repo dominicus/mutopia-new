@@ -19,7 +19,7 @@
     g8 [ g, ] r16 e'16 [ fis g ] a [ fis e d ] | % 14
     b'16 [ b, e d ] cis [ a d g ] a [ e cis a] | % 15
     d16 [ e d cis ] d8 [ a ] d, r8 | % 16
-  }       
+ }       
 
  \repeat volta 2 {
     d'4 d c | % 17

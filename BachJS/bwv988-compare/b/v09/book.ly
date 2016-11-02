@@ -15,17 +15,17 @@ global = {
     \paper {
 	print-first-page-number = ##t 
 	system-system-spacing =
-	    #'((basic-distance . 25)
-	       (minimum-distance . 14)
-	       (padding . 4)
-	       (stretchability . 12))
+	    #'((basic-distance . 28)
+	       (minimum-distance . 25)
+	       (padding . 0))
+	%       (stretchability . 12))
     }
 
     \header {
 	title = "Variation 09"
 	subtitle = "   "
 %	subsubtitle = "   "
-	meter = \markup \column { "Canon at the Third" \null }
+%	meter = \markup \column { "Canon at the Third" \null }
 	meter = "Canon at the Third"
 	piece = "   "
 	poet = "   "

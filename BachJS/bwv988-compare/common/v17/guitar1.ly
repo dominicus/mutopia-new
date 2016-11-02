@@ -15,8 +15,7 @@
     e,16 [ d' cis b ] cis [ e a8 ] a8 \mordent r8 | % 10
     b,16 [ g' a, fis' ] g, [ e' fis, d' ] e, [ cis' d, b' ] | % 11
     cis,16 [ b' a gis ] a [ cis e8 ]
-    \once \override Script #'padding = #1
-    e4 \mordent ~  | % 12
+    \TIne e4 \mordent ~  | % 12
     e16 [ d e cis ] d [ b c a ] b [ g a fis ] | % 13
     g16 [ e' fis, d' ] e, [ cis' \grace d32 cis16 ( b )] \grace cis32 b16 [ ( a ) b  g' ] | % 14
     g8. [ fis32 e ] fis16 [ d b g ] a [ fis g e' ] | % 15
@@ -35,7 +34,7 @@
     e16 [ e' b d ] c [ b a c ] b [ d c e ] | % 25
     d16 [ b a c ] b [ a gis b ] a [ c b d ] | % 26
     c16 [ a g b ] a [ fis' g e ] fis [ d e c' ] | % 27
-    c8 ~ [ c32 b a g ] fis16 [ g a fis ] \grace e8 \Tr d4 ~ | % 28
+    \TInj c8 ~ [ c32 b a g ] fis16 [ g a fis ] \grace e8 \Tr \TInb d4 ~ | % 28
     d16 [ b c a ] b [ g' a, f' ] g, [ e' f, d' ] | % 29
     e,8 r32 g32 [ a b ] c16 [ a b g ] a [ fis g e  ] | % 30
     fis16 [ e' \TUpt d8 ] ~ d32 [ e fis g fis e d c ] b16 [ g'16 a,16 fis'16 ] | % 31

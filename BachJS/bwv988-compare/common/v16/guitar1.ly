@@ -1,7 +1,7 @@
 \version "2.18.0"
 
  sopranoOne = \relative c'' {
-  \time 2/2
+ \time 2/2
  \set Staff.connectArpeggios = ##t
  \repeat volta 2 {
     \stemDown
@@ -34,14 +34,12 @@
     b8. [ \times 2/3 {  cis32 d e ] }
     d8. \prallprall [ \times 2/3 { cis32 d e ] }
     a,8. [ \times 2/3 {  e'32 fis g ]} a8. [ cis,16 ] \stemUp| % 14
-%    \once \override Voice.Script #'X-offset = #10
-%    d4. \turn e8 e4. \downprall d8 |  % 15
     d4. e8 \turn e4. \downprall d8 |  % 15
-    }
-    \alternative {
-    {<fis, a d>1 | } % 16
-    { \stemDown \time 3/8 d'8 [ a16 g fis e ] |} % 16
  }
+    \alternative {
+	{<fis, a d>1 | } % 16
+	{\stemDown \time 3/8 d'8 [ a16 g fis e ] |} % 16
+    }
     
  \repeat volta 2  {
     \stemUp fis8 \turn [ g a ] | % 18
@@ -74,7 +72,7 @@
     c16 [ b a b c a ] |
     d4 b8 |
     g8 [ a fis ] | % 47
-    }
+ }
     \alternative {
 	{g4 s8 | b8\rest a'16 [g fis e ] | }
 	{ \time 2/2 g,1 |}
@@ -98,7 +96,7 @@ sopranoTwo =   \relative c'' {
     s2 fis,4 s4| % 13
     s1 | % 14
     s2 cis'2 | % 15
-    }
+ }
    
     \alternative {
         {s1 | } % 16
@@ -136,7 +134,7 @@ sopranoTwo =   \relative c'' {
     s1*3/8  | % 44
     s1*3/8  | % 45
     s1*3/8  | % 46
-    }
+ }
     
     \alternative {
         {s1*3/8 | s1*3/8 } % 32
@@ -161,14 +159,14 @@ sopranoThree =   \relative c'' {
     s1 | % 13
     s1 | % 14
     s1 | % 15
-    }
+ }
    
     \alternative {
         {s1 | } % 16
         { s1*3/8 |} % 16
     }
 
- \repeat volta 2  {
+ \repeat volta 2 {
     s1*3/8
     s1*3/8
     s1*3/8
@@ -199,7 +197,7 @@ sopranoThree =   \relative c'' {
     \tieDown d4. ~   | % 44
     d16 [ fis e g fis8 ]   | % 45
     b,8 c a | % 46
-}
+ }
 
     \alternative {
         {b4 b'8\rest |  % 47

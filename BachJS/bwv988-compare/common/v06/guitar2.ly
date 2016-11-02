@@ -1,12 +1,5 @@
 \version "2.18.0"
 
-extendLV = #(define-music-function (parser location further) (number?)
-#{
-	\once \override LaissezVibrerTie #'X-extent = #'(0 . 0)
-	\once \override LaissezVibrerTie #'details #'note-head-gap = #(/ further -2.1)
-	\once \override LaissezVibrerTie #'extra-offset = #(cons (/ further 2) 0)
-#})
-	
  guitartwo = \relative c''' {
  \set Staff.instrumentName = "Gtr2 "
 
@@ -28,7 +21,7 @@ extendLV = #(define-music-function (parser location further) (number?)
     \TDna d4. ~ | % 13
     d16 [ cis16 b16 d16 cis16 b16 ] | % 14
     cis16 [ b16 a16 g16 fis16 e16 ] | % 15
-  }
+ }
 
     \alternative {
 	    { \stemUp fis8 r8 r8 | % 16
@@ -38,7 +31,7 @@ extendLV = #(define-music-function (parser location further) (number?)
      
  \repeat volta 2 {
     a8 [ g16 fis16 e16 d16 ] | % 20
-    cis8 c4 ~ | 
+    cis8 \TInb c4 ~ | 
     c8 [ b16 a16 g16 fis16 ] | % 22
     \TUp e4. ~ | 
     e16 [ dis16 cis16 e16 dis16 cis16 ] | % 24
@@ -51,7 +44,7 @@ extendLV = #(define-music-function (parser location further) (number?)
     g4. ~ | 
     g16 [ fis16 e16 g16 fis16 e16 ] | % 32
     fis16 [ e16 d16 c16 b16 a16 ] |
-    }
+ }
 
     \alternative {
 	    { \stemUp g8 r8 r8 | % 32

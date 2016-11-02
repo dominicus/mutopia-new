@@ -14,6 +14,7 @@
     \SUpb \appoggiatura d8 c4 r8 e8 | % 6
     a,8. [ b16 ] c4 r8 d8 | % 7
     d8. [ b16 ] g4 r4  | % 8
+    \once \override Staff.TimeSignature.stencil = ##f
     b'4 b4 r8 g'8 | % 9
     g8. [ e16 ] fis4 \mordent r8 c8 | % 10
     b8. [ dis16 ] e4 \mordent r8 e8 | % 11
@@ -23,6 +24,7 @@
     a,8. [ g32 fis32 ]
     \SUpb \appoggiatura fis8 e4 r8 a,8 | % 15
     d4 d4 r4 | % 16
+    \once \override Staff.TimeSignature.stencil = ##f
  }
 
  \repeat volta 1 {
@@ -37,9 +39,10 @@
     g4 f4 r8 a8 | % 22
     a8. [ fis16 ] \SUp \appoggiatura e8 dis4 r8 fis8 | % 23
     fis8. [ dis16 ] e4 \mordent r4  | % 24
+    \once \override Staff.TimeSignature.stencil = ##f
     \time 3/4
     \set Staff.timeSignatureFraction = #'(3 . 4)
-    r8  r16 gis16 a8. [ b16 ] c4 ~ | % 25
+    r8  r16 gis16 a8. [ b16 ] \TInb c4 ~ | % 25
     c8. [ fis,16 ] g8. [ a16 ] b4 ~  | % 26
     b8. [ e,16 ] fis8. [ g16 ] a8. [ g16 ] | % 27
     \set Staff.timeSignatureFraction = #'(18 . 16)

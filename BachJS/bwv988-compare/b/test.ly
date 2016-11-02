@@ -60,7 +60,6 @@ TIni = \shape #'((0.4 . 0.0)(0.0 . 0.1)(0.0 . 0.1)(-0.4 . 0.0)) Tie
 TInj = \shape #'((0.3 . 0.0)(0.0 . -0.1)(0.0 . -0.1)(-0.3 . 0.0)) Tie
 TInk = \shape #'((0.6 . 0.0)(0.0 . -0.1)(0.0 . -0.1)(-0.6 . -0.0)) Tie
 TInl = \shape #'((0.0 . 0.0)(0.0 . 0.0)(0.0 . 0.0)(-0.3 . 0.0)) Tie
-TInm = \shape #'((0.4 . 0.1)(0.0 . 0.1)(0.0 . 0.1)(-0.4 . 0.1)) Tie
 Tr = \shape #'((0.4 . 0.0)(0.3 . 0.0)(0.0 . 0.0)(0.0 . 0.0)) Tie
 Tl = \shape #'((0.0 . 0.0)(0.0 . 0.0)(0.0 . 0.0)(-0.2 . 0.0)) Tie
 Tla = \shape #'((0.2 . 0.0)(0.0 . 0.0)(0.0 . 0.0)(-0.5 . 0.0)) Tie
@@ -116,44 +115,5 @@ SUpd = \shape #'((0.0 . 0.4)(-0.0 . -0.2)(-0.0 . 0.6)(-1.0 . 0.0)) Slur
 SUpe = \shape #'((0.0 . 0.5)(0.0 . 0.0)(0.0 . 0.0)(0.0 . 0.0)) Slur
 SBl = \shape #'((0.0 . 0.0)(0.0 . 0.0)(0.0 . 0.0)(-1.0 . 0.0)) Slur
 
-\include "toc.ly"
-%\include "forward.ly"
-\include "blank.ly"
-\include "intro.ly"
-\include "aria/1.7e/book.ly"
-\include "aria/1.8/book.ly"
-%\include "aria/1.9/book.ly"
-\include "v01/book.ly"
-\include "v02/book.ly"
-\include "v03/book.ly"
-\include "v04/book.ly"
-\include "v05/book.ly"
-\include "v06/book.ly"
-\include "v07/book.ly"
-\include "v08/book.ly"
-\include "v09/book.ly"
-\include "v10/book.ly"
-\include "v11/book.ly"
-\include "v12/book.ly"
-\include "v13/book.ly"
-\include "v14/book.ly"
-\include "v15/book.ly"
-\include "v16/book.ly"
-\include "v17/book.ly"
-\include "v18/book.ly"
-\include "v19/book.ly"
-\include "v20/book.ly"
-\include "v21/book.ly"
-\include "v22/book.ly"
 \include "v23/book.ly"
-\include "v24/book.ly"
-\include "v25/book.ly"
-\include "v26/book.ly"
-\include "v27/book.ly"
-\include "v28/book.ly"
 \include "v29/book.ly"
-\include "v30/book.ly"
-\include "ornaments/book.ly"
-\include "ack.ly"
-\include "copyright.ly"
-\include "errata.ly"

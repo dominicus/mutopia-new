@@ -52,6 +52,6 @@
         g16 g'16 f16 a16 g16 f16 e16 d16
         c16 c'16 b16 d16 c16 b16 a16 g16   
        fis16 g16 fis16 a16 b,8 d8
-    }
+ }
         \alternative { { g,8[ g16 fis16] g16 a16 b16 c16 } { g'8 d8 g,4 \bar "|." } }
 }

@@ -47,7 +47,7 @@ guitartwo = \relative c {
    \break
         
     \stemUp fis16. [ d32 e fis g a ] b8. [ g16 ] a4 a, | % 15
-}    
+ }    
     \alternative {
 	{ d,4 ~ d16 [ d'32 e fis g a b ] c8. [ a16 fis8. d16 ] | } % 16
 	{d,4 r8 \time 3/8 |} % 17
@@ -55,7 +55,7 @@ guitartwo = \relative c {
 
    \pageBreak
 
-    \repeat volta 2 {
+ \repeat volta 2 {
     \stemDown r8 d''16 [ c b a ] | % 18
     b8 [ c d ] | % 19
     g,16 [ b a c b d ] | % 20
@@ -104,7 +104,7 @@ guitartwo = \relative c {
    \break
     b16 [ d c e d fis ]| % 45
     e8 [ c d ] | % 46
-    }
+ }
     \alternative {
 	<<
 	    { s4 s8 | s4. } \\

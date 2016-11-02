@@ -8,10 +8,11 @@
     g8 [ b8 ] \TUpo e4 ~ e8 [ fis16 e16 ] d4 |
     e8 [ d8 e8 fis8 ] g8 [ d8 g8 fis8 ] |
 
-    e8 [ fis16 g16 ] a4 ~ a8 [ g16 fis16 ] g8 g, |
+    e8 [ fis16 g16 ] \TInb a4 ~ a8 [ g16 fis16 ] g8 g, |
     a'8 [ g8 a8 b8 ] c8 [ g8 c8 b8 ] |
-    a8 [ b16 cis16 ] d4 ~ d8 [ cis16 b16 ] cis16 [ d16 e8 ]~ |
-    e8 d4 cis8 d2 | } 
+    a8 [ b16 cis16 ] d4 ~ d8 [ cis16 b16 ] cis16 [ d16 \TInb e8 ]~ |
+    e8 d4 cis8 d2 |
+ } 
  
  \repeat volta 1 {
     R1 |
@@ -21,7 +22,7 @@
 
     \SUpb \appoggiatura d16 c8. [ d16 ] b4 \prall c8 r8 g'4 ~|
     g8 fis4 e8 fis8 [ a16 g16 ] a16 [ c16 b16 a16 ] |
-    g4 a4 b2 ~|
+    g4 a4 \TInb b2 ~|
     b8 [ e8 d8 c8 ] b2 
-    }
+ }
 }

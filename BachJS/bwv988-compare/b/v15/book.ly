@@ -14,12 +14,12 @@ global = {
 \bookpart {
 
     \paper {
-	 print-first-page-number = ##t 
+	print-first-page-number = ##t 
 	system-system-spacing =
-	    #'((basic-distance . 25)
-	       (minimum-distance . 14)
-	       (padding . 4)
-	       (stretchability . 12))
+	    #'((basic-distance . 28)
+	       (minimum-distance . 25)
+	       (padding . 4))
+%	       (stretchability . 12))
     }
 
     \header {
@@ -45,7 +45,7 @@ global = {
 	    \override StaffGrouper #'staff-staff-spacing =
 		#'((basic-distance . 12)
                    (minimum-distance . 8)
-                   (padding . 2))
+                   (padding . 4))
             }
 	<<
 	    \new Staff << \new Voice { \spacing } \new Voice { \global \guitarone } >>

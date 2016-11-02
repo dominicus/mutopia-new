@@ -29,9 +29,9 @@
         d16 [ b fis' ] e [ cis g' ]
         fis16 [ d a' ] g [ e b' ] | % 14
     }
-    a8 ~ 
+    \TInb a8 ~ 
     \scaleDurations #' ( 2 . 3 ) { a16 [  b cis ] d [ cis b ] }
-    a8 ~ 
+    \TInb a8 ~ 
     \scaleDurations #'(2 . 3) { a16 [ g fis ] e [ fis g ] | } % 15
     fis8 r8 
     \times 2/3  {r16 fis,16 [ a] } 
@@ -89,7 +89,7 @@
         r16 b,16 [ g' ]
         r16 a,16 [ fis' ] | % 28
     }
-    g,,8 [ g' ~ ]  
+    g,,8 [ \TInb g' ~ ]  
     \times 2/3 { g16 [ b e, ] }
     \scaleDurations #'(2 . 3) {
         f [ a d, ]
@@ -97,9 +97,9 @@
         a16 [ g e' ] d [ b f' ]
     }
     e8 g' c e,  | % 30
-    d8 ~ \times 2/3 { d16 [  e fis ] }
+    \TInb d8 ~ \times 2/3 { d16 [  e fis ] }
     \scaleDurations #' ( 2 . 3 ) { g16 [ fis e ] }
-    d8 ~ 
+    \TInb d8 ~ 
     \scaleDurations #' ( 2 . 3 ) { d16 [ c b ] }
     \scaleDurations #' ( 2 . 3 ) { a [ b c ] | } % 31
     b8 r8 

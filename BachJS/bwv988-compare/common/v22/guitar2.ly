@@ -8,13 +8,13 @@
     r2 g2 ~ | % 3
     g4 fis8 [ e ] fis4 a | % 4
     d,2. f4 | % 5
-    e2. g4 ~ | % 6
-    g4 fis8 [ e ] fis4 a ~ | % 7
+    e2. \TInb g4 ~ | % 6
+    g4 fis8 [ e ] fis4 \TInb a ~ | % 7
     a4 g8 [ fis ] g4 b | % 8
     e,2 b' | % 9
     a2 d | % 10
     e1 ~ | % 11
-    e1 ~ | % 12
+    \TInb e1 ~ | % 12
     e4 d8 [ cis ] d4 fis | % 13
     b,2. e8 [ d ] | % 14
     e4 d2 cis4 | % 15
@@ -36,7 +36,7 @@
     d,2 r2 | % 28
     r2 g2 ~ | % 29
     g4 g8 [ fis ] g2 ~ | % 30
-    g4 fis8 [ e ] fis4 a ~ | % 31
+    g4 fis8 [ e ] fis4 \TInb a ~ | % 31
     a4 g8 [ fis ] g2 | % 32
  }
 }

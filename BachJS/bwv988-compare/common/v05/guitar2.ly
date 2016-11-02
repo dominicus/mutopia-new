@@ -14,17 +14,17 @@
     g16 b cis d ] e [ fis e d ] cis [b a g ] | % 9
     fis [ a b cis ] d [ e d cis ] b [ a g fis ] | % 10
     e8 [ fis g b] 
-    \once \override Script #'padding = #1 e4\mordent ~ | % 11
+    \TIne e4\mordent ~ | % 11
     e8 [ d ] cis16 [e b e ] a, [ e' g, e'] | % 12
     fis,16 [ e' d cis ] d [ a d, d' ] e, [d' fis, d' ] | % 13
     g,16 [ e' d cis ] d [ b e, d'] fis, [d' g, d'] | % 14
     a [ d cis b ] cis [e a, cis ] e, [ g fis e ] | % 15
 	fis [a d, fis ] a, [ d fis, a ] d,4 | % 16
-    }
+ }
 
 \pageBreak
 
-    \repeat volta 2 {
+ \repeat volta 2 {
     r16 d''16 [ c b ] a [ g fis e ] d [ c' b a ] | % 17
     b16 [ g fis e ] d [ c b a ] g [ g' a b ] | % 18
     c16 [ d e d ] c [ b a g ] a [ b c a ] | % 319
@@ -41,5 +41,5 @@
     e'8 [ g, ] r8 b8 [ a  g ] | % 30
     fis16 [ d' e fis ] g [ d b g ] a [ c g' fis ] | % 31
     g8 [ g, d b ] g4
-    }
+ }
 }

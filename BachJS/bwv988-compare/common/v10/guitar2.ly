@@ -30,9 +30,9 @@
     c4 a fis a | % 22
     fis4 b b, a'| % 23
     g4 fis8 [ g ] \TUpo e2 ~| % 24
-    e4 r4 a2 ~| % 25
+    e4 r4 \TInb a2 ~| % 25
     a4 d b g ~ | % 26
-    g4 c8 [ b ] c2 ~ | % 27
+    g4 c8 [ b ] \TIn c2 ~ | % 27
     c2. c4| % 28
     b2 r4 g4| % 29
     e2. a8 [ g ] | % 30

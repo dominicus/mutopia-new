@@ -33,7 +33,8 @@
 
  \repeat volta 2 {
     d'8 r8
-    \stemDown \once \override Script #'padding = #1 c''4.\prallprall ~ c16 [ b32 c ] | % 17
+  %  \stemDown \once \override Script #'padding = #1 c''4.\prallprall ~ c16 [ b32 c ] | % 17
+    \stemDown \TIng c''4.\prallprall ~ c16 [ b32 c ] | % 17
     b8 r8 \stemUp \TDn f,4\mordent~ f16 [ a g f ] | % 18
     e8 r8  \stemDown fis'8 ([ a8  ] dis,8 [ e16 fis ) ] | % 19
     b,8 r8 \stemUp

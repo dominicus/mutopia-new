@@ -15,8 +15,8 @@ global = {
     \paper {
 	print-first-page-number = ##t 
 	system-system-spacing =
-	    #'((basic-distance . 22)
-	       (minimum-distance . 14)
+	    #'((basic-distance . 25)
+	       (minimum-distance . 20)
 	       (padding . 4)
 	       (stretchability . 12))
     }
@@ -40,9 +40,9 @@ global = {
     \score {
 	\new StaffGroup \with {
             \override StaffGrouper #'staff-staff-spacing =
-                #'((basic-distance . 12)
-                   (minimum-distance . 5)
-                   (padding . 4)
+                #'((basic-distance . 14)
+                   (minimum-distance . 10)
+                   (padding . 0)
                    (stretchability . 8))
         }
 	<<

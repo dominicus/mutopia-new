@@ -14,12 +14,12 @@ global = {
 \bookpart {
 
     \paper {
-	 print-first-page-number = ##t
+	print-first-page-number = ##t
 	system-system-spacing =
-	    #'((basic-distance . 22)
-	       (minimum-distance . 14)
-	       (padding . 4)
-	       (stretchability . 12))
+	    #'((basic-distance . 28)
+	       (minimum-distance . 25)
+	       (padding . 4))
+%	       (stretchability . 12))
     }
 
 
@@ -45,7 +45,7 @@ global = {
 	\new StaffGroup \with {
 	    \override StaffGrouper #'staff-staff-spacing =
 		#'((basic-distance . 10)
-                   (minimum-distance . 6)
+                   (minimum-distance . 8)
                    (padding . 4))
             }
 	<<

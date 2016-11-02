@@ -36,7 +36,7 @@
     c8 [ d16 c b a ] b8 [ c d ] g, [ a b ] | % 28
     e,8 r8 r8 e'8 r8 r8 a,8 r8 r8 | % 29
     g8 [ a b ] c [ b a ] b [ g a ] | % 30
-    b4. ~ b8 [ a g ] d'4 d,8 | % 31
+    \TInl b4. ~ b8 [ a g ] d'4 d,8 | % 31
     g4 g8 g4 g8 g4. | % 32
  }
 }

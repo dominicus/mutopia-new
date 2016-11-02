@@ -14,13 +14,13 @@
     e8 [ d16 c b a ] | % 7
     b4. ~ | % 8
     b16 [ a c b a g ] |  % 9
-    a8 a'4 ~ | % 10
+    a8 \TInb a'4 ~ | % 10
     a8 [ g16 fis e d ] | % 11
-    cis16 [ e a b c8 ~ ] | % 12
+    cis16 [ e a b \TInb c8 ~ ] | % 12
     c8 [ b16 a g fis ] | % 13
     \TUpo e4. ~ | % 14
     e16 [ d cis e d cis ] | % 15
-    }
+ }
 
     \alternative {
 	    { d16 [ c b a g fis ] | g8 r8 r8 }
@@ -42,7 +42,7 @@
     fis16 [ dis16 e16 c16 e16 g16 ] |
     a4. ~ | 
     a16 [ g16 fis16 a16 g16 fis16 ] | % 33
-    }
+ }
 
     \alternative {
 	  { g16 [ fis16 e16 d16 c16 b16 ] |

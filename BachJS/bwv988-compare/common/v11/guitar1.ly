@@ -15,9 +15,9 @@
     fis8. ~ [ fis8 e'16 ] d [ cis b ] a [ g fis ] | % 10
     \TUpo e8. ~ e16 [ fis g ] cis, [ b' a ] g [ a b ] |
     e,16 [ d' cis ] b [ cis d ] cis [ e fis ] g [ fis e ] |
-    d4. ~ \downprall d8 [ fis,16 ] a8 [ d16 ] | % 13
-    d4. ~ \upprall d8 [ gis,16 ] b8 [ d16 ] |
-    d4. ~ \upprall d16 [ e g ] cis, [ e g ] |
+    \TIng d4. ~ \downprall d8 [ fis,16 ] a8 [ d16 ] | % 13
+    \TIng d4. ~ \upprall d8 [ gis,16 ] b8 [ d16 ] |
+    \TIng d4. ~ \upprall d16 [ e g ] cis, [ e g ] |
     fis8. ~ fis16 [ d a ] fis [ d fis ] a [ cis d] | % 16
  }
   

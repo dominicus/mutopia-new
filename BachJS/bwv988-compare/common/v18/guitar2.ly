@@ -11,7 +11,7 @@
     %5-8
     g2. fis8 g |
     a2. c8 b |
-    c2 ~ c8 b c a |
+    \TInb c2 ~ c8 b c a |
     b2 r2
     %9-12
     g1 |
@@ -33,7 +33,7 @@
     dis2 r
     % 21-24
     g1
-    fis4 g a2 ~
+    fis4 g \TInb a2 ~
     a4 g8 a b2 ~
     b8 a g fis e4 r
     %25-28

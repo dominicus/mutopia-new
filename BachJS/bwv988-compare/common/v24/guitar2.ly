@@ -7,13 +7,13 @@
     R1*9/8 | % 2
     g4 fis8 g4 a8 b d cis | % 3
     d4 a8 d4 e8 \grace e16 fis16 [ g fis e d8] | % 4
-    g8 [ b a ] b [ g fis ] g4. ~ | % 5
+    g8 [ b a ] b [ g fis ] \TInb g4. ~ | % 5
     g8 [ fis e ] fis [ g a ] d,4. ~ | % 6
     d8 [ g fis ] g [ b a ] b [ d16 c b a ] | % 7
     b8 [ c16 b a g ] a8 [ b16 a g fis ] g8 [ a16 g fis e ] | % 8
     d8 [ b'' a ] g [ a fis ] e16 [ d cis8 d ] |  % 9
     \grace d8 cis4. ~ cis8 [ d e ] a, [ b cis ] | % 10
-    d4 fis8 g4 a8 b,4. ~ | % 11
+    d4 fis8 g4 a8 \TInb b,4. ~ | % 11
     b8 [ a gis ] a2._~ | % 12
     a8 [ d cis ] d16 [ e fis8 e ] fis [ a16 g fis e ] | % 13
     fis8 [ g16  fis  e  d ] e8 [ fis16  e  d  cis ] d8 [ e16 d cis b ] | % 14

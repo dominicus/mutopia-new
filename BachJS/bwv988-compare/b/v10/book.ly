@@ -40,14 +40,18 @@ global = {
     \tocItem \markup { "Variation 10" \hspace #10 "Fughetta" }
 
     \score {
-	\new StaffGroup {
+	\new StaffGroup \with {
+	    \override StaffGrouper #'staff-staff-spacing =
+		#'((basic-distance . 10)
+                   (minimum-distance . 6)
+                   (padding . 0))
+            }
 	<<
 	    \new Staff << \global \guitarone >>
 	    \new Staff << \global \guitartwo >>
 	    \new Staff << \global \guitarthree >>
 	    \new Staff << \global \guitarfour >>
 	>>
-	}
 
 	\layout { }
     }

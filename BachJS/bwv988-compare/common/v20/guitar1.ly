@@ -31,7 +31,7 @@
     g8 [ g, fis a fis d'] | % 14
     \times 2/3  { cis16 [ a b ] }
     \scaleDurations #' ( 2 . 3 ) { cis16[ d e ] }
-    fis8 ~ \scaleDurations #' ( 2 . 3 ) { fis16 [ e d ] } 
+    \TInb fis8 ~ \scaleDurations #' ( 2 . 3 ) { fis16 [ e d ] } 
     b'8 [ cis \turn ] | % 15
     \times 2/3  { d16 [ a fis ] }
     \scaleDurations #' ( 2 . 3 ) { d16[ a fis ] } 
@@ -79,7 +79,7 @@
         a16 [ c fis, ] g [ b e, ] | % 30
         fis16 [ d e ] fis [ g a ]
     }
-    \TUpc b,8 ~ \scaleDurations #' ( 2 . 3 ) { b16 [ a g ] }
+    \TIni b,8 ~ \scaleDurations #' ( 2 . 3 ) { b16 [ a g ] }
     e'8 [ fis \turn] | % 31
     \times 2/3 { g16 [ d b ] }
     \scaleDurations #'(2 . 3) { g [ d b ] }

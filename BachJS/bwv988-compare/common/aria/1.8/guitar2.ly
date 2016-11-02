@@ -44,7 +44,7 @@
 	{ g,4\rest \stemDown a,2 | g,4\rest \stemDown b,2 }  
     >>
     << %15-16
-	{ fis4 e8. fis16 g4~ | g4 fis2 } \\
+	{ fis4 e8. fis16 \TInb g4~ | g4 fis2 } \\
 	{ a,2.~ | a,4. a,8 d4 }
     >>
     d8 e8 fis2^\mordent
