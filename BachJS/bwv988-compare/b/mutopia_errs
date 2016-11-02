@@ -1,0 +1,61 @@
+v27 bar 24 gis tie
+v25 bar 24/25 as tie
+v24 bar 12 a tie , bar 17 double ties(a), bar24 double ties (bass e), bar29 voice 2 d#, b28 no tie on top d
+v02 bar 5 treble "b" should be "g"
+v03 bar 5-6 middle voice "d" should be tied
+    bar 15-16 middel voice "a" should be tied
+v04    bar 17 (second repeat), tie missing in voice 1 and 2 in treble clef (c# g)
+var06 bar 10 middle top voice "a" should be a8
+      bar 15 bass "a" should be octave lower
+      bar 25 bass  "b" should be octave lower
+      bar 19 top voice "a" should be tied to the B section
+      bar 35 top voice "a" should be tied over to the repeat
+      bar 36 (last bar) top voice "g" should be octave lower
+v07   bar 6 missing phrase slur
+v07   bar 14 missing phrase slur
+v07   bar 21 missing phrase slur
+v07   bar 22 missing phrase slur
+      bar 15 grace note "b" missing
+v09   var 16 bass odd 16th not beamed
+
+v10   \time should be 2/2 not 4/4
+      bar 11-12 third voice (is now in treble clef for 2 notes) "e2" should be tied over
+      bar 26-27 secound voice  "g" should be tied over
+v12  bar 22 d should be dis
+v13  bar 24 treble clef, lower voice missing d#
+v14  bar 4 first "e" should be "f"
+v16  \time should be 2/2 not 4/4
+     bar 5, treble clef,  ornament is incorrect should be prallmordent not prallprall
+     bar 15 \turn missing
+     bar 18 \turn missing
+     bar 48 incorrect b in treble clef, should be octave lower in the bass
+     bar 9, bass cleff, single beam through 2 beats
+     bar 32, treble clef, lower voice, last "g" should be "gis"
+             trebel clef upper voice first "d" should be "e"
+v19  bar 13 -14 "c" should be tied
+v21  bar 5 missing tie b8 ~ b16
+     bar 6 top voice, ornament on wrong note
+v22  wrong time sig should be 2/2 not 4/4
+v25  bar 2 appog should be "c" not "f"
+     bar 18 appog should be "b" not "c"
+v24  bar 13 guitar2, last 4 16ths should be "a g fis e"
+v28  bar8, bass clef lower voice missing rest 32nd rest on beat 2, missing "g32" at the end
+     bar13 bass clef lower voice missing missing "f" at end of bar, extra r32
+     bar18 bass clef, last note "d" should be "b"
+     bar21 bass clef lower voice missing rest 32nd rest on beat 3, missing "e32" at the end
+     bar25 bass clef lower voice missing "a32 g32" at the end, extra r16 at end
+     bar26 bass clef lower voice missing rest 32nd rest on beat 3, missing "g32" at the end
+     bar27 treble clef upper voice missing rest 32nd rest on beat 3, extre r32 at the end
+           treble clef upper voice missing "c" on secound beat
+           treble clef upper voice beat 2 missing "c32"
+           last bass note should be "a" not "f"
+v29  bar 12 bass clef "bis" should be "cis", and next "bis" should be "b" (no accidental until firs "bis" fixed)
+      bar 22 lower clef, low "g" should be "b"
+      bar 14 lower clef first note "fis" should be "g", upper clef last two notes should be "g e" not "fis e"
+
+v30  bar8 treble clef, second voice beat 3.5 should be "g8" not "a8", rythm not correct 
+     bar10 treble clef, top voice last note should be "fis" not "f"
+     bar13 treble clef, secound voice first beat should be "c8. d16" not "c8 d8"
+     bar14 bass clef, top voice, beat 3 and 4 should be "e4 e4" not "e4 fis4"
+
+
