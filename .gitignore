@@ -4,3 +4,4 @@
 *.rdf
 *.mid
 *.zip
+/tempo/*
