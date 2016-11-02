@@ -26,7 +26,7 @@
     title = "Piano Sonata No.1"
     composer = "L.V. Beethoven (1770-1827)"
     opus = "Op.2 No.1"
-    date = "1793-95"
+    date = "1794/95"
     style = "Classical"
     source = "Peters, 1910"
 
@@ -34,9 +34,9 @@
     maintainerEmail = "javier (at) ruiz-alma.com"
     license = "Creative Commons Attribution-ShareAlike 4.0"
 
-    mutopiatitle = "Piano Sonata No.1 Adagio"
-    mutopiaopus = "Op.2 No.1 Mov.2"
-    mutopiacomposer = "BeethovenLV"
+    mutopiatitle = "Sonata No. 1 (2nd Movement: Adagio)"
+    mutopiaopus = "Op. 2, No. 1"
+    mutopiacomposer = "BeethovenLv"
     mutopiainstrument = "Piano"
 
     footer = "Mutopia-2001/01/01-1"
