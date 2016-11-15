@@ -15,6 +15,7 @@ posSlurB = \once \override Voice.Slur #'positions = #'(1 . 0.5)
 posSlurC = \once \override Voice.Slur #'positions = #'(2.2 . 0)
 
 posTextA = \once\override TextScript.extra-offset = #'(0 . 1)
+posTextB = \once\override DynamicText.extra-offset = #'(0 . -1)
 
 
 posSlurPriority = \once \override Slur.outside-staff-priority = #150
