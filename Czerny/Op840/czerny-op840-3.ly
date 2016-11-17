@@ -25,7 +25,6 @@ meter = { \tempo 4 = 78 }
   style               =       "Romantic"
   moreInfo	      =       "Exercices Progressifs dans tous les tons majeurs et mineurs; Melodic studies"
   license             =       "Public Domain"
-  copyright           =       "public domain"
   enteredby           =       "Manuela" %Manuela Gößnitzer
   maintainer          =       "Manuela"
   maintainerEmail     =       "pressephotografin--gmail.com"
