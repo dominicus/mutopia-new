@@ -16,6 +16,8 @@ shpSlurH = {
   \shape #'((0 . 0) (0 . -0.5) (0 . -1) (0 . -3)) Slur
 }
 shpSlurJ = \shape #'((0 . 0) (0 . 1.5) (2 . 1.5) (0 . 0)) Slur
+shpSlurK = \shape #'((0 . 1.5) (0 . 1.5) (0 . 1) (0 . 0)) Slur
+shpSlurL = \shape #'((0 . 0) (0 . 1) (0 . 3) (0 . 1.8)) Slur
 
 posSlurA = \once \override Voice.Slur #'positions = #'(0.5 . 3)
 posSlurB = \once \override Voice.Slur #'positions = #'(1 . 0.5)
@@ -28,6 +30,7 @@ posTextC = \once\override TextScript.extra-offset = #'(0 . -1)
 doubleSlurOn = \set doubleSlurs = ##t
 doubleSlurOff = \set doubleSlurs = ##f
 
+noFingPad = \once \override Fingering.padding = #0.5
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % A function to modify the shape of slurs by offsetting the positions property
