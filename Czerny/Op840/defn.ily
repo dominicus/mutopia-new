@@ -18,6 +18,7 @@ shpSlurH = {
 shpSlurJ = \shape #'((0 . 0) (0 . 1.5) (2 . 1.5) (0 . 0)) Slur
 shpSlurK = \shape #'((0 . 1.5) (0 . 1.5) (0 . 1) (0 . 0)) Slur
 shpSlurL = \shape #'((0 . 0) (0 . 1) (0 . 3) (0 . 1.8)) Slur
+shpSlurM = \shape #'((0 . 0.5) (0 . 2) (0 . 1.3) (0 . 0)) Slur
 
 posSlurA = \once \override Voice.Slur #'positions = #'(0.5 . 3)
 posSlurB = \once \override Voice.Slur #'positions = #'(1 . 0.5)
@@ -46,3 +47,4 @@ offsetPositions =
         `(,(+ (car offsets) (cdar (ly:slur::calc-control-points grob))) .
            ,(+ (cdr offsets) (cdr (cadddr (ly:slur::calc-control-points grob))))))
    #})
+
