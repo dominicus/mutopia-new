@@ -1,6 +1,7 @@
 \version "2.18.2" 
 
 omitDynamic = \once\omit DynamicText
+omitHairpin = \once\omit Hairpin
 
 posSlurPriority = \once \override Slur.outside-staff-priority = #150
 
@@ -19,6 +20,12 @@ shpSlurJ = \shape #'((0 . 0) (0 . 1.5) (2 . 1.5) (0 . 0)) Slur
 shpSlurK = \shape #'((0 . 1.5) (0 . 1.5) (0 . 1) (0 . 0)) Slur
 shpSlurL = \shape #'((0 . 0) (0 . 1) (0 . 3) (0 . 1.8)) Slur
 shpSlurM = \shape #'((0 . 0.5) (0 . 2) (0 . 1.3) (0 . 0)) Slur
+shpSlurN = \shape #'((0 . 0) (0 . 1) (0 . 2.5) (0 . 4)) Slur
+shpSlurP = \shape #'((0 . 0.5) (0 . 0) (0 . 0.4) (0 . 0.8)) Slur
+shpSlurP = \shape #'((0 . -1.5) (1 . 1) (-1 . 1) (0 . -1.5)) Slur
+shpSlurQ = \shape #'((0 . -2) (1 . 1) (-1 . 0) (0 . -3)) Slur
+shpSlurR = \shape #'((0 . 0) (0 . 0) (0 . -1) (0 . -1.7)) Slur
+shpSlurS = \shape #'((0 . 0) (0 . 0) (0 . 1) (0 . 3)) Slur
 
 posSlurA = \once \override Voice.Slur #'positions = #'(0.5 . 3)
 posSlurB = \once \override Voice.Slur #'positions = #'(1 . 0.5)
@@ -27,6 +34,8 @@ posSlurC = \once \override Voice.Slur #'positions = #'(2.2 . 0)
 posTextA = \once\override TextScript.extra-offset = #'(0 . 1)
 posTextB = \once\override DynamicText.extra-offset = #'(0 . -1)
 posTextC = \once\override TextScript.extra-offset = #'(0 . -1)
+
+posHairpinA = \once\override Hairpin.extra-offset = #'(0 . -1)
 
 doubleSlurOn = \set doubleSlurs = ##t
 doubleSlurOff = \set doubleSlurs = ##f

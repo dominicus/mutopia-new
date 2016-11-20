@@ -22,8 +22,8 @@
 
   \context {
     \Staff
-    \omit ClefModifier
-    explicitClefVisibility = #end-of-line-invisible
+    %\omit ClefModifier
+    %explicitClefVisibility = #end-of-line-invisible
     explicitKeySignatureVisibility = #end-of-line-invisible
   }
 }
