@@ -253,7 +253,8 @@ LH = \relative c' {
       \set fingeringOrientations = #'(up) %% für Akkorde!
       \override Fingering.direction = #DOWN  %% für Einzelnoten!
       \override Fingering.staff-padding = #'()
-      \omitDynamic \grace { s8\p } d4-5\<_( \omitDynamic es8-5\sf ) d8\rest \omitDynamic < c-5 g'-2>4\p (
+      \omitDynamic \grace { s8\p } \shpSlurU d4-5\<_( \omitDynamic es8-5\sf ) d8\rest
+      \omitDynamic \posSlurPriority \shpSlurT < c-5 g'-2>4\p (
       < fis-3 a-1 > < g-4 d'-1 > )
       \override Fingering.avoid-slur = #'inside
       \set fingeringOrientations = #'(left) %% für Akkorde!

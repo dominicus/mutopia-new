@@ -26,6 +26,8 @@ shpSlurP = \shape #'((0 . -1.5) (1 . 1) (-1 . 1) (0 . -1.5)) Slur
 shpSlurQ = \shape #'((0 . -2) (1 . 1) (-1 . 0) (0 . -3)) Slur
 shpSlurR = \shape #'((0 . 0) (0 . 0) (0 . -1) (0 . -1.7)) Slur
 shpSlurS = \shape #'((0 . 0) (0 . 0) (0 . 1) (0 . 3)) Slur
+shpSlurT = \shape #'((0.8 . -2.5) (1 . -2.2) (-1 . -2.5) (-0.7 . -2.5)) Slur
+shpSlurU = \shape #'((1 . 0.8) (1 . 0.9) (0 . 0.4) (0 . 0)) Slur
 
 posSlurA = \once \override Voice.Slur #'positions = #'(0.5 . 3)
 posSlurB = \once \override Voice.Slur #'positions = #'(1 . 0.5)
