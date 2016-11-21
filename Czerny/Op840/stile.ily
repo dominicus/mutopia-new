@@ -7,9 +7,9 @@
 \paper {
   annotate-spacing = ##f
   left-margin = #15
-  top-margin = #20
+  top-margin = #16
   ragged-right = ##f
-  bottom-margin = #10
+  bottom-margin = #8
   last-bottom-spacing.basic-distance = #10
 }
 

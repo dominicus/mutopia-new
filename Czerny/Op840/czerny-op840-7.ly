@@ -10,6 +10,7 @@ tonality_deutsch = "G dur"
 tonality_fr = "Sol majeur."
 meter = { \tempo 4 = 140 }
 
+\paper { page-count = 2 }
 
 \header {
   composer            =       \markup { \bold "Carl Czerny" " (* 21. Februar 1791; † 15. Juli 1857)" }
