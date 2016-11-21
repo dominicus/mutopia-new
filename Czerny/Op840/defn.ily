@@ -34,6 +34,7 @@ posSlurC = \once \override Voice.Slur #'positions = #'(2.2 . 0)
 posTextA = \once\override TextScript.extra-offset = #'(0 . 1)
 posTextB = \once\override DynamicText.extra-offset = #'(0 . -1)
 posTextC = \once\override TextScript.extra-offset = #'(0 . -1)
+posTextD = \once\override TextScript.extra-offset = #'(-2.8 . -9)
 
 posHairpinA = \once\override Hairpin.extra-offset = #'(0 . -1)
 
