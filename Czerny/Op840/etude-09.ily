@@ -258,35 +258,3 @@ LH = \relative c' {
 }
 
 dynamics = { }
-
-%{
-\score
-{
-  \new PianoStaff \with {
-    instrumentName = \markup {
-      \center-column {
-        \line {
-          \bold \huge { "№" }
-          \number { \exercise "." }
-        }
-        \line \large { B Dur }
-        \italic \line { Si \flat majeur. }
-      }
-    }
-    shortInstrumentName = ""
-  }
-  <<
-    \new Staff="Discant"
-    \RH
-    \new Staff="Bass"
-    \LH
-  >>
-  \layout {
-    ragged-last-bottom = ##t
-    %ragged-last = ##t
-    ragged-right = ##f
-  }
-  \midi { }
-}
-
-%}
